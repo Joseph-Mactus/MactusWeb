@@ -63,59 +63,75 @@ const CompanyOverview = () => {
       </section>
 
       {/* SECTION 2 — MISSION / VISION / VALUES (3-column card layout) */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="py-24 px-6 bg-[#fafafa] relative overflow-hidden border-b border-gray-100">
+        {/* Abstract Light Background Orbs */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-60 pointer-events-none overflow-hidden">
+          <div className="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] rounded-full bg-[#e0006e]/[0.03] blur-[5rem]"></div>
+          <div className="absolute bottom-[-10%] left-[-5%] w-[40rem] h-[40rem] rounded-full bg-blue-500/[0.02] blur-[5rem]"></div>
+        </div>
+        
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Card 1 — Mission */}
-            <div className="group relative bg-[#1a1a1a] p-10 rounded-[2.5rem] border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(224,0,110,0.15)]">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#e0006e]/10 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="group relative bg-white p-10 md:p-12 rounded-[2.5rem] border border-gray-100 overflow-hidden transition-all duration-500 hover:-translate-y-3 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(224,0,110,0.15)] hover:border-[#e0006e]/20">
+              {/* Background accent on hover */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#e0006e]/5 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               
-              <div className="w-16 h-16 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] transition-all duration-500">
-                <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 w-0 h-1.5 bg-gradient-to-r from-[#e0006e] to-[#ff4b9f] group-hover:w-full transition-all duration-700 ease-out"></div>
+
+              <div className="relative z-10 w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e]">
+                <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" strokeWidth="2.5" />
                   <circle cx="12" cy="12" r="2" fill="currentColor" />
                 </svg>
               </div>
               
-              <h3 className="text-white font-black text-2xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors">Mission</h3>
-              <p className="text-gray-400 leading-relaxed font-medium">
+              <h3 className="relative z-10 text-gray-900 font-black text-2xl md:text-3xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors duration-500">Mission</h3>
+              <p className="relative z-10 text-gray-600 leading-relaxed font-medium transition-colors duration-500 group-hover:text-gray-800">
                 "We want to be the trusted leader in intelligent automation solutions, transforming pharmaceutical and industrial processes with cutting-edge technology, compliance excellence, and sustainable innovation."
               </p>
             </div>
 
             {/* Card 2 — Vision */}
-            <div className="group relative bg-[#1a1a1a] p-10 rounded-[2.5rem] border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(224,0,110,0.15)]">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#e0006e]/10 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="group relative bg-white p-10 md:p-12 rounded-[2.5rem] border border-gray-100 overflow-hidden transition-all duration-500 hover:-translate-y-3 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(224,0,110,0.15)] hover:border-[#e0006e]/20 mt-0 md:mt-12">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#e0006e]/5 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <div className="absolute top-0 left-0 w-0 h-1.5 bg-gradient-to-r from-[#e0006e] to-[#ff4b9f] group-hover:w-full transition-all duration-700 ease-out"></div>
 
-              <div className="w-16 h-16 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] transition-all duration-500">
-                <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="relative z-10 w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e]">
+                <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
 
-              <h3 className="text-white font-black text-2xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors">Vision</h3>
-              <p className="text-gray-400 leading-relaxed font-medium">
+              <h3 className="relative z-10 text-gray-900 font-black text-2xl md:text-3xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors duration-500">Vision</h3>
+              <p className="relative z-10 text-gray-600 leading-relaxed font-medium transition-colors duration-500 group-hover:text-gray-800">
                 "To empower global industries with future-ready automation that guarantees data integrity, operational efficiency, and unmatched reliability in every critical environment."
               </p>
             </div>
 
             {/* Card 3 — Core Values */}
-            <div className="group relative bg-[#1a1a1a] p-10 rounded-[2.5rem] border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(224,0,110,0.15)]">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#e0006e]/10 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="group relative bg-white p-10 md:p-12 rounded-[2.5rem] border border-gray-100 overflow-hidden transition-all duration-500 hover:-translate-y-3 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(224,0,110,0.15)] hover:border-[#e0006e]/20 mt-0 md:mt-24">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#e0006e]/5 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <div className="absolute top-0 left-0 w-0 h-1.5 bg-gradient-to-r from-[#e0006e] to-[#ff4b9f] group-hover:w-full transition-all duration-700 ease-out"></div>
 
-              <div className="w-16 h-16 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] transition-all duration-500">
-                <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="relative z-10 w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e]">
+                <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
 
-              <h3 className="text-white font-black text-2xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors">Core Values</h3>
-              <ul className="space-y-3">
-                {['Innovation', 'Integrity', 'Excellence', 'Collaboration'].map(value => (
-                  <li key={value} className="flex items-center space-x-3">
-                    <span className="w-1.5 h-1.5 bg-[#e0006e] rounded-full"></span>
-                    <span className="text-gray-400 font-bold uppercase tracking-widest text-[10px]">{value}</span>
+              <h3 className="relative z-10 text-gray-900 font-black text-2xl md:text-3xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors duration-500">Core Values</h3>
+              <ul className="relative z-10 space-y-4">
+                {['Innovation', 'Integrity', 'Excellence', 'Collaboration'].map((value, idx) => (
+                  <li key={value} className="flex items-center space-x-4 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover/item:bg-[#e0006e] group-hover/item:border-[#e0006e] transition-colors duration-300">
+                      <span className="text-[#e0006e] group-hover/item:text-white font-black text-sm transition-colors duration-300">0{idx + 1}</span>
+                    </div>
+                    <span className="text-gray-600 font-bold uppercase tracking-widest text-sm group-hover/item:text-gray-900 transition-colors duration-300">{value}</span>
                   </li>
                 ))}
               </ul>

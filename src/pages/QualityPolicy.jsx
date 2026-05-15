@@ -97,46 +97,53 @@ const QualityPolicy = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — QUALITY PILLARS (PREMIUM DARK DESIGN) */}
-      <section className="py-32 px-6 bg-white relative overflow-hidden">
+      {/* SECTION 2 — QUALITY PILLARS (PREMIUM LIGHT DESIGN) */}
+      <section className="py-32 px-6 bg-[#fafafa] relative overflow-hidden border-b border-gray-100">
+        {/* Abstract Light Background Orbs */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-60 pointer-events-none overflow-hidden">
+          <div className="absolute top-[-10%] left-[-5%] w-[50rem] h-[50rem] rounded-full bg-[#e0006e]/[0.03] blur-[5rem]"></div>
+          <div className="absolute bottom-[-10%] right-[-5%] w-[50rem] h-[50rem] rounded-full bg-blue-500/[0.02] blur-[5rem]"></div>
+        </div>
+
         {/* Subtle background element */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none select-none overflow-hidden">
-          <span className="text-[20rem] font-black absolute -top-20 -left-20 leading-none">QUALITY</span>
-          <span className="text-[20rem] font-black absolute -bottom-20 -right-20 leading-none">POLICY</span>
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none select-none overflow-hidden flex items-center justify-center">
+          <span className="text-[12rem] md:text-[24rem] font-black text-gray-900 leading-none absolute whitespace-nowrap">QUALITY</span>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {pillars.map((pillar, i) => (
               <div
                 key={i}
-                className="animate-reveal-up group relative bg-[#1a1a1a] p-10 rounded-[2.5rem] border border-white/5 overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_50px_100px_rgba(224,0,110,0.15)]"
+                className={`animate-reveal-up group relative bg-white p-10 md:p-12 rounded-[2.5rem] border border-gray-100 overflow-hidden transition-all duration-700 hover:-translate-y-4 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(224,0,110,0.15)] hover:border-[#e0006e]/20 ${i % 3 === 1 ? 'lg:mt-12' : i % 3 === 2 ? 'lg:mt-24' : ''}`}
                 style={{ animationDelay: `${0.2 + (i * 0.1)}s` }}
               >
-                {/* Decorative background glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#e0006e]/10 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                {/* Background accent on hover */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#e0006e]/5 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-                {/* Vertical accent indicator */}
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-[3px] bg-[#e0006e] rounded-full scale-y-0 group-hover:scale-y-100 transition-transform duration-700"></div>
+                {/* Top Accent Line */}
+                <div className="absolute top-0 left-0 w-0 h-1.5 bg-gradient-to-r from-[#e0006e] to-[#ff4b9f] group-hover:w-full transition-all duration-700 ease-out"></div>
 
-                <div className="relative z-10 space-y-6">
-                  <div className="text-[#e0006e] bg-[#e0006e]/10 w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-700 group-hover:bg-[#e0006e] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 shadow-xl">
-                    {pillar.icon}
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#e0006e] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e]">
+                    <div className="text-[#e0006e] group-hover:text-white transition-colors duration-500">
+                      {pillar.icon}
+                    </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <h3 className="text-white font-black text-2xl uppercase tracking-tighter leading-tight group-hover:text-[#e0006e] transition-colors duration-500">
+                  <div className="space-y-4 flex-grow">
+                    <h3 className="text-gray-900 font-black text-2xl md:text-3xl uppercase tracking-tighter leading-tight group-hover:text-[#e0006e] transition-colors duration-500">
                       {pillar.heading}
                     </h3>
-                    <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium transition-colors duration-500 group-hover:text-gray-300">
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed font-medium transition-colors duration-500 group-hover:text-gray-800">
                       {pillar.body}
                     </p>
                   </div>
                 </div>
 
-                {/* Index number */}
-                <div className="absolute bottom-6 right-10">
-                  <span className="text-4xl font-black text-white/5 italic select-none group-hover:text-[#e0006e]/10 transition-colors duration-700">
+                {/* Index number with outline effect */}
+                <div className="absolute bottom-4 right-6 pointer-events-none">
+                  <span className="text-7xl font-black text-transparent opacity-10 group-hover:opacity-30 transition-all duration-700 transform group-hover:scale-110 group-hover:-translate-x-2 group-hover:-translate-y-2 select-none inline-block" style={{ WebkitTextStroke: '2px #e0006e' }}>
                     0{i + 1}
                   </span>
                 </div>

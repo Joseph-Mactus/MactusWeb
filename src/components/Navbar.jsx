@@ -85,6 +85,7 @@ export default function Navbar() {
                     if (sub === "Leadership") path = "/leadership";
                     if (sub === "Promoters") path = "/promoters";
                     if (sub === "Quality Policy") path = "/quality-policy";
+                    if (sub === "Careers") path = "/careers";
                     
                     return (
                       <a
@@ -126,27 +127,38 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div className={`fixed inset-0 z-[65] xl:hidden transition-all duration-500 ${isMenuOpen ? 'visible' : 'invisible opacity-0 pointer-events-none'}`}>
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-md" onClick={() => setIsMenuOpen(false)}></div>
-        <div className={`absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white shadow-2xl transition-transform duration-500 ease-out border-l border-gray-100 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="p-8 pt-24 overflow-y-auto h-full">
-            <div className="space-y-2">
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-500" onClick={() => setIsMenuOpen(false)}></div>
+        <div className={`absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white/95 backdrop-blur-2xl shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-gray-100 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          {/* Top Decorative Gradient */}
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#e0006e] via-[#ff4d9e] to-[#e0006e]"></div>
+          
+          <div className="p-8 pt-24 overflow-y-auto h-full scrollbar-hide">
+            <div className="space-y-6">
               {NAV_ITEMS.map((item) => (
-                <div key={item.title} className="border-b border-gray-50 last:border-0 pb-2">
+                <div key={item.title} className="border-b border-gray-100 last:border-0 pb-4">
                   <div
                     onClick={() => item.subItems ? toggleMobileSub(item.title) : setIsMenuOpen(false)}
-                    className="flex items-center justify-between py-4 cursor-pointer group"
+                    className="flex items-center justify-between py-2 cursor-pointer group"
                   >
-                    <span className="text-[#e0006e] font-black text-lg tracking-tight group-hover:pl-2 transition-all duration-300">{item.title}</span>
+                    <span className="text-gray-900 font-black text-xl tracking-tight group-hover:text-[#e0006e] transition-colors duration-300">
+                      {item.title}
+                    </span>
                     {item.subItems && (
-                      <svg className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${activeMobileSub === item.title ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${activeMobileSub === item.title ? 'bg-[#e0006e] text-white shadow-[0_0_15px_rgba(224,0,110,0.4)]' : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200 group-hover:text-gray-900'}`}>
+                        <svg className={`w-4 h-4 transition-transform duration-300 ${activeMobileSub === item.title ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     )}
                   </div>
 
                   {item.subItems && (
-                    <div className={`overflow-hidden transition-all duration-300 ${activeMobileSub === item.title ? 'max-h-96 opacity-100 mt-2 pb-4' : 'max-h-0 opacity-0'}`}>
-                      <div className="space-y-1 pl-4 border-l-2 border-[#e0006e]/20">
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeMobileSub === item.title ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                      <div className="space-y-2 pl-4 relative">
+                        {/* Custom animated border line */}
+                        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gray-100 rounded-full"></div>
+                        <div className={`absolute left-0 top-0 w-[2px] bg-[#e0006e] rounded-full transition-all duration-700 ${activeMobileSub === item.title ? 'h-full' : 'h-0'}`}></div>
+
                         {item.subItems.map((sub, i) => {
                           let path = "#";
                           if (sub === "Smart Access Control System") path = "/sacs";
@@ -156,13 +168,14 @@ export default function Navbar() {
                           if (sub === "Leadership") path = "/leadership";
                           if (sub === "Promoters") path = "/promoters";
                           if (sub === "Quality Policy") path = "/quality-policy";
+                          if (sub === "Careers") path = "/careers";
                           
                           return (
                             <a
                               key={i}
                               href={path}
                               onClick={() => setIsMenuOpen(false)}
-                              className="block py-3 px-4 text-gray-600 text-sm font-bold hover:text-[#e0006e] hover:bg-gray-50 rounded-lg transition-all"
+                              className="block py-3 px-4 text-gray-500 text-sm font-bold hover:text-[#e0006e] hover:bg-gray-50 rounded-xl transition-all duration-300"
                             >
                               {sub}
                             </a>
@@ -174,8 +187,14 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-            <div className="mt-12 pt-12 border-t border-gray-100 opacity-30 text-center">
-              <span className="text-[10px] font-black tracking-widest text-[#e0006e] uppercase">Mactus Automation Pvt. Ltd.</span>
+            
+            <div className="mt-5 pt-12 border-t border-gray-100 text-center flex flex-col items-center gap-4">
+              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center border border-gray-200">
+                <img src={MactusLogo} alt="Mactus Logo" className="w-8 h-8 object-contain" />
+              </div>
+              <div className="text-[9px] font-black tracking-[0.3em] text-[#e0006e] uppercase">
+                Mactus Automation
+              </div>
             </div>
           </div>
         </div>

@@ -4,29 +4,29 @@ const FOOTER_COLS = [
   {
     title: "COMPLIANCE PRODUCTS",
     links: [
-      "Smart Access Control System",
-      "Automated Solution Dispensing System",
-      "Intervention Recording System",
-      "Media Plate Tracking and Management System",
-      "Intravenous Bag Leak Tester (IVBLT)"
+      { name: "Smart Access Control System", path: "/sacs" },
+      { name: "Automated Solution Dispensing System", path: "/asds" },
+      { name: "Intervention Recording System", path: "/irs" },
+      { name: "Media Plate Tracking and Management System", path: "#" },
+      { name: "Intravenous Bag Leak Tester (IVBLT)", path: "#" }
     ]
   },
   {
     title: "SYSTEM INTEGRATION",
     links: [
-      "Building Management System",
-      "Environmental Monitoring System",
-      "Low Voltage Systems"
+      { name: "Building Management System", path: "#" },
+      { name: "Environmental Monitoring System", path: "#" },
+      { name: "Low Voltage Systems", path: "#" }
     ]
   },
   {
     title: "ABOUT US",
     links: [
-      "Overview",
-      "Leadership",
-      "Promoters",
-      "Careers",
-      "Quality Policy"
+      { name: "Overview", path: "/company-overview" },
+      { name: "Leadership", path: "/leadership" },
+      { name: "Promoters", path: "/promoters" },
+      { name: "Careers", path: "/careers" },
+      { name: "Quality Policy", path: "/quality-policy" }
     ]
   }
 ];
@@ -42,7 +42,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {col.links.map((link, i) => (
                   <li key={i}>
-                    <a href="#" className="text-gray-400 text-sm hover:text-[#e0006e] transition-colors duration-200 block">{link}</a>
+                    <a href={link.path} className="text-gray-400 text-sm hover:text-[#e0006e] transition-colors duration-200 block">{link.name}</a>
                   </li>
                 ))}
               </ul>

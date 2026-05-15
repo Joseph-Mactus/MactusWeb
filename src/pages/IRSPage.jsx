@@ -121,16 +121,16 @@ const IRSPage = () => {
 
             <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Every</span>
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.1s' }}>Every</span>
               </span>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>intervention.</span>
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.2s' }}>intervention.</span>
               </span>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block shimmer-text font-black" style={{ animationDelay: '0.4s' }}>Every</span>
+                <span className="animate-reveal-up inline-block shimmer-text font-black pr-2" style={{ animationDelay: '0.4s' }}>Every</span>
               </span>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.5s' }}>second.</span>
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.5s' }}>second.</span>
               </span>
             </h1>
 

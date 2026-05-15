@@ -126,10 +126,10 @@ const SACSPage = () => {
                 </span>
               ))}
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block shimmer-text font-black" style={{ animationDelay: '0.4s' }}>remembers</span>
+                <span className="animate-reveal-up inline-block shimmer-text font-black pr-10" style={{ animationDelay: '0.4s' }}>remembers</span>
               </span>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.5s' }}>everything.</span>
+                <span className="animate-reveal-up inline-block pr-10" style={{ animationDelay: '0.5s' }}>everything.</span>
               </span>
             </h1>
 
