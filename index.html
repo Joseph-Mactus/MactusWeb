@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/src/assets/Mactus_sm.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mactus-web</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e0006e",
+              darkbg: "#333333",
+              navy: "#0D1B35",
+              purple: "#6A3FB5",
+              teal: "#1D9E75",
+              surface: "#F4F6FA",
+            },
+            fontFamily: {
+              sans: ['"DM Sans"', 'sans-serif'],
+              serif: ['"DM Serif Display"', 'serif'],
+              inter: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-left': 'fadeInLeft 1s ease-out forwards',
+              'fade-in-right': 'fadeInRight 1s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+            },
+            keyframes: {
+              fadeInLeft: {
+                '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              fadeInRight: {
+                '0%': { opacity: '0', transform: 'translateX(50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes shine {
+        0% { left: -100%; }
+        100% { left: 100%; }
+      }
+      .animate-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .animate-shine::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+        transform: skewX(-25deg);
+        animation: shine 3s infinite;
+      }
+    </style>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
