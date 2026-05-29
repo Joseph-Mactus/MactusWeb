@@ -284,26 +284,6 @@ export default function Navbar() {
               );
             })}
           </div>
-
-          {/* Footer CTAs */}
-          <div className="flex gap-3 px-4 py-4 border-t border-gray-100">
-            <button className="flex-1 flex items-center justify-center gap-2 py-[13px] rounded-[14px] bg-gray-100 text-gray-700 text-[13px] font-bold border border-gray-200 transition-opacity active:opacity-70">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              Search
-            </button>
-            <a
-              href="/contact-us/"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex-1 flex items-center justify-center gap-2 py-[13px] rounded-[14px] bg-[#e0006e] text-white text-[13px] font-bold transition-opacity active:opacity-80"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Contact Us
-            </a>
-          </div>
         </div>
       </div>
 
