@@ -16,8 +16,8 @@ import BuildingManagementSystem from './pages/SystemIntegration/BMSPage';
 import EnvironmentalMonitoringSystem from './pages/SystemIntegration/EMSPage';
 import Testimonial from './pages/TestimonialsPage';
 import ContactUs from './pages/Contactus';
-import LowVoltageSystems from './pages/SystemIntegration/LowVoltageSystems';
 import ComplianceProductPage from './pages/Complianceproductspage';
+import LowVoltageSystems from './pages/SystemIntegration/Lowvoltagesystems';
 
 function App() {
   return (
