@@ -1,255 +1,103 @@
 import React, { useState, useEffect, useRef } from 'react';
-import indiaMap from '@svg-maps/india';
-const india = indiaMap.default || indiaMap;
-import Dashboard from ".././assets/Dashboard.jpg";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import indiaMap from '@svg-maps/india';
+const india = indiaMap.default || indiaMap;
 
-// --- Shared Components ---
-const SectionTitle = ({ children }) => (
-  <div className="flex justify-center w-full mb-6 mt-8">
-    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+// ─── Reusable Components ──────────────────────────────────────────────────────
+
+const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
+  <div className={`flex flex-col ${center ? 'items-center' : 'items-start'} w-full mb-12 mt-8`}>
+    {eyebrow && (
+      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">{eyebrow}</span>
+    )}
+    <h2 className={`${center ? 'text-center' : ''} font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
 
-const COMPLIANCE_PRODUCTS = [
-  {
-    name: "Smart Access Control System",
-    desc: "Biometric & RFID enabled security for critical areas.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    ),
-    color: "from-blue-500/20 to-cyan-400/20",
-    accent: "#00d2ff"
-  },
-  {
-    name: "Intervention Recording System",
-    desc: "21 CFR Part 11 compliant audit trail recording.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-    ),
-    color: "from-purple-500/20 to-pink-400/20",
-    accent: "#ff00e0"
-  },
-  {
-    name: "Automated Solution Dispensing System",
-    desc: "Precision volume control for laboratory accuracy.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-      </svg>
-    ),
-    color: "from-emerald-500/20 to-teal-400/20",
-    accent: "#00ffa3"
-  },
-  {
-    name: "Media Plates Tracking & Management",
-    desc: "Complete traceability for microbiology media.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-      </svg>
-    ),
+// ─── Count-up Hook ────────────────────────────────────────────────────────────
 
-    color: "from-orange-500/20 to-yellow-400/20",
-    accent: "#ffcc00"
-  },
-  {
-    name: "Intravenous Bag Leak Tester",
-    desc: "High sensitivity detection for pharma packaging.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
-    color: "from-[#e0006e]/20 to-[#ff4d9e]/20",
-    accent: "#e0006e"
-  }
-];
-
-function Hero() {
-  return (
-    <section className="relative w-full min-h-[750px] flex items-center bg-[#1a1a1a] overflow-hidden group">
-      {/* Decorative Grid Background */}
-      <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
-
-      <div className="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20">
-
-        {/* Left Side: Content */}
-        <div className="space-y-8 animate-fade-in-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase mb-4">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
-            </span>
-            TRUSTED BY INDIA’S TOP PHARMA SINCE 2012
-          </div>
-
-          <h1 className="text-white font-black text-4xl md:text-5xl lg:text-7xl leading-[1.1] tracking-tighter">
-            When the Auditor arrives,<br />
-            <span className="text-[#e0006e]">your data is already ready.</span>
-          </h1>
-
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-[580px] font-medium opacity-90">
-            We replace the paper logbooks in your cleanrooms with <span className="text-white font-bold">21 CFR Part 11</span> compliant systems — so every entry, intervention, and dispense is captured, signed, and audit-ready the moment it happens.
-          </p>
-
-          <div className="flex flex-row items-center gap-4 pt-6 flex-wrap md:flex-nowrap">
-            <button className="px-8 py-5 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_15px_30px_rgba(224,0,110,0.25)] hover:shadow-[0_20px_40px_rgba(224,0,110,0.35)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-xs flex items-center gap-2 whitespace-nowrap">
-              Explore our solutions
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-            <button className="px-8 py-5 bg-transparent text-white font-extrabold rounded-xl border-2 border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-300 uppercase tracking-widest text-xs whitespace-nowrap">
-              Talk to a compliance expert
-            </button>
-          </div>
-        </div>
-
-        {/* Right Side: Interactive Product List (Compact Vertical) */}
-        <div className="relative flex flex-col gap-2.5 animate-fade-in-right max-w-md mx-auto lg:mx-0">
-          {COMPLIANCE_PRODUCTS.map((product, idx) => (
-            <div
-              key={idx}
-              style={{ animationDelay: `${idx * 100}ms` }}
-              className="group relative flex items-center gap-3 p-3 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[#e0006e]/40 transition-all duration-500 hover:translate-x-2 cursor-pointer overflow-hidden shadow-lg hover:shadow-[#e0006e]/10"
-            >
-              {/* Colored Side Bar */}
-              <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${product.color.replace('/20', '')} opacity-40 group-hover:opacity-100 transition-opacity`}></div>
-
-              {/* Icon Container */}
-              <div className={`flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br ${product.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-all duration-500`} style={{ color: product.accent }}>
-                {product.icon}
-              </div>
-
-              {/* Content */}
-              <div className="flex-grow min-w-0">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-white font-bold text-[14px] tracking-tight truncate group-hover:text-[#e0006e] transition-colors">
-                    {product.name}
-                  </h3>
-                  <span className="text-white/5 font-black text-lg group-hover:text-[#e0006e]/20 transition-colors">
-                    0{idx + 1}
-                  </span>
-                </div>
-                <p className="text-gray-400 text-[11px] leading-tight opacity-50 group-hover:opacity-100 transition-opacity line-clamp-1">
-                  {product.desc}
-                </p>
-              </div>
-
-              {/* Arrow */}
-              <div className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                <svg className="w-3.5 h-3.5 text-[#e0006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-
-              {/* Decorative Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </div>
-          ))}
-        </div>
-
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#e0006e]/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
-        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] -z-10 animate-pulse delay-700"></div>
-      </div>
-    </section>
-  );
-}
-
-
-// --- 5 & 6. Combined Milestones & Map Section ---
-
-const MILESTONES = [
-  {
-    end: 13,
-    suffix: "",
-    label: "Years of Industry Presence",
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-    color: "from-blue-500 to-cyan-400"
-  },
-  {
-    end: 50,
-    suffix: "+",
-    label: "Clients Served",
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-    color: "from-[#e0006e] to-[#ff4d9e]"
-  },
-  {
-    end: 130,
-    suffix: "+",
-    label: "Successful Projects",
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    color: "from-purple-500 to-indigo-500"
-  }
-];
-
-// Custom, robust Animated Counter Hook
-function AnimatedCounter({ end, suffix }) {
+const useCountUp = (target, duration = 1800, start = false) => {
   const [count, setCount] = useState(0);
-  const counterRef = useRef(null);
+  useEffect(() => {
+    if (!start) return;
+    let startTime = null;
+    const isNumeric = typeof target === 'number';
+    if (!isNumeric) { setCount(target); return; }
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(ease * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+};
+
+const AnimatedStat = ({ value, suffix = '', label, detail }) => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const numericValue = parseInt(value.replace(/\D/g, ''), 10) || 0;
+  const count = useCountUp(numericValue, 1800, visible);
 
   useEffect(() => {
-    let observer;
-    const currentRef = counterRef.current;
+    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.3 });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
-    const startAnimation = () => {
-      let startTimestamp = null;
-      const duration = 2000;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        // ease out quad
-        const easeProgress = progress * (2 - progress);
-        setCount(Math.floor(easeProgress * end));
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        } else {
-          setCount(end);
-        }
-      };
-      window.requestAnimationFrame(step);
-    };
+  const display = `${visible ? count : 0}${suffix}`;
 
-    observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        startAnimation();
-        observer.disconnect(); // scrollSpyOnce
-      }
-    }, { threshold: 0.1 });
+  return (
+    <div ref={ref} className="group bg-white/80 backdrop-blur-xl border border-white rounded-[2rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_rgba(224,0,110,0.10)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-start">
+      {/* Count */}
+      <p className="shimmer-text font-black tracking-tighter leading-none mb-3 transition-transform duration-300 group-hover:scale-105"
+        style={{ fontSize: 'clamp(52px, 7vw, 80px)', lineHeight: 1 }}>
+        {display}
+      </p>
+      {/* Label */}
+      <p className="text-gray-900 font-black text-sm uppercase tracking-[0.15em] leading-snug mb-2">{label}</p>
+      {/* Detail */}
+      {detail && <p className="text-gray-400 font-medium text-xs leading-relaxed">{detail}</p>}
+    </div>
+  );
+};
 
-    if (currentRef) observer.observe(currentRef);
+// ─── FAQ Accordion ────────────────────────────────────────────────────────────
 
-    return () => {
-      if (currentRef && observer) observer.unobserve(currentRef);
-    };
-  }, [end]);
+const FAQAccordion = ({ items }) => {
+  const [open, setOpen] = useState(null);
+  return (
+    <div className="space-y-3 max-w-4xl mx-auto">
+      {items.map((item, idx) => (
+        <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
+          <button
+            onClick={() => setOpen(open === idx ? null : idx)}
+            className="w-full px-8 py-6 text-left flex justify-between items-center gap-4 focus:outline-none"
+          >
+            <span className="font-bold text-gray-900 text-lg leading-snug">{item.q}</span>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${open === idx ? 'rotate-180 bg-[#e0006e] text-white' : 'bg-gray-50 text-[#e0006e]'}`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </button>
+          <div className={`transition-all duration-300 overflow-hidden ${open === idx ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className="px-8 pb-6 text-gray-500 leading-relaxed font-medium text-base">{item.a}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-  return <span ref={counterRef}>{count}{suffix}</span>;
-}
+// ─── India Map SVG ────────────────────────────────────────────────────────────
 
-// These are exact centroid coordinates mapping 1:1 to the 612x696 India SVG ViewBox
+// ─── India Map SVG ────────────────────────────────────────────────────────────
+
 const MAP_PINS = [
   { name: "HIMACHAL PRADESH", lines: "2 LINES", cx: 225.5, cy: 173.0, align: "right" },
   { name: "RAJASTHAN", lines: "2 LINES", cx: 154.0, cy: 256.8, align: "left" },
@@ -262,229 +110,541 @@ const MAP_PINS = [
   { name: "TAMIL NADU", lines: "4 LINES", cx: 245.4, cy: 547.4, align: "right" },
 ];
 
-function MilestonesAndMap({ india }) {
-  const [activePin, setActivePin] = useState(null);
+const IndiaMap = ({ activePin, setActivePin }) => {
   const viewBoxParts = india?.viewBox?.split(' ') || ['0', '0', '612', '696'];
   const svgWidth = parseFloat(viewBoxParts[2]);
   const svgHeight = parseFloat(viewBoxParts[3]);
 
   return (
-    <section className="w-full font-sans">
+    <div className="relative w-full max-w-[550px] aspect-[612/696] bg-gradient-to-br from-gray-900 via-gray-950 to-black rounded-[2.5rem] p-6 md:p-10 shadow-[0_30px_70px_rgba(0,0,0,0.4)] border border-white/5 overflow-hidden group">
+      {/* Decorative ambient glowing background circles */}
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#e0006e]/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
-      {/* SECTION 1: Milestones (Premium Design) */}
-      <div className="bg-white py-20 px-6 md:px-12 lg:px-20 relative overflow-hidden">
-        {/* Subtle Decorative Elements */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-        <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#e0006e]/5 rounded-full blur-[100px] -z-0"></div>
+      <svg viewBox={india?.viewBox || '0 0 612 696'} className="w-full h-full relative z-0" fill="none">
+        {india?.locations?.map((loc) => {
+          const isHighlighted = activePin && loc.name.toUpperCase() === activePin.name.toUpperCase();
+          return (
+            <path
+              key={loc.id}
+              d={loc.path}
+              className={`transition-all duration-500 cursor-pointer ${isHighlighted
+                ? 'fill-[#e0006e]/25 stroke-[#ff4b9f] stroke-[1.5px]'
+                : 'fill-blue-300/15 stroke-blue-300/40 hover:fill-blue-400/25 hover:stroke-blue-200'
+                }`}
+              onMouseEnter={() => {
+                const foundPin = MAP_PINS.find(p => p.name === loc.name.toUpperCase());
+                if (foundPin) {
+                  setActivePin(foundPin);
+                } else {
+                  // Fallback for other states
+                  setActivePin({ name: loc.name.toUpperCase(), lines: '0 LINES' });
+                }
+              }}
+              onMouseLeave={() => setActivePin(null)}
+            />
+          );
+        })}
+      </svg>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 p-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {MILESTONES.map((item, idx) => (
+      {/* Render pins on top of map */}
+      {MAP_PINS.map((pin, idx) => {
+        const isHovered = activePin && activePin.name === pin.name;
+        return (
+          <div
+            key={idx}
+            className="absolute z-10 cursor-pointer transition-all duration-300"
+            style={{
+              top: `${(pin.cy / svgHeight) * 100}%`,
+              left: `${(pin.cx / svgWidth) * 100}%`,
+            }}
+            onMouseEnter={() => setActivePin(pin)}
+            onMouseLeave={() => setActivePin(null)}
+          >
+            <div className="relative flex items-center justify-center -translate-x-1/2 -translate-y-1/2">
+              {/* Outer pulsing ring */}
               <div
-                key={idx}
-                className="group relative flex flex-col items-center p-5 rounded-[2.5rem] bg-white border border-gray-100 hover:border-[#e0006e]/10 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-700"
-              >
-                {/* Icon Container with Gradient Glow */}
-                <div className={`relative mb-5 p-4 rounded-2xl bg-gradient-to-br ${item.color} text-white shadow-xl transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500`}>
-                  <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  {item.icon}
-                </div>
+                className={`absolute rounded-full bg-[#e0006e]/25 animate-ping duration-[3s] transition-all ${isHovered ? 'w-10 h-10 scale-150 opacity-100' : 'w-6 h-6 opacity-0'
+                  }`}
+              ></div>
+              {/* Inner glow */}
+              <div
+                className={`absolute rounded-full bg-[#e0006e] transition-all duration-500 blur-[4px] ${isHovered ? 'w-4 h-4 scale-[2.5]' : 'w-2 h-2 opacity-50'
+                  }`}
+              ></div>
+              {/* Core dot */}
+              <div
+                className={`relative rounded-full shadow-[0_0_15px_rgba(224,0,110,1)] border border-white/20 transition-all duration-300 ${isHovered ? 'bg-white scale-125 w-2.5 h-2.5' : 'bg-[#e0006e] w-2 h-2'
+                  }`}
+              ></div>
 
-                {/* Counter */}
-                <div className="text-center">
-                  <span className="block text-[#1a1a1a] font-black text-4xl lg:text-5xl tracking-tighter mb-1">
-                    <AnimatedCounter end={item.end} suffix={item.suffix} />
-                  </span>
-
-                  {/* Label with Animated Underline */}
-                  <div className="relative inline-block px-2">
-                    <span className="text-gray-400 font-bold text-[10px] md:text-[11px] tracking-[0.15em] uppercase transition-colors group-hover:text-[#e0006e] block max-w-[140px] leading-tight">
-                      {item.label}
-                    </span>
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#e0006e] transition-all duration-500 group-hover:w-full rounded-full"></div>
+              {/* Glassmorphic Tooltip Card */}
+              {isHovered && (
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 z-50 pointer-events-none">
+                  <div className="bg-gray-950/90 backdrop-blur-md border border-[#e0006e]/30 px-4 py-2.5 rounded-xl shadow-[0_15px_30px_rgba(0,0,0,0.5)] animate-in fade-in zoom-in duration-200 transform origin-bottom">
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-gray-950/90"></div>
+                    <div className="flex flex-col items-center whitespace-nowrap">
+                      <h5 className="text-white font-extrabold text-xs tracking-wide uppercase">
+                        {pin.name}
+                      </h5>
+                      <span className="text-[#e0006e] font-black text-[10px] tracking-wider mt-0.5">
+                        {pin.lines}
+                      </span>
+                    </div>
                   </div>
                 </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-                {/* Decorative Background Number */}
-                <span className="absolute top-6 right-8 text-gray-100/50 font-black text-6xl select-none group-hover:text-[#e0006e]/5 transition-colors pointer-events-none">
-                  0{idx + 1}
-                </span>
+// ─── Main Page ────────────────────────────────────────────────────────────────
+
+const HomePage = () => {
+  const [openFaq, setOpenFaq] = useState(0);
+  const [activePin, setActivePin] = useState(null);
+
+  const faqs = [
+    { q: "What does 'audit-ready' actually mean in a Mactus system?", a: "Audit-ready means that at any moment — without preparation, without manual reconciliation, without a QA scramble — every regulated event in your cleanroom is captured, electronically signed, time-stamped, and exportable. When the inspector asks for last Tuesday's third-shift batch, the answer is a query, not an investigation." },
+    { q: "How is Mactus different from generic SCADA or BMS vendors?", a: "Generic vendors sell horizontal platforms. Mactus builds pharma-specific applications. Our Smart Access Control System enforces aseptic SOP sequencing at the door. Our Intervention Recording System aligns with EU GMP Annex 1 expectations. Our EMS is 21 CFR Part 11 compliant from day one — not retrofitted with a custom-built overlay." },
+    { q: "Is Mactus 21 CFR Part 11 compliant?", a: "Yes. Every Mactus product is built around 21 CFR Part 11 requirements from the architecture up — electronic signatures, role-based access, tamper-proof audit trails, and time-stamped event capture. Full GAMP 5 validation documentation is delivered with every install." },
+    { q: "Does Mactus integrate with our existing systems?", a: "Yes. SACS integrates with existing door interlocking. EMS integrates with most BMS platforms — Honeywell, Siemens, Schneider, Johnson Controls. Our IIoT layer is protocol-agnostic — Modbus, OPC-UA, BACnet, MQTT. We connect to your environment; we don't ask you to replace it." },
+    { q: "What validation support do you provide?", a: "Full V-model documentation: URS, FDS, DQ, IQ, OQ, PQ, traceability matrix, and risk assessment per GAMP 5 Category 4/5. We've supported customers through USFDA, EU GMP, MHRA, WHO-GMP, and CDSCO inspections." },
+    { q: "How quickly can a Mactus system be deployed?", a: "Standard compliance products (SACS, IRS, IVBLT) deploy in 6 to 10 weeks including validation. Custom integrations (BMS, EMS, LVS) range from 12 to 24 weeks depending on facility scope." },
+    { q: "Are your products suitable for sterile injectable manufacturing?", a: "Yes. Our compliance product line was designed primarily for aseptic and sterile environments. Installed bases at sterile injectable, vaccine, and biologics facilities across India." },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+  };
+
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mactus Automation Pvt. Ltd.",
+    "url": "https://www.mactus.in",
+    "logo": "https://mactus.in/wp-content/uploads/2025/09/mlogo-1.png",
+    "foundingDate": "2012",
+    "telephone": "+918048909888",
+    "email": "contact@mactus.in",
+    "address": { "@type": "PostalAddress", "streetAddress": "#75, 1st Main, 2nd Stage, Arekere-Mico Layout, Bannerghatta Road", "addressLocality": "Bangalore", "addressRegion": "Karnataka", "postalCode": "560076", "addressCountry": "IN" },
+    "sameAs": ["https://www.linkedin.com/company/33209730", "https://www.youtube.com/@mactusautomation2548"]
+  };
+
+  useEffect(() => {
+    document.title = "Mactus Automation | Digital Compliance Management for Pharma, Healthcare & Food Processing";
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.setAttribute('name', 'description'); document.head.appendChild(metaDesc); }
+    metaDesc.setAttribute('content', '21 CFR Part 11 compliant systems for sterile operations, contamination control, and critical GMP workflows. India\'s leading pharma manufacturers since 2012.');
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20 overflow-x-hidden">
+      <Navbar />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+
+      <style>{`
+        @keyframes reveal-up {
+          0% { transform: translateY(100%); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes fade-in-up {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-reveal-up { animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.7s ease forwards; }
+        .shimmer-text {
+          background: linear-gradient(90deg, #e0006e 0%, #ff4b9f 50%, #e0006e 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
+      `}</style>
+
+      {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
+      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[90vh] flex items-center border-b border-white/5">
+        <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+          {/* Left */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.15em] uppercase">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
+              </span>
+              TRUSTED BY INDIA'S LEADING PHARMA SINCE 2012
+            </div>
+
+            <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.05s' }}>Digital Compliance</span>
+              </span>
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.15s' }}>Management for</span>
+              </span>
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block text-[#e0006e]" style={{ animationDelay: '0.25s' }}>Pharma, Healthcare</span>
+              </span>
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.35s' }}>& Food Processing</span>
+              </span>
+            </h1>
+
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[560px] font-medium opacity-80">
+              Inspection-ready, 21 CFR Part 11 compliant systems for sterile operations, contamination control, and the critical GMP workflows your auditors look at first. Mactus records compliance automatically — so your operators do the work, and the system attests to it.
+            </p>
+
+            <div className="flex flex-row items-center gap-4 flex-wrap sm:flex-nowrap">
+              <a href="/compliance-products/" className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.25)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.35)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
+                Explore Our Systems
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <a href="/contact-us/" className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
+                Talk to a Compliance Expert
+              </a>
+            </div>
+          </div>
+
+          {/* Right — Floating UI card over cleanroom */}
+          <div className="relative animate-float hidden lg:block">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10">
+              <img
+                src="https://mactus.in/wp-content/uploads/2025/08/iStock-2160382145-1024x576.jpg"
+                alt="Pharma cleanroom"
+                className="w-full object-cover"
+                style={{ maxHeight: '480px' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/70 to-transparent"></div>
+            </div>
+            {/* Floating event card */}
+            <div className="absolute bottom-6 left-4 right-4 bg-[#1a1a1a]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[#e0006e] font-black text-[10px] tracking-[0.2em] uppercase">Live Audit Trail · SACS</span>
+                <span className="flex items-center gap-1.5 text-green-400 text-[10px] font-bold"><span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>RECORDING</span>
+              </div>
+              {[
+                { op: "OP-007", action: "Entry — Grade B Cleanroom", time: "09:42:17", status: "✓" },
+                { op: "OP-012", action: "Gowning SOP verified", time: "09:42:31", status: "✓" },
+                { op: "OP-007", action: "Training current — Access granted", time: "09:42:33", status: "✓" },
+              ].map((e, i) => (
+                <div key={i} className="flex items-center gap-3 py-1.5 border-b border-white/5 last:border-0">
+                  <span className="text-[#e0006e] font-black text-[10px] w-14 flex-shrink-0">{e.op}</span>
+                  <span className="text-gray-300 text-[10px] font-medium flex-1 truncate">{e.action}</span>
+                  <span className="text-gray-500 text-[10px] font-mono flex-shrink-0">{e.time}</span>
+                  <span className="text-green-400 text-[10px] flex-shrink-0">{e.status}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 2 — THE RELIABLE WITNESS ─────────────────────────────────── */}
+      <section className="py-20 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+            <div>
+              <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase block mb-4">WHY MACTUS</span>
+              <h2 className="font-black text-4xl md:text-5xl tracking-tighter leading-tight text-gray-900">
+                Your operators do the work.<br />
+                <span className="text-[#e0006e]">Our systems do the witnessing.</span>
+              </h2>
+            </div>
+            <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
+              <p>In a regulated cleanroom, every action is also a record. Every entry, every intervention, every dispense, every sample — each one must be captured, timestamped, attributed, and defensible. Most plants still ask the operator to do this capture themselves, on paper, between tasks, often from memory at the end of a shift. That is the data integrity risk hiding in plain sight.</p>
+              <p>Mactus removes that risk. Our systems observe the work as it happens — and record it automatically. Operators don't sign with timestamps. Supervisors don't attest after the fact. The system already has. Every event is captured, electronically signed, and written to a tamper-proof audit trail the moment it occurs.</p>
+            </div>
+          </div>
+
+          {/* 3 pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 bg-gray-50 rounded-[2rem] overflow-hidden border border-gray-100">
+            {[
+              { word: "Recorded", body: "Every regulated event captured at the moment it happens — not reconstructed from memory hours later." },
+              { word: "Replayed", body: "Any batch, any shift, any operator, any room — reconstructable down to the second, on demand." },
+              { word: "Reported", body: "End-of-shift summary with statistical context, ready for QA review — not days of manual reconciliation." },
+            ].map((p, i) => (
+              <div key={i} className="p-10 group hover:bg-white transition-colors duration-300">
+                <p className="shimmer-text font-black text-4xl md:text-5xl tracking-tighter mb-4">{p.word}</p>
+                <p className="text-gray-500 font-medium leading-relaxed">{p.body}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* SECTION 2: National Presence (Dark Background) */}
-      <div className="bg-[#1a1a1a] py-10 px-6 md:px-12 lg:px-20 xl:px-32">
+      {/* ── SECTION 3 — THE PAPER PROBLEM ────────────────────────────────────── */}
+      <section className="py-20 px-6 bg- border-b border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      
+          {/* <div className="text-center mb-10">
+            <p className="text-[#e0006e] font-black tracking-tighter leading-none" style={{ fontSize: 'clamp(100px, 18vw, 180px)' }}>47</p>
+            <p className="text-white font-bold text-xl md:text-2xl tracking-tight mt-2">paper logbooks in an average sterile-fill cleanroom</p>
+          </div>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter mb-6">Every one of them is a 483 waiting to happen.</h2>
+            <p className="text-gray-400 text-lg leading-relaxed font-medium">Entry logs. Gowning logs. Intervention logs. Cleaning logs. Dispensing logs. Sampling logs. Reconciliation logs. Each one a stack of paper that has to be filled in correctly, in real time, by an operator under shift pressure — and reviewed line by line, sometimes weeks later, by a QA reviewer who wasn't there. Mactus replaces the stack with one digital audit trail per cleanroom.</p>
+          </div> */}
 
-            {/* Column 1: Details & Presence List */}
-            <div className="space-y-0">
-              <div className="space-y-4">
-                <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">National Reach</span>
-                <h4 className="text-white font-black text-4xl md:text-5xl leading-tight tracking-tighter">
-                  Strategic Intelligence,<br />Locally Deployed
-                </h4>
-                <p className="text-gray-400 text-lg leading-relaxed max-w-xl opacity-90">
-                  With regional headquarters across major industrial hubs in India, we provide localized expertise and immediate response times for critical life science infrastructure and automation support.
-                </p>
-              </div>
-
-              {/* Presence List integrated into the details column */}
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8 pt-4 border-t border-white/10">
-                {MAP_PINS.map((pin, idx) => (
-                  <div
-                    key={idx}
-                    onMouseEnter={() => setActivePin(pin)}
-                    onMouseLeave={() => setActivePin(null)}
-                    className={`flex items-start space-x-3 group cursor-pointer transition-all duration-300 ${activePin?.name === pin.name ? 'translate-x-2' : ''}`}
-                  >
-                    <div className={`w-1.5 h-1.5 rounded-full mt-2 transition-all duration-300 ${activePin?.name === pin.name ? 'bg-white scale-150 shadow-[0_0_12px_#fff]' : 'bg-[#e0006e]'}`}></div>
-                    <div className="flex flex-col">
-                      <span className={`font-bold text-[15px] transition-colors duration-300 ${activePin?.name === pin.name ? 'text-[#e0006e]' : 'text-gray-200 hover:text-[#e0006e]'}`}>{pin.name}</span>
-                      <span className="text-gray-600 text-[10px] font-bold uppercase tracking-widest mt-0.5">{pin.lines}</span>
-                    </div>
-                  </div>
+          {/* Comparison table */}
+          <div className="overflow-x-auto rounded-[1.5rem] border border-gray-100 shadow-sm">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-gray-200">
+                  <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">Scenario</th>
+                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">On Paper</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With Mactus</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  ["Cleanroom entry", "Did the operator sign at 09:42 or 09:48? The pen smudged.", "Timestamped to the second. Operator biometrically bound."],
+                  ["Intervention", "Operator estimated 30 seconds. Sensor says 4 minutes.", "Sensor-measured, second by second."],
+                  ["Reconciliation", "Out of 48 media plates, we can find 46.", "All 48. With QR scans for each."],
+                ].map((row, i) => (
+                  <tr key={i} className="group hover:bg-gray-50 transition-colors">
+                    <td className="px-8 py-6 font-bold text-gray-500">{row[0]}</td>
+                    <td className="px-8 py-6 text-gray-500 font-medium text-sm italic">{row[1]}</td>
+                    <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors text-sm">{row[2]}</td>
+                  </tr>
                 ))}
-              </div>
-            </div>
-
-            {/* Column 2: Interactive Map Card */}
-            <div className="relative w-full flex justify-center items-center lg:mt-16 mt-12 map-pin-container">
-              <div className="relative w-full max-w-[550px] aspect-[612/696] bg-gradient-to-br from-[#222] to-[#1a1a1a] rounded-[2.5rem] p-8 md:p-14 shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/5 overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#e0006e]/5 to-transparent opacity-30"></div>
-
-                <svg viewBox={india?.viewBox || '0 0 612 696'} className="w-full h-full relative z-0 opacity-80" fill="none">
-                  {india?.locations?.map(loc => (
-                    <path
-                      key={loc.id}
-                      d={loc.path}
-                      className="fill-[#6CB4EE] stroke-white/5 stroke-[1px] transition-all duration-700 hover:fill-[#363636] hover:stroke-[#e0006e]/20"
-                    />
-                  ))}
-                </svg>
-
-                {MAP_PINS.map((pin, idx) => (
-                  <div
-                    key={idx}
-                    className="absolute z-10 cursor-default"
-                    style={{
-                      top: `${(pin.cy / svgHeight) * 100}%`,
-                      left: `${(pin.cx / svgWidth) * 100}%`
-                    }}
-                    onMouseEnter={() => setActivePin(pin)}
-                    onMouseLeave={() => setActivePin(null)}
-                  >
-                    <div className="relative flex items-center justify-center -translate-x-1/2 -translate-y-1/2 group/pin">
-                      <div className={`absolute w-8 h-8 rounded-full bg-[#e0006e]/10 animate-ping duration-[2.5s] ${activePin?.name === pin.name ? 'scale-150 opacity-100' : 'opacity-0'}`}></div>
-                      <div className={`absolute w-3 h-3 rounded-full transition-all duration-500 ${activePin?.name === pin.name ? 'bg-[#e0006e] scale-[2.5] blur-[4px]' : 'bg-[#e0006e]/20'}`}></div>
-                      <div className={`relative w-2 h-2 rounded-full shadow-[0_0_20px_rgba(224,0,110,1)] border border-white/20 transition-all duration-300 ${activePin?.name === pin.name ? 'bg-white scale-125' : 'bg-[#e0006e]'}`}></div>
-
-                      {/* Interactive Tooltip Card - Minimized */}
-                      {activePin?.name === pin.name && (
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-50 pointer-events-none">
-                          <div className="bg-[#1a1a1a]/95 backdrop-blur-xl border border-[#e0006e]/30 px-5 py-3 rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in duration-200 transform origin-bottom">
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-[#e0006e]/30"></div>
-
-                            <div className="flex flex-col items-center whitespace-nowrap">
-                              <h5 className="text-white font-black text-[13px] tracking-tight uppercase">{pin.name}</h5>
-                              <span className="text-[#e0006e] font-bold text-[10px] tracking-widest mt-0.5">{pin.lines}</span>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-// --- 4. Our Core Portfolios ---
-const PORTFOLIOS = [
-  {
-    title: "Pharma Compliance",
-    tagline: "Regulatory Precision",
-    desc: "Mactus Automation offers high-standard compliance products designed to meet 21 CFR Part 11 and other stringent global regulatory standards.",
-    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop"
-  },
-  {
-    title: "System Integration",
-    tagline: "Facility Automation",
-    desc: "Comprehensive integration solutions (BMS/EMS/LVS) meticulously engineered to streamline processes and enhance operational efficiency.",
-    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop"
-  },
-  {
-    title: "Industrial IOT",
-    tagline: "Smart Manufacturing",
-    desc: "Seamlessly integrating sensors and software into intelligent ecosystems for real-time monitoring and data-driven optimization.",
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop"
-  }
-];
-
-function Portfolios() {
-  return (
-    <section className="bg-white py-10 px-6 relative overflow-hidden">
-      <SectionTitle>Our Core Portfolios</SectionTitle>
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {PORTFOLIOS.map((item, idx) => (
-          <div
-            key={idx}
-            className="group relative bg-[#fdfdfd] rounded-[2.5rem] border border-gray-100 overflow-hidden hover:shadow-[0_30px_60px_rgba(224,0,110,0.12)] transition-all duration-500 hover:-translate-y-2"
-          >
-            {/* Image Container */}
-            <div className="h-48 overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
-
-            {/* Content Container */}
-            <div className="p-6 space-y-3">
-              <span className="text-[#e0006e] text-[10px] font-black uppercase tracking-[0.2em] opacity-60">
-                {item.tagline}
-              </span>
-              <h3 className="text-[#1a1a1a] font-black text-2xl tracking-tight leading-tight group-hover:text-[#e0006e] transition-colors duration-300">
-                {item.title}
-              </h3>
-              <p className="text-gray-500 text-[14.5px] leading-relaxed font-medium">
-                {item.desc}
-              </p>
-
-
-            </div>
-
-            {/* Decorative Top Accent */}
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-[#e0006e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+      {/* ── SECTION 4 — CORE PORTFOLIOS ──────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="font-black text-4xl md:text-5xl tracking-tighter text-gray-900 mb-4">Five products. One purpose.</h2>
+            <p className="text-gray-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+              Turn the cleanroom's most paper-heavy workflows — entry, intervention, dispensing, media plates, IV bag leak testing — into a signed, time-stamped, audit-ready electronic trail.
+            </p>
           </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
-// --- Main Page Component ---
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-white flex flex-col font-sans">
-      <Navbar />
-      <Hero />
-      <Portfolios />
-      <MilestonesAndMap india={india} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              { eyebrow: "REGULATORY PRECISION", title: "Pharma Compliance Products", body: "Five purpose-built systems — SACS, IRS, ASDS, MPATS, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
+              { eyebrow: "FACILITY AUTOMATION", title: "System Integration", body: "End-to-end BMS, EMS, and LVS integration for life-science facilities. We deliver URS through PQ, with the validation pack QA expects. Your facility goes from commissioned to qualified without a gap.", href: "/system-integration/", cta: "Explore system integration" },
+              { eyebrow: "SMART MANUFACTURING", title: "Industrial IoT (IIoT)", body: "Sensors, controllers, and analytics layered onto existing infrastructure. Real-time visibility into HVAC, utilities, and equipment health — so engineering fixes problems before quality finds them.", href: "/iiot-implementations/", cta: "See IIoT implementations" },
+            ].map((card, i) => (
+              <div key={i} className="group bg-white border border-gray-100 rounded-[2rem] p-8 hover:border-[#e0006e]/20 hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 flex flex-col" style={{ borderTop: '3px solid transparent', backgroundImage: 'linear-gradient(white, white), linear-gradient(white, white)', backgroundOrigin: 'border-box', backgroundClip: 'padding-box, border-box' }}>
+                <div className="border-t-2 border-[#e0006e] -mx-8 -mt-8 mb-8 rounded-t-[2rem] pt-1"></div>
+                <span className="text-[#e0006e] font-black text-[10px] tracking-[0.2em] uppercase mb-3">{card.eyebrow}</span>
+                <h3 className="font-black text-2xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors">{card.title}</h3>
+                <p className="text-gray-500 leading-relaxed font-medium text-sm flex-1 mb-6">{card.body}</p>
+                <a href={card.href} className="flex items-center gap-2 text-[#e0006e] font-black text-xs tracking-widest uppercase group-hover:gap-3 transition-all duration-300">
+                  {card.cta}
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 5 — BUILT FOR YOUR INDUSTRY ─────────────────────────────── */}
+      <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle>Engineered for the industries that can't afford to get it wrong.</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { icon: "💊", name: "Pharmaceutical Manufacturing", body: "Sterile injectables, oral solid dosage, biologics, API. From aseptic fill-finish to QC microbiology — we know where regulators look first." },
+              { icon: "🏥", name: "Healthcare & Hospitals", body: "Critical-environment monitoring for ICUs, OTs, blood banks, and pharmacy compounding units. NABH and JCI alignment built in." },
+              { icon: "🍽️", name: "Food Processing", body: "FSSAI, HACCP, and FSMA-aligned monitoring for processing, cold-chain, and packaging — because food-grade is just pharma-grade with different vocabulary." },
+            ].map((ind, i) => (
+              <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 group text-center">
+                <div className="w-16 h-16 rounded-2xl bg-[#e0006e]/10 flex items-center justify-center text-3xl mb-6 mx-auto group-hover:bg-[#e0006e]/20 transition-colors">{ind.icon}</div>
+                <h3 className="font-black text-xl text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors">{ind.name}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed font-medium">{ind.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Stats Section  */}
+      <section className="py-24 px-6 bg-gradient-to-b from-white to-[#f8fbff] border-b border-gray-100 overflow-hidden relative">
+
+        {/* Background Blur Effects */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-sky-100 rounded-full blur-3xl opacity-40"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-100 rounded-full blur-3xl opacity-40"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* Heading */}
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <span className="text-[#e0006e] font-black text-xs tracking-[0.25em] uppercase mb-4 block">
+              MACTUS BY THE NUMBERS
+            </span>
+
+            <h2 className="font-black text-4xl md:text-6xl tracking-tighter text-gray-900 leading-tight mb-6">
+              Thirteen years of
+              <span className="text-[#e0006e]"> validated execution.</span>
+            </h2>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { target: 130, suffix: '+', label: "Fill Lines Digitised", detail: "Across India's top sterile facilities" },
+              { target: 50, suffix: '+', label: "Pharma Customers", detail: "From API to aseptic fill-finish" },
+              { target: 9, suffix: '\u00A0', label: "States with Service Teams", detail: "On-site when deadlines demand it" },
+            ].map((stat, i) => (
+              <AnimatedStat key={i} value={String(stat.target)} suffix={stat.suffix} label={stat.label} detail={stat.detail} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 7 — NATIONAL REACH ───────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left — text + coverage */}
+            <div className="space-y-8 order-1">
+              <div>
+                <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase block mb-4">LOCALLY DEPLOYED</span>
+                <h2 className="font-black text-4xl md:text-5xl tracking-tighter text-gray-900 leading-tight mb-6">Strategic intelligence, locally deployed.</h2>
+                <p className="text-gray-600 text-lg leading-relaxed font-medium">Pharma manufacturing doesn't pause for travel time. With service teams across India's major industrial corridors — from Himachal's pharma belt to Telangana's bulk-drug hub — we're on-site when validation deadlines, audits, or breakdowns demand it.</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2.5">
+                {[
+                  ["Himachal Pradesh", 2], ["Gujarat", 43], ["Goa", 9], ["Karnataka", 2],
+                  ["Tamil Nadu", 4], ["Rajasthan", 2], ["Madhya Pradesh", 2], ["Telangana", 31], ["Andhra Pradesh", 1],
+                ].map(([state, lines]) => {
+                  const isHovered = activePin && activePin.name === state.toUpperCase();
+                  return (
+                    <div
+                      key={state}
+                      onMouseEnter={() => setActivePin({ name: state.toUpperCase(), lines: `${lines} LINE${lines > 1 ? 'S' : ''}` })}
+                      onMouseLeave={() => setActivePin(null)}
+                      className={`flex items-center gap-2 px-3 py-2.5 rounded-xl border transition-all duration-300 cursor-pointer ${isHovered
+                        ? 'bg-gray-950 border-[#e0006e]/50 shadow-[0_4px_20px_rgba(224,0,110,0.15)] translate-x-1'
+                        : 'bg-gray-50 border-gray-100 hover:border-gray-300'
+                        }`}
+                    >
+                      <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${isHovered ? 'bg-[#e0006e] scale-125' : 'bg-gray-400'}`}></div>
+                      <span className={`font-extrabold text-xs transition-colors duration-300 ${isHovered ? 'text-white' : 'text-gray-700'}`}>{state}</span>
+                      <span className={`ml-auto font-black text-xs transition-colors duration-300 ${isHovered ? 'text-[#e0006e]' : 'text-gray-400'}`}>{lines}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Quote */}
+              {/* VERIFY: Replace anonymised quote with real named quote ASAP */}
+              <blockquote className="bg-gray-900 rounded-2xl p-8 border border-white/5 relative overflow-hidden">
+                <div className="absolute top-4 left-6 text-[#e0006e] font-black leading-none select-none" style={{ fontSize: '80px', opacity: 0.15 }}>"</div>
+                <p className="text-gray-200 text-base leading-relaxed font-medium italic relative z-10 mb-4">
+                  "When the FDA pre-inspection notice arrived, we had four weeks. Mactus's intervention data was the first thing my QA team pulled — and the only thing we didn't have to manually reconstruct."
+                </p>
+                <footer className="text-[#e0006e] font-black text-xs tracking-widest uppercase">
+                  — QA Head, Top-10 Indian Pharma (anonymised, with consent)
+                </footer>
+              </blockquote>
+            </div>
+
+            {/* Right — India map */}
+            <div className="order-2 flex justify-center w-full">
+              <IndiaMap activePin={activePin} setActivePin={setActivePin} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 8 — WHY MACTUS ───────────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle>Why India's most-inspected pharma plants run on Mactus.</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              { title: "Domain-built, not configured-into", body: "We didn't pivot into pharma. We started here. Every product is shaped by SOPs we've read, deviations we've investigated, and inspectors we've watched at work. When we say a system is inspector-ready, we mean we've sat across the table from one." },
+              { title: "Compliance by design, not by overlay", body: "21 CFR Part 11, EU GMP Annex 1, ALCOA+, GAMP 5 — these aren't checkboxes for us. They're the architecture our products are built on, from the first sketch." },
+              { title: "Validation pack included, not blank-slate", body: "URS, FDS, DQ, IQ, OQ, PQ, traceability matrix, and risk assessment per GAMP 5 — delivered with every install. Your QA team gets a binder, not a blank slate." },
+              { title: "Long-term partner, not one-time vendor", body: "Annual maintenance, on-call validation support, and roadmap-aligned upgrades. Our oldest customer has been with us since 2013." },
+            ].map((card, i) => (
+              <div key={i} className="bg-white rounded-2xl p-8 border-l-4 border-[#e0006e] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                <h3 className="font-black text-xl text-gray-900 mb-3">{card.title}</h3>
+                <p className="text-gray-500 leading-relaxed font-medium">{card.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 9 — MACTUS VERIFY (commented out until ready to ship) ─────── */}
+      {/* TODO: Uncomment when Mactus Verify is ready to ship */}
+      {/*
+      <section className="py-20 px-6 bg-[#1a1a1a] border-b border-white/5">
+        ...
+      </section>
+      */}
+
+      {/* ── SECTION 10 — RESOURCES ───────────────────────────────────────────── */}
+      <section className="py-10 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle eyebrow="KNOWLEDGE HUB">What we're reading, writing, and recording.</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-1 max-w-6xl mx-auto">
+            {[
+              { type: "WEBINAR", title: "Digitising Line Cleaning in Pharma Manufacturing" },
+              { type: "CASE STUDY", title: "How a Top-5 Indian Pharma Reduced Cleanroom Deviations by 78%" },
+              { type: "WHITEPAPER", title: "ALCOA+ for Aseptic Operations: A Practical Playbook" },
+            ].map((r, i) => (
+              <div key={i} className="group bg-gray-50 rounded-[2rem] p-8 border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+                <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase mb-4 self-start
+                  ${r.type === 'WEBINAR' ? 'bg-purple-100 text-purple-700 border border-purple-200'
+                    : r.type === 'CASE STUDY' ? 'bg-[#e0006e]/10 text-[#e0006e] border border-[#e0006e]/20'
+                      : 'bg-blue-50 text-blue-600 border border-blue-200'}`}>
+                  {r.type}
+                </span>
+                <h3 className="font-black text-xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors leading-snug flex-1">{r.title}</h3>
+                <a href={r.href} className="flex items-center gap-2 text-[#e0006e] font-black text-xs tracking-widest uppercase group-hover:gap-3 transition-all duration-300 mt-2">
+                  {r.cta}
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} /></svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 11 — FAQ ─────────────────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle>Questions pharma teams ask us first.</SectionTitle>
+          <FAQAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* ── SECTION 12 — PRE-FOOTER CTA ──────────────────────────────────────── */}
+
+
       <Footer />
     </div>
   );
-}
+};
+
+export default HomePage;

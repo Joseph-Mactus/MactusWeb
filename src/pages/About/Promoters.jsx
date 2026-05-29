@@ -1,8 +1,12 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
+import { useState } from 'react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 const Promoters = () => {
+  useState(() => {
+    document.title = "Promoters | Mactus";
+  }, []);
+
   const promoters = [
     {
       name: "Boby K Joseph",
@@ -79,6 +83,27 @@ const Promoters = () => {
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s linear infinite;
         }
+        .bio-container {
+          max-height: 155px; /* height of ~5 lines */
+          overflow: hidden;
+          transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .group:hover .bio-container {
+          max-height: 1000px;
+        }
+        .bio-fade {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 60px;
+          background: linear-gradient(to top, #ffffff 20%, transparent);
+          pointer-events: none;
+          transition: opacity 0.4s ease;
+        }
+        .group:hover .bio-fade {
+          opacity: 0;
+        }
       `}</style>
 
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
@@ -107,10 +132,10 @@ const Promoters = () => {
           {promoters.map((p, i) => (
             <div 
               key={i} 
-              className={`group flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24`}
+              className={`group flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-start gap-8 lg:gap-16`}
             >
               {/* Photo Side */}
-              <div className="w-full lg:w-1/3 flex-shrink-0 relative">
+              <div className="w-48 sm:w-64 lg:w-72 flex-shrink-0 relative mx-auto lg:mx-0">
                 <div className="absolute -inset-4 bg-gray-50 rounded-[3rem] -z-10 group-hover:bg-[#e0006e]/5 transition-colors duration-700"></div>
                 <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                   <img 
@@ -122,15 +147,20 @@ const Promoters = () => {
               </div>
 
               {/* Info Side */}
-              <div className="w-full lg:w-2/3 space-y-6">
+              <div className="flex-1 space-y-6 w-full">
                 <div className="space-y-2">
                   <p className="text-[#e0006e] font-black text-xs tracking-[0.3em] uppercase">{p.title}</p>
-                  <h3 className="text-gray-900 font-black text-4xl md:text-5xl uppercase tracking-tighter leading-none italic">{p.name}</h3>
+                  <h3 className="text-gray-900 font-black text-4xl md:text-5xl uppercase tracking-tighter leading-none italic group-hover:text-[#e0006e] transition-colors duration-500">{p.name}</h3>
                 </div>
                 
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">
-                  {p.bio}
-                </p>
+                <div className="relative pl-6 border-l-2 border-gray-100 group-hover:border-[#e0006e] transition-colors duration-500">
+                  <div className="bio-container relative">
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">
+                      {p.bio}
+                    </p>
+                    <div className="bio-fade" />
+                  </div>
+                </div>
 
                 <div className="pt-4">
                   <a 

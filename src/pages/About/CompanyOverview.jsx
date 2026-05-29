@@ -1,7 +1,6 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 const SectionTitle = ({ children, light = false }) => (
   <div className="flex justify-center w-full mb-12 mt-8">
     <h2 className={`text-center ${light ? 'text-[#e0006e]' : 'text-gray-900'} font-black text-3xl md:text-4xl tracking-tighter relative pb-4 inline-block uppercase`}>
@@ -12,6 +11,10 @@ const SectionTitle = ({ children, light = false }) => (
 );
 
 const CompanyOverview = () => {
+  React.useState(() => {
+    document.title = "Company Overview | Mactus";
+  }, []);
+
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#00d2ff]/20">
       <Navbar />

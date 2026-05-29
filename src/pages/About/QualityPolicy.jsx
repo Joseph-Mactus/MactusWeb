@@ -1,8 +1,13 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { useState } from 'react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const QualityPolicy = () => {
+  useState(() => {
+    document.title = "Quality Policy | Mactus";
+  }, []);
+
   const pillars = [
     {
       icon: (

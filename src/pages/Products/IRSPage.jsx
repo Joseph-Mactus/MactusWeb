@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ImageCarousel from '../components/ImageCarousel';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import ImageCarousel from '../../components/ImageCarousel';
 
-import sacs_1 from '../assets/images/sacs_1.png';
-import sacs_2 from '../assets/images/sacs_2.png';
-import sacs_3 from '../assets/images/sacs_3.png';
+import irs_1 from '../../assets/images/irs_1.png';
+import irs_2 from '../../assets/images/irs_2.png';
+import irs_3 from '../../assets/images/irs_3.png';
+
+import Brochure from '../../assets/Brochurs/MAPL_InterverntionRecordingSystemBrochureV1.pdf';
 
 const SectionTitle = ({ children }) => (
   <div className="flex justify-center w-full mb-6 mt-8">
@@ -43,32 +45,37 @@ const FAQAccordion = ({ items }) => {
   );
 };
 
-const SACSPage = () => {
+const IRSPage = () => {
+  useState(() => {
+    document.title = "Intervention Recording System (IRS) | Mactus";
+  }, []);
+
   const features = [
-    { title: "21 CFR Compliance", desc: "Full adherence to Part 11 electronic records and signatures requirements.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-    { title: "Access Enforcement", desc: "Hard interlocking that prevents door opening unless all SOP conditions are met.", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" },
-    { title: "Training Verification", desc: "Syncs with HRMS to ensure only currently certified staff can enter specific areas.", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
-    { title: "Tailgate Detection", desc: "Advanced AI sensors detect and alert if multiple people enter on a single badge-in.", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
-    { title: "Real-time Monitoring", desc: "Live dashboard showing every entry, exit, and violation across the facility.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
-    { title: "Audit Readiness", desc: "Instant export of signed, tamper-proof audit trails for USFDA/MHRA inspections.", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+    { title: "Auto Sensor Capture", desc: "Non-contact sensors automatically detect port opening and hand entry without operator input.", icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" },
+    { title: "Operator Binding", desc: "Syncs with access control to automatically attribute interventions to the specific operator at the line.", icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" },
+    { title: "SOP Guidance", desc: "Displays step-by-step recovery procedures on-screen the moment an intervention is detected.", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+    { title: "Batch Control", desc: "Enforces maximum allowable interventions per batch, triggering supervisor alerts if limits are reached.", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+    { title: "Reporting & Trending", desc: "Automatic generation of PQR/APR ready data with trend analysis of intervention types.", icon: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" },
+    { title: "APS / Media Fill Support", desc: "Specific mode for Aseptic Process Simulation to track complex intervention sequences.", icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" },
   ];
 
   const steps = [
-    { title: "IDENTIFY", desc: "Operator swipes RFID or uses biometric authentication at the cleanroom entrance." },
-    { title: "VALIDATE", desc: "SACS verifies identity, training status, and gowning sequence compliance in real-time." },
-    { title: "PERMIT / BLOCK", desc: "Door lock releases only if all criteria are met; otherwise, entry is denied and logged." },
-    { title: "RECORD", desc: "The entry event is digitally signed and added to the 21 CFR Part 11 audit trail." },
+    { title: "DETECT", desc: "Sensors instantly identify a physical intervention (port open, glove entry, or door bypass)." },
+    { title: "IDENTIFY", desc: "System cross-references operator identity and current batch phase automatically." },
+    { title: "GUIDE", desc: "Operator is prompted to select the justification from a pre-approved list (e.g., Stopper Jam)." },
+    { title: "APPROVE", desc: "For critical interventions, a supervisor is alerted for real-time electronic signature approval." },
+    { title: "RECORD", desc: "The data—duration, operator, justification, and timestamp—is committed to the 21 CFR audit trail." },
   ];
 
   const faqs = [
-    { question: "What is SACS?", answer: "SACS (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual gowning logbooks with a digital, 21 CFR Part 11 compliant workflow." },
-    { question: "Is it 21 CFR Part 11 compliant?", answer: "Yes, SACS is built from the ground up to meet the requirements of 21 CFR Part 11, including electronic signatures, audit trails, and data integrity controls." },
-    { question: "Does it replace door interlocking?", answer: "SACS enhances existing interlocking systems. It can interface with your current door controllers to provide an additional layer of compliance-based logic before a door is permitted to unlock." },
-    { question: "How does it prevent tailgating?", answer: "We use high-precision overhead IR or AI-based vision sensors to count the number of individuals passing through a door. If the count exceeds the number of authorized badge-ins, an alarm is triggered." },
-    { question: "Can it enforce gowning sequence?", answer: "Absolutely. SACS can be configured to require confirmation of specific SOP steps (e.g., hand sanitization, gowning, glove change) before granting access to the next grade area." },
-    { question: "Does it verify training?", answer: "Yes, SACS integrates with your Learning Management System (LMS) or HRMS to ensure that an operator's certifications for that specific area are current before allowing entry." },
-    { question: "What does deployment look like?", answer: "Deployment is a turnkey process including hardware installation, software configuration, and full IQ/OQ/PQ validation to ensure compliance with your site requirements." },
-    { question: "Which customers use SACS?", answer: "SACS is trusted by leading sterile injectable plants, vaccine manufacturers, and API facilities across India and globally to maintain audit readiness." },
+    { question: "What is IRS?", answer: "IRS (Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
+    { question: "Is it Annex 1 aligned?", answer: "Yes, IRS is specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
+    { question: "How does it detect interventions automatically?", answer: "We use a combination of magnetic sensors for doors/ports and IR curtains for glove ports to detect physical entry into the aseptic zone without any manual trigger needed." },
+    { question: "Can it enforce a max per batch?", answer: "Yes, you can configure maximum limits for specific types of interventions. The system will alert supervisors if the limit is approached or reached." },
+    { question: "Does it work with existing lines?", answer: "IRS is designed for retrofit. Our non-invasive sensors can be mounted on almost any existing fill-finish line, RABS, or Isolator without compromising cabinet integrity." },
+    { question: "How does it support APR/PQR?", answer: "Instead of manual data collation, IRS provides 1-click export of trending data, making Annual Product Reviews (APR) and Periodic Quality Reviews (PQR) significantly faster." },
+    { question: "Is it suitable for media fills?", answer: "It is ideal for Aseptic Process Simulations (Media Fills). It accurately tracks the duration and sequence of interventions, providing a perfect record for regulatory submission." },
+    { question: "How long does deployment take?", answer: "A typical deployment, including sensor mounting and software configuration, takes 4-6 weeks, followed by site validation (IQ/OQ)." },
   ];
 
   return (
@@ -105,7 +112,6 @@ const SACSPage = () => {
 
       {/* Hero Section */}
       <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[75vh] flex items-center">
-        {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -116,25 +122,26 @@ const SACSPage = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
               </span>
-              SMART ACCESS CONTROL SYSTEM
+              INTERVENTION RECORDING SYSTEM
             </div>
 
             <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
-              {["The", "cleanroom", "door", "that"].map((word, i) => (
-                <span key={i} className="overflow-hidden inline-block py-1">
-                  <span className="animate-reveal-up inline-block" style={{ animationDelay: `${i * 0.1}s` }}>{word}</span>
-                </span>
-              ))}
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block shimmer-text font-black pr-10" style={{ animationDelay: '0.4s' }}>remembers</span>
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.1s' }}>Every</span>
               </span>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block pr-10" style={{ animationDelay: '0.5s' }}>everything.</span>
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.2s' }}>intervention.</span>
+              </span>
+              <span className="overflow-hidden inline-block py-1">
+                <span className="animate-reveal-up inline-block shimmer-text font-black pr-2" style={{ animationDelay: '0.4s' }}>Every</span>
+              </span>
+              <span className="overflow-hidden inline-block py-1">
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.5s' }}>second.</span>
               </span>
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-              SACS replaces the gowning logbook with a paperless, 21 CFR Part 11 compliant entry-exit system — enforcing every SOP and writing a tamper-proof audit trail.
+              IRS digitises every glove-port intervention, captured automatically, signed electronically, and ready the day your auditor asks for it.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -144,17 +151,17 @@ const SACSPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
-              <button className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
-                Download Brochure
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
-                </svg>
-              </button>
+              <a href={Brochure} className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
+                  Download Brochure
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
+                  </svg>
+                </a>
             </div>
           </div>
 
           <div className="relative animate-fade-in-right animate-float">
-            <ImageCarousel images={[sacs_1, sacs_2, sacs_3]} />
+            <ImageCarousel images={[irs_1, irs_2, irs_3]} />
           </div>
         </div>
       </section>
@@ -162,19 +169,19 @@ const SACSPage = () => {
       {/* Problem Section */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle>The Audit Challenge</SectionTitle>
+          <SectionTitle>The Compliance Challenge</SectionTitle>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
             <div className="space-y-6">
               <h2 className="font-black text-4xl md:text-5xl text-gray-900 leading-tight tracking-tighter">
-                Why a paper gowning logbook is your <span className="text-[#e0006e]">weakest</span> link
+                Aseptic interventions are where <span className="text-[#e0006e]">audits</span> are won or lost
               </h2>
             </div>
             <div className="space-y-6">
               <p className="text-gray-500 text-lg leading-relaxed">
-                In an aseptic area, every entry is a regulated event. Most pharma plants still capture all of this on a logbook taped to the door.
+                EU GMP Annex 1 (2022) made it explicit: every intervention must be justified, documented, time-bound, and trended.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed font-bold text-gray-900">
-                Form 483 observations on access control are among the most common USFDA findings in sterile facilities.
+                Yet on most lines, recording is still an operator scribbling in a logbook — sometimes hours after the fact.
               </p>
             </div>
           </div>
@@ -182,19 +189,19 @@ const SACSPage = () => {
           <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-gray-200">
+                <tr className="bg-gray-100">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
-                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper Logbook</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With SACS</th>
+                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper / Manual</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With IRS</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                  ["Untrained operator enters", "Manual check by security", "System-level training lock"],
-                  ["Gowning SOP skipped", "Relies on honesty", "Digital verification required"],
-                  ["Tailgate entry", "Impossible to track", "Sensor-based AI detection"],
-                  ["Audit trail", "Illegible, paper-based", "Instant 21 CFR PDF export"],
-                  ["Capacity exceeded", "Hard to monitor", "Real-time headcount lock"],
+                  ["Intervention not recorded", "Memory dependent", "Auto-sensor capture"],
+                  ["Duration accuracy", "Rough estimate", "Precision millisecond tracking"],
+                  ["Excessive interventions", "Hard to track live", "Batch limit enforcement"],
+                  ["Operator attribution", "Manual signing", "Digital link to SACS identity"],
+                  ["Trending across batches", "Weeks of spreadsheet work", "Instant PQR/APR analytics"],
                 ].map((row, i) => (
                   <tr key={i} className="group hover:bg-gray-50 transition-colors">
                     <td className="px-8 py-6 font-bold text-gray-900">{row[0]}</td>
@@ -211,7 +218,7 @@ const SACSPage = () => {
       {/* Features Grid */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle>Compliance Features</SectionTitle>
+          <SectionTitle>Recording Features</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f, i) => (
               <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/10 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 group">
@@ -255,15 +262,15 @@ const SACSPage = () => {
                 <div className="flex items-center justify-end px-4 py-2 bg-gray-50/50 rounded-t-xl border-b border-gray-100/50">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-[8px] font-black tracking-[0.2em] text-gray-400 uppercase">System Active</span>
+                    <span className="text-[8px] font-black tracking-[0.2em] text-gray-400 uppercase">Recording Active</span>
                   </div>
                 </div>
 
                 <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-white">
                    <iframe 
                     className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
-                    src="https://www.youtube.com/embed/3Xj6dzZFoqQ?rel=0&modestbranding=1&controls=1" 
-                    title="SACS System Workflow"
+                    src="https://www.youtube.com/embed/q_V2sazmumQ?rel=0&modestbranding=1&controls=1" 
+                    title="IRS System Workflow"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
                   ></iframe>
@@ -279,18 +286,18 @@ const SACSPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Industry Targets</span>
-              <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Built for high-stakes manufacturing</h2>
-              <p className="text-gray-400 text-lg">Every facility type has unique compliance challenges. SACS is flexible enough for all of them.</p>
+              <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Aseptic Processing</span>
+              <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Engineered for critical fill-finish</h2>
+              <p className="text-gray-400 text-lg">Whether on an open RABS or a closed isolator, IRS provides the transparency your quality team demands.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                "Sterile injectables",
+                "Sterile injectables (vials/PFS/ampoules)",
                 "Biologics & vaccine fill-finish",
-                "Oral solid dosage",
-                "API manufacturing Grade B/C",
-                "Hospital pharmacy USP 797/800",
-                "Food processing FSMA/FSSAI"
+                "Lyophilised product fill-finish",
+                "RABS and isolator processing",
+                "Aseptic Process Simulation campaigns",
+                "Cell & gene therapy fill-finish"
               ].map(item => (
                 <div key={item} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-colors group">
                   <div className="flex items-center gap-4">
@@ -309,9 +316,9 @@ const SACSPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { label: "entries captured", value: "100%", sub: "Total Traceability" },
-              { label: "inspection observations", value: "Zero", sub: "Since Deployment" },
-              { label: "audit export", value: "1-click", sub: "Anytime, Anywhere" },
+              { label: "interventions auto-captured", value: "100%", sub: "Zero Sensor Misses" },
+              { label: "retrospective entries", value: "0", sub: "Forced Real-time Logging" },
+              { label: "APR/PQR export", value: "1-click", sub: "Data Integrity Guaranteed" },
             ].map((stat, i) => (
               <div key={i} className="text-center space-y-4 p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-500">
                 <p className="text-[#e0006e] font-black text-6xl tracking-tighter">{stat.value}</p>
@@ -340,7 +347,7 @@ const SACSPage = () => {
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
-                Your auditor will read every entry. <span className="text-[#e0006e]">Make sure they are all there.</span>
+                The next batch starts soon. <span className="text-[#e0006e]">Will every intervention be in the record?</span>
               </h2>
             </div>
             <button className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
@@ -356,4 +363,4 @@ const SACSPage = () => {
   );
 };
 
-export default SACSPage;
+export default IRSPage;
