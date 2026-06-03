@@ -7,15 +7,15 @@ const NAV_ITEMS = [
     subItems: ["Company Overview", "Leadership", "Promoters", "Careers", "Quality Policy"]
   },
   {
-    title: "COMPLIANCE PRODUCTS",
-    subItems: [
-      "Smart Access Control System",
-      "Intervention Recording System",
-      "Automated Solution Dispensing System",
-      "MEM™ (Environmental Monitoring)",
-      "Intravenous Bag Leak Tester"
-    ]
-  },
+  title: "COMPLIANCE PRODUCTS",
+  subItems: [
+    "SACS™ (Smart Access Control System)",
+    "IRS™ (Intervention Recording System)",
+    "ASDS™ (Automated Solution Dispensing System)",
+    "MEM™ (Environmental Monitoring)",
+    "IVBLT™ (Intravenous Bag Leak Tester)"
+  ]
+},
   {
     title: "SYSTEM INTEGRATION",
     subItems: ["Building Management System", "Environmental Monitoring System", "Low Voltage Systems"]
@@ -56,20 +56,29 @@ const ICON_MAP = {
 };
 
 const SUB_PATHS = {
-  "Smart Access Control System": "/products/sacs",
-  "Intervention Recording System": "/products/irs",
-  "Automated Solution Dispensing System": "/products/asds",
+  "SACS™ (Smart Access Control System)": "/products/sacs",
+  "IRS™ (Intervention Recording System)": "/products/irs",
+  "ASDS™ (Automated Solution Dispensing System)": "/products/asds",
   "MEM™ (Environmental Monitoring)": "/products/mem",
+  "IVBLT™ (Intravenous Bag Leak Tester)": "/products/ivblt",
+
   "Company Overview": "/company-overview",
   "Leadership": "/leadership",
   "Promoters": "/promoters",
   "Quality Policy": "/quality-policy",
   "Careers": "/careers",
+
   "Case Studies": "/case-studies",
-  "Building Management System": "/system-integration/building-management-system",
-  "Environmental Monitoring System": "/system-integration/environmental-monitoring-system",
   "Testimonials": "/testimonial",
-  "Low Voltage Systems": "/system-integration/low-voltage-systems",
+
+  "Building Management System":
+    "/system-integration/building-management-system",
+
+  "Environmental Monitoring System":
+    "/system-integration/environmental-monitoring-system",
+
+  "Low Voltage Systems":
+    "/system-integration/low-voltage-systems",
 };
 
 export default function Navbar() {

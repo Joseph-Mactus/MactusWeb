@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 const caseStudies = [
   {
     id: 1,
-    tag: "SACS",
+    tag: "SACS™™",
     title: "Strengthening GMP Compliance with Automated Access Control Systems",
     teaser: "Even the most mature pharmaceutical facilities carry hidden compliance risks. Strong SOPs, trained teams, and GMP discipline often still rely on people to enforce access rules. When cleanroom entry depends on manual registers and memory, small gaps quietly build audit pressure. This case study shows how one facility eliminated that risk by making compliance automatic at the door.",
     image: "https://mactus.in/wp-content/uploads/2026/02/ChatGPT-Image-Feb-9-2026-03_30_29-PM.png",
@@ -13,7 +13,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    tag: "IRS",
+    tag: "IRS™",
     title: "When Manual Intervention Recording Becomes a Compliance Risk",
     teaser: "Manual intervention recording burdened operators during sterile manufacturing. Handwritten logs and delayed entries created gaps in traceability and audit readiness. Small oversights led to deviations and extended QA review cycles. This case study shows how digitization transformed a manual risk into a real-time, audit-ready GMP control system.",
     image: "https://mactus.in/wp-content/uploads/2026/02/ChatGPT-Image-Feb-9-2026-04_24_07-PM.png",
@@ -21,7 +21,7 @@ const caseStudies = [
   },
   {
     id: 3,
-    tag: "ASDS",
+    tag: "ASDS™",
     title: "The Risk of Manual Disinfectant Solution Preparation",
     teaser: "Manual disinfectant preparation depends heavily on operator accuracy. At this facility, manual weighing, calculations, and paper records introduced variability and traceability gaps. Small errors resulted in deviations, rework, and audit observations. This case study shows how automation transformed a high-risk GMP activity into a controlled, compliant process.",
     image: "https://mactus.in/wp-content/uploads/2026/02/ChatGPT-Image-Feb-9-2026-04_29_05-PM.png",
@@ -29,7 +29,7 @@ const caseStudies = [
   }
 ];
 
-const tags = ["All", "SACS", "IRS", "ASDS", "MPATS", "IVBLT"];
+const tags = ["All", "SACS™™", "IRS™", "ASDS™", "MPATS", "IVBLT"];
 
 const CaseStudies = () => {
   const [activeTag, setActiveTag] = useState("All");

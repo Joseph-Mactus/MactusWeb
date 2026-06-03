@@ -135,36 +135,36 @@ const MEMPage = () => {
 
   const faqs = [
     {
-      question: "What is MEM (Mactus Environmental Monitoring)?",
-      answer: "MEM is a digital system that manages the complete lifecycle of media plates used in pharmaceutical environmental monitoring — from issuance through exposure, incubation, reading, and disposition. Each plate carries a QR code that is scanned at every handover, binding the plate to the operator, location, batch, and incubator. The result is end-to-end traceability, automatic reconciliation, and 21 CFR Part 11 compliant electronic records of every event in the plate's life."
+      question: "What is MEM™ (Mactus Environmental Monitoring)?",
+      answer: "MEM™ is a digital system that manages the complete lifecycle of media plates used in pharmaceutical environmental monitoring — from issuance through exposure, incubation, reading, and disposition. Each plate carries a QR code that is scanned at every handover, binding the plate to the operator, location, batch, and incubator. The result is end-to-end traceability, automatic reconciliation, and 21 CFR Part 11 compliant electronic records of every event in the plate's life."
     },
     {
-      question: "What types of environmental monitoring does MEM support?",
-      answer: "MEM supports the full range of environmental monitoring sampling methods used in pharmaceutical and biotech facilities: active air sampling, passive air sampling (settle plates), surface swabs, contact plates, and personnel monitoring (gowning checks and finger dab plates). Each sampling type can be configured with its own SOP workflow, location library, and alert/action limit set."
+      question: "What types of environmental monitoring does MEM™ support?",
+      answer: "MEM™ supports the full range of environmental monitoring sampling methods used in pharmaceutical and biotech facilities: active air sampling, passive air sampling (settle plates), surface swabs, contact plates, and personnel monitoring (gowning checks and finger dab plates). Each sampling type can be configured with its own SOP workflow, location library, and alert/action limit set."
     },
     {
       question: "How does QR-code tracking actually work on a media plate?",
-      answer: "Each plate is labelled with a unique QR code at the issuance step in MEM. From that moment on, every interaction with the plate — moving to the cleanroom for exposure, returning to the lab, placing in an incubator, reading the result, disposing — is captured by scanning the QR code at the relevant station. The scan binds the event to the operator who scanned it, the time, and the location. The plate's full history is reconstructable from its QR code alone."
+      answer: "Each plate is labelled with a unique QR code at the issuance step in MEM™. From that moment on, every interaction with the plate — moving to the cleanroom for exposure, returning to the lab, placing in an incubator, reading the result, disposing — is captured by scanning the QR code at the relevant station. The scan binds the event to the operator who scanned it, the time, and the location. The plate's full history is reconstructable from its QR code alone."
     },
     {
-      question: "Does MEM replace our existing QC microbiology LIMS?",
-      answer: "No. MEM is designed to complement existing LIMS, not replace them. MEM handles the operational tracking and lifecycle management of plates — the layer that LIMS typically does not do well. Final analytical results from MEM can be pushed to LIMS via integration. Most customers run MEM alongside their existing LIMS without disruption."
+      question: "Does MEM™ replace our existing QC microbiology LIMS?",
+      answer: "No. MEM™ is designed to complement existing LIMS, not replace them. MEM™ handles the operational tracking and lifecycle management of plates — the layer that LIMS typically does not do well. Final analytical results from MEM™ can be pushed to LIMS via integration. Most customers run MEM™ alongside their existing LIMS without disruption."
     },
     {
-      question: "How does MEM align with EU GMP Annex 1 expectations for environmental monitoring?",
-      answer: "EU GMP Annex 1 (2022 revision) increased expectations for environmental monitoring rigour — particularly around continuous monitoring, contamination control strategy, and data integrity. MEM supports these expectations directly: every sample is tied to a specific location and grade, every result is e-signed and trended, alert/action limit breaches trigger documented review workflows, and the full audit trail is ALCOA+ aligned."
+      question: "How does MEM™ align with EU GMP Annex 1 expectations for environmental monitoring?",
+      answer: "EU GMP Annex 1 (2022 revision) increased expectations for environmental monitoring rigour — particularly around continuous monitoring, contamination control strategy, and data integrity. MEM™ supports these expectations directly: every sample is tied to a specific location and grade, every result is e-signed and trended, alert/action limit breaches trigger documented review workflows, and the full audit trail is ALCOA+ aligned."
     },
     {
-      question: "Can MEM work for media fill / Aseptic Process Simulation campaigns?",
-      answer: "Yes. MEM has dedicated workflows for media fill and Aseptic Process Simulation campaigns, where environmental monitoring intensity is significantly higher than routine. Every sample is captured with full campaign context (date, batch, line, intervention), supporting the comprehensive EM data pack typically required in an APS report."
+      question: "Can MEM™ work for media fill / Aseptic Process Simulation campaigns?",
+      answer: "Yes. MEM™ has dedicated workflows for media fill and Aseptic Process Simulation campaigns, where environmental monitoring intensity is significantly higher than routine. Every sample is captured with full campaign context (date, batch, line, intervention), supporting the comprehensive EM data pack typically required in an APS report."
     },
     {
-      question: "Does MEM integrate with our incubators and EMS?",
-      answer: "Yes. MEM integrates with environmental monitoring systems (EMS) and incubator monitoring to automatically log incubation parameters — temperature, duration, incubator ID — without manual operator entry. This eliminates a common source of data integrity findings and ensures incubation parameters are tamper-proof."
+      question: "Does MEM™ integrate with our incubators and EMS?",
+      answer: "Yes. MEM™ integrates with environmental monitoring systems (EMS) and incubator monitoring to automatically log incubation parameters — temperature, duration, incubator ID — without manual operator entry. This eliminates a common source of data integrity findings and ensures incubation parameters are tamper-proof."
     },
     {
-      question: "How long does MEM deployment take?",
-      answer: "Standard MEM deployment for a single site is 10 to 14 weeks end-to-end — including URS finalisation, SOP digitisation, location and limit library configuration, QR labelling setup, integration with incubators / EMS / LIMS, validation testing (IQ, OQ, PQ), training of QC microbiology and operators, and go-live support. Multi-site rollouts are scoped separately."
+      question: "How long does MEM™ deployment take?",
+      answer: "Standard MEM™ deployment for a single site is 10 to 14 weeks end-to-end — including URS finalisation, SOP digitisation, location and limit library configuration, QR labelling setup, integration with incubators / EMS / LIMS, validation testing (IQ, OQ, PQ), training of QC microbiology and operators, and go-live support. Multi-site rollouts are scoped separately."
     }
   ];
 
@@ -186,19 +186,19 @@ const MEMPage = () => {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mactus.in/" },
-      { "@type": "ListItem", "position": 2, "name": "MEM™ (Environmental Monitoring)", "item": "https://mactus.in/products/mem" }
+      { "@type": "ListItem", "position": 2, "name": "MEM™™ (Environmental Monitoring)", "item": "https://mactus.in/products/mem" }
     ]
   };
 
   useEffect(() => {
-    document.title = "MEM™ Environmental Monitoring Software for Pharma | 21 CFR Part 11 | Mactus Automation";
+    document.title = "MEM™™ Environmental Monitoring Software for Pharma | 21 CFR Part 11 | Mactus Automation";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', 'MEM™ is a pharmaceutical environmental monitoring software platform for tracking settle plates, active air, surface, and personnel monitoring with QR-code traceability, electronic signatures, automated reconciliation, and 21 CFR Part 11 compliance.');
+    metaDesc.setAttribute('content', 'MEM™™ is a pharmaceutical environmental monitoring software platform for tracking settle plates, active air, surface, and personnel monitoring with QR-code traceability, electronic signatures, automated reconciliation, and 21 CFR Part 11 compliance.');
   }, []);
 
   return (
@@ -228,7 +228,7 @@ const MEMPage = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
           <div className="space-y-8 animate-fade-in-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
-              COMPLIANCE PRODUCT · ENVIRONMENTAL MONITORING
+              MACTUS ENVIRONMENTAL MONITORING
             </div>
 
             <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
@@ -245,7 +245,7 @@ const MEMPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[550px] font-medium opacity-80">
-              MEM digitizes the complete lifecycle of environmental monitoring media plates — issuance, exposure, incubation, reading, reconciliation, and disposal — with QR-code traceability, electronic signatures, and audit-ready records.
+              MEM™ digitizes the complete lifecycle of environmental monitoring media plates — issuance, exposure, incubation, reading, reconciliation, and disposal — with QR-code traceability, electronic signatures, and audit-ready records.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap sm:flex-nowrap">
@@ -270,11 +270,11 @@ const MEMPage = () => {
       {/* SECTION 2 — THE PROBLEM WE SOLVE */}
       <section className="py-14 px-6 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle eyebrow="WHY MEM">Lose one plate, lose the audit.</SectionTitle>
+          <SectionTitle eyebrow="WHY MEM™">Lose one plate, lose the audit.</SectionTitle>
 
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-              A single unreconciled EM plate can delay batch release and trigger major inspection observations. <span className="text-[#e0006e]">MEM makes the reconciliation problem disappear.</span>
+              A single unreconciled EM plate can delay batch release and trigger major inspection observations. <span className="text-[#e0006e]">MEM™ makes the reconciliation problem disappear.</span>
             </p>
           </div>
 
@@ -284,7 +284,7 @@ const MEMPage = () => {
                 <tr className="bg-gray-200">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                   <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Spreadsheet / Paper</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">MEM</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">MEM™</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -307,16 +307,16 @@ const MEMPage = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — WHAT MEM IS */}
+      {/* SECTION 3 — WHAT MEM™ IS */}
       <section className="py-10 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle eyebrow="THE SOLUTION">What MEM Is</SectionTitle>
+          <SectionTitle eyebrow="THE SOLUTION">What MEM™ Is</SectionTitle>
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
             <p>
-              MEM is a digital solution that manages the complete lifecycle of every media plate used in environmental monitoring. Each plate is assigned a QR code at issuance and scanned at every stage — exposure, incubation, reading, and disposition.
+              MEM™ is a digital solution that manages the complete lifecycle of every media plate used in environmental monitoring. Each plate is assigned a QR code at issuance and scanned at every stage — exposure, incubation, reading, and disposition.
             </p>
             <p>
-              Every scan is linked to the operator, location, batch, incubator, and microbiologist. By batch release, reconciliation is already complete. MEM transforms environmental monitoring from manual tracking to provable compliance.
+              Every scan is linked to the operator, location, batch, incubator, and microbiologist. By batch release, reconciliation is already complete. MEM™ transforms environmental monitoring from manual tracking to provable compliance.
             </p>
           </div>
         </div>
@@ -398,7 +398,7 @@ const MEMPage = () => {
                 <iframe
                   className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
                   src="https://www.youtube.com/embed/uQPwGbxaTB4?rel=0&modestbranding=1&controls=1"
-                  title="MEM System Workflow"
+                  title="MEM™ System Workflow"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
@@ -460,8 +460,8 @@ const MEMPage = () => {
       <section className="py-24 px-6 bg-[#1a1a1a]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After MEM Goes Live</h2>
-            <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running MEM in production EM programmes</p>
+            <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After MEM™ Goes Live</h2>
+            <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running MEM™ in production EM programmes</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-800">
             {outcomes.map((outcome, idx) => (
@@ -511,7 +511,7 @@ const MEMPage = () => {
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
-                If one plate is missing, the audit isn't ready. <span className="text-[#e0006e]">MEM makes sure that doesn't happen.</span>
+                If one plate is missing, the audit isn't ready. <span className="text-[#e0006e]">MEM™ makes sure that doesn't happen.</span>
               </h2>
             </div>
             <a href="/contact-us/" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">

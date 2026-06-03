@@ -236,36 +236,36 @@ const EMSPage = () => {
               SYSTEM INTEGRATION · ENVIRONMENTAL MONITORING
             </div>
 
-           <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
+            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
 
-  <div className="overflow-hidden">
-    <span
-      className="animate-reveal-up block"
-      style={{ animationDelay: '0.1s' }}
-    >
-      Proof that your
-    </span>
-  </div>
+              <div className="overflow-hidden">
+                <span
+                  className="animate-reveal-up block"
+                  style={{ animationDelay: '0.1s' }}
+                >
+                  Proof that your
+                </span>
+              </div>
 
-  <div className="overflow-hidden -mt-2">
-    <span
-      className="animate-reveal-up block text-[#e0006e]"
-      style={{ animationDelay: '0.2s' }}
-    >
-      cleanroom was in spec.
-    </span>
-  </div>
+              <div className="overflow-hidden -mt-2">
+                <span
+                  className="animate-reveal-up block text-[#e0006e]"
+                  style={{ animationDelay: '0.2s' }}
+                >
+                  cleanroom was in spec.
+                </span>
+              </div>
 
-  <div className="overflow-hidden -mt-2">
-    <span
-      className="animate-reveal-up block  font-black"
-      style={{ animationDelay: '0.3s' }}
-    >
-      Every minute. Every room.
-    </span>
-  </div>
+              <div className="overflow-hidden -mt-2">
+                <span
+                  className="animate-reveal-up block  font-black"
+                  style={{ animationDelay: '0.3s' }}
+                >
+                  Every minute. Every room.
+                </span>
+              </div>
 
-</h1>
+            </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-80">
               Mactus EMS continuously monitors temperature, relative humidity, and differential pressure across your pharmaceutical facility — with GMP-approved sensors, immutable data logging, local and centralized alarms, and audit-ready reports that stand up to USFDA and MHRA inspection.
@@ -276,7 +276,7 @@ const EMSPage = () => {
                 Request an EMS Assessment
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
-              
+
             </div>
           </div>
 
@@ -294,7 +294,7 @@ const EMSPage = () => {
         </div>
       </section>
 
-     
+
 
       {/* SECTION 3 — WHAT EMS MONITORS */}
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
@@ -333,48 +333,48 @@ const EMSPage = () => {
       </section>
 
       {/* SECTION 4 — KEY FEATURES */}
-    <section className="py-20 px-6 bg-white border-b border-gray-100">
-  <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
 
-    <SectionTitle eyebrow="CAPABILITIES">
-      Key Features of EMS
-    </SectionTitle>
+          <SectionTitle eyebrow="CAPABILITIES">
+            Key Features of EMS
+          </SectionTitle>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-      {/* Left Side - Simple Feature List */}
-      <div className="space-y-5">
+            {/* Left Side - Simple Feature List */}
+            <div className="space-y-5">
 
-        {features.map((f, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-4 border-b border-gray-100 pb-4"
-          >
-            <span className="text-2xl">
-              {f.icon}
-            </span>
+              {features.map((f, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-4 border-b border-gray-100 pb-4"
+                >
+                  <span className="text-2xl">
+                    {f.icon}
+                  </span>
 
-            <h4 className="text-lg font-semibold text-gray-900">
-              {f.title}
-            </h4>
+                  <h4 className="text-lg font-semibold text-gray-900">
+                    {f.title}
+                  </h4>
+                </div>
+              ))}
+
+            </div>
+
+            {/* Right Side - Image */}
+            <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100">
+              <img
+                src="https://mactus.in/wp-content/uploads/2025/08/iStock-1714501746-1024x683.jpg"
+                alt="EMS Features"
+                className="w-full h-[550px] object-cover"
+              />
+            </div>
+
           </div>
-        ))}
 
-      </div>
-
-      {/* Right Side - Image */}
-      <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100">
-        <img
-          src="https://mactus.in/wp-content/uploads/2025/08/iStock-1714501746-1024x683.jpg"
-          alt="EMS Features"
-          className="w-full h-[550px] object-cover"
-        />
-      </div>
-
-    </div>
-
-  </div>
-</section>
+        </div>
+      </section>
       {/* SECTION 5 — HOW EMS WORKS */}
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -404,7 +404,7 @@ const EMSPage = () => {
                     <div className={`w-24 h-24 rounded-full flex items-center justify-center transition-all duration-300 relative bg-white
                       ${isActive ? 'border-4 border-[#e0006e] text-[#e0006e] shadow-[0_0_30px_rgba(224,0,110,0.2)] scale-110' :
                         isPast ? 'border-2 border-[#e0006e]/50 text-[#e0006e]/50 bg-gray-100' :
-                        'border-2 border-gray-200 text-gray-400 group-hover:border-[#e0006e]/30 group-hover:text-[#e0006e]'}`}
+                          'border-2 border-gray-200 text-gray-400 group-hover:border-[#e0006e]/30 group-hover:text-[#e0006e]'}`}
                     >
                       <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-black text-xs border-4 border-white">
                         {step.id}
@@ -455,7 +455,7 @@ const EMSPage = () => {
         </div>
       </section>
 
-     
+
 
 
       {/* SECTION 9 — FAQ */}

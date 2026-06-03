@@ -21,10 +21,10 @@ const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
 const products = [
   {
     id: 'sacs',
-    tag: 'SACS',
+    tag: 'SACS™™',
     name: 'Smart Access Control System',
     positioning: 'The cleanroom door is where contamination risk and compliance risk both begin.',
-    description: 'Mactus SACS is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
+    description: 'Mactus SACS™™ is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
     capabilities: [
       'Biometric authentication — fingerprint and face recognition',
       'SOP-enforced gowning sequence before cleanroom entry',
@@ -37,10 +37,10 @@ const products = [
   },
   {
     id: 'irs',
-    tag: 'IRS',
+    tag: 'IRS™',
     name: 'Intervention Recording System',
-    positioning: 'Every aseptic intervention is a contamination risk and a data integrity event. IRS captures both.',
-    description: 'The Intervention Recording System (IRS) is a web-based automation solution designed to monitor, control, and record interventions occurring during batch processing in pharmaceutical filling lines. Sensor-measured duration, operator identity, intervention type, and supervisor sign-off — all captured automatically, aligned with EU GMP Annex 1.',
+    positioning: 'Every aseptic intervention is a contamination risk and a data integrity event. IRS™ captures both.',
+    description: 'The Intervention Recording System (IRS™) is a web-based automation solution designed to monitor, control, and record interventions occurring during batch processing in pharmaceutical filling lines. Sensor-measured duration, operator identity, intervention type, and supervisor sign-off — all captured automatically, aligned with EU GMP Annex 1.',
     capabilities: [
       'Sensor-measured intervention duration — no operator self-reporting',
       'EU GMP Annex 1 aligned intervention classification',
@@ -53,10 +53,10 @@ const products = [
   },
   {
     id: 'asds',
-    tag: 'ASDS',
+    tag: 'ASDS™',
     name: 'Automated Solution Dispensing System',
-    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS replaces the graduated cylinder with a recipe.',
-    description: 'The ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a recipe and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — recipe, volume, operator, time — with full 21 CFR Part 11 audit trail.',
+    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS™ replaces the graduated cylinder with a recipe.',
+    description: 'The ASDS™ is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a recipe and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — recipe, volume, operator, time — with full 21 CFR Part 11 audit trail.',
     capabilities: [
       'Up to 6 configurable recipes — disinfectant, IPA, detergent, sporicide',
       'Volumetric accuracy — recipe-locked, no manual estimation',
@@ -69,10 +69,10 @@ const products = [
   },
   {
     id: 'mem',
-    tag: 'MEM™',
-    name: 'MEM™ — Mactus Environmental Monitoring',
-    positioning: 'One unaccounted-for media plate can delay batch release. MEM makes sure that never happens.',
-    description: 'MEM digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
+    tag: 'MEM™™',
+    name: 'MEM™™ — Mactus Environmental Monitoring',
+    positioning: 'One unaccounted-for media plate can delay batch release. MEM™ makes sure that never happens.',
+    description: 'MEM™ digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
     capabilities: [
       'QR-code tracking — every plate scanned at every lifecycle stage',
       'Automatic batch reconciliation — all plates accounted for at release',
@@ -81,7 +81,7 @@ const products = [
     ],
     image: 'https://mactus.in/wp-content/uploads/elementor/thumbs/EMPATS-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png',
     link: '/products/mem/',
-    note: 'Previously listed as MPATS — now MEM™',
+    note: 'Previously listed as MPATS — now MEM™™',
   },
   {
     id: 'ivblt',
@@ -113,10 +113,10 @@ const standards = [
 ];
 
 const tableRows = [
-  { product: 'SACS', link: '/sacs-2/', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
-  { product: 'IRS', link: '/irs/', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'ASDS', link: '/products/automated-solution-dispensing-system/', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'MEM™', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
+  { product: 'SACS™™', link: '/sacs-2/', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
+  { product: 'IRS™', link: '/irs/', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'ASDS™', link: '/products/automated-solution-dispensing-system/', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'MEM™™', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
   { product: 'IVBLT', link: '/intravenous-bag-leak-tester/', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
 ];
 
@@ -217,7 +217,7 @@ const ComplianceProductsPage = () => {
     document.title = "Pharma Compliance Products | 21 CFR Part 11 GMP Systems | Mactus Automation";
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
-    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS, IRS, ASDS, MEM, IVBLT. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
+    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS™™, IRS™, ASDS™, MEM™, IVBLT. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
   }, []);
 
   return (
@@ -285,10 +285,10 @@ const ComplianceProductsPage = () => {
             <div className="relative w-full max-w-sm">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: 'SACS', sub: 'Access Control', num: '01' },
-                  { label: 'IRS', sub: 'Interventions', num: '02' },
-                  { label: 'ASDS', sub: 'Dispensing', num: '03' },
-                  { label: 'MEM™', sub: 'Env. Monitoring', num: '04' },
+                  { label: 'SACS™™', sub: 'Access Control', num: '01' },
+                  { label: 'IRS™', sub: 'Interventions', num: '02' },
+                  { label: 'ASDS™', sub: 'Dispensing', num: '03' },
+                  { label: 'MEM™™', sub: 'Env. Monitoring', num: '04' },
                 ].map((item, i) => (
                   <div key={i} className={`bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#e0006e]/40 hover:bg-white/10 transition-all duration-300 ${i === 0 ? 'mt-6' : ''} ${i === 3 ? '-mt-6' : ''}`}>
                     <p className="text-[#e0006e] font-black text-[10px] tracking-widest uppercase mb-1">{item.num}</p>

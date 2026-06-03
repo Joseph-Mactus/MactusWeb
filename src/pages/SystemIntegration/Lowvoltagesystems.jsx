@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-// ── Shared design tokens (identical to SACS page) ────────────────────────────
+// ── Shared design tokens (identical to SACS™ page) ────────────────────────────
 
 const SectionTitle = ({ children }) => (
   <div className="flex justify-center w-full mb-6 mt-8">
@@ -155,26 +155,26 @@ const LowVoltageSystems = () => {
               </div>
 
               {/* Heading */}
-              <h1 className="text-white font-black text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tighter">
-                {['Safety.', 'Security.'].map((word, i) => (
-                  <span key={i} className="overflow-hidden inline-block py-1 mr-4">
-                    <span
-                      className="animate-reveal-up inline-block"
-                      style={{ animationDelay: `${i * 0.12}s` }}
-                    >
-                      {word}
-                    </span>
-                  </span>
-                ))}
-                <br />
-                <span className="overflow-hidden block py-1">
-                  <span className="inline-block animate-reveal-up" style={{ animationDelay: '0.25s' }}>
-                    <span className="font-black inline-block">
-                      Smart Infrastructure.
-                    </span>
-                  </span>
+               <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
+
+              <div className="overflow-hidden">
+                <span
+                  className="animate-reveal-up block"
+                  style={{ animationDelay: '0.1s' }}
+                >
+                  Safety Security
                 </span>
-              </h1>
+              </div>
+
+              <div className="overflow-hidden -mt-2">
+                <span
+                  className="animate-reveal-up block text-[#e0006e]"
+                  style={{ animationDelay: '0.2s' }}
+                >
+                Smart Infrastructure.
+                </span>
+              </div>
+            </h1>
 
               {/* Intro */}
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-90">

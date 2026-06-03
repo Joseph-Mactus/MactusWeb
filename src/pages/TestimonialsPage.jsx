@@ -184,23 +184,23 @@ const TestimonialsPage = () => {
 
   const cards = [
     {
-      tag: "SACS",
-      title: "Customer Validation – Smart Access Control System (SACS)",
-      description: "Documented confirmation of cleanroom access control and compliance support using SACS. Formally validates Mactus SACS design, installation, and operational performance at a pharma manufacturing facility.",
+      tag: "SACS™™",
+      title: "Customer Validation – Smart Access Control System (SACS™™)",
+      description: "Documented confirmation of cleanroom access control and compliance support using SACS™™. Formally validates Mactus SACS™™ design, installation, and operational performance at a pharma manufacturing facility.",
       image: "https://mactus.in/wp-content/uploads/2026/02/sacs-testimonial.png",
       productLink: "/sacs/",
     },
     {
-      tag: "ASDS",
-      title: "Customer Validation – Automated Solution Dispensing System (ASDS)",
+      tag: "ASDS™",
+      title: "Customer Validation – Automated Solution Dispensing System (ASDS™)",
       description: "Confirmation of successful design, installation, qualification, and operational performance of the Automated Solution Dispensing System at a pharma manufacturing facility.",
-      image: "https://mactus.in/wp-content/uploads/2026/02/ASDS-testimaonial.png",
+      image: "https://mactus.in/wp-content/uploads/2026/02/ASDS™-testimaonial.png",
       productLink: "/asds/",
     },
     // {
     //   tag: "More Coming",
-    //   title: "IRS · MEM · IVBLT Validations",
-    //   description: "Customer validation letters for IRS, MEM (MPATS), and IVBLT are being prepared and will be published here.",
+    //   title: "IRS™ · MEM™ · IVBLT Validations",
+    //   description: "Customer validation letters for IRS™, MEM™ (MPATS), and IVBLT are being prepared and will be published here.",
     //   placeholder: true,
     // },
   ];
@@ -213,7 +213,7 @@ const TestimonialsPage = () => {
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', 'Documented customer validations and testimonials for Mactus Automation compliance products — SACS and ASDS validated by pharma manufacturing customers across India.');
+    metaDesc.setAttribute('content', 'Documented customer validations and testimonials for Mactus Automation compliance products — SACS™™ and ASDS™ validated by pharma manufacturing customers across India.');
   }, []);
 
   return (

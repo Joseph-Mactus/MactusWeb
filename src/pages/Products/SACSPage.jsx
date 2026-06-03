@@ -46,7 +46,7 @@ const FAQAccordion = ({ items }) => {
 
 const SACSPage = () => {
   useState(() => {
-    document.title = "Smart Access Control System (SACS) | Mactus";
+    document.title = "Smart Access Control System (SACS™™) | Mactus";
   }, []);
 
   const features = [
@@ -60,20 +60,20 @@ const SACSPage = () => {
 
   const steps = [
     { title: "IDENTIFY", desc: "Operator swipes RFID or uses biometric authentication at the cleanroom entrance." },
-    { title: "VALIDATE", desc: "SACS verifies identity, training status, and gowning sequence compliance in real-time." },
+    { title: "VALIDATE", desc: "SACS™™ verifies identity, training status, and gowning sequence compliance in real-time." },
     { title: "PERMIT / BLOCK", desc: "Door lock releases only if all criteria are met; otherwise, entry is denied and logged." },
     { title: "RECORD", desc: "The entry event is digitally signed and added to the 21 CFR Part 11 audit trail." },
   ];
 
   const faqs = [
-    { question: "What is SACS?", answer: "SACS (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual gowning logbooks with a digital, 21 CFR Part 11 compliant workflow." },
-    { question: "Is it 21 CFR Part 11 compliant?", answer: "Yes, SACS is built from the ground up to meet the requirements of 21 CFR Part 11, including electronic signatures, audit trails, and data integrity controls." },
-    { question: "Does it replace door interlocking?", answer: "SACS enhances existing interlocking systems. It can interface with your current door controllers to provide an additional layer of compliance-based logic before a door is permitted to unlock." },
+    { question: "What is SACS™™?", answer: "SACS™™ (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual gowning logbooks with a digital, 21 CFR Part 11 compliant workflow." },
+    { question: "Is it 21 CFR Part 11 compliant?", answer: "Yes, SACS™™ is built from the ground up to meet the requirements of 21 CFR Part 11, including electronic signatures, audit trails, and data integrity controls." },
+    { question: "Does it replace door interlocking?", answer: "SACS™™ enhances existing interlocking systems. It can interface with your current door controllers to provide an additional layer of compliance-based logic before a door is permitted to unlock." },
     { question: "How does it prevent tailgating?", answer: "We use high-precision overhead IR or AI-based vision sensors to count the number of individuals passing through a door. If the count exceeds the number of authorized badge-ins, an alarm is triggered." },
-    { question: "Can it enforce gowning sequence?", answer: "Absolutely. SACS can be configured to require confirmation of specific SOP steps (e.g., hand sanitization, gowning, glove change) before granting access to the next grade area." },
-    { question: "Does it verify training?", answer: "Yes, SACS integrates with your Learning Management System (LMS) or HRMS to ensure that an operator's certifications for that specific area are current before allowing entry." },
+    { question: "Can it enforce gowning sequence?", answer: "Absolutely. SACS™™ can be configured to require confirmation of specific SOP steps (e.g., hand sanitization, gowning, glove change) before granting access to the next grade area." },
+    { question: "Does it verify training?", answer: "Yes, SACS™™ integrates with your Learning Management System (LMS) or HRMS to ensure that an operator's certifications for that specific area are current before allowing entry." },
     { question: "What does deployment look like?", answer: "Deployment is a turnkey process including hardware installation, software configuration, and full IQ/OQ/PQ validation to ensure compliance with your site requirements." },
-    { question: "Which customers use SACS?", answer: "SACS is trusted by leading sterile injectable plants, vaccine manufacturers, and API facilities across India and globally to maintain audit readiness." },
+    { question: "Which customers use SACS™™?", answer: "SACS™™ is trusted by leading sterile injectable plants, vaccine manufacturers, and API facilities across India and globally to maintain audit readiness." },
   ];
 
   return (
@@ -139,7 +139,7 @@ const SACSPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-              SACS replaces the gowning logbook with a paperless, 21 CFR Part 11 compliant entry-exit system — enforcing every SOP and writing a tamper-proof audit trail.
+              SACS™™ replaces the gowning logbook with a paperless, 21 CFR Part 11 compliant entry-exit system — enforcing every SOP and writing a tamper-proof audit trail.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -190,7 +190,7 @@ const SACSPage = () => {
                 <tr className="bg-gray-200">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                   <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper Logbook</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With SACS</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With SACS™™</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -268,7 +268,7 @@ const SACSPage = () => {
                   <iframe
                     className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
                     src="https://www.youtube.com/embed/3Xj6dzZFoqQ?rel=0&modestbranding=1&controls=1"
-                    title="SACS System Workflow"
+                    title="SACS™™ System Workflow"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
@@ -286,7 +286,7 @@ const SACSPage = () => {
             <div className="space-y-6">
               <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Industry Targets</span>
               <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Built for high-stakes manufacturing</h2>
-              <p className="text-gray-400 text-lg">Every facility type has unique compliance challenges. SACS is flexible enough for all of them.</p>
+              <p className="text-gray-400 text-lg">Every facility type has unique compliance challenges. SACS™™ is flexible enough for all of them.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[

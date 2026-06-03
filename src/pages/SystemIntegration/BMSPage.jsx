@@ -174,7 +174,7 @@ const BMSPage = () => {
               SYSTEM INTEGRATION · BUILDING MANAGEMENT
             </div>
 
-            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter">
+            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tighter">
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Every building</span>
               </span>

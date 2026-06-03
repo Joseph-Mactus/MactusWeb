@@ -4,29 +4,89 @@ const FOOTER_COLS = [
   {
     title: "COMPLIANCE PRODUCTS",
     links: [
-      { name: "Smart Access Control System", path: "/sacs" },
-      { name: "Automated Solution Dispensing System", path: "/asds" },
-      { name: "Intervention Recording System", path: "/irs" },
-      { name: "Media Plate Tracking and Management System", path: "#" },
-      { name: "Intravenous Bag Leak Tester (IVBLT)", path: "#" }
+      {
+        name: "SACS™ (Smart Access Control System)",
+        path: "/products/sacs"
+      },
+      {
+        name: "IRS™ (Intervention Recording System)",
+        path: "/products/irs"
+      },
+      {
+        name: "ASDS™ (Automated Solution Dispensing System)",
+        path: "/products/asds"
+      },
+      {
+        name: "MEM™ (Environmental Monitoring)",
+        path: "/products/mem"
+      },
+      {
+        name: "IVBLT™ (Intravenous Bag Leak Tester)",
+        path: "#"
+      }
     ]
   },
   {
     title: "SYSTEM INTEGRATION",
     links: [
-      { name: "Building Management System", path: "/building-management-system" },
-      { name: "Environmental Monitoring System", path: "/environmental-monitoring-system" },
-      { name: "Low Voltage Systems", path: "/low-voltage-systems" }
+      {
+        name: "Building Management System",
+        path: "/system-integration/building-management-system"
+      },
+      {
+        name: "Environmental Monitoring System",
+        path: "/system-integration/environmental-monitoring-system"
+      },
+      {
+        name: "Low Voltage Systems",
+        path: "/system-integration/low-voltage-systems"
+      }
     ]
   },
   {
     title: "ABOUT US",
     links: [
-      { name: "Overview", path: "/company-overview" },
-      { name: "Leadership", path: "/leadership" },
-      { name: "Promoters", path: "/promoters" },
-      { name: "Careers", path: "/careers" },
-      { name: "Quality Policy", path: "/quality-policy" }
+      {
+        name: "Company Overview",
+        path: "/company-overview"
+      },
+      {
+        name: "Leadership",
+        path: "/leadership"
+      },
+      {
+        name: "Promoters",
+        path: "/promoters"
+      },
+      {
+        name: "Careers",
+        path: "/careers"
+      },
+      {
+        name: "Quality Policy",
+        path: "/quality-policy"
+      }
+    ]
+  },
+  {
+    title: "RESOURCES",
+    links: [
+      {
+        name: "Case Studies",
+        path: "/case-studies"
+      },
+      {
+        name: "Testimonials",
+        path: "/testimonial"
+      },
+      {
+        name: "IIOT Implementations",
+        path: "/iiot-implementations"
+      },
+      {
+        name: "Contact Us",
+        path: "/contact-us/"
+      }
     ]
   }
 ];
@@ -35,7 +95,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#262626] border-t border-white/5">
       <div className="bg-[#262626] pt-6 pb-6 px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {FOOTER_COLS.map((col, idx) => (
             <div key={idx}>
               <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-8 uppercase opacity-80">{col.title}</h4>

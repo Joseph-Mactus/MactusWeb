@@ -47,7 +47,7 @@ const FAQAccordion = ({ items }) => {
 
 const IRSPage = () => {
   useState(() => {
-    document.title = "Intervention Recording System (IRS) | Mactus";
+    document.title = "Intervention Recording System (IRS™) | Mactus";
   }, []);
 
   const features = [
@@ -68,12 +68,12 @@ const IRSPage = () => {
   ];
 
   const faqs = [
-    { question: "What is IRS?", answer: "IRS (Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
-    { question: "Is it Annex 1 aligned?", answer: "Yes, IRS is specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
+    { question: "What is IRS™?", answer: "IRS™ (Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
+    { question: "Is it Annex 1 aligned?", answer: "Yes, IRS™ is specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
     { question: "How does it detect interventions automatically?", answer: "We use a combination of magnetic sensors for doors/ports and IR curtains for glove ports to detect physical entry into the aseptic zone without any manual trigger needed." },
     { question: "Can it enforce a max per batch?", answer: "Yes, you can configure maximum limits for specific types of interventions. The system will alert supervisors if the limit is approached or reached." },
-    { question: "Does it work with existing lines?", answer: "IRS is designed for retrofit. Our non-invasive sensors can be mounted on almost any existing fill-finish line, RABS, or Isolator without compromising cabinet integrity." },
-    { question: "How does it support APR/PQR?", answer: "Instead of manual data collation, IRS provides 1-click export of trending data, making Annual Product Reviews (APR) and Periodic Quality Reviews (PQR) significantly faster." },
+    { question: "Does it work with existing lines?", answer: "IRS™ is designed for retrofit. Our non-invasive sensors can be mounted on almost any existing fill-finish line, RABS, or Isolator without compromising cabinet integrity." },
+    { question: "How does it support APR/PQR?", answer: "Instead of manual data collation, IRS™ provides 1-click export of trending data, making Annual Product Reviews (APR) and Periodic Quality Reviews (PQR) significantly faster." },
     { question: "Is it suitable for media fills?", answer: "It is ideal for Aseptic Process Simulations (Media Fills). It accurately tracks the duration and sequence of interventions, providing a perfect record for regulatory submission." },
     { question: "How long does deployment take?", answer: "A typical deployment, including sensor mounting and software configuration, takes 4-6 weeks, followed by site validation (IQ/OQ)." },
   ];
@@ -141,7 +141,7 @@ const IRSPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-              IRS digitises every glove-port intervention, captured automatically, signed electronically, and ready the day your auditor asks for it.
+              IRS™ digitises every glove-port intervention, captured automatically, signed electronically, and ready the day your auditor asks for it.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -192,7 +192,7 @@ const IRSPage = () => {
                 <tr className="bg-gray-100">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                   <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper / Manual</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With IRS</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With IRS™</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -200,7 +200,7 @@ const IRSPage = () => {
                   ["Intervention not recorded", "Memory dependent", "Auto-sensor capture"],
                   ["Duration accuracy", "Rough estimate", "Precision millisecond tracking"],
                   ["Excessive interventions", "Hard to track live", "Batch limit enforcement"],
-                  ["Operator attribution", "Manual signing", "Digital link to SACS identity"],
+                  ["Operator attribution", "Manual signing", "Digital link to SACS™™ identity"],
                   ["Trending across batches", "Weeks of spreadsheet work", "Instant PQR/APR analytics"],
                 ].map((row, i) => (
                   <tr key={i} className="group hover:bg-gray-50 transition-colors">
@@ -270,7 +270,7 @@ const IRSPage = () => {
                    <iframe 
                     className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
                     src="https://www.youtube.com/embed/q_V2sazmumQ?rel=0&modestbranding=1&controls=1" 
-                    title="IRS System Workflow"
+                    title="IRS™ System Workflow"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
                   ></iframe>
@@ -288,7 +288,7 @@ const IRSPage = () => {
             <div className="space-y-6">
               <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Aseptic Processing</span>
               <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Engineered for critical fill-finish</h2>
-              <p className="text-gray-400 text-lg">Whether on an open RABS or a closed isolator, IRS provides the transparency your quality team demands.</p>
+              <p className="text-gray-400 text-lg">Whether on an open RABS or a closed isolator, IRS™ provides the transparency your quality team demands.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[

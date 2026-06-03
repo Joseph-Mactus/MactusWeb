@@ -171,10 +171,10 @@ const SalesForm = () => {
                 <Label htmlFor="s-product" required>Product / Service of Interest</Label>
                 <select id="s-product" value={data.product} onChange={set('product')} className={cls('product')}>
                     <option value="" disabled>-- Select a product or service --</option>
-                    <option>Smart Access Control System (SACS)</option>
-                    <option>Intervention Recording System (IRS)</option>
-                    <option>Automated Solution Dispensing System (ASDS)</option>
-                    <option>MEM – Environmental Monitoring (formerly MPATS)</option>
+                    <option>Smart Access Control System (SACS™™)</option>
+                    <option>Intervention Recording System (IRS™)</option>
+                    <option>Automated Solution Dispensing System (ASDS™)</option>
+                    <option>MEM™ – Environmental Monitoring (formerly MPATS)</option>
                     <option>Intravenous Bag Leak Tester (IVBLT)</option>
                     <option>Building Management System (BMS)</option>
                     <option>Environmental Monitoring System (EMS)</option>
@@ -327,7 +327,7 @@ const SupportForm = () => {
                 <Label htmlFor="t-product" required>Product</Label>
                 <select id="t-product" value={data.product} onChange={set('product')} className={cls('product')}>
                     <option value="" disabled>-- Select product --</option>
-                    {['SACS', 'IRS', 'ASDS', 'MEM (MPATS)', 'IVBLT', 'BMS', 'EMS', 'Low Voltage Systems', 'IIoT', 'Other'].map(p => (
+                    {['SACS™™', 'IRS™', 'ASDS™', 'MEM™ (MPATS)', 'IVBLT', 'BMS', 'EMS', 'Low Voltage Systems', 'IIoT', 'Other'].map(p => (
                         <option key={p}>{p}</option>
                     ))}
                 </select>
