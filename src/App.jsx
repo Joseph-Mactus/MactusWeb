@@ -5,6 +5,7 @@ import SACSPage from './pages/Products/SACSPage';
 import IRSPage from './pages/Products/IRSPage';
 import ASDSPage from './pages/Products/ASDSPage';
 import MEMPage from './pages/Products/MEMPage';
+import IVBLTPage from './pages/Products/IvbltPage';
 import CompanyOverview from './pages/About/CompanyOverview';
 import Leadership from './pages/About/Leadership';
 import Promoters from './pages/About/Promoters';
@@ -28,6 +29,7 @@ function App() {
         <Route path="/products/irs" element={<IRSPage />} />
         <Route path="/products/asds" element={<ASDSPage />} />
         <Route path="/products/mem" element={<MEMPage />} />
+        <Route path="/products/ivblt" element={<IVBLTPage />} />
 
         <Route path="/company-overview" element={<CompanyOverview />} />
         <Route path="/leadership" element={<Leadership />} />

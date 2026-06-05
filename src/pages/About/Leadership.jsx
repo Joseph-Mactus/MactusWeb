@@ -2,6 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import leaImg1 from '../../assets/images/Leadership/boby-joseph-image.png';
+import leaImg2 from '../../assets/images/Leadership/amar-sir-image-5-1024x1020.jpg';
+import leaImg3 from '../../assets/images/Leadership/Tomzee-Photo.jpg';
+import leaImg4 from '../../assets/images/Leadership/WhatsApp-Image-2025-08-07-at-1.09.27-PM-785x1024.jpeg';
+import leaImg5 from '../../assets/images/Leadership/sethu-sir-photo-2-902x1024.jpg';
+import leaImg6 from '../../assets/images/Leadership/athul-image-682x1024.png';
+import leaImg7 from '../../assets/images/Leadership/manikandan-image.png';
 
 const Leadership = () => {
   useState(() => {
@@ -12,50 +19,50 @@ const Leadership = () => {
     {
       name: "Boby K Joseph",
       title: "MD & CEO",
-      photo: "https://mactus.in/wp-content/uploads/2025/05/boby-joseph-image.png",
+      photo: leaImg1,
       bio: "Boby brings extensive experience across organizations such as Mactus Automation Pvt Ltd, Sol-Ark, Honeywell Technology Solutions Lab Private Limited, and Tata Consulting Engineers. His professional journey reflects deep expertise in automation, engineering excellence, compliance solutions, and industrial technology leadership. Having been closely associated with Mactus Automation over the years as Director and CEO, and later as Founder Director, his elevation to MD and CEO underscores both continuity and strong leadership depth. His strategic vision and domain expertise are expected to further strengthen the company's position in regulated industry automation.",
       linkedin: "https://www.linkedin.com/in/bobykjoseph/"
     },
     {
       name: "Amarnath Ravisankar",
       title: "COO",
-      photo: "https://mactus.in/wp-content/uploads/2025/05/amar-sir-image-5-1024x1020.jpg",
+      photo: leaImg2,
       bio: "Amar has over 2 decades of experience in design, engineering, leadership, people and project management of Industrial automation and building automation projects encompassing system integration design, development and implementation of building services and systems. Before taking up executive leadership, Amar has led a vibrant team of automation engineers in delivering control and compliance management solutions for Indian Pharmaceutical industry. He has proven track record of driving operational excellence, quality assurance, cost control and customer delight. Amar has domain specialist experience in design, planning, development and implementation of overall building automation and industrial automation solutions for large scale projects. Amar has expertise in providing leadership in master system integration between various building systems, services and third-party integration that includes HVAC, FAS, Fire suppression system, plumbing, lighting and other ELV systems. Amar holds a Bachelor of Engineering in Electronics and Instrumentation Engineering from Anna University, Chennai, India. He has undergone several training programs and has acquired automation certifications from OEMs like Honeywell, Schneider, Tridium Niagara, American Auto-matrix, Bosch and many more.",
       linkedin: "http://linkedin.com/in/amarnath-ravisankar-969b04121"
     },
     {
       name: "Tomzee P Varghese",
       title: "CFO",
-      photo: "https://mactus.in/wp-content/uploads/2025/05/Tomzee-Photo.jpg",
+      photo: leaImg3,
       bio: "Tomzee brings close to three decades of expertise and has established himself as a seasoned professional in the fields of finance, accounts, administration, and team management. Tomzee's expertise spans various industries, making him a versatile asset to any organization. His strategic approach and comprehensive understanding of finance, direct and indirect taxation and general accounting have enabled him to manage complex financial systems effectively, optimizing working capital arrangements, budgetary control and streamlining processes. Tomzee holds a bachelor's degree in commerce from Mahatma Gandhi University, Kottayam, Kerala, India. His commitment to excellence and strong leadership skills allow him to successfully lead and manage teams, playing a pivotal role in supporting the financial stability and growth of the organizations he serves.",
       linkedin: "https://www.linkedin.com/in/tomzee-p-varghese-b12560379/"
     },
     {
       name: "Ramesh Selvaraj",
       title: "Enterprise Sales Leader",
-      photo: "https://mactus.in/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-07-at-1.09.27-PM-785x1024.jpeg",
+      photo: leaImg4,
       bio: "Ramesh Selvaraj is the Associate Director in Sales and Business Development at Mactus Automation, bringing over 14 years of diverse experience in programming, project management, product development, and sales. Before his leadership role at Mactus, he successfully led a team of automation engineers in delivering compliance products and solutions to the Indian pharmaceutical industry. Ramesh is skilled in product development and enhancement, utilizing customer voice-of-the-customer (VOC) insights to address pain points and meet client needs. His expertise in 21 CFR Part 11 requirements is crucial for compliance in the pharmaceutical sector. He holds a Bachelor of Engineering in Electrical and Electronics from Visvesvaraya Technological University, Belgaum, Karnataka, and has completed various training programs with certifications in project management, program management, and business development and sales.",
       linkedin: "https://www.linkedin.com/in/ramesh-selvaraj-22626a8a/"
     },
     {
       name: "Sethurajan S",
       title: "Project Engineering Leader",
-      photo: "https://mactus.in/wp-content/uploads/2025/08/sethu-sir-photo-2-902x1024.jpg",
-      bio: "Mr. Sethurajan S is a seasoned BMS specialist with over 13 years of experience in the design, execution, and documentation of intelligent building solutions. He is proficient across the full project lifecycle, including system integration and commissioning. His expertise extends to EMS and ELV systems such as FAPA, ACS, DIS, CCTV, and networking infrastructure. Currently, he oversees end-to-end project engineering, focusing on the design and execution of compliance-driven systems such as SACS™™, IRS™, ASDS™, and MPATS, and leads system integration projects for the pharmaceutical industry. He holds a B.E. in Electronics and Communication Engineering from Anna University, Chennai, and is certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4 Commissioning, and Schneider Electric Building Automation.",
+      photo: leaImg5,
+      bio: "Mr. Sethurajan S is a seasoned BMS specialist with over 13 years of experience in the design, execution, and documentation of intelligent building solutions. He is proficient across the full project lifecycle, including system integration and commissioning. His expertise extends to EMS and ELV systems such as FAPA, ACS, DIS, CCTV, and networking infrastructure. Currently, he oversees end-to-end project engineering, focusing on the design and execution of compliance-driven systems such as SACS™, IRS™, ASDS™, and MEM™, and leads system integration projects for the pharmaceutical industry. He holds a B.E. in Electronics and Communication Engineering from Anna University, Chennai, and is certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4 Commissioning, and Schneider Electric Building Automation.",
       linkedin: "https://www.linkedin.com/in/sethu-rajan-558329b9/"
     },
     {
       name: "Athul Mohan",
       title: "Head of Marketing",
-      photo: "https://mactus.in/wp-content/uploads/2026/04/athul-image-682x1024.png",
+      photo: leaImg6,
       bio: "With 12+ years of experience spanning SaaS sales, demand generation, and account management, Athul brings deep commercial expertise to Mactus Automation's marketing function. His career has been rooted in the pharmaceutical and life sciences industry, working closely with quality leaders, compliance teams, and senior decision-makers across India's manufacturing ecosystem. Having spent the better part of his career on the sales side, Athul understands what it takes to build trust in a highly regulated, relationship-driven industry. At Mactus, he is leading a full-scale marketing transformation — a new brand identity, website relaunch, SEO and content strategy, and an active LinkedIn presence — all aimed at establishing Mactus as the go-to name for pharma compliance automation in India and beyond.",
       linkedin: "https://www.linkedin.com/in/athulmohan/"
     },
     {
       name: "Manikandan P",
       title: "Customer Support Leader",
-      photo: "https://mactus.in/wp-content/uploads/2026/04/manikandan-image.png",
-      bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS™™, IRS™, ASDS™, and MPATS. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
+      photo: leaImg7,
+      bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS™, IRS™, ASDS™, and MEM™. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
       linkedin: "https://www.linkedin.com/in/manikandan-p-81748719a/"
     }
   ];
@@ -94,7 +101,7 @@ const Leadership = () => {
 
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
       <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden min-h-[50vh] flex flex-col items-center justify-center text-center border-b border-white/5">
-        {/* Decorative elements from SACS™™/IRS™ */}
+        {/* Decorative elements from SACS™/IRS™ */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 

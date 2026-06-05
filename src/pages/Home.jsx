@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import indiaMap from '@svg-maps/india';
+import homImg1 from '../assets/images/Home/mlogo-1.png';
+import homImg2 from '../assets/images/Home/iStock-2160382145-1024x576.jpg';
 const india = indiaMap.default || indiaMap;
 
 // ─── Reusable Components ──────────────────────────────────────────────────────
@@ -212,9 +214,9 @@ const HomePage = () => {
     { q: "What does 'audit-ready' actually mean in a Mactus system?", a: "Audit-ready means that at any moment — without preparation, without manual reconciliation, without a QA scramble — every regulated event in your cleanroom is captured, electronically signed, time-stamped, and exportable. When the inspector asks for last Tuesday's third-shift batch, the answer is a query, not an investigation." },
     { q: "How is Mactus different from generic SCADA or BMS vendors?", a: "Generic vendors sell horizontal platforms. Mactus builds pharma-specific applications. Our Smart Access Control System enforces aseptic SOP sequencing at the door. Our Intervention Recording System aligns with EU GMP Annex 1 expectations. Our EMS is 21 CFR Part 11 compliant from day one — not retrofitted with a custom-built overlay." },
     { q: "Is Mactus 21 CFR Part 11 compliant?", a: "Yes. Every Mactus product is built around 21 CFR Part 11 requirements from the architecture up — electronic signatures, role-based access, tamper-proof audit trails, and time-stamped event capture. Full GAMP 5 validation documentation is delivered with every install." },
-    { q: "Does Mactus integrate with our existing systems?", a: "Yes. SACS™™ integrates with existing door interlocking. EMS integrates with most BMS platforms — Honeywell, Siemens, Schneider, Johnson Controls. Our IIoT layer is protocol-agnostic — Modbus, OPC-UA, BACnet, MQTT. We connect to your environment; we don't ask you to replace it." },
+    { q: "Does Mactus integrate with our existing systems?", a: "Yes. SACS™ integrates with existing door interlocking. EMS integrates with most BMS platforms — Honeywell, Siemens, Schneider, Johnson Controls. Our IIoT layer is protocol-agnostic — Modbus, OPC-UA, BACnet, MQTT. We connect to your environment; we don't ask you to replace it." },
     { q: "What validation support do you provide?", a: "Full V-model documentation: URS, FDS, DQ, IQ, OQ, PQ, traceability matrix, and risk assessment per GAMP 5 Category 4/5. We've supported customers through USFDA, EU GMP, MHRA, WHO-GMP, and CDSCO inspections." },
-    { q: "How quickly can a Mactus system be deployed?", a: "Standard compliance products (SACS™™, IRS™, IVBLT) deploy in 6 to 10 weeks including validation. Custom integrations (BMS, EMS, LVS) range from 12 to 24 weeks depending on facility scope." },
+    { q: "How quickly can a Mactus system be deployed?", a: "Standard compliance products (SACS™, IRS™, IVBLT) deploy in 6 to 10 weeks including validation. Custom integrations (BMS, EMS, LVS) range from 12 to 24 weeks depending on facility scope." },
     { q: "Are your products suitable for sterile injectable manufacturing?", a: "Yes. Our compliance product line was designed primarily for aseptic and sterile environments. Installed bases at sterile injectable, vaccine, and biologics facilities across India." },
   ];
 
@@ -229,7 +231,7 @@ const HomePage = () => {
     "@type": "Organization",
     "name": "Mactus Automation Pvt. Ltd.",
     "url": "https://www.mactus.in",
-    "logo": "https://mactus.in/wp-content/uploads/2025/09/mlogo-1.png",
+    "logo": homImg1,
     "foundingDate": "2012",
     "telephone": "+918048909888",
     "email": "contact@mactus.in",
@@ -330,7 +332,7 @@ const HomePage = () => {
           <div className="relative animate-float hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10">
               <img
-                src="https://mactus.in/wp-content/uploads/2025/08/iStock-2160382145-1024x576.jpg"
+                src={homImg2}
                 alt="Pharma cleanroom"
                 className="w-full object-cover"
                 style={{ maxHeight: '480px' }}
@@ -340,7 +342,7 @@ const HomePage = () => {
             {/* Floating event card */}
             <div className="absolute bottom-6 left-4 right-4 bg-[#1a1a1a]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[#e0006e] font-black text-[10px] tracking-[0.2em] uppercase">Live Audit Trail · SACS™™</span>
+                <span className="text-[#e0006e] font-black text-[10px] tracking-[0.2em] uppercase">Live Audit Trail · SACS™</span>
                 <span className="flex items-center gap-1.5 text-green-400 text-[10px] font-bold"><span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>RECORDING</span>
               </div>
               {[
@@ -446,7 +448,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
-              { eyebrow: "REGULATORY PRECISION", title: "Pharma Compliance Products", body: "Five purpose-built systems — SACS™™, IRS™, ASDS™, MPATS, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
+              { eyebrow: "REGULATORY PRECISION", title: "Pharma Compliance Products", body: "Five purpose-built systems — SACS™, IRS™, ASDS™, MEM™, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
               { eyebrow: "FACILITY AUTOMATION", title: "System Integration", body: "End-to-end BMS, EMS, and LVS integration for life-science facilities. We deliver URS through PQ, with the validation pack QA expects. Your facility goes from commissioned to qualified without a gap.", href: "/system-integration/", cta: "Explore system integration" },
               { eyebrow: "SMART MANUFACTURING", title: "Industrial IoT (IIoT)", body: "Sensors, controllers, and analytics layered onto existing infrastructure. Real-time visibility into HVAC, utilities, and equipment health — so engineering fixes problems before quality finds them.", href: "/iiot-implementations/", cta: "See IIoT implementations" },
             ].map((card, i) => (

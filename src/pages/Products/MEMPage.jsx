@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
+import ZohoFormModal from '../../components/ZohoFormModal';
 
-import img_1 from '../../assets/images/sacs_1.png';
-import img_2 from '../../assets/images/sacs_2.png';
-import img_3 from '../../assets/images/sacs_3.png';
+import img_1 from '../../assets/images/mem_1.png';
+import img_2 from '../../assets/images/mem_2.png';
+import img_3 from '../../assets/images/mem_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_MEM_BrochureV11.pdf';
 
@@ -24,49 +25,51 @@ const SectionTitle = ({ children, eyebrow, isDark }) => (
 );
 
 const MEMPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [activeStage, setActiveStage] = useState(1);
   const [openFaq, setOpenFaq] = useState(null);
 
   const lifecycleStages = [
-    { 
-      id: 1, 
+    {
+      id: 1,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg>
-      ), 
-      name: "Issuance", 
-      detail: "Each plate receives a unique QR code label. Plate ID, media type, batch, and expiry are recorded. Operator identity captured at issuance." 
+      ),
+      name: "Issuance",
+      detail: "Each plate receives a unique QR code label. Plate ID, media type, batch, and expiry are recorded. Operator identity captured at issuance."
     },
-    { 
-      id: 2, 
+    {
+      id: 2,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
-      ), 
-      name: "Exposure", 
-      detail: "Plate moved to cleanroom sampling location. QR scan links the plate to the exposure location, grade, operator, date, and exposure duration." 
+      ),
+      name: "Exposure",
+      detail: "Plate moved to cleanroom sampling location. QR scan links the plate to the exposure location, grade, operator, date, and exposure duration."
     },
-    { 
-      id: 3, 
+    {
+      id: 3,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
-      ), 
-      name: "Incubation", 
-      detail: "Plate placed in incubator. QR scan logs incubator ID, placement time. Temperature and duration auto-logged from incubator/EMS integration." 
+      ),
+      name: "Incubation",
+      detail: "Plate placed in incubator. QR scan logs incubator ID, placement time. Temperature and duration auto-logged from incubator/EMS integration."
     },
-    { 
-      id: 4, 
+    {
+      id: 4,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-      ), 
-      name: "Reading", 
-      detail: "CFU count entered through guided HMI, e-signed by the reading microbiologist. Automatic comparison against alert and action limits for that location and grade." 
+      ),
+      name: "Reading",
+      detail: "CFU count entered through guided HMI, e-signed by the reading microbiologist. Automatic comparison against alert and action limits for that location and grade."
     },
-    { 
-      id: 5, 
+    {
+      id: 5,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-      ), 
-      name: "Disposition", 
-      detail: "Plate disposed or archived. Final status locked. Batch-level reconciliation report auto-generated — all plates accounted for." 
+      ),
+      name: "Disposition",
+      detail: "Plate disposed or archived. Final status locked. Batch-level reconciliation report auto-generated — all plates accounted for."
     }
   ];
 
@@ -186,19 +189,19 @@ const MEMPage = () => {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mactus.in/" },
-      { "@type": "ListItem", "position": 2, "name": "MEM™™ (Environmental Monitoring)", "item": "https://mactus.in/products/mem" }
+      { "@type": "ListItem", "position": 2, "name": "MEM™ (Environmental Monitoring)", "item": "https://mactus.in/products/mem" }
     ]
   };
 
   useEffect(() => {
-    document.title = "MEM™™ Environmental Monitoring Software for Pharma | 21 CFR Part 11 | Mactus Automation";
+    document.title = "MEM™ Environmental Monitoring Software for Pharma | 21 CFR Part 11 | Mactus Automation";
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', 'MEM™™ is a pharmaceutical environmental monitoring software platform for tracking settle plates, active air, surface, and personnel monitoring with QR-code traceability, electronic signatures, automated reconciliation, and 21 CFR Part 11 compliance.');
+    metaDesc.setAttribute('content', 'MEM™ is a pharmaceutical environmental monitoring software platform for tracking settle plates, active air, surface, and personnel monitoring with QR-code traceability, electronic signatures, automated reconciliation, and 21 CFR Part 11 compliance.');
   }, []);
 
   return (
@@ -213,8 +216,26 @@ const MEMPage = () => {
           0% { transform: translateY(100%); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
         }
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
         .animate-reveal-up {
           animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .shimmer-text {
+          background: linear-gradient(90deg, #e0006e 0%, #ff4b9f 50%, #e0006e 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
         }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -228,16 +249,16 @@ const MEMPage = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
           <div className="space-y-8 animate-fade-in-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
-              MACTUS ENVIRONMENTAL MONITORING
+              COMPLIANCE PRODUCT · MACTUS ENVIRONMENTAL MONITORING
             </div>
 
-            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
+            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Every environmental</span>
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>monitoring sample fully traceable </span>
-                <span className="animate-reveal-up  text-[#e0006e]" style={{ animationDelay: '0.3s' }}>from issuance to disposal.</span>
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>monitoring sample fully traceable from</span>
+                <span className="animate-reveal-up pr-1 shimmer-text text-[#e0006e]" style={{ animationDelay: '0.3s' }}>issuance to disposal.</span>
 
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
@@ -249,21 +270,21 @@ const MEMPage = () => {
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap sm:flex-nowrap">
-              <a href="/contact-us/" className="px-8 py-4 bg-[#e0006e] hover:bg-[#ff1a8c] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[11px] flex items-center gap-2 whitespace-nowrap">
+              <button onClick={() => setIsModalOpen(true)} className="px-8 py-4 bg-[#e0006e] hover:bg-[#ff1a8c] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[11px] flex items-center gap-2 whitespace-nowrap">
                 Request a Demo &rarr;
-              </a>
+              </button>
               <a href={Brochure} className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
-                  Download Brochure
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
-                  </svg>
-                </a>
+                Download Brochure
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
+                </svg>
+              </a>
             </div>
           </div>
 
           <div className="relative animate-fade-in-right animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
-            <ImageCarousel images={[img_1, img_2, img_3]} />
-          </div>
+            <ImageCarousel images={[img_3,img_1, img_2]} />
+          </div> 
         </div>
       </section>
 
@@ -352,7 +373,7 @@ const MEMPage = () => {
                     <div className={`w-24 h-24 rounded-full flex items-center justify-center transition-all duration-300 relative bg-white
                       ${isActive ? 'border-4 border-[#e0006e] text-[#e0006e] shadow-[0_0_30px_rgba(224,0,110,0.2)] scale-110' :
                         isPast ? 'border-2 border-[#e0006e]/50 text-[#e0006e]/50 bg-gray-50' :
-                        'border-2 border-gray-100 text-gray-400 group-hover:border-[#e0006e]/30 group-hover:text-[#e0006e]'}`}
+                          'border-2 border-gray-100 text-gray-400 group-hover:border-[#e0006e]/30 group-hover:text-[#e0006e]'}`}
                     >
                       <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-black text-xs border-4 border-white">
                         {stage.id}
@@ -514,14 +535,15 @@ const MEMPage = () => {
                 If one plate is missing, the audit isn't ready. <span className="text-[#e0006e]">MEM™ makes sure that doesn't happen.</span>
               </h2>
             </div>
-            <a href="/contact-us/" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
+            <button onClick={() => setIsModalOpen(true)} className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
               Request a Demo
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
+      {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
       <Footer />
     </div>
   );

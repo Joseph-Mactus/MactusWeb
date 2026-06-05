@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
+import ZohoFormModal from '../../components/ZohoFormModal';
 
 import irs_1 from '../../assets/images/irs_1.png';
 import irs_2 from '../../assets/images/irs_2.png';
@@ -46,6 +47,8 @@ const FAQAccordion = ({ items }) => {
 };
 
 const IRSPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useState(() => {
     document.title = "Intervention Recording System (IRS™) | Mactus";
   }, []);
@@ -145,7 +148,7 @@ const IRSPage = () => {
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
-              <button className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
+              <button onClick={() => setIsModalOpen(true)} className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
                 Request a Demo
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -200,7 +203,7 @@ const IRSPage = () => {
                   ["Intervention not recorded", "Memory dependent", "Auto-sensor capture"],
                   ["Duration accuracy", "Rough estimate", "Precision millisecond tracking"],
                   ["Excessive interventions", "Hard to track live", "Batch limit enforcement"],
-                  ["Operator attribution", "Manual signing", "Digital link to SACS™™ identity"],
+                  ["Operator attribution", "Manual signing", "Digital link to SACS™ identity"],
                   ["Trending across batches", "Weeks of spreadsheet work", "Instant PQR/APR analytics"],
                 ].map((row, i) => (
                   <tr key={i} className="group hover:bg-gray-50 transition-colors">
@@ -350,7 +353,7 @@ const IRSPage = () => {
                 The next batch starts soon. <span className="text-[#e0006e]">Will every intervention be in the record?</span>
               </h2>
             </div>
-            <button className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
+            <button onClick={() => setIsModalOpen(true)} className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
               Request a Demo
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </button>
@@ -358,7 +361,8 @@ const IRSPage = () => {
         </div>
       </section>
 
-      <Footer />
+      {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
+        <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import iioImg1 from '../assets/images/IIoT/IIOT_Screenshot-2025-07-24-165157-1024x493.png';
 
 const SectionTitle = ({ children, eyebrow, isDark }) => (
   <div className="flex flex-col items-center w-full mb-12 mt-8">
@@ -342,12 +343,12 @@ const IIoT = () => {
               <a href="/contact-us/" className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
                 Request an IIoT Assessment &rarr;
               </a>
-              <a href="#" className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
+              {/* <a href="#" className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
                 Download IIoT Capability Deck
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
                 </svg>
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -356,7 +357,7 @@ const IIoT = () => {
             <div className="relative w-full max-w-2xl mx-auto lg:mx-0 lg:max-w-none lg:w-[125%] bg-white rounded-3xl p-2 shadow-[0_30px_60px_rgba(0,0,0,0.4)] border border-white/10 transition-transform duration-500 hover:scale-[1.02] overflow-hidden group lg:-translate-x-12">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               <img 
-                src="https://mactus.in/wp-content/uploads/2025/07/IIOT_Screenshot-2025-07-24-165157-1024x493.png" 
+                src={iioImg1} 
                 alt="Mactus IIoT Dashboard Screenshot" 
                 className="w-full h-auto rounded-[1.5rem] object-cover relative z-10 shadow-inner"
               />
@@ -366,36 +367,7 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 1.5 — DEMO VIDEO */}
-      <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-[#e0006e] font-black text-sm tracking-[0.2em] uppercase mb-3">Live Telemetry</h2>
-            <h3 className="text-gray-900 font-black text-3xl md:text-4xl tracking-tight">See the IIoT Platform in Action</h3>
-          </div>
-          <div className="relative w-full rounded-3xl p-2 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100 transition-transform duration-500 hover:scale-[1.01]">
-            <div className="flex items-center justify-between px-5 py-3 bg-gray-50 rounded-t-2xl border-b border-gray-100">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span className="text-[9px] font-black tracking-[0.25em] text-gray-500 uppercase">System Active</span>
-              </div>
-            </div>
-            <div className="relative aspect-video w-full rounded-b-2xl overflow-hidden bg-black">
-              <iframe 
-                className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-2xl scale-[1.01]"
-                src="https://www.youtube.com/embed/0kozktJpyII?rel=0&modestbranding=1&controls=1&start=7" 
-                title="IIoT Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* SECTION 2 — THE PROBLEM WE SOLVE */}
       <section className="py-24 px-6 bg-white relative">
@@ -439,6 +411,36 @@ const IIoT = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+       <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-[#e0006e] font-black text-sm tracking-[0.2em] uppercase mb-3">Live Telemetry</h2>
+            <h3 className="text-gray-900 font-black text-3xl md:text-4xl tracking-tight">See the IIoT Platform in Action</h3>
+          </div>
+          <div className="relative w-full rounded-3xl p-2 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100 transition-transform duration-500 hover:scale-[1.01]">
+            <div className="flex items-center justify-between px-5 py-3 bg-gray-50 rounded-t-2xl border-b border-gray-100">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                <div className="w-3 h-3 rounded-full bg-amber-400"></div>
+                <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span className="text-[9px] font-black tracking-[0.25em] text-gray-500 uppercase">System Active</span>
+              </div>
+            </div>
+            <div className="relative aspect-video w-full rounded-b-2xl overflow-hidden bg-black">
+              <iframe 
+                className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-2xl scale-[1.01]"
+                src="https://www.youtube.com/embed/0kozktJpyII?rel=0&modestbranding=1&controls=1&start=7" 
+                title="IIoT Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>

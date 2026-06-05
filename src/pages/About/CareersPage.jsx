@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import ZohoFormModal from '../../components/ZohoFormModal';
 
 // ─── CONFIGURATION ──────────────────────────────────────────────────────────
 // After following the setup guide, paste your Sheet ID here.
@@ -102,7 +103,7 @@ const BulletSection = ({ title, items, dotColor }) => (
   </div>
 );
 
-const JobCard = ({ job }) => {
+const JobCard = ({ job, onApply }) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="bg-white rounded-3xl border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] transition-all overflow-hidden">
@@ -137,10 +138,10 @@ const JobCard = ({ job }) => {
           {job.keyResponsibilities?.length > 0 && <BulletSection title="Key Responsibilities" items={job.keyResponsibilities} dotColor="bg-[#e0006e]/50" />}
           {job.skills?.length > 0 && <BulletSection title="Skills Required" items={job.skills} dotColor="bg-[#e0006e]/50" />}
           <div className="pt-6 mt-6 border-t border-gray-200">
-            <a href={job.applyLink} className="inline-flex items-center gap-2 px-10 py-4 bg-[#e0006e] text-white font-black rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-sm">
+            <button onClick={(e) => { e.stopPropagation(); onApply(); }} className="inline-flex items-center gap-2 px-10 py-4 bg-[#e0006e] text-white font-black rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-sm cursor-pointer">
               Apply Now
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -152,6 +153,7 @@ const CareersPage = () => {
   useEffect(() => { document.title = "Careers | Mactus"; }, []);
   const [jobs, setJobs] = useState([]);
   const [status, setStatus] = useState('loading');
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -186,14 +188,14 @@ const CareersPage = () => {
 
       {/* Hero */}
       <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
-        <div className="absolute inset-0 z-0 opacity-20" style={{backgroundImage:'radial-gradient(#e0006e 0.5px,transparent 0.5px)',backgroundSize:'32px 32px'}}></div>
+        <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px,transparent 0.5px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#1a1a1a] z-0"></div>
         <div className="relative z-10 max-w-5xl mx-auto space-y-6">
           <h1 className="text-white font-black text-5xl md:text-7xl lg:text-9xl leading-tight tracking-tighter uppercase italic">
-            <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block" style={{animationDelay:'0.2s'}}>Join Us at</span></span>
-            <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block shimmer-text pr-10" style={{animationDelay:'0.4s'}}>Mactus!</span></span>
+            <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>Join Us at</span></span>
+            <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.4s' }}>Mactus!</span></span>
           </h1>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium opacity-80 animate-reveal-up" style={{animationDelay:'0.6s'}}>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
             At Mactus Automation, we specialize in Pharma Industry Automation. We are looking for passionate individuals who want to drive innovation and transform industries with cutting-edge automation solutions.
           </p>
         </div>
@@ -239,7 +241,7 @@ const CareersPage = () => {
                 <p className="text-gray-400 text-sm mt-2">Send your resume to <a href="mailto:careers@mactus.in" className="text-[#e0006e] font-bold">careers@mactus.in</a> and we'll reach out when something fits!</p>
               </div>
             )}
-            {status === 'success' && jobs.map(job => <JobCard key={job.id} job={job} />)}
+            {status === 'success' && jobs.map(job => <JobCard key={job.id} job={job} onApply={() => setIsResumeModalOpen(true)} />)}
           </div>
         </div>
       </section>
@@ -255,14 +257,22 @@ const CareersPage = () => {
                 We're always looking for talented people. Send your resume to <a href="mailto:careers@mactus.in" className="text-white hover:text-[#e0006e] font-bold underline transition-colors">careers@mactus.in</a> and we'll reach out when the right opportunity comes up.
               </p>
             </div>
-            <a href="mailto:careers@mactus.in?subject=Open Application" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap text-sm">
+            <button onClick={() => setIsResumeModalOpen(true)} className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap text-sm cursor-pointer">
               Send Your Resume
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
+      {isResumeModalOpen && (
+        <ZohoFormModal
+          title="Send Your Resume"
+          formUrl="https://forms.zohopublic.in/mactus1/form/SendYourResume/formperma/drhsoJ2ycjb1WjTWTih58_NuAPgDTQdGf_R_y3vAlqQ"
+          height="2000px"
+          onClose={() => setIsResumeModalOpen(false)}
+        />
+      )}
       <Footer />
     </div>
   );

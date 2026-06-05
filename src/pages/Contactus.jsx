@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -14,380 +14,10 @@ const SectionTitle = ({ children }) => (
     </div>
 );
 
-// ── Field Components ──────────────────────────────────────────────────────────
-const Label = ({ htmlFor, children, required }) => (
-    <label htmlFor={htmlFor} className="block text-sm font-bold text-gray-800 mb-1.5">
-        {children}
-        {required && <span className="text-[#e0006e] ml-1">*</span>}
-    </label>
-);
-
-const FieldError = ({ msg }) =>
-    msg ? <p className="mt-1 text-xs text-red-500 font-semibold">{msg}</p> : null;
-
-const inputBase =
-    'w-full px-4 py-3 rounded-xl border bg-white text-gray-900 text-sm font-medium transition-all duration-200 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-[#e0006e]/30';
-const inputNormal = `${inputBase} border-gray-200 focus:border-[#e0006e]`;
-const inputError = `${inputBase} border-red-400 focus:border-red-500 focus:ring-red-200`;
-
-// ── Spinner SVG ───────────────────────────────────────────────────────────────
-const Spinner = () => (
-    <svg className="animate-spin h-4 w-4 text-white inline-block mr-2" fill="none" viewBox="0 0 24 24">
-        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-    </svg>
-);
-
-// ── Success Card ──────────────────────────────────────────────────────────────
-const SuccessCard = ({ firstName, heading, body, urgent }) => (
-    <div className="flex flex-col items-center justify-center text-center py-16 px-8 space-y-6 animate-fade-in">
-        <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center border-4 border-green-100">
-            <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-            </svg>
-        </div>
-        <div className="space-y-3">
-            <h3 className="text-2xl font-black text-gray-900">{heading.replace('[First Name]', firstName)}</h3>
-            <p className="text-gray-500 leading-relaxed max-w-sm">{body}</p>
-            {urgent && (
-                <p className="text-sm text-gray-400">
-                    For urgent issues, call{' '}
-                    <a href="tel:+918048909888" className="text-[#e0006e] font-bold hover:underline">+91 80 4890 9888</a>.
-                </p>
-            )}
-        </div>
-        <a
-            href="/"
-            className="mt-4 px-8 py-3 bg-[#1a1a1a] text-white font-extrabold rounded-xl hover:bg-[#e0006e] transition-colors duration-300 text-sm tracking-widest uppercase"
-        >
-            Back to Home
-        </a>
-    </div>
-);
-
-// ── SALES FORM ────────────────────────────────────────────────────────────────
-
-const SalesForm = () => {
-    const [data, setData] = useState({
-        name: '', company: '', title: '', email: '',
-        phone: '', product: '', facilityType: '', message: ''
-    });
-    const [errors, setErrors] = useState({});
-    const [submitted, setSubmitted] = useState(false);
-    const [submitting, setSubmitting] = useState(false);
-    const [apiError, setApiError] = useState('');
-
-    const set = (field) => (e) => setData(prev => ({ ...prev, [field]: e.target.value }));
-
-    const validate = () => {
-        const e = {};
-        if (!data.name.trim()) e.name = 'Full name is required.';
-        if (!data.company.trim()) e.company = 'Company name is required.';
-        if (!data.title.trim()) e.title = 'Job title is required.';
-        if (!data.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
-            e.email = 'A valid email address is required.';
-        if (!data.phone.trim()) e.phone = 'Phone number is required.';
-        if (!data.product || data.product === '')
-            e.product = 'Please select a product or service.';
-        setErrors(e);
-        return Object.keys(e).length === 0;
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!validate()) return;
-        setSubmitting(true);
-        setApiError('');
-        try {
-            await fetch('/api/contact-sales', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            setSubmitted(true);
-        } catch {
-            setApiError('Something went wrong. Please try again or call us at +91 80 4890 9888.');
-        } finally {
-            setSubmitting(false);
-        }
-    };
-
-    const cls = (field) => errors[field] ? inputError : inputNormal;
-
-    if (submitted) {
-        return (
-            <SuccessCard
-                firstName={data.name.split(' ')[0]}
-                heading="Thank you, [First Name]."
-                body="Your enquiry has been received. A Mactus representative will be in touch within 1 business day."
-            />
-        );
-    }
-
-    return (
-        <div className="space-y-5">
-            {/* Name */}
-            <div>
-                <Label htmlFor="s-name" required>Full Name</Label>
-                <input id="s-name" type="text" value={data.name} onChange={set('name')}
-                    placeholder="Your full name" className={cls('name')} />
-                <FieldError msg={errors.name} />
-            </div>
-
-            {/* Company */}
-            <div>
-                <Label htmlFor="s-company" required>Company Name</Label>
-                <input id="s-company" type="text" value={data.company} onChange={set('company')}
-                    placeholder="Your organisation" className={cls('company')} />
-                <FieldError msg={errors.company} />
-            </div>
-
-            {/* Job Title */}
-            <div>
-                <Label htmlFor="s-title" required>Job Title</Label>
-                <input id="s-title" type="text" value={data.title} onChange={set('title')}
-                    placeholder="e.g. Head of Engineering, QA Manager" className={cls('title')} />
-                <FieldError msg={errors.title} />
-            </div>
-
-            {/* Email */}
-            <div>
-                <Label htmlFor="s-email" required>Email Address</Label>
-                <input id="s-email" type="email" value={data.email} onChange={set('email')}
-                    placeholder="work@yourcompany.com" className={cls('email')} />
-                <FieldError msg={errors.email} />
-            </div>
-
-            {/* Phone */}
-            <div>
-                <Label htmlFor="s-phone" required>Phone Number</Label>
-                <input id="s-phone" type="tel" value={data.phone} onChange={set('phone')}
-                    placeholder="+91 XXXXX XXXXX" className={cls('phone')} />
-                <FieldError msg={errors.phone} />
-            </div>
-
-            {/* Product */}
-            <div>
-                <Label htmlFor="s-product" required>Product / Service of Interest</Label>
-                <select id="s-product" value={data.product} onChange={set('product')} className={cls('product')}>
-                    <option value="" disabled>-- Select a product or service --</option>
-                    <option>Smart Access Control System (SACS™™)</option>
-                    <option>Intervention Recording System (IRS™)</option>
-                    <option>Automated Solution Dispensing System (ASDS™)</option>
-                    <option>MEM™ – Environmental Monitoring (formerly MPATS)</option>
-                    <option>Intravenous Bag Leak Tester (IVBLT)</option>
-                    <option>Building Management System (BMS)</option>
-                    <option>Environmental Monitoring System (EMS)</option>
-                    <option>Low Voltage Systems (LVS)</option>
-                    <option>IIoT Implementation</option>
-                    <option>Multiple / Not sure yet</option>
-                </select>
-                <FieldError msg={errors.product} />
-            </div>
-
-            {/* Facility Type (optional) */}
-            <div>
-                <Label htmlFor="s-facility">Facility Type <span className="text-gray-400 font-normal text-xs">(optional)</span></Label>
-                <select id="s-facility" value={data.facilityType} onChange={set('facilityType')} className={inputNormal}>
-                    <option value="">-- Select facility type --</option>
-                    <option>Sterile Injectable Manufacturing</option>
-                    <option>Oral Solid Dosage</option>
-                    <option>Biologics / Vaccine</option>
-                    <option>API Manufacturing</option>
-                    <option>Hospital / Compounding Pharmacy</option>
-                    <option>Industrial / Non-Pharma</option>
-                    <option>Other</option>
-                </select>
-            </div>
-
-            {/* Message (optional) */}
-            <div>
-                <Label htmlFor="s-message">Message <span className="text-gray-400 font-normal text-xs">(optional)</span></Label>
-                <textarea id="s-message" rows={4} value={data.message} onChange={set('message')}
-                    placeholder="Tell us about your facility, timeline, or specific requirements..."
-                    className={`${inputNormal} resize-none`} />
-            </div>
-
-            {/* API error */}
-            {apiError && (
-                <p className="text-sm text-red-500 font-semibold">{apiError}</p>
-            )}
-
-            {/* Submit */}
-            <button
-                onClick={handleSubmit}
-                disabled={submitting}
-                className="w-full py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-widest text-[11px] disabled:opacity-70 disabled:cursor-not-allowed"
-            >
-                {submitting ? <><Spinner />Sending…</> : 'Send Enquiry →'}
-            </button>
-            <p className="text-center text-xs text-gray-400 font-medium">We typically respond within 1 business day.</p>
-        </div>
-    );
-};
-
-// ── SUPPORT FORM ──────────────────────────────────────────────────────────────
-const SupportForm = () => {
-    const [data, setData] = useState({
-        name: '', company: '', email: '', phone: '',
-        product: '', issueType: '', description: ''
-    });
-    const [errors, setErrors] = useState({});
-    const [submitted, setSubmitted] = useState(false);
-    const [submitting, setSubmitting] = useState(false);
-    const [apiError, setApiError] = useState('');
-
-    const set = (field) => (e) => setData(prev => ({ ...prev, [field]: e.target.value }));
-
-    const validate = () => {
-        const e = {};
-        if (!data.name.trim()) e.name = 'Full name is required.';
-        if (!data.company.trim()) e.company = 'Company name is required.';
-        if (!data.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
-            e.email = 'A valid email address is required.';
-        if (!data.phone.trim()) e.phone = 'Phone number is required.';
-        if (!data.product || data.product === '')
-            e.product = 'Please select a product.';
-        if (!data.issueType || data.issueType === '')
-            e.issueType = 'Please select an issue type.';
-        if (!data.description.trim())
-            e.description = 'Please describe your issue.';
-        setErrors(e);
-        return Object.keys(e).length === 0;
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!validate()) return;
-        setSubmitting(true);
-        setApiError('');
-        try {
-            await fetch('/api/contact-support', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            setSubmitted(true);
-        } catch {
-            setApiError('Something went wrong. Please try again or call us at +91 80 4890 9888.');
-        } finally {
-            setSubmitting(false);
-        }
-    };
-
-    const cls = (field) => errors[field] ? inputError : inputNormal;
-
-    if (submitted) {
-        return (
-            <SuccessCard
-                firstName={data.name.split(' ')[0]}
-                heading="Support request submitted, [First Name]."
-                body="Our technical team will reach out shortly."
-                urgent
-            />
-        );
-    }
-
-    return (
-        <div className="space-y-5">
-            {/* Name */}
-            <div>
-                <Label htmlFor="t-name" required>Full Name</Label>
-                <input id="t-name" type="text" value={data.name} onChange={set('name')}
-                    placeholder="Your full name" className={cls('name')} />
-                <FieldError msg={errors.name} />
-            </div>
-
-            {/* Company */}
-            <div>
-                <Label htmlFor="t-company" required>Company Name</Label>
-                <input id="t-company" type="text" value={data.company} onChange={set('company')}
-                    placeholder="Your organisation" className={cls('company')} />
-                <FieldError msg={errors.company} />
-            </div>
-
-            {/* Email */}
-            <div>
-                <Label htmlFor="t-email" required>Email Address</Label>
-                <input id="t-email" type="email" value={data.email} onChange={set('email')}
-                    placeholder="work@yourcompany.com" className={cls('email')} />
-                <FieldError msg={errors.email} />
-            </div>
-
-            {/* Phone */}
-            <div>
-                <Label htmlFor="t-phone" required>Phone Number</Label>
-                <input id="t-phone" type="tel" value={data.phone} onChange={set('phone')}
-                    placeholder="+91 XXXXX XXXXX" className={cls('phone')} />
-                <FieldError msg={errors.phone} />
-            </div>
-
-            {/* Product */}
-            <div>
-                <Label htmlFor="t-product" required>Product</Label>
-                <select id="t-product" value={data.product} onChange={set('product')} className={cls('product')}>
-                    <option value="" disabled>-- Select product --</option>
-                    {['SACS™™', 'IRS™', 'ASDS™', 'MEM™ (MPATS)', 'IVBLT', 'BMS', 'EMS', 'Low Voltage Systems', 'IIoT', 'Other'].map(p => (
-                        <option key={p}>{p}</option>
-                    ))}
-                </select>
-                <FieldError msg={errors.product} />
-            </div>
-
-            {/* Issue Type */}
-            <div>
-                <Label htmlFor="t-issue" required>Issue Type</Label>
-                <select id="t-issue" value={data.issueType} onChange={set('issueType')} className={cls('issueType')}>
-                    <option value="" disabled>-- Select issue type --</option>
-                    {[
-                        'Software / System issue',
-                        'Hardware fault',
-                        'Calibration / Qualification',
-                        'User access / Credentials',
-                        'Report or data export',
-                        'Integration issue',
-                        'Training request',
-                        'AMC / Service contract enquiry',
-                        'Other'
-                    ].map(t => <option key={t}>{t}</option>)}
-                </select>
-                <FieldError msg={errors.issueType} />
-            </div>
-
-            {/* Description */}
-            <div>
-                <Label htmlFor="t-desc" required>Description of Issue</Label>
-                <textarea id="t-desc" rows={5} value={data.description} onChange={set('description')}
-                    placeholder="Describe the issue, including any error messages, affected areas, and when it started..."
-                    className={`${cls('description')} resize-none`} />
-                <FieldError msg={errors.description} />
-            </div>
-
-            {/* API error */}
-            {apiError && (
-                <p className="text-sm text-red-500 font-semibold">{apiError}</p>
-            )}
-
-            {/* Submit — outlined style to differentiate */}
-            <button
-                onClick={handleSubmit}
-                disabled={submitting}
-                className="w-full py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-widest text-[11px] disabled:opacity-70 disabled:cursor-not-allowed"
-            >
-                {submitting ? <><Spinner />Submitting…</> : 'Submit Support Request →'}
-            </button>
-            <p className="text-center text-xs text-gray-400 font-medium">
-                For urgent issues, call{' '}
-                <a href="tel:+918048909888" className="text-[#e0006e] font-bold hover:underline">+91 80 4890 9888</a> directly.
-            </p>
-        </div>
-    );
-};
-
 // ── MAIN PAGE ─────────────────────────────────────────────────────────────────
 const ContactUs = () => {
-    const [showSalesForm, setShowSalesForm] = useState(false);
-    const [showSupportForm, setShowSupportForm] = useState(false);
+    const [openForm, setOpenForm] = useState(null);
+
     return (
         <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
             <Navbar />
@@ -433,7 +63,7 @@ const ContactUs = () => {
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s linear infinite;
         }
-        .animate-fade-in { animation: fade-in 0.5s ease forwards; }
+        .animate-fade-in { animation: fade-in 0.3s ease forwards; }
       `}</style>
 
             {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
@@ -499,10 +129,9 @@ const ContactUs = () => {
                     <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
                         {/* Left — Sales */}
                         <div
-                            onClick={() => setShowSalesForm(true)}
-                            className="bg-white rounded-t-[2.5rem] lg:rounded-l-[2.5rem] lg:rounded-tr-none border border-gray-100 shadow-sm p-8 md:p-12 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                            className={`bg-white rounded-t-[2.5rem] lg:rounded-l-[2.5rem] lg:rounded-tr-none border border-gray-100 shadow-sm p-8 md:p-12 transition-all duration-300 ${openForm === 'sales' ? 'shadow-xl' : 'hover:shadow-xl hover:-translate-y-1 cursor-pointer'}`}
+                            onClick={() => { if (openForm !== 'sales') setOpenForm('sales'); }}
                         >
-                            {/* Card header */}
                             <div className="flex items-center gap-4 mb-3">
                                 <div className="w-12 h-12 rounded-2xl bg-[#e0006e]/10 flex items-center justify-center">
                                     <svg
@@ -536,29 +165,34 @@ const ContactUs = () => {
                                 will connect with you to discuss your needs in detail.
                             </p>
 
-                            {!showSalesForm && (
-                                <button className="px-6 py-3 rounded-xl bg-[#e0006e] text-white font-bold text-sm hover:bg-[#c70061] transition-colors">
+                            {openForm === 'sales' ? (
+                                <div className="mt-8 animate-fade-in relative">
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); setOpenForm(null); }}
+                                        className="mb-4 flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-[#e0006e] transition-colors"
+                                    >
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                        Close Form
+                                    </button>
+                                    <iframe
+                                        aria-label="Contact Us"
+                                        frameBorder="0"
+                                        style={{ height: "1000px", width: "100%", border: "none" }}
+                                        src="https://forms.zohopublic.in/mactus1/form/ContactUs1/formperma/RudU9kD9cf9xHJ0kV-09fcEho3hfYURS8kYyYU9IWIs"
+                                        title="Contact Us"
+                                    />
+                                </div>
+                            ) : (
+                                <button className="mt-4 px-6 py-2.5 bg-[#e0006e] text-white font-bold rounded-xl text-sm hover:bg-[#ff4b9f] transition-colors shadow-md pointer-events-none">
                                     Open Sales Form
                                 </button>
                             )}
-
-                            <div
-                                className={`transition-all duration-500 overflow-hidden ${showSalesForm
-                                    ? 'max-h-[1200px] opacity-100 mt-8'
-                                    : 'max-h-0 opacity-0'
-                                    }`}
-                            >
-                                <SalesForm />
-                            </div>
                         </div>
 
-
-
-                        {/* Right — Support */}
                         {/* Right — Support */}
                         <div
-                            onClick={() => setShowSupportForm(true)}
-                            className="bg-white rounded-b-[2.5rem] lg:rounded-r-[2.5rem] lg:rounded-bl-none border border-gray-100 border-l-0 shadow-sm p-8 md:p-12 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                            className={`bg-white rounded-b-[2.5rem] lg:rounded-r-[2.5rem] lg:rounded-bl-none border border-gray-100 border-l-0 shadow-sm p-8 md:p-12 transition-all duration-300 ${openForm === 'support' ? 'shadow-xl' : 'hover:shadow-xl hover:-translate-y-1 cursor-pointer'}`}
+                            onClick={() => { if (openForm !== 'support') setOpenForm('support'); }}
                         >
                             <div className="flex items-center gap-4 mb-3">
                                 <div className="w-12 h-12 rounded-2xl bg-[#e0006e]/10 flex items-center justify-center">
@@ -599,20 +233,28 @@ const ContactUs = () => {
                                 will reach out to assist you.
                             </p>
 
-                            {!showSupportForm && (
-                                <button className="px-6 py-3 rounded-xl bg-[#e0006e] text-white font-bold text-sm hover:bg-[#c70061] transition-colors">
+                            {openForm === 'support' ? (
+                                <div className="mt-8 animate-fade-in relative">
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); setOpenForm(null); }}
+                                        className="mb-4 flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-[#e0006e] transition-colors"
+                                    >
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                        Close Form
+                                    </button>
+                                    <iframe
+                                        aria-label="Technical Support Request"
+                                        frameBorder="0"
+                                        style={{ height: "1100px", width: "100%", border: "none" }}
+                                        src="https://forms.zohopublic.in/mactus1/form/TechnicalSupportRequest/formperma/M_QXRl9J2AB5-TNp92O0wRqr93xVXTVzBO7mO3mhfd8"
+                                        title="Technical Support Request"
+                                    />
+                                </div>
+                            ) : (
+                                <button className="mt-4 px-6 py-2.5 bg-[#e0006e] text-white font-bold rounded-xl text-sm hover:bg-[#ff4b9f] transition-colors shadow-md pointer-events-none">
                                     Open Support Form
                                 </button>
                             )}
-
-                            <div
-                                className={`transition-all duration-500 overflow-hidden ${showSupportForm
-                                    ? 'max-h-[1400px] opacity-100 mt-8'
-                                    : 'max-h-0 opacity-0'
-                                    }`}
-                            >
-                                <SupportForm />
-                            </div>
                         </div>
                     </div>
                 </div>

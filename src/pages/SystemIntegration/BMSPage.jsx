@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import bmsImg1 from '../../assets/images/BMSPage/iStock-2160382145-1024x576.jpg';
+import bmsImg2 from '../../assets/images/BMSPage/WhatsApp-Image-2025-04-08-at-6.03.36-PM-1-scaled-ra3ga84nbbvx5idk6b75jufccm9muxvwaj49306ccg.jpeg';
 
 const SectionTitle = ({ children, eyebrow, isDark }) => (
   <div className="flex flex-col items-center w-full mb-12 mt-8">
@@ -202,7 +204,7 @@ const BMSPage = () => {
           <div className="relative animate-float lg:justify-self-end w-full max-w-xl mx-auto lg:mx-0">
             <div className="relative rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.4)] border border-white/10">
               <img
-                src="https://mactus.in/wp-content/uploads/2025/08/iStock-2160382145-1024x576.jpg"
+                src={bmsImg1}
                 alt="Building Management System"
                 className="w-full h-full object-cover"
               />
@@ -297,7 +299,7 @@ const BMSPage = () => {
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 group">
               <img
-                src="https://mactus.in/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-04-08-at-6.03.36-PM-1-scaled-ra3ga84nbbvx5idk6b75jufccm9muxvwaj49306ccg.jpeg"
+                src={bmsImg2}
                 alt="BMS Control Panel"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />
@@ -400,7 +402,7 @@ const BMSPage = () => {
                 <video
                   controls
                   preload="metadata"
-                  poster="https://mactus.in/wp-content/uploads/2025/08/iStock-2160382145-1024x576.jpg"
+                  poster={bmsImg1}
                   className="w-full"
                   style={{ display: 'block' }}
                 >

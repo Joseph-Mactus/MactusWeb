@@ -1,6 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import comImg1 from '../assets/images/Complianceproductspage/ChatGPT-Image-Apr-14-2025-04_27_52-PM-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
+import comImg2 from '../assets/images/Complianceproductspage/Untitled-design-10-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
+import comImg3 from '../assets/images/Complianceproductspage/Screenshot-2025-04-03-130453-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
+import comImg4 from '../assets/images/Complianceproductspage/EMPATS-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png';
+import comImg5 from '../assets/images/Complianceproductspage/20250808_1258_Pharmaceutical-Equipment-Setup_remix_01k2498vpgfns854fcb9g4y4ch-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png';
+import ZohoFormModal from '../components/ZohoFormModal';
 
 // ─── Section Title ────────────────────────────────────────────────────────────
 
@@ -21,18 +27,18 @@ const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
 const products = [
   {
     id: 'sacs',
-    tag: 'SACS™™',
+    tag: 'SACS™',
     name: 'Smart Access Control System',
     positioning: 'The cleanroom door is where contamination risk and compliance risk both begin.',
-    description: 'Mactus SACS™™ is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
+    description: 'Mactus SACS™ is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
     capabilities: [
       'Biometric authentication — fingerprint and face recognition',
       'SOP-enforced gowning sequence before cleanroom entry',
       '21 CFR Part 11 compliant audit trail — every entry timestamped and signed',
       'Real-time occupancy and access reports for QA review',
     ],
-    image: 'https://mactus.in/wp-content/uploads/elementor/thumbs/ChatGPT-Image-Apr-14-2025-04_27_52-PM-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png',
-    link: '/sacs-2/',
+    image: comImg1,
+    link: '/products/sacs',
     note: null,
   },
   {
@@ -47,8 +53,8 @@ const products = [
       'Electronic supervisor sign-off bound to each event',
       'Real-time intervention count and duration trending per batch',
     ],
-    image: 'https://mactus.in/wp-content/uploads/elementor/thumbs/Untitled-design-10-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png',
-    link: '/irs/',
+    image: comImg2,
+    link: '/products/irs/',
     note: null,
   },
   {
@@ -63,14 +69,14 @@ const products = [
       'On-demand preparation — eliminates over-preparation and waste',
       'Mobile, SS-fabricated — wheels between cleanrooms',
     ],
-    image: 'https://mactus.in/wp-content/uploads/elementor/thumbs/Screenshot-2025-04-03-130453-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png',
-    link: '/products/automated-solution-dispensing-system/',
+    image: comImg3,
+    link: '/products/asds/',
     note: null,
   },
   {
     id: 'mem',
-    tag: 'MEM™™',
-    name: 'MEM™™ — Mactus Environmental Monitoring',
+    tag: 'MEM™',
+    name: 'MEM™ — Mactus Environmental Monitoring',
     positioning: 'One unaccounted-for media plate can delay batch release. MEM™ makes sure that never happens.',
     description: 'MEM™ digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
     capabilities: [
@@ -79,9 +85,9 @@ const products = [
       'E-signed CFU readings — bound to the reading microbiologist',
       'EU GMP Annex 1 and 21 CFR Part 11 aligned',
     ],
-    image: 'https://mactus.in/wp-content/uploads/elementor/thumbs/EMPATS-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png',
+    image: comImg4,
     link: '/products/mem/',
-    note: 'Previously listed as MPATS — now MEM™™',
+    note: 'Previously listed as MPATS — now MEM™',
   },
   {
     id: 'ivblt',
@@ -95,8 +101,8 @@ const products = [
       'Electronic test records — batch, operator, result, timestamp',
       'Reduces patient safety risk and batch rejection at distribution',
     ],
-    image: 'https://mactus.in/wp-content/uploads/elementor/thumbs/20250808_1258_Pharmaceutical-Equipment-Setup_remix_01k2498vpgfns854fcb9g4y4ch-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png',
-    link: '/intravenous-bag-leak-tester/',
+    image: comImg5,
+    link: '/products/ivblt',
     note: null,
   },
 ];
@@ -113,11 +119,11 @@ const standards = [
 ];
 
 const tableRows = [
-  { product: 'SACS™™', link: '/sacs-2/', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
-  { product: 'IRS™', link: '/irs/', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'ASDS™', link: '/products/automated-solution-dispensing-system/', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'MEM™™', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
-  { product: 'IVBLT', link: '/intravenous-bag-leak-tester/', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'SACS™', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
+  { product: 'IRS™', link: '/products/irs', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'ASDS™', link: '/products/asds', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'MEM™', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
+  { product: 'IVBLT™', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
 ];
 
 const validationDocs = [
@@ -211,13 +217,15 @@ const ProductCard = ({ product, index }) => {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 const ComplianceProductsPage = () => {
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
 
   useEffect(() => {
     document.title = "Pharma Compliance Products | 21 CFR Part 11 GMP Systems | Mactus Automation";
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
-    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS™™, IRS™, ASDS™, MEM™, IVBLT. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
+    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS™, IRS™, ASDS™, MEM™, IVBLT™. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
   }, []);
 
   return (
@@ -253,7 +261,7 @@ const ComplianceProductsPage = () => {
 
           {/* Left */}
           <div className="space-y-8">
-           
+
 
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.15em] uppercase">
               <span className="relative flex h-2 w-2">
@@ -285,10 +293,10 @@ const ComplianceProductsPage = () => {
             <div className="relative w-full max-w-sm">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: 'SACS™™', sub: 'Access Control', num: '01' },
+                  { label: 'SACS™', sub: 'Access Control', num: '01' },
                   { label: 'IRS™', sub: 'Interventions', num: '02' },
                   { label: 'ASDS™', sub: 'Dispensing', num: '03' },
-                  { label: 'MEM™™', sub: 'Env. Monitoring', num: '04' },
+                  { label: 'MEM™', sub: 'Env. Monitoring', num: '04' },
                 ].map((item, i) => (
                   <div key={i} className={`bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#e0006e]/40 hover:bg-white/10 transition-all duration-300 ${i === 0 ? 'mt-6' : ''} ${i === 3 ? '-mt-6' : ''}`}>
                     <p className="text-[#e0006e] font-black text-[10px] tracking-widest uppercase mb-1">{item.num}</p>
@@ -323,7 +331,7 @@ const ComplianceProductsPage = () => {
         </div>
       </section>
 
-      
+
 
       {/* ── SECTION 6 — COMPARISON TABLE ─────────────────────────────────────── */}
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
@@ -399,6 +407,7 @@ const ComplianceProductsPage = () => {
         </div>
       </section>
 
+      {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
       <Footer />
     </div>
   );

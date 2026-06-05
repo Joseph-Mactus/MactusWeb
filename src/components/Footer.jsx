@@ -22,7 +22,7 @@ const FOOTER_COLS = [
       },
       {
         name: "IVBLT™ (Intravenous Bag Leak Tester)",
-        path: "#"
+        path: "/products/ivblt"
       }
     ]
   },

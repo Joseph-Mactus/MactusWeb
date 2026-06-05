@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import lowImg1 from '../../assets/images/Lowvoltagesystems/iStock-535197853-scaled-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.jpg';
+import lowImg2 from '../../assets/images/Lowvoltagesystems/iStock-803960996-scaled-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.jpg';
+import lowImg3 from '../../assets/images/Lowvoltagesystems/iStock-528296984-scaled-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.jpg';
+import lowImg4 from '../../assets/images/Lowvoltagesystems/door-interlock-ra3ga84zseh6x39aept56g8834ozf7u0206ym3srjw.png';
+import lowImg5 from '../../assets/images/Lowvoltagesystems/iStock-146878726-scaled-ra3ga84zseh9zkuxk4m0gilq57gm43mog10mx1s0eq.jpg';
+import lowImg6 from '../../assets/images/Lowvoltagesystems/pharma-camera-ra3ga84zseh85aaqva4ow2s0wrefp65h0ex8c2znw8.png';
+import lowImg7 from '../../assets/images/Lowvoltagesystems/centrol-clock-system-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
+import lowImg8 from '../../assets/images/Lowvoltagesystems/gas-detection-created-1-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
+import lowImg9 from '../../assets/images/Lowvoltagesystems/aiease_1748949958369-768x526.jpg';
 
 // ── Shared design tokens (identical to SACS™ page) ────────────────────────────
 
@@ -19,41 +28,49 @@ const systems = [
   {
     title: 'Fire Alarm System',
     icon: 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z',
+    image: lowImg1,
     desc: 'Mactus designs and integrates addressable fire alarm systems compliant with NBC and local fire safety codes, engineered for the unique demands of pharmaceutical manufacturing and cleanroom environments. Each zone is mapped to your facility layout, enabling precise identification of alarm origins and rapid response protocols. Our systems integrate seamlessly with BMS and emergency response infrastructure, ensuring that every second counts when it matters most.',
   },
   {
     title: 'Public Addressing System',
     icon: 'M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z',
+    image: lowImg2,
     desc: 'Our PA systems are engineered to deliver intelligible, high-clarity voice communication across large and acoustically challenging facilities — including noisy manufacturing floors, warehouse areas, and multi-floor office complexes. Pre-recorded evacuation messages, live broadcast zones, and zonal paging ensure that the right message reaches the right area instantly. This is a critical life-safety layer that Mactus integrates with fire alarm and BMS systems for coordinated emergency response.',
   },
   {
     title: 'Access Controlling System',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    image: lowImg3,
     desc: 'Mactus deploys enterprise-grade access control systems using RFID, biometrics, and smart card technology to enforce entry restrictions across regulated zones, server rooms, and restricted production areas. All access events are time-stamped, logged, and exportable — providing the audit-ready records essential for CGMP, FDA, and ISO compliance. Integration with HRMS and training databases ensures only currently certified personnel can access designated areas.',
   },
   {
     title: 'Door Interlocking System',
     icon: 'M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z',
+    image: lowImg4,
     desc: 'Cleanroom integrity depends on maintaining precise pressure differentials, and our door interlocking systems ensure that only one door in an airlock can open at any given time — preventing cross-contamination and uncontrolled airflow between classified zones. Mactus systems support both mechanical and electronic interlocking with configurable logic for Grade A/B/C/D environments. Every interlock event is logged, making these systems a core component of your 21 CFR Part 11 and EU GMP compliance stack.',
   },
   {
     title: 'Emergency Talk Back System',
     icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
+    image: lowImg5,
     desc: 'In a facility emergency, clear two-way communication between control rooms, floor personnel, and security is not optional — it is life-critical. Mactus installs dedicated emergency talk-back stations at strategic locations, enabling hands-free, noise-cancelling intercom communication that functions independently of the main telephony infrastructure. These systems are designed to remain operational during power failures via UPS backup, and can be integrated with fire alarm and CCTV systems for unified incident management.',
   },
   {
     title: 'Closed Circuit Television (CCTV)',
     icon: 'M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.902L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
+    image: lowImg6,
     desc: 'Mactus designs and installs IP-based CCTV surveillance systems with high-resolution cameras, intelligent video analytics, and centralised NVR/DVR recording infrastructure suitable for both indoor cleanroom corridors and outdoor perimeter security. Camera placements are mapped to your facility\'s risk zones — including entry points, server rooms, production floors, and material airlocks — ensuring comprehensive coverage with no blind spots. Footage is retained and stored in compliance with regulatory and internal audit requirements.',
   },
   {
     title: 'Central Clock System',
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    image: lowImg7,
     desc: 'Accurate, synchronised timekeeping is a fundamental GMP requirement — every batch record, audit trail, and electronic signature depends on a consistent, traceable time source. Mactus installs NTP-based master clock systems that synchronise all facility clocks, SCADA timestamps, access control logs, and BMS events to a single authoritative time reference. This eliminates discrepancies between system logs and ensures that your data integrity posture is unassailable during regulatory inspections.',
   },
   {
     title: 'Gas Detection System',
     icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-1M9 9h6',
+    image: lowImg8,
     desc: 'Pharmaceutical and industrial facilities routinely work with flammable solvents, toxic gases, and oxygen-displacing agents — making a reliable gas detection system a non-negotiable safety investment. Mactus integrates fixed-point and addressable gas detectors calibrated for your specific hazardous substances, with real-time alarming, automatic ventilation activation, and BMS integration to isolate affected zones before a hazard escalates. Our systems comply with ATEX, IEC, and relevant Indian safety standards, providing documented evidence of safety compliance for insurance and regulatory audits.',
   },
 ];
@@ -126,10 +143,33 @@ const LowVoltageSystems = () => {
           box-shadow: 0 40px 80px rgba(0,0,0,0.07);
           border-color: rgba(224,0,110,0.15);
         }
+        .hero-image-frame {
+          position: relative;
+        }
+        .hero-image-frame::before {
+          content: '';
+          position: absolute;
+          inset: -2px;
+          border-radius: 2rem;
+          background: linear-gradient(135deg, rgba(224,0,110,0.4) 0%, rgba(224,0,110,0.05) 60%, transparent 100%);
+          z-index: 0;
+        }
+        .hero-image-frame img {
+          position: relative;
+          z-index: 1;
+        }
+        .sys-card-image {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 1.25rem 1.25rem 0 0;
+          display: block;
+          flex-shrink: 0;
+        }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[72vh] flex items-center">
+      <section className="relative bg-[#1a1a1a] py-16 px-6 ml-[-5px] overflow-hidden min-h-[72vh] flex items-center">
         {/* Dot grid background */}
         <div
           className="absolute inset-0 z-0 opacity-20"
@@ -151,77 +191,47 @@ const LowVoltageSystems = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]" />
                 </span>
-                LOW VOLTAGE SYSTEMS
+                SYSTEM INTEGRATION · LOW VOLTAGE SYSTEMS
               </div>
 
               {/* Heading */}
-               <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
-
-              <div className="overflow-hidden">
-                <span
-                  className="animate-reveal-up block"
-                  style={{ animationDelay: '0.1s' }}
-                >
-                  Safety Security
-                </span>
-              </div>
-
-              <div className="overflow-hidden -mt-2">
-                <span
-                  className="animate-reveal-up block text-[#e0006e]"
-                  style={{ animationDelay: '0.2s' }}
-                >
-                Smart Infrastructure.
-                </span>
-              </div>
-            </h1>
+              <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
+                <div className="overflow-hidden">
+                  <span
+                    className="animate-reveal-up block"
+                    style={{ animationDelay: '0.1s' }}
+                  >
+                    Safety Security
+                  </span>
+                </div>
+                <div className="overflow-hidden -mt-2">
+                  <span
+                    className="animate-reveal-up block text-[#e0006e]"
+                    style={{ animationDelay: '0.2s' }}
+                  >
+                    Smart Infrastructure.
+                  </span>
+                </div>
+              </h1>
 
               {/* Intro */}
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-90">
                 Mactus Automation is a trusted integrator of Low Voltage Systems for pharmaceutical, biotech, and industrial facilities — designing, installing, and commissioning safety and security infrastructure that meets the highest regulatory and operational standards. From fire detection and access control to gas monitoring and emergency communication, our systems are engineered to protect people, assets, and compliance records with equal rigour. Every LVS deployment is backed by full documentation and post-installation support, so your facility remains audit-ready from day one.
               </p>
+            </div>
 
-              {/* CTAs */}
-              <div className="flex flex-row items-center gap-4 pt-2 flex-wrap">
-                <a
-                  href="/contact-us/"
-                  className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap"
-                >
-                  Request a Consultation
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <a
-                  href="#systems"
-                  className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap"
-                >
-                  Explore Systems
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </a>
+            {/* Right: hero image */}
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="hero-image-frame w-full max-w-[520px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/60">
+                <img
+                  src={lowImg9}
+                  alt="Low Voltage Systems – Mactus Automation"
+                  className="w-full h-auto object-cover rounded-[2rem]"
+                  style={{ display: 'block' }}
+                />
               </div>
             </div>
 
-            {/* Right: stat pills */}
-            <div className="hidden lg:flex flex-col gap-5 items-end">
-              {[
-                { value: '8', label: 'Integrated Safety & Security Systems' },
-                { value: 'CGMP', label: 'Compliant Deployments' },
-                { value: '1', label: 'Vendor — Full Project Accountability' },
-                { value: 'AMC', label: 'Long-Term Support Contracts Available' },
-              ].map((s, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-2xl px-8 py-5 hover:border-[#e0006e]/30 hover:bg-white/8 transition-all duration-300 w-full max-w-sm"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <span className="text-[#e0006e] font-black text-3xl tracking-tight">{s.value}</span>
-                  <span className="text-gray-400 text-sm font-bold leading-snug">{s.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -238,29 +248,41 @@ const LowVoltageSystems = () => {
             {systems.map((sys, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded-[2.5rem] border border-gray-100 card-hover group flex gap-6"
+                className="bg-white rounded-[2.5rem] border border-gray-100 card-hover group overflow-hidden flex flex-col"
               >
-                {/* Icon block */}
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#e0006e] transition-all duration-500">
-                    <svg className="w-7 h-7 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={sys.icon} />
-                    </svg>
-                  </div>
-                  {/* System number */}
-                  <p className="text-center text-[10px] font-black text-gray-300 tracking-widest mt-2">
-                    {String(i + 1).padStart(2, '0')}
-                  </p>
+                {/* System image */}
+                <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                  <img
+                    src={sys.image}
+                    alt={sys.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-black text-lg text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors duration-300 leading-tight">
-                    {sys.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed font-medium">
-                    {sys.desc}
-                  </p>
+                {/* Card body */}
+                <div className="flex gap-6 p-8 flex-1">
+                  {/* Icon block */}
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#e0006e] transition-all duration-500">
+                      <svg className="w-7 h-7 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={sys.icon} />
+                      </svg>
+                    </div>
+                    {/* System number */}
+                    <p className="text-center text-[10px] font-black text-gray-300 tracking-widest mt-2">
+                      {String(i + 1).padStart(2, '0')}
+                    </p>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-black text-lg text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors duration-300 leading-tight">
+                      {sys.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">
+                      {sys.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -298,62 +320,6 @@ const LowVoltageSystems = () => {
           </div>
         </div>
       </section>
-
-      {/* ── COMPLIANCE STRIP ─────────────────────────────────────────────────── */}
-      <section className="py-14 px-6 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-center text-xs font-black text-gray-400 tracking-[0.3em] uppercase mb-8">
-            Designed for Compliance With
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {['CGMP', 'USFDA 21 CFR Part 11', 'WHO-GMP', 'EU GMP Annex 11', 'NBC Fire Safety', 'ATEX / IEC Gas Safety', 'ISO 14644 Cleanroom'].map((tag) => (
-              <span
-                key={tag}
-                className="px-5 py-2.5 rounded-full border border-gray-200 bg-white text-gray-600 text-xs font-black tracking-wider hover:border-[#e0006e]/30 hover:text-[#e0006e] transition-all duration-200"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRE-FOOTER CTA ───────────────────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
-          {/* Dot grid inside CTA card */}
-          <div
-            className="absolute inset-0 z-0 opacity-10"
-            style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '20px 20px' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
-
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
-            <div className="max-w-xl space-y-4">
-              <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">
-                Ready to Get Started?
-              </span>
-              <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
-                Plan your facility's safety infrastructure with Mactus.{' '}
-                <span className="text-[#e0006e]">Let's build it right, the first time.</span>
-              </h2>
-              <p className="text-gray-400 text-base leading-relaxed">
-                Our engineering team will assess your facility requirements and recommend an integrated Low Voltage Systems solution tailored to your compliance obligations and operational needs.
-              </p>
-            </div>
-            <a
-              href="/contact-us/"
-              className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap hover:-translate-y-1 duration-300"
-            >
-              Request a Consultation
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
