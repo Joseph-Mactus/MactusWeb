@@ -67,7 +67,7 @@ const ContactUs = () => {
       `}</style>
 
             {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-            <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[55vh] flex items-center">
+            <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
                 {/* Dot grid */}
                 <div className="absolute inset-0 z-0 opacity-20"
                     style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
@@ -86,7 +86,7 @@ const ContactUs = () => {
                     </div>
 
                     {/* Heading */}
-                    <h1 className="text-white font-black text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tighter mb-6 flex flex-wrap gap-x-[0.25em]">
+                    <h1 className="text-white font-black leading-[1.05] tracking-tighter mb-6 flex flex-wrap gap-x-[0.25em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
                         {["Let's"].map((w, i) => (
                             <span key={i} className="overflow-hidden inline-block py-1 px-2">
                                 <span className="animate-reveal-up inline-block" style={{ animationDelay: `${i * 0.1}s` }}>{w}</span>

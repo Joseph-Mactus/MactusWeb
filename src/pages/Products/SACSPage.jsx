@@ -112,7 +112,7 @@ const SACSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#1a1a1a] py-5 px-6 overflow-hidden min-h-[75vh] flex items-center">
+      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
@@ -127,7 +127,7 @@ const SACSPage = () => {
               SMART ACCESS CONTROL SYSTEM
             </div>
 
-            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
+            <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
               {["The", "cleanroom", "door", "that"].map((word, i) => (
                 <span key={i} className="overflow-hidden pr-2 inline-block py-1">
                   <span className="animate-reveal-up inline-block" style={{ animationDelay: `${i * 0.1}s` }}>{word}</span>

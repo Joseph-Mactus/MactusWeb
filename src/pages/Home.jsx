@@ -101,14 +101,14 @@ const FAQAccordion = ({ items }) => {
 // ─── India Map SVG ────────────────────────────────────────────────────────────
 
 const MAP_PINS = [
-  { name: "HIMACHAL PRADESH", lines: "2 LINES", cx: 225.5, cy: 173.0, align: "right" },
+  { name: "HIMACHAL PRADESH", lines: "2 LINES", cx: 205.5, cy: 160.0, align: "right" },
   { name: "RAJASTHAN", lines: "2 LINES", cx: 154.0, cy: 256.8, align: "left" },
-  { name: "GUJARAT", lines: "43 LINES", cx: 88.8, cy: 334.9, align: "left" },
-  { name: "MADHYA PRADESH", lines: "2 LINES", cx: 274.2, cy: 338.9, align: "right" },
-  { name: "GOA", lines: "9 LINES", cx: 165, cy: 478.0, align: "left" },
-  { name: "TELANGANA", lines: "31 LINES", cx: 267.1, cy: 436.5, align: "right" },
-  { name: "KARNATAKA", lines: "2 LINES", cx: 191.6, cy: 506.6, align: "left" },
-  { name: "ANDHRA PRADESH", lines: "1 LINES", cx: 252.2, cy: 494.7, align: "right" },
+  { name: "GUJARAT", lines: "43 LINES", cx: 98.8, cy: 334.9, align: "left" },
+  { name: "MADHYA PRADESH", lines: "2 LINES", cx: 234.2, cy: 338.9, align: "right" },
+  { name: "GOA", lines: "9 LINES", cx: 150, cy: 488.0, align: "left" },
+  { name: "TELANGANA", lines: "31 LINES", cx: 240.1, cy: 436.5, align: "right" },
+  { name: "KARNATAKA", lines: "2 LINES", cx: 181.6, cy: 506.6, align: "left" },
+  { name: "ANDHRA PRADESH", lines: "1 LINES", cx: 232.2, cy: 494.7, align: "right" },
   { name: "TAMIL NADU", lines: "4 LINES", cx: 245.4, cy: 547.4, align: "right" },
 ];
 
@@ -283,7 +283,7 @@ const HomePage = () => {
       `}</style>
 
       {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[90vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -298,7 +298,7 @@ const HomePage = () => {
               TRUSTED BY INDIA'S LEADING PHARMA SINCE 2012
             </div>
 
-            <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>
+            <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.05s' }}>Digital Compliance</span>
               </span>

@@ -195,7 +195,7 @@ const LowVoltageSystems = () => {
               </div>
 
               {/* Heading */}
-              <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
+              <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
                 <div className="overflow-hidden">
                   <span
                     className="animate-reveal-up block"

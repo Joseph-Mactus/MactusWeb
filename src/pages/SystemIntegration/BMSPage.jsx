@@ -161,7 +161,7 @@ const BMSPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -176,7 +176,7 @@ const BMSPage = () => {
               SYSTEM INTEGRATION · BUILDING MANAGEMENT
             </div>
 
-            <h1 className="text-white font-black text-3xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tighter">
+            <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Every building</span>
               </span>

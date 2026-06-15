@@ -43,12 +43,12 @@ const CompanyOverview = () => {
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
       <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
         {/* Animated Background Mesh */}
-        <div className="absolute inset-0 z-0 opacity-20" style={{ 
-          backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', 
-          backgroundSize: '32px 32px' 
+        <div className="absolute inset-0 z-0 opacity-20" style={{
+          backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)',
+          backgroundSize: '32px 32px'
         }}></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#1a1a1a] z-0"></div>
-        
+
         <div className="relative z-10 max-w-5xl mx-auto space-y-6">
           <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
             <span className="block overflow-visible px-4">
@@ -59,7 +59,7 @@ const CompanyOverview = () => {
             </span>
           </h1>
 
-          <p className="text-gray-400 text-lg md:text-xl font-bold tracking-wide uppercase opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
+          <p className="text-gray-400 text-lg md:text-xl font-bold tracking-wide  opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
             Intelligent Automation for a Compliant World
           </p>
         </div>
@@ -72,7 +72,7 @@ const CompanyOverview = () => {
           <div className="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] rounded-full bg-[#e0006e]/[0.03] blur-[5rem]"></div>
           <div className="absolute bottom-[-10%] left-[-5%] w-[40rem] h-[40rem] rounded-full bg-blue-500/[0.02] blur-[5rem]"></div>
         </div>
-        
+
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -81,7 +81,7 @@ const CompanyOverview = () => {
             <div className="group relative bg-white p-10 md:p-12 rounded-[2.5rem] border border-gray-100 overflow-hidden transition-all duration-500 hover:-translate-y-3 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(224,0,110,0.15)] hover:border-[#e0006e]/20">
               {/* Background accent on hover */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#e0006e]/5 to-transparent rounded-bl-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              
+
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 w-0 h-1.5 bg-gradient-to-r from-[#e0006e] to-[#ff4b9f] group-hover:w-full transition-all duration-700 ease-out"></div>
 
@@ -91,7 +91,7 @@ const CompanyOverview = () => {
                   <circle cx="12" cy="12" r="2" fill="currentColor" />
                 </svg>
               </div>
-              
+
               <h3 className="relative z-10 text-gray-900 font-black text-2xl md:text-3xl mb-4 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors duration-500">Mission</h3>
               <p className="relative z-10 text-gray-600 leading-relaxed font-medium transition-colors duration-500 group-hover:text-gray-800">
                 "We want to be the trusted leader in intelligent automation solutions, transforming pharmaceutical and industrial processes with cutting-edge technology, compliance excellence, and sustainable innovation."

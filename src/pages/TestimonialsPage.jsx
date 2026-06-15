@@ -252,7 +252,7 @@ const TestimonialsPage = () => {
 `}</style>
 
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
-      <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
+      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[70vh] text-center border-b border-white/5">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 z-0 opacity-20" style={{
           backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)',
@@ -263,7 +263,7 @@ const TestimonialsPage = () => {
         <div className="relative z-10 max-w-5xl mx-auto space-y-6 flex flex-col items-center">
 
 
-          <h1 className="text-white font-black text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
+          <h1 className="text-white font-black leading-[1.05] tracking-tighter uppercase italic" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
             <span className="block overflow-hidden px-4">
               <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Trusted By Pharma</span>
             </span>
