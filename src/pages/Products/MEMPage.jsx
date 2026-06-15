@@ -4,8 +4,8 @@ import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
 
-import img_2 from '../../assets/images/Complianceproducts/MEM/MEM1.JPEG';
-import img_3 from '../../assets/images/Complianceproducts/MEM/MEM2.JPEG';
+import img_2 from '../../assets/images/Complianceproducts/MEM/mem_1.JPEG';
+import img_3 from '../../assets/images/Complianceproducts/MEM/mem_2.JPEG';
 import img_1 from '../../assets/images/mem_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_MEM_BrochureV11.pdf';
