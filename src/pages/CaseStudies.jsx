@@ -119,7 +119,7 @@ const CaseStudies = () => {
             </span>
           </h1>
 
-          <p className="text-gray-400 text-lg md:text-xl font-bold tracking-wide uppercase opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
+          <p className="text-gray-400 text-lg md:text-xl font-bold tracking-wide opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
             See how leading pharmaceutical manufacturers eliminated compliance risk, closed audit gaps, and moved from manual processes to automated, traceable GMP control systems.
           </p>
         </div>

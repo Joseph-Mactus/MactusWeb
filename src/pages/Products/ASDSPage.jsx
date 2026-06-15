@@ -1,110 +1,110 @@
-  import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ZohoFormModal from '../../components/ZohoFormModal';
-  import ImageCarousel from '../../components/ImageCarousel';
-  import irs_1 from '../../assets/images/asds_1.png';
-  import irs_2 from '../../assets/images/asds_2.png';
-  import irs_3 from '../../assets/images/asds_3.png';
-  import Brochure from '../../assets/Brochurs/MAPL_ASDS_BrochureV1-compressed.pdf';
-  const SectionTitle = ({ children, eyebrow }) => (
-    <div className="flex flex-col items-center w-full mb-12 mt-8">
-      {eyebrow && (
-        <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
-          {eyebrow}
-        </span>
-      )}
-      <h2 className="text-center text-[#e0006e] font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block">
-        {children}
-        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
-      </h2>
-    </div>
-  );
+import ImageCarousel from '../../components/ImageCarousel';
+import irs_1 from '../../assets/images/ASDS/asds_1.png';
+import irs_2 from '../../assets/images/ASDS/asds_2.png';
+import irs_3 from '../../assets/images/ASDS/asds_3.png';
+import Brochure from '../../assets/Brochurs/MAPL_ASDS_BrochureV1-compressed.pdf';
+const SectionTitle = ({ children, eyebrow }) => (
+  <div className="flex flex-col items-center w-full mb-12 mt-8">
+    {eyebrow && (
+      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
+        {eyebrow}
+      </span>
+    )}
+    <h2 className="text-center text-[#e0006e] font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block">
+      {children}
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+    </h2>
+  </div>
+);
 
-  const FAQAccordion = ({ items }) => {
-    const [openIndex, setOpenIndex] = useState(null);
+const FAQAccordion = ({ items }) => {
+  const [openIndex, setOpenIndex] = useState(null);
 
-    return (
-      <div className="space-y-4">
-        {items.map((item, idx) => (
-          <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm transition-all hover:shadow-md">
-            <button
-              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-              className="w-full px-8 py-6 text-left flex justify-between items-center gap-4"
-            >
-              <span className="font-bold text-gray-900 text-lg">{item.question}</span>
-              <span className={`w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''} flex-shrink-0`}>
-                <svg className="w-4 h-4 text-[#e0006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
-              </span>
-            </button>
-            <div className={`transition-all duration-300 overflow-hidden ${openIndex === idx ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-              <div className="px-8 pb-6 text-gray-500 leading-relaxed">
-                {item.answer}
-              </div>
+  return (
+    <div className="space-y-4">
+      {items.map((item, idx) => (
+        <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm transition-all hover:shadow-md">
+          <button
+            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+            className="w-full px-8 py-6 text-left flex justify-between items-center gap-4"
+          >
+            <span className="font-bold text-gray-900 text-lg">{item.question}</span>
+            <span className={`w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''} flex-shrink-0`}>
+              <svg className="w-4 h-4 text-[#e0006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </button>
+          <div className={`transition-all duration-300 overflow-hidden ${openIndex === idx ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className="px-8 pb-6 text-gray-500 leading-relaxed">
+              {item.answer}
             </div>
           </div>
-        ))}
-      </div>
-    );
-  };
+        </div>
+      ))}
+    </div>
+  );
+};
 
-  const ASDSPage = () => {
+const ASDSPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-    useState(() => {
-      document.title = "Automated Solution Dispensing System (ASDS™) | Mactus";
-    }, []);
-    
-    const features = [
-      { title: "Recipe-Driven Preparation", desc: ["Up to 6 different solutions configurable per unit — disinfectant, detergent, IPA, sporicide, neutraliser, custom", "Operator selects recipe + volume on the HMI; system handles the dilution math and dispensing", "Recipes are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
-      { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery — no \"close enough\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
-      { title: "On-Demand, No Waste", desc: ["Solutions prepared only when needed — no shift-start over-preparation", "Reduced waste of expensive concentrates", "Reconciliation is automatic — every dispense logged, every discard captured"], icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
-      { title: "Compliance", desc: ["21 CFR Part 11 compliant user management — electronic signatures, role-based access, audit trails", "Automated record keeping — every dispense event time-stamped and signed", "Historical data storage and export for QA review and APR/PQR", "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ"], icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-      { title: "Build & Usability", desc: ["Pharma-grade SS fabrication — designed for repeated cleaning and cleanroom environments", "Mobile design — castors with brakes, wheel between cleanrooms", "Industrial HMI with intuitive recipe-selection workflow", "Compact footprint — fits through standard cleanroom doors"], icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
-    ];
+  useState(() => {
+    document.title = "Automated Solution Dispensing System (ASDS™) | Mactus";
+  }, []);
 
-    const steps = [
-      { title: "Authenticate", desc: "Operator logs in at the HMI. Electronic signature is bound to the dispense event." },
-      { title: "Select", desc: "Operator picks the recipe (e.g., 0.5% sodium hypochlorite) and the required volume." },
-      { title: "Dispense", desc: "ASDS™ calculates the dilution, opens the metered valves, mixes, and dispenses into the operator's labelled container." },
-      { title: "Record", desc: "Recipe, volume, operator, time, and dispense ID are written to the audit trail and the cleaning log automatically." },
-    ];
+  const features = [
+    { title: "Recipe-Driven Preparation", desc: ["Up to 6 different solutions configurable per unit — disinfectant, detergent, IPA, sporicide, neutraliser, custom", "Operator selects recipe + volume on the HMI; system handles the dilution math and dispensing", "Recipes are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
+    { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery — no \"close enough\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
+    { title: "On-Demand, No Waste", desc: ["Solutions prepared only when needed — no shift-start over-preparation", "Reduced waste of expensive concentrates", "Reconciliation is automatic — every dispense logged, every discard captured"], icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
+    { title: "Compliance", desc: ["21 CFR Part 11 compliant user management — electronic signatures, role-based access, audit trails", "Automated record keeping — every dispense event time-stamped and signed", "Historical data storage and export for QA review and APR/PQR", "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ"], icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+    { title: "Build & Usability", desc: ["Pharma-grade SS fabrication — designed for repeated cleaning and cleanroom environments", "Mobile design — castors with brakes, wheel between cleanrooms", "Industrial HMI with intuitive recipe-selection workflow", "Compact footprint — fits through standard cleanroom doors"], icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
+  ];
 
-    const useCases = [
-      { title: "Sterile Injectable Manufacturing", desc: "Disinfection of Grade A/B/C/D cleanroom areas", icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" },
-      { title: "Oral Solid Dosage", desc: "Equipment and area cleaning between batches", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
-      { title: "Biologics and Vaccine", desc: "Closed-system and equipment cleaning", icon: "M13 10V3L4 14h7v8l9-11h-7z" },
-      { title: "API & Intermediate Manufacturing", desc: "Utility area cleaning", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
-      { title: "Hospital Pharmacy Compounding", desc: "Cleanroom areas (USP <797> / <800>)", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
-      { title: "Food Processing", desc: "Sanitiser preparation for CIP / clean-out-of-place", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" }
-    ];
+  const steps = [
+    { title: "Authenticate", desc: "Operator logs in at the HMI. Electronic signature is bound to the dispense event." },
+    { title: "Select", desc: "Operator picks the recipe (e.g., 0.5% sodium hypochlorite) and the required volume." },
+    { title: "Dispense", desc: "ASDS™ calculates the dilution, opens the metered valves, mixes, and dispenses into the operator's labelled container." },
+    { title: "Record", desc: "Recipe, volume, operator, time, and dispense ID are written to the audit trail and the cleaning log automatically." },
+  ];
 
-    const faqs = [
-      { question: "What is an Automated Solution Dispensing System (ASDS™) in pharma?", answer: "An Automated Solution Dispensing System is an automated cleaning-solution preparation unit for pharma and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, IPA, and other cleaning agents with purified water on demand, eliminating manual mixing errors. Each dispense is recorded electronically per 21 CFR Part 11 — recipe, volume, operator, time — for full audit traceability." },
-      { question: "Why automate cleaning solution preparation? Operators have done it manually for decades.", answer: "They have, and that's exactly the audit problem. Manual preparation depends on operator attention and graduated-cylinder accuracy. Dilution strength drifts shift-to-shift, batch consistency is unprovable, reconciliation between prepared and used quantities relies on paper logbooks, and the entire process is a recurring finding in GMP audits. ASDS™ removes the variable: recipe is locked, dilution is metered, every event is signed." },
-      { question: "How many different cleaning solutions can ASDS™ prepare?", answer: "Up to 6 different recipes are configurable per ASDS™ unit. Common configurations include sodium hypochlorite (variable strengths), 70% IPA, peracetic acid, quaternary ammonium disinfectants, detergents, and sporicides. Recipes are configured during install based on your site's cleaning SOPs and locked under change control." },
-      { question: "Is ASDS™ 21 CFR Part 11 compliant?", answer: "Yes. ASDS™ includes role-based user management, electronic signatures bound to each dispense event, time-stamped audit trails, and tamper-proof historical data storage. Validation documentation (URS, FDS, DQ, IQ, OQ, PQ, traceability matrix) is delivered with every installation per GAMP 5." },
-      { question: "Can ASDS™ move between cleanrooms?", answer: "Yes. ASDS™ is built on castors with brakes, designed to be wheeled between cleanrooms and through standard cleanroom doors. The SS fabrication is pharma-grade and tolerates repeated cleaning between rooms. One unit can serve multiple cleanroom suites on a shift rotation." },
-      { question: "Does ASDS™ handle reconciliation of prepared vs. used vs. discarded?", answer: "Yes. Every prepared volume is logged. Operators record use and discard events through the same HMI. The reconciliation report — prepared, used, discarded, balance — is available for any time window and exportable for batch records or QA review." },
-      { question: "What's the typical deployment timeline?", answer: "Standard ASDS™ deployment is 6 to 8 weeks end-to-end — including recipe finalisation, hardware delivery, on-site installation, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-unit rollouts across multiple sites are scoped separately." },
-      { question: "Does ASDS™ require purified water / WFI plumbing?", answer: "ASDS™ connects to your existing purified water supply via a standard sanitary connection. No new plumbing infrastructure is required if you already have a purified water loop accessible at the unit's deployment location. Utility requirements are confirmed during the URS / site-survey phase." }
-    ];
+  const useCases = [
+    { title: "Sterile Injectable Manufacturing", desc: "Disinfection of Grade A/B/C/D cleanroom areas", icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" },
+    { title: "Oral Solid Dosage", desc: "Equipment and area cleaning between batches", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
+    { title: "Biologics and Vaccine", desc: "Closed-system and equipment cleaning", icon: "M13 10V3L4 14h7v8l9-11h-7z" },
+    { title: "API & Intermediate Manufacturing", desc: "Utility area cleaning", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+    { title: "Hospital Pharmacy Compounding", desc: "Cleanroom areas (USP <797> / <800>)", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
+    { title: "Food Processing", desc: "Sanitiser preparation for CIP / clean-out-of-place", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" }
+  ];
 
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    };
+  const faqs = [
+    { question: "What is an Automated Solution Dispensing System (ASDS™) in pharma?", answer: "An Automated Solution Dispensing System is an automated cleaning-solution preparation unit for pharma and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, IPA, and other cleaning agents with purified water on demand, eliminating manual mixing errors. Each dispense is recorded electronically per 21 CFR Part 11 — recipe, volume, operator, time — for full audit traceability." },
+    { question: "Why automate cleaning solution preparation? Operators have done it manually for decades.", answer: "They have, and that's exactly the audit problem. Manual preparation depends on operator attention and graduated-cylinder accuracy. Dilution strength drifts shift-to-shift, batch consistency is unprovable, reconciliation between prepared and used quantities relies on paper logbooks, and the entire process is a recurring finding in GMP audits. ASDS™ removes the variable: recipe is locked, dilution is metered, every event is signed." },
+    { question: "How many different cleaning solutions can ASDS™ prepare?", answer: "Up to 6 different recipes are configurable per ASDS™ unit. Common configurations include sodium hypochlorite (variable strengths), 70% IPA, peracetic acid, quaternary ammonium disinfectants, detergents, and sporicides. Recipes are configured during install based on your site's cleaning SOPs and locked under change control." },
+    { question: "Is ASDS™ 21 CFR Part 11 compliant?", answer: "Yes. ASDS™ includes role-based user management, electronic signatures bound to each dispense event, time-stamped audit trails, and tamper-proof historical data storage. Validation documentation (URS, FDS, DQ, IQ, OQ, PQ, traceability matrix) is delivered with every installation per GAMP 5." },
+    { question: "Can ASDS™ move between cleanrooms?", answer: "Yes. ASDS™ is built on castors with brakes, designed to be wheeled between cleanrooms and through standard cleanroom doors. The SS fabrication is pharma-grade and tolerates repeated cleaning between rooms. One unit can serve multiple cleanroom suites on a shift rotation." },
+    { question: "Does ASDS™ handle reconciliation of prepared vs. used vs. discarded?", answer: "Yes. Every prepared volume is logged. Operators record use and discard events through the same HMI. The reconciliation report — prepared, used, discarded, balance — is available for any time window and exportable for batch records or QA review." },
+    { question: "What's the typical deployment timeline?", answer: "Standard ASDS™ deployment is 6 to 8 weeks end-to-end — including recipe finalisation, hardware delivery, on-site installation, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-unit rollouts across multiple sites are scoped separately." },
+    { question: "Does ASDS™ require purified water / WFI plumbing?", answer: "ASDS™ connects to your existing purified water supply via a standard sanitary connection. No new plumbing infrastructure is required if you already have a purified water loop accessible at the unit's deployment location. Utility requirements are confirmed during the URS / site-survey phase." }
+  ];
 
-    return (
-      <>
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  return (
+    <>
       <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
         <Navbar />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -138,7 +138,7 @@ import ZohoFormModal from '../../components/ZohoFormModal';
         `}</style>
 
         {/* Hero Section */}
-        <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[75vh] flex items-center border-b border-white/5">
+        <section className="relative bg-[#1a1a1a] py-5 px-6 overflow-hidden min-h-[75vh] flex items-center border-b border-white/5">
           <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -201,7 +201,7 @@ import ZohoFormModal from '../../components/ZohoFormModal';
         <section className="py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <SectionTitle eyebrow="WHY ASDS™">Manual cleaning solution prep is the slow leak in GMP cleaning</SectionTitle>
-            
+
             <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
               <p className="text-gray-500 text-lg leading-relaxed font-medium">
                 Cleaning is the first line of defence against contamination. And in most pharma plants, the cleaning solutions themselves are still mixed by hand — an operator with a graduated cylinder, a bottle of stock disinfectant, a jug of purified water, and the patience to get it right in a busy shift.
@@ -247,7 +247,7 @@ import ZohoFormModal from '../../components/ZohoFormModal';
         <section className="py-24 px-6 bg-[#fafafa] border-y border-gray-100">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>What ASDS™ Is</SectionTitle>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <p className="text-gray-600 text-lg leading-relaxed">
@@ -257,7 +257,7 @@ import ZohoFormModal from '../../components/ZohoFormModal';
                   Every dispense is recorded electronically — recipe, volume, operator, time, batch. The dispensing log is built as the work is done. Nothing to write up later.
                 </p>
               </div>
-              
+
               <div className="bg-[#0a0a1a] rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#e0006e]/20 rounded-full blur-[3rem] group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 <svg className="w-12 h-12 text-[#e0006e]/30 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1 15V9C1 8.44772 1.44772 8 2 8H5C6.10457 8 7 7.10457 7 6V5C7 3.89543 6.10457 3 5 3H0C-1.10457 3 -2 3.89543 -2 5V15C-2 18.866 1.13401 22 5 22H7V21L7 18C7 16.8954 6.10457 16 5 16H2C1.44772 16 1 15.5523 1 15Z" /></svg>
@@ -304,11 +304,11 @@ import ZohoFormModal from '../../components/ZohoFormModal';
         {/* How It Works */}
         <section className="py-24 px-6 bg-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[radial-gradient(#e0006e_1px,transparent_1px)] bg-[size:30px_30px] opacity-[0.02]"></div>
-          
+
           <div className="max-w-7xl mx-auto relative z-10">
             <SectionTitle>System Workflow</SectionTitle>
             <p className="text-center text-gray-500 font-bold tracking-widest uppercase mb-16 -mt-8">A 4-step flow on every dispense</p>
-            
+
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 space-y-12">
                 {steps.map((step, i) => (
@@ -337,11 +337,11 @@ import ZohoFormModal from '../../components/ZohoFormModal';
                   </div>
 
                   <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-white">
-                    <iframe 
+                    <iframe
                       className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
-                      src="https://www.youtube.com/embed/6SZQT3DSDso?rel=0&modestbranding=1&controls=1" 
+                      src="https://www.youtube.com/embed/6SZQT3DSDso?rel=0&modestbranding=1&controls=1"
                       title="ASDS™ System Workflow"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   </div>
@@ -380,7 +380,7 @@ import ZohoFormModal from '../../components/ZohoFormModal';
               <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After ASDS™ Goes Live</h2>
               <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running ASDS™ in production</p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-800">
               {[
                 { stat: "100%", label: "of prep events logged", desc: "No manual logbooks" },
@@ -430,8 +430,8 @@ import ZohoFormModal from '../../components/ZohoFormModal';
         {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
         <Footer />
       </div>
-      </>
-    );
-  };
+    </>
+  );
+};
 
-  export default ASDSPage;
+export default ASDSPage;

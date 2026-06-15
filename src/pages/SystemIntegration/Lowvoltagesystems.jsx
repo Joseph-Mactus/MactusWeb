@@ -221,7 +221,7 @@ const LowVoltageSystems = () => {
             </div>
 
             {/* Right: hero image */}
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="flex items-center justify-center mt-12 lg:mt-0">
               <div className="hero-image-frame w-full max-w-[520px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/60">
                 <img
                   src={lowImg9}

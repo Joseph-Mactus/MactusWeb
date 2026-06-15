@@ -4,9 +4,9 @@ import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
 
-import sacs_1 from '../../assets/images/sacs_1.png';
-import sacs_2 from '../../assets/images/sacs_2.png';
-import sacs_3 from '../../assets/images/sacs_3.png';
+import sacs_1 from '../../assets/images/SACS/sacs_2.png';
+import sacs_2 from '../../assets/images/SACS/sacs_1.png';
+import sacs_3 from '../../assets/images/SACS/sacs_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_SmartAccessControlSystemBrochureV1.pdf';
 const SectionTitle = ({ children }) => (
@@ -112,7 +112,7 @@ const SACSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[75vh] flex items-center">
+      <section className="relative bg-[#1a1a1a] py-5 px-6 overflow-hidden min-h-[75vh] flex items-center">
         {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
@@ -360,7 +360,7 @@ const SACSPage = () => {
       </section>
 
       {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
-        <Footer />
+      <Footer />
     </div>
   );
 };

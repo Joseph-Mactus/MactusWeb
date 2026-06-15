@@ -197,7 +197,7 @@ const TestimonialsPage = () => {
       title: "Customer Validation – Automated Solution Dispensing System (ASDS™)",
       description: "Confirmation of successful design, installation, qualification, and operational performance of the Automated Solution Dispensing System at a pharma manufacturing facility.",
       image: testImg2,
-      productLink: "/asds/",
+      productLink: "/pr",
     },
     // {
     //   tag: "More Coming",
@@ -223,88 +223,64 @@ const TestimonialsPage = () => {
       <Navbar />
 
       <style>{`
-        @keyframes reveal-up {
-          0% { transform: translateY(100%); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes shimmer {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        .animate-reveal-up {
-          animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          opacity: 0;
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #e0006e 0%, #ff4b9f 50%, #e0006e 100%);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-      `}</style>
+  @keyframes reveal-up {
+  0%   { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
 
-      {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[75vh] flex items-center border-b border-white/5">
-  <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-  <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
+.animate-reveal-up {
+  opacity: 0;
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) forwards;
+}
 
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+.shimmer-text {
+  background: linear-gradient(90deg, #e0006e 0%, #ff4b9f 50%, #e0006e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    {/* Left column */}
-    <div className="space-y-8">
-      {/* Eyebrow */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
-        </span>
-        CUSTOMER VALIDATION LETTERS
-      </div>
+.animate-reveal-up.shimmer-text {
+  animation:
+    reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) forwards,
+    shimmer 3s linear calc(var(--delay, 0s) + 0.8s) infinite;
+}
+`}</style>
 
-      <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter">
-        <span className="overflow-hidden inline-block py-1 w-full">
-          <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Trusted by Pharma</span>
-        </span>
-        <span className="overflow-hidden inline-block py-1 w-full">
-          <span className="animate-reveal-up inline-block  text-[#e0006e]" style={{ animationDelay: '0.2s' }}>Manufacturers</span>
-        </span>
-        <span className="overflow-hidden inline-block py-1 w-full">
-          <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.3s' }}>Across India</span>
-        </span>
-      </h1>
+      {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
+      <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
+        {/* Animated Background Mesh */}
+        <div className="absolute inset-0 z-0 opacity-20" style={{
+          backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)',
+          backgroundSize: '32px 32px'
+        }}></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#1a1a1a] z-0"></div>
 
-      <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-        Our customers don't just use Mactus products — they formally validate them. Below are documented customer confirmations of design, installation, qualification, and operational performance across our compliance product range.
-      </p>
-    </div>
+        <div className="relative z-10 max-w-5xl mx-auto space-y-6 flex flex-col items-center">
 
-    {/* Right column — image */}
-    <div className="relative animate-float lg:justify-self-end w-full max-w-xl mx-auto lg:mx-0">
-      {/* Decorative stacked document effect */}
-      <div className="relative">
-        {/* Back card */}
-        <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl"
-          style={{ transform: 'rotate(3deg) translateY(8px) translateX(8px)' }}></div>
-        {/* Mid card */}
-        <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl"
-          style={{ transform: 'rotate(1.5deg) translateY(4px) translateX(4px)' }}></div>
-        {/* Front — main image */}
-        <div className="relative rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10">
-          <img
-            src={tesImg1}
-            alt="Customer Validation Document"
-            className="w-full object-cover object-top"
-            style={{ maxHeight: '520px' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/60 to-transparent"></div>
+
+          <h1 className="text-white font-black text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
+            <span className="block overflow-hidden px-4">
+              <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Trusted By Pharma</span>
+            </span>
+            <span className="block overflow-hidden px-4">
+              <span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.3s' }}>Manufacturers</span>
+            </span>
+            <span className="block overflow-hidden px-4">
+              <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.5s' }}>Across India</span>
+            </span>
+          </h1>
+
+          <p className="text-gray-400 text-base md:text-lg lg:text-xl font-bold tracking-wide  opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
+            Our customers don't just use Mactus products — they formally validate them. Below are documented customer confirmations of design, installation, qualification, and operational performance across our compliance product range.
+          </p>
         </div>
-      </div>
-    </div>
+      </section>
 
-  </div>
-</section>
-     
 
       {/* SECTION 3 — CUSTOMER VALIDATIONS */}
       <section className="py-16 px-6 bg-white">

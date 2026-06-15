@@ -4,9 +4,9 @@ import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
 
-import img_1 from '../../assets/images/mem_1.png';
-import img_2 from '../../assets/images/mem_2.png';
-import img_3 from '../../assets/images/mem_3.png';
+import img_2 from '../../assets/images/Complianceproducts/MEM/MEM1.JPEG';
+import img_3 from '../../assets/images/Complianceproducts/MEM/MEM2.JPEG';
+import img_1 from '../../assets/images/mem_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_MEM_BrochureV11.pdf';
 
@@ -242,7 +242,7 @@ const MEMPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#1a1a1a] py-5 px-6 overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -283,8 +283,8 @@ const MEMPage = () => {
           </div>
 
           <div className="relative animate-fade-in-right animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
-            <ImageCarousel images={[img_3,img_1, img_2]} />
-          </div> 
+            <ImageCarousel images={[img_3, img_1, img_2]} />
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import ZohoFormModal from '../../components/ZohoFormModal';
 import ImageCarousel from '../../components/ImageCarousel';
 import ivblt_1 from '../../assets/images/ivblt_1.png';
 import ivblt_2 from '../../assets/images/ivblt_2.png';
@@ -228,7 +229,7 @@ const IVBLTPage = () => {
       `}</style>
 
       {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#1a1a1a] py-5 px-6 overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -463,27 +464,25 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 9 — PRE-FOOTER CTA ───────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-10 px-6 bg-white">
         <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
-                Every IV bag that leaves your facility represents a patient.{' '}
-                <span className="text-[#e0006e]">Make sure every one was tested.</span>
+                Cleaning is your first line of defence. <span className="text-[#e0006e]">Make sure every drop is the right one.</span>
               </h2>
             </div>
-            <a href="/contact-us/" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap">
-              Request an IVBLT™ Demo
+            <button onClick={() => setIsModalOpen(true)} className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
+              Request Demo
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
       {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
-        <Footer />
+      <Footer />
     </div>
   );
 };

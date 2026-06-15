@@ -4,9 +4,9 @@ import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
 
-import irs_1 from '../../assets/images/irs_1.png';
-import irs_2 from '../../assets/images/irs_2.png';
-import irs_3 from '../../assets/images/irs_3.png';
+import irs_1 from '../../assets/images/Complianceproducts/IRS/IRS1.png';
+import irs_2 from '../../assets/images/Complianceproducts/IRS/IRS2.png';
+import irs_3 from '../../assets/images/Complianceproducts/IRS/IRS3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_InterverntionRecordingSystemBrochureV1.pdf';
 
@@ -114,7 +114,7 @@ const IRSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 overflow-hidden min-h-[75vh] flex items-center">
+      <section className="relative bg-[#1a1a1a] py-5 px-6 overflow-hidden min-h-[75vh] flex items-center">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -155,11 +155,11 @@ const IRSPage = () => {
                 </svg>
               </button>
               <a href={Brochure} className="px-7 py-4 bg-white/5 text-white font-extrabold rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#e0006e]/50 hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
-                  Download Brochure
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
-                  </svg>
-                </a>
+                Download Brochure
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -270,11 +270,11 @@ const IRSPage = () => {
                 </div>
 
                 <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-white">
-                   <iframe 
+                  <iframe
                     className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
-                    src="https://www.youtube.com/embed/q_V2sazmumQ?rel=0&modestbranding=1&controls=1" 
+                    src="https://www.youtube.com/embed/q_V2sazmumQ?rel=0&modestbranding=1&controls=1"
                     title="IRS™ System Workflow"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
                 </div>
@@ -362,7 +362,7 @@ const IRSPage = () => {
       </section>
 
       {isModalOpen && <ZohoFormModal onClose={() => setIsModalOpen(false)} title="Request Demo" />}
-        <Footer />
+      <Footer />
     </div>
   );
 };

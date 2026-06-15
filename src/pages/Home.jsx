@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import indiaMap from '@svg-maps/india';
 import homImg1 from '../assets/images/Home/mlogo-1.png';
-import homImg2 from '../assets/images/Home/iStock-2160382145-1024x576.jpg';
+import homImg2 from '../assets/images/Home/Home.png';
 const india = indiaMap.default || indiaMap;
 
 // ─── Reusable Components ──────────────────────────────────────────────────────
@@ -329,8 +329,8 @@ const HomePage = () => {
           </div>
 
           {/* Right — Floating UI card over cleanroom */}
-          <div className="relative animate-float hidden lg:block">
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10">
+          <div className="relative animate-float block mt-12 lg:mt-0">
+            <div className="relative min-h-[320px] sm:min-h-[480px] rounded-2xl overflow-hidden flex shadow-[0_40px_80px_rgba(0,0,0,0.5)] border border-white/10">
               <img
                 src={homImg2}
                 alt="Pharma cleanroom"
@@ -398,7 +398,7 @@ const HomePage = () => {
       {/* ── SECTION 3 — THE PAPER PROBLEM ────────────────────────────────────── */}
       <section className="py-20 px-6 bg- border-b border-white/5">
         <div className="max-w-7xl mx-auto">
-      
+
           {/* <div className="text-center mb-10">
             <p className="text-[#e0006e] font-black tracking-tighter leading-none" style={{ fontSize: 'clamp(100px, 18vw, 180px)' }}>47</p>
             <p className="text-white font-bold text-xl md:text-2xl tracking-tight mt-2">paper logbooks in an average sterile-fill cleanroom</p>
