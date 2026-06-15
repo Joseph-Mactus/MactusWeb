@@ -4,9 +4,9 @@ import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
 
-import sacs_1 from '../../assets/images/SACS/sacs_2.png';
-import sacs_2 from '../../assets/images/SACS/sacs_1.png';
-import sacs_3 from '../../assets/images/SACS/sacs_3.png';
+import sacs_1 from '../../assets/images/Complianceproducts/SACS/sacs_2.png';
+import sacs_2 from '../../assets/images/Complianceproducts/SACS/sacs_1.png';
+import sacs_3 from '../../assets/images/Complianceproducts/SACS/sacs_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_SmartAccessControlSystemBrochureV1.pdf';
 const SectionTitle = ({ children }) => (
@@ -129,7 +129,7 @@ const SACSPage = () => {
 
             <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]">
               {["The", "cleanroom", "door", "that"].map((word, i) => (
-                <span key={i} className="overflow-hidden inline-block py-1">
+                <span key={i} className="overflow-hidden pr-2 inline-block py-1">
                   <span className="animate-reveal-up inline-block" style={{ animationDelay: `${i * 0.1}s` }}>{word}</span>
                 </span>
               ))}

@@ -3,9 +3,9 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ZohoFormModal from '../../components/ZohoFormModal';
 import ImageCarousel from '../../components/ImageCarousel';
-import irs_1 from '../../assets/images/ASDS/asds_1.png';
-import irs_2 from '../../assets/images/ASDS/asds_2.png';
-import irs_3 from '../../assets/images/ASDS/asds_3.png';
+import irs_1 from '../../assets/images/Complianceproducts/ASDS/asds_1.png';
+import irs_2 from '../../assets/images/Complianceproducts/ASDS/asds_2.png';
+import irs_3 from '../../assets/images/Complianceproducts/ASDS/asds_3.png';
 import Brochure from '../../assets/Brochurs/MAPL_ASDS_BrochureV1-compressed.pdf';
 const SectionTitle = ({ children, eyebrow }) => (
   <div className="flex flex-col items-center w-full mb-12 mt-8">

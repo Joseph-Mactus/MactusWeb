@@ -2,20 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import casImg1 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-03_30_29-PM.png';
-import casImg2 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-04_24_07-PM.png';
+import casImg2 from '../assets/images/Complianceproducts/IRS/IRS1.png';
 import casImg3 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-04_29_05-PM.png';
 import casImg4 from '../assets/images/ivblt_2.png';
-import casImg5 from '../assets/images/mem_1.png';
+import casImg5 from '../assets/images/Complianceproducts/MEM/mem_2.jpeg';
 
 
 const caseStudies = [
   {
     id: 1,
     tag: "SACS™",
-    title: "Strengthening GMP Compliance with Automated Access Control Systems",
+    title: "Strengthening GMP Compliance with Automated Access Control System",
     teaser: "Even the most mature pharmaceutical facilities carry hidden compliance risks. Strong SOPs, trained teams, and GMP discipline often still rely on people to enforce access rules. When cleanroom entry depends on manual registers and memory, small gaps quietly build audit pressure. This case study shows how one facility eliminated that risk by making compliance automatic at the door.",
     image: casImg1,
-    link: "/sacs-case-study/"
   },
   {
     id: 2,
@@ -23,7 +22,7 @@ const caseStudies = [
     title: "When Manual Intervention Recording Becomes a Compliance Risk",
     teaser: "Manual intervention recording burdened operators during sterile manufacturing. Handwritten logs and delayed entries created gaps in traceability and audit readiness. Small oversights led to deviations and extended QA review cycles. This case study shows how digitization transformed a manual risk into a real-time, audit-ready GMP control system.",
     image: casImg2,
-    link: "/irs-case-study/"
+      
   },
   {
     id: 3,
@@ -31,7 +30,6 @@ const caseStudies = [
     title: "The Risk of Manual Disinfectant Solution Preparation",
     teaser: "Manual disinfectant preparation depends heavily on operator accuracy. At this facility, manual weighing, calculations, and paper records introduced variability and traceability gaps. Small errors resulted in deviations, rework, and audit observations. This case study shows how automation transformed a high-risk GMP activity into a controlled, compliant process.",
     image: casImg3,
-    link: "/asds-case-study/"
   },
   {
     id: 4,
@@ -39,7 +37,6 @@ const caseStudies = [
     title: "Automating Environmental Monitoring for Audit-Ready Compliance",
     teaser: "Manual environmental monitoring programs are prone to data integrity risks and delayed responses to excursions. This case study illustrates how transitioning to an automated, real-time MEM system eliminated paperwork, ensured 21 CFR Part 11 compliance, and provided immediate visibility into cleanroom conditions, significantly reducing audit vulnerabilities.",
     image: casImg5,
-    link: "/mem-case-study/"
   },
   {
     id: 5,
@@ -47,7 +44,6 @@ const caseStudies = [
     title: "Enhancing Traceability in In-Vitro Testing Workflows",
     teaser: "Managing complex testing workflows manually can lead to transcription errors and loss of traceability. By implementing a digitized IVBLT workflow, this facility streamlined their data collection, enforced standardized testing protocols, and achieved complete data integrity from sample receipt to final reporting, impressing auditors with their transparent processes.",
     image: casImg4,
-    link: "/ivblt-case-study/"
   }
 ];
 
@@ -133,7 +129,7 @@ const CaseStudies = () => {
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
-                className={`px-6 py-2.5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 ${activeTag === tag
+                className={`px-6 py-2.5 rounded-full font-bold text-sm tracking-wider  transition-all duration-300 ${activeTag === tag
                   ? 'bg-[#e0006e] text-white shadow-lg shadow-[#e0006e]/20'
                   : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-100'
                   }`}
@@ -175,7 +171,7 @@ const CaseStudies = () => {
 
                 {/* Card Content */}
                 <div className="p-10 flex flex-col flex-grow space-y-4">
-                  <h3 className="text-gray-900 font-black text-xl md:text-2xl mb-2 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors duration-500">
+                  <h3 className="text-gray-900 font-black text-xl md:text-2xl mb-2  tracking-tight group-hover:text-[#e0006e] transition-colors duration-500">
                     <a href={cs.link}>{cs.title}</a>
                   </h3>
 

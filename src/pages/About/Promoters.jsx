@@ -119,7 +119,7 @@ const Promoters = () => {
         <div className="relative z-10 max-w-5xl mx-auto space-y-8">
        
 
-          <h1 className="text-white font-black text-5xl md:text-7xl lg:text-9xl leading-[0.95] tracking-tighter uppercase italic">
+          <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[0.95] tracking-tighter uppercase italic">
             <span className="block overflow-visible px-4">
               <span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.2s' }}>Promoters</span>
             </span>

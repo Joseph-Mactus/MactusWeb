@@ -191,7 +191,7 @@ const CareersPage = () => {
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px,transparent 0.5px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#1a1a1a] z-0"></div>
         <div className="relative z-10 max-w-5xl mx-auto space-y-6">
-          <h1 className="text-white font-black text-5xl md:text-7xl lg:text-9xl leading-tight tracking-tighter uppercase italic">
+          <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
             <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>Join Us at</span></span>
             <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.4s' }}>Mactus!</span></span>
           </h1>

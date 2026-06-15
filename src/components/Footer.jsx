@@ -111,7 +111,7 @@ export default function Footer() {
 
           <div className="space-y-10">
             {/* Newsletter */}
-            <div>
+            {/* <div>
               <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-6 uppercase opacity-80">NEWSLETTER</h4>
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">Stay updated on the latest automation trends.</p>
               <div className="relative max-w-xs group">
@@ -126,7 +126,7 @@ export default function Footer() {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Contact Info */}
             <div>

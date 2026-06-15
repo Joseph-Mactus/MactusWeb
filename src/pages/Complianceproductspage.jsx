@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import comImg1 from '../assets/images/Complianceproducts/ChatGPT-Image-Apr-14-2025-04_27_52-PM-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
-import comImg2 from '../assets/images/Complianceproducts/Untitled-design-10-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
-import comImg3 from '../assets/images/Complianceproducts/Screenshot-2025-04-03-130453-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
-import comImg4 from '../assets/images/Complianceproducts/EMPATS-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png';
-import comImg5 from '../assets/images/Complianceproducts/20250808_1258_Pharmaceutical-Equipment-Setup_remix_01k2498vpgfns854fcb9g4y4ch-ra3ga84zhvkl1jv0sfonip3tj3b790c42et782umik.png';
+import comImg2 from '../assets/images/Complianceproducts/IRS/IRS1.png';
+import comImg3 from '../assets/images/Complianceproducts/ASDS/asds_1.png';
+import comImg4 from '../assets/images/Complianceproducts/MEM/mem_2.jpeg';
+import comImg5 from '../assets/images/ivblt_2.png';
 import ZohoFormModal from '../components/ZohoFormModal';
 
 // ─── Section Title ────────────────────────────────────────────────────────────

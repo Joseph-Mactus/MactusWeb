@@ -106,7 +106,7 @@ const Leadership = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto space-y-6">
-          <h1 className="text-white font-black text-5xl md:text-7xl lg:text-9xl leading-[0.95] tracking-tighter uppercase italic flex flex-wrap justify-center">
+          <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-[0.95] tracking-tighter uppercase italic flex flex-wrap justify-center">
             <span className="block overflow-visible px-4">
               <span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.2s' }}>Leadership</span>
             </span>
