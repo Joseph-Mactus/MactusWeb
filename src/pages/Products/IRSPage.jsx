@@ -120,7 +120,7 @@ const IRSPage = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8 animate-fade-in-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase mb-4">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
@@ -144,7 +144,7 @@ const IRSPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-              IRSdigitises every glove-port intervention, captured automatically, signed electronically, and ready the day your auditor asks for it.
+              IRS digitises every open door and glove-port intervention, captured automatically, signed electronically, and ready the day your auditor asks for it.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -184,8 +184,7 @@ const IRSPage = () => {
                 EU GMP Annex 1 (2022) made it explicit: every intervention must be justified, documented, time-bound, and trended.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed font-bold text-gray-900">
-                Yet on most lines, recording is still an operator scribbling in a logbook — sometimes hours after the fact.
-              </p>
+Yet on most facilities, recording is still an operator scribbling on a cleanroom paper — sometimes hours after the fact.              </p>
             </div>
           </div>
 

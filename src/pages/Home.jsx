@@ -303,7 +303,10 @@ const HomePage = () => {
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.05s' }}>Digital Compliance</span>
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.15s' }}>Management for</span>
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.15s' }}>Management products</span>
+              </span>
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block text-[#e0006e]" style={{ animationDelay: '0.25s' }}> and solutions for</span>
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block text-[#e0006e]" style={{ animationDelay: '0.25s' }}>Pharma, Healthcare</span>
@@ -448,7 +451,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
-              { eyebrow: "REGULATORY PRECISION", title: "Digital Compliance Solutions", body: "Five purpose-built systems — SACS, IRS™, ASDS, MEM, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
+              { eyebrow: "REGULATORY PRECISION", title: "Digital Compliance Solutions", body: "Five purpose-built systems — SACS, IRS™, ASDS, MPATS, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
               { eyebrow: "FACILITY AUTOMATION", title: "System Integration", body: "End-to-end BMS, EMS, and LVS integration for life-science facilities. We deliver URS through PQ, with the validation pack QA expects. Your facility goes from commissioned to qualified without a gap.", href: "/system-integration/", cta: "Explore system integration" },
               { eyebrow: "SMART MANUFACTURING", title: "Industrial IoT (IIoT)", body: "Sensors, controllers, and analytics layered onto existing infrastructure. Real-time visibility into HVAC, utilities, and equipment health — so engineering fixes problems before quality finds them.", href: "/iiot-implementations/", cta: "See IIoT implementations" },
             ].map((card, i) => (

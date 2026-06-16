@@ -5,7 +5,7 @@ import casImg1 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-03_30
 import casImg2 from '../assets/images/Complianceproducts/IRS/IRS1.png';
 import casImg3 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-04_29_05-PM.png';
 import casImg4 from '../assets/images/ivblt_2.png';
-import casImg5 from '../assets/images/Complianceproducts/MEM/mem_2.jpeg';
+import casImg5 from '../assets/images/Complianceproducts/MPATS/mem_2.jpeg';
 
 
 const caseStudies = [
@@ -33,9 +33,9 @@ const caseStudies = [
   },
   {
     id: 4,
-    tag: "MEM",
+    tag: "MPATS",
     title: "Automating Environmental Monitoring for Audit-Ready Compliance",
-    teaser: "Manual environmental monitoring programs are prone to data integrity risks and delayed responses to excursions. This case study illustrates how transitioning to an automated, real-time MEM system eliminated paperwork, ensured 21 CFR Part 11 compliance, and provided immediate visibility into cleanroom conditions, significantly reducing audit vulnerabilities.",
+    teaser: "Manual environmental monitoring programs are prone to data integrity risks and delayed responses to excursions. This case study illustrates how transitioning to an automated, real-time MPATS system eliminated paperwork, ensured 21 CFR Part 11 compliance, and provided immediate visibility into cleanroom conditions, significantly reducing audit vulnerabilities.",
     image: casImg5,
   },
   {
@@ -47,7 +47,7 @@ const caseStudies = [
   }
 ];
 
-const tags = ["All", "SACS", "IRS™", "ASDS", "MEM", "IVBLT"];
+const tags = ["All", "SACS", "IRS™", "ASDS", "MPATS", "IVBLT"];
 
 const CaseStudies = () => {
   const [activeTag, setActiveTag] = useState("All");

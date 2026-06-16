@@ -62,18 +62,18 @@ const SACSPage = () => {
   ];
 
   const steps = [
-    { title: "IDENTIFY", desc: "Operator swipes RFID or uses biometric authentication at the cleanroom entrance." },
-    { title: "VALIDATE", desc: "SACS verifies identity, training status, and gowning sequence compliance in real-time." },
+    { title: "IDENTIFY", desc: "Operator uses biometric authentication at the cleanroom entrance." },
+    { title: "VALIDATE", desc: "SACS™ verifies identity, training status, and gowning qualification status in real-time." },
     { title: "PERMIT / BLOCK", desc: "Door lock releases only if all criteria are met; otherwise, entry is denied and logged." },
     { title: "RECORD", desc: "The entry event is digitally signed and added to the 21 CFR Part 11 audit trail." },
   ];
 
   const faqs = [
-    { question: "What is SACS?", answer: "SACS (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual gowning logbooks with a digital, 21 CFR Part 11 compliant workflow." },
+    { question: "What is SACS?", answer: "SACS (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual entry and exit logbooks with a digital, 21 CFR Part 11 compliant workflow." },
     { question: "Is it 21 CFR Part 11 compliant?", answer: "Yes, SACS is built from the ground up to meet the requirements of 21 CFR Part 11, including electronic signatures, audit trails, and data integrity controls." },
     { question: "Does it replace door interlocking?", answer: "SACS enhances existing interlocking systems. It can interface with your current door controllers to provide an additional layer of compliance-based logic before a door is permitted to unlock." },
     { question: "How does it prevent tailgating?", answer: "We use high-precision overhead IR or AI-based vision sensors to count the number of individuals passing through a door. If the count exceeds the number of authorized badge-ins, an alarm is triggered." },
-    { question: "Can it enforce gowning sequence?", answer: "Absolutely. SACS can be configured to require confirmation of specific SOP steps (e.g., hand sanitization, gowning, glove change) before granting access to the next grade area." },
+    { question: "Can it enforce gowning sequence?", answer: "Absolutely. SACS  can be configured to connect to your gowning qualification master list, and only qualified operators will be permitted to enter the aseptic area." },
     { question: "Does it verify training?", answer: "Yes, SACS integrates with your Learning Management System (LMS) or HRMS to ensure that an operator's certifications for that specific area are current before allowing entry." },
     { question: "What does deployment look like?", answer: "Deployment is a turnkey process including hardware installation, software configuration, and full IQ/OQ/PQ validation to ensure compliance with your site requirements." },
     { question: "Which customers use SACS?", answer: "SACS is trusted by leading sterile injectable plants, vaccine manufacturers, and API facilities across India and globally to maintain audit readiness." },
@@ -119,7 +119,7 @@ const SACSPage = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8 animate-fade-in-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase mb-4">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
@@ -142,7 +142,7 @@ const SACSPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-              SACS replaces the gowning logbook with a paperless, 21 CFR Part 11 compliant entry-exit system — enforcing every SOP and writing a tamper-proof audit trail.
+              SACS replaces the entry & exit logbook with a paperless, 21 CFR Part 11 compliant entry-exit system — enforcing every SOP and maintaining a tamper-proof audit trail.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -199,7 +199,7 @@ const SACSPage = () => {
               <tbody className="divide-y divide-gray-100">
                 {[
                   ["Untrained operator enters", "Manual check by security", "System-level training lock"],
-                  ["Gowning SOP skipped", "Relies on honesty", "Digital verification required"],
+                  ["Gowning qualification skipped", "Relies on honesty", "Digital verification required"],
                   ["Tailgate entry", "Impossible to track", "Sensor-based AI detection"],
                   ["Audit trail", "Illegible, paper-based", "Instant 21 CFR PDF export"],
                   ["Capacity exceeded", "Hard to monitor", "Real-time headcount lock"],

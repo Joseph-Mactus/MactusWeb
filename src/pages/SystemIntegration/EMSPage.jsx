@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import emsImg1 from '../../assets/images/EMSPage/iStock-2166193783.jpg';
+import emsImg1 from '../../assets/images/EMSPage/ems_1.png';
 import emsImg2 from '../../assets/images/EMSPage/iStock-1714501746-1024x683.jpg';
 
 const SectionTitle = ({ children, eyebrow, isDark }) => (
@@ -336,47 +336,30 @@ const EMSPage = () => {
 
       {/* SECTION 4 — KEY FEATURES */}
       <section className="py-20 px-6 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
+  <div className="max-w-7xl mx-auto">
 
-          <SectionTitle eyebrow="CAPABILITIES">
-            Key Features of EMS
-          </SectionTitle>
+    <SectionTitle eyebrow="CAPABILITIES">
+      Key Features of EMS
+    </SectionTitle>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-            {/* Left Side - Simple Feature List */}
-            <div className="space-y-5">
-
-              {features.map((f, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 border-b border-gray-100 pb-4"
-                >
-                  <span className="text-2xl">
-                    {f.icon}
-                  </span>
-
-                  <h4 className="text-lg font-semibold text-gray-900">
-                    {f.title}
-                  </h4>
-                </div>
-              ))}
-
-            </div>
-
-            {/* Right Side - Image */}
-            <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100">
-              <img
-                src={emsImg2}
-                alt="EMS Features"
-                className="w-full h-[550px] object-cover"
-              />
-            </div>
-
-          </div>
-
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {features.map((f, i) => (
+        <div
+          key={i}
+          className="flex items-center gap-4 border-b border-gray-100 pb-4"
+        >
+          <span className="text-2xl">
+            {f.icon}
+          </span>
+          <h4 className="text-lg font-semibold text-gray-900">
+            {f.title}
+          </h4>
         </div>
-      </section>
+      ))}
+    </div>
+
+  </div>
+</section>
       {/* SECTION 5 — HOW EMS WORKS */}
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">

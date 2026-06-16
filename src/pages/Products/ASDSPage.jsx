@@ -56,7 +56,7 @@ const ASDSPage = () => {
   }, []);
 
   const features = [
-    { title: "Recipe-Driven Preparation", desc: ["Up to 6 different solutions configurable per unit — disinfectant, detergent, IPA, sporicide, neutraliser, custom", "Operator selects recipe + volume on the HMI; system handles the dilution math and dispensing", "Recipes are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
+    { title: "Recipe-Driven Preparation", desc: ["Up to 6 custom different disinfectant solutions configurable per unit (Sporicidal, Hand Disinfectant and Detergent).", "Operator selects recipe + volume on the HMI; system handles the dilution math and dispensing", "Recipes are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
     { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery — no \"close enough\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
     { title: "On-Demand, No Waste", desc: ["Solutions prepared only when needed — no shift-start over-preparation", "Reduced waste of expensive concentrates", "Reconciliation is automatic — every dispense logged, every discard captured"], icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
     { title: "Compliance", desc: ["21 CFR Part 11 compliant user management — electronic signatures, role-based access, audit trails", "Automated record keeping — every dispense event time-stamped and signed", "Historical data storage and export for QA review and APR/PQR", "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ"], icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
@@ -249,7 +249,7 @@ const ASDSPage = () => {
         {/* What ASDS Is */}
         <section className="py-24 px-6 bg-[#fafafa] border-y border-gray-100">
           <div className="max-w-7xl mx-auto">
-            <SectionTitle>What ASDS Is</SectionTitle>
+            <SectionTitle>What ASDS is</SectionTitle>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">

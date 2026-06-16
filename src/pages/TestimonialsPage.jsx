@@ -201,8 +201,8 @@ const TestimonialsPage = () => {
     },
     // {
     //   tag: "More Coming",
-    //   title: "IRS· MEM · IVBLT Validations",
-    //   description: "Customer validation letters for IRS™, MEM (MPATS), and IVBLT are being prepared and will be published here.",
+    //   title: "IRS· MPATS · IVBLT Validations",
+    //   description: "Customer validation letters for IRS™, MPATS (MPATS), and IVBLT are being prepared and will be published here.",
     //   placeholder: true,
     // },
   ];

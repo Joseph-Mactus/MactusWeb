@@ -9,7 +9,7 @@ import lowImg5 from '../../assets/images/Lowvoltagesystems/iStock-146878726-scal
 import lowImg6 from '../../assets/images/Lowvoltagesystems/pharma-camera-ra3ga84zseh85aaqva4ow2s0wrefp65h0ex8c2znw8.png';
 import lowImg7 from '../../assets/images/Lowvoltagesystems/centrol-clock-system-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
 import lowImg8 from '../../assets/images/Lowvoltagesystems/gas-detection-created-1-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
-import lowImg9 from '../../assets/images/Lowvoltagesystems/aiease_1748949958369-768x526.jpg';
+import lowImg9 from '../../assets/images/Lowvoltagesystems/img_1.png';
 
 // ── Shared design tokens (identical to SACS page) ────────────────────────────
 

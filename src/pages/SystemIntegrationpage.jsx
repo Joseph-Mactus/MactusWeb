@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ImageCarousel from '../components/ImageCarousel';
-import bmsImg from '../assets/images/BMSPage/iStock-2160382145-1024x576.jpg';
-import emsImg from '../assets/images/EMSPage/iStock-2166193783.jpg';
-import lvsImg from '../assets/images/Lowvoltagesystems/aiease_1748949958369-768x526.jpg';
+import bmsImg from '../assets/images/BMSPage/bms_1.png';
+import emsImg from '../assets/images/EMSPage/ems_1.png';
+import lvsImg from '../assets/images/Lowvoltagesystems/img_1.png';
 
 const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
   <div className={`flex flex-col ${center ? 'items-center' : 'items-start'} w-full mb-12 mt-8`}>
@@ -97,58 +97,106 @@ const IntegrationCard = ({ integration, index }) => {
   const isEven = index % 2 === 1;
 
   return (
-    <div className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-0 items-stretch bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-[0_8px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.10)] transition-all duration-500 group`}>
-      <div className="lg:w-5/12 relative overflow-hidden" style={{ minHeight: '320px' }}>
-        <img
-          src={integration.image}
-          alt={integration.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-          style={{ minHeight: '320px' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div className="absolute top-5 left-5">
-          <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#e0006e] text-white text-[11px] font-black tracking-[0.15em] uppercase shadow-lg">
-            {integration.tag}
-          </span>
-        </div>
-      </div>
+    <div
+  className={`flex flex-col ${
+    isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'
+  } items-stretch bg-white rounded-[2.5rem] overflow-hidden
+  border border-gray-100
+  shadow-[0_8px_40px_rgba(0,0,0,0.06)]
+  hover:shadow-[0_20px_60px_rgba(0,0,0,0.10)]
+  transition-all duration-500 group`}
+>
+  {/* Image section */}
+  <div className="w-full lg:w-7/12 relative overflow-hidden bg-gray-50 min-h-[320px] lg:min-h-[500px]">
+    <img
+      src={integration.image}
+      alt={integration.name}
+      className="
+        absolute inset-0
+        w-full h-full
+        object-fill
+        transition-transform duration-700
+        group-hover:scale-[1.02]
+      "
+    />
 
-      <div className="lg:w-7/12 p-8 md:p-10 flex flex-col justify-center gap-5">
-        <div>
-          <p className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-2">{integration.tag}</p>
-          <h3 className="font-black text-2xl md:text-3xl text-gray-900 tracking-tight leading-snug mb-3 group-hover:text-[#e0006e] transition-colors duration-300">
-            {integration.name}
-          </h3>
-          <p className="text-[#e0006e] font-medium text-sm italic leading-relaxed mb-4">"{integration.positioning}"</p>
-          <p className="text-gray-500 leading-relaxed font-medium text-sm">{integration.description}</p>
-        </div>
+    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
 
-        <ul className="space-y-2.5">
-          {integration.capabilities.map((capability, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-[#e0006e]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg className="w-3 h-3 text-[#e0006e]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <span className="text-gray-600 text-sm font-medium leading-relaxed">{capability}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="pt-2">
-          <a
-            href={integration.link}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#e0006e] text-[#e0006e] font-black text-xs tracking-widest uppercase hover:bg-[#e0006e] hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(224,0,110,0.25)]"
-          >
-            Learn More
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-      </div>
+    <div className="absolute top-5 left-5">
+      <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#e0006e] text-white text-[11px] font-black tracking-[0.15em] uppercase shadow-lg">
+        {integration.tag}
+      </span>
     </div>
+  </div>
+
+  {/* Content section */}
+  <div className="w-full lg:w-5/12 p-8 md:p-10 flex flex-col justify-center gap-5">
+    <div>
+      <p className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-2">
+        {integration.tag}
+      </p>
+
+      <h3 className="font-black text-2xl md:text-3xl text-gray-900 tracking-tight leading-snug mb-3 group-hover:text-[#e0006e] transition-colors duration-300">
+        {integration.name}
+      </h3>
+
+      <p className="text-[#e0006e] font-medium text-sm italic leading-relaxed mb-4">
+        "{integration.positioning}"
+      </p>
+
+      <p className="text-gray-500 leading-relaxed font-medium text-sm">
+        {integration.description}
+      </p>
+    </div>
+
+    <ul className="space-y-2.5">
+      {integration.capabilities.map((capability, i) => (
+        <li key={i} className="flex items-start gap-3">
+          <div className="w-5 h-5 rounded-full bg-[#e0006e]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg
+              className="w-3 h-3 text-[#e0006e]"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <span className="text-gray-600 text-sm font-medium leading-relaxed">
+            {capability}
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <div className="pt-2">
+      <a
+        href={integration.link}
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#e0006e] text-[#e0006e] font-black text-xs tracking-widest uppercase hover:bg-[#e0006e] hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(224,0,110,0.25)]"
+      >
+        Learn More
+
+        <svg
+          className="w-3.5 h-3.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={3}
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
   );
 };
 
@@ -218,13 +266,13 @@ const SystemIntegrationPage = () => {
             </p>
           </div>
 
-          <div className="relative animate-fade-in-right animate-float">
+          <div className="relative animate-fade-in-right  animate-float">
             <ImageCarousel images={[bmsImg, emsImg, lvsImg]} />
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-16 px-6  border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="THE FULL RANGE">Our System Integration Range</SectionTitle>
           <p className="text-center text-gray-500 font-medium text-base -mt-6 mb-12">
@@ -239,7 +287,7 @@ const SystemIntegrationPage = () => {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-16 px-6  border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="DECISION AID">Which integration closes which gap?</SectionTitle>
           <p className="text-center text-gray-500 font-medium text-base -mt-6 mb-10">

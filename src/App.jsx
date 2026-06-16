@@ -21,6 +21,8 @@ import ComplianceProductPage from './pages/Complianceproductspage';
 import SystemIntegrationPage from './pages/SystemIntegrationpage';
 import LowVoltageSystems from './pages/SystemIntegration/Lowvoltagesystems';
 
+import GeminiChatbot from './components/GeminiChatbot';
+
 function App() {
   return (
     <Router>
@@ -51,7 +53,9 @@ function App() {
         <Route path="/compliance-products" element={<ComplianceProductPage />} />       
         <Route path="/iiot-implementations" element={<IIoT />} />
       </Routes>
+      <GeminiChatbot />
     </Router>
+    
   );
 }
 

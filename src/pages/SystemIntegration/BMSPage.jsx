@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import bmsImg1 from '../../assets/images/BMSPage/iStock-2160382145-1024x576.jpg';
+import bmsImg1 from '../../assets/images/BMSPage/bms_1.png';
 import bmsImg2 from '../../assets/images/BMSPage/WhatsApp-Image-2025-04-08-at-6.03.36-PM-1-scaled-ra3ga84nbbvx5idk6b75jufccm9muxvwaj49306ccg.jpeg';
 
 const SectionTitle = ({ children, eyebrow, isDark }) => (

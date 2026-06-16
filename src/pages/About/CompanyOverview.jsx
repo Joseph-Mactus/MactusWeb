@@ -151,7 +151,7 @@ const CompanyOverview = () => {
             <div className="h-1.5 w-20 bg-[#e0006e] mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 lg:gap-32 justify-items-center text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 lg:gap-32 justify-items-center text-center">
             {/* Column 1 — Compliance Products */}
             <div className="space-y-10 w-full max-w-sm">
               <div className="text-center group">
@@ -184,6 +184,22 @@ const CompanyOverview = () => {
                   "Building Management System",
                   "Environmental Monitoring System",
                   "Low Voltage Systems"
+                ].map((name, i) => (
+                  <li key={i} className="py-3 border-b border-gray-100">
+                    <span className="text-gray-600 font-bold text-base">{name}</span>
+                  </li>
+                ))}
+              </ul>
+              
+            </div>
+            <div className="space-y-10 w-full max-w-sm">
+              <div className="text-center group">
+                <h3 className="text-gray-900 font-black text-2xl mb-3 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors">IIOT IMPLEMENTATION</h3>
+                <div className="h-1 w-12 bg-[#e0006e] mx-auto transition-all group-hover:w-full"></div>
+              </div>
+              <ul className="space-y-6">
+                {[
+                  "IIOT Implementations"
                 ].map((name, i) => (
                   <li key={i} className="py-3 border-b border-gray-100">
                     <span className="text-gray-600 font-bold text-base">{name}</span>

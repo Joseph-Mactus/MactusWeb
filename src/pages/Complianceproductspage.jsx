@@ -5,7 +5,7 @@ import ImageCarousel from '../components/ImageCarousel';
 import comImg1 from '../assets/images/Complianceproducts/ChatGPT-Image-Apr-14-2025-04_27_52-PM-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
 import comImg2 from '../assets/images/Complianceproducts/IRS/IRS1.png';
 import comImg3 from '../assets/images/Complianceproducts/ASDS/asds_1.png';
-import comImg4 from '../assets/images/Complianceproducts/MEM/mem_3.png';
+import comImg4 from '../assets/images/Complianceproducts/MPATS/mem_3.png';
 import comImg5 from '../assets/images/ivblt_2.png';
 import ZohoFormModal from '../components/ZohoFormModal';
 
@@ -76,10 +76,10 @@ const products = [
   },
   {
     id: 'mem',
-    tag: 'MEM',
-    name: 'MEM — Mactus Environmental Monitoring',
-    positioning: 'One unaccounted-for media plate can delay batch release. MEM makes sure that never happens.',
-    description: 'MEM digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
+    tag: 'MPATS',
+    name: 'MPATS — Mactus Environmental Monitoring',
+    positioning: 'One unaccounted-for media plate can delay batch release. MPATS makes sure that never happens.',
+    description: 'MPATS digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
     capabilities: [
       'QR-code tracking — every plate scanned at every lifecycle stage',
       'Automatic batch reconciliation — all plates accounted for at release',
@@ -88,7 +88,7 @@ const products = [
     ],
     image: comImg4,
     link: '/products/mem/',
-    note: 'Previously listed as MPATS — now MEM',
+    note: 'Previously listed as MPATS — now MPATS',
   },
   {
     id: 'ivblt',
@@ -123,7 +123,7 @@ const tableRows = [
   { product: 'SACS', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
   { product: 'IRS™', link: '/products/irs', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
   { product: 'ASDS', link: '/products/asds', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'MEM', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
+  { product: 'MPATS', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
   { product: 'IVBLT', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
 ];
 
@@ -226,7 +226,7 @@ const ComplianceProductsPage = () => {
     document.title = "Pharma Compliance Products | 21 CFR Part 11 GMP Systems | Mactus Automation";
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
-    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS, IRS™, ASDS, MEM, IVBLT. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
+    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS, IRS™, ASDS, MPATS, IVBLT. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
   }, []);
 
   return (

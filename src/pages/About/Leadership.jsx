@@ -38,8 +38,8 @@ const Leadership = () => {
       linkedin: "https://www.linkedin.com/in/tomzee-p-varghese-b12560379/"
     },
     {
-      name: "Ramesh Selvaraj",
-      title: "Enterprise Sales Leader",
+      name: "Ramesh  Selvaraj",
+      title: "Director-Enterprise Sales Leader",
       photo: leaImg4,
       bio: "Ramesh Selvaraj is the Associate Director in Sales and Business Development at Mactus Automation, bringing over 14 years of diverse experience in programming, project management, product development, and sales. Before his leadership role at Mactus, he successfully led a team of automation engineers in delivering compliance products and solutions to the Indian pharmaceutical industry. Ramesh is skilled in product development and enhancement, utilizing customer voice-of-the-customer (VOC) insights to address pain points and meet client needs. His expertise in 21 CFR Part 11 requirements is crucial for compliance in the pharmaceutical sector. He holds a Bachelor of Engineering in Electrical and Electronics from Visvesvaraya Technological University, Belgaum, Karnataka, and has completed various training programs with certifications in project management, program management, and business development and sales.",
       linkedin: "https://www.linkedin.com/in/ramesh-selvaraj-22626a8a/"
@@ -48,7 +48,7 @@ const Leadership = () => {
       name: "Sethurajan S",
       title: "Project Engineering Leader",
       photo: leaImg5,
-      bio: "Mr. Sethurajan S is a seasoned BMS specialist with over 13 years of experience in the design, execution, and documentation of intelligent building solutions. He is proficient across the full project lifecycle, including system integration and commissioning. His expertise extends to EMS and ELV systems such as FAPA, ACS, DIS, CCTV, and networking infrastructure. Currently, he oversees end-to-end project engineering, focusing on the design and execution of compliance-driven systems such as SACS, IRS™, ASDS, and MEM, and leads system integration projects for the pharmaceutical industry. He holds a B.E. in Electronics and Communication Engineering from Anna University, Chennai, and is certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4 Commissioning, and Schneider Electric Building Automation.",
+      bio: "Mr. Sethurajan S is a seasoned BMS specialist with over 13 years of experience in the design, execution, and documentation of intelligent building solutions. He is proficient across the full project lifecycle, including system integration and commissioning. His expertise extends to EMS and ELV systems such as FAPA, ACS, DIS, CCTV, and networking infrastructure. Currently, he oversees end-to-end project engineering, focusing on the design and execution of compliance-driven systems such as SACS, IRS™, ASDS, and MPATS, and leads system integration projects for the pharmaceutical industry. He holds a B.E. in Electronics and Communication Engineering from Anna University, Chennai, and is certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4 Commissioning, and Schneider Electric Building Automation.",
       linkedin: "https://www.linkedin.com/in/sethu-rajan-558329b9/"
     },
     {
@@ -62,7 +62,7 @@ const Leadership = () => {
       name: "Manikandan P",
       title: "Customer Support Leader",
       photo: leaImg7,
-      bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS, IRS™, ASDS, and MEM. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
+      bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS, IRS™, ASDS, and MPATS. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
       linkedin: "https://www.linkedin.com/in/manikandan-p-81748719a/"
     }
   ];

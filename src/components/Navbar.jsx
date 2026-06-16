@@ -12,7 +12,7 @@ const NAV_ITEMS = [
     "SACS (Smart Access Control System)",
     "IRS(Intervention Recording System)",
     "ASDS (Automated Solution Dispensing System)",
-    "MEM (Environmental Monitoring)",
+    "MPATS (Environmental Monitoring)",
     "IVBLT (Intravenous Bag Leak Tester)"
   ]
 },
@@ -59,7 +59,7 @@ const SUB_PATHS = {
   "SACS (Smart Access Control System)": "/products/sacs",
   "IRS(Intervention Recording System)": "/products/irs",
   "ASDS (Automated Solution Dispensing System)": "/products/asds",
-  "MEM (Environmental Monitoring)": "/products/mem",
+  "MPATS (Environmental Monitoring)": "/products/mem",
   "IVBLT (Intravenous Bag Leak Tester)": "/products/ivblt",
 
   "Company Overview": "/company-overview",
