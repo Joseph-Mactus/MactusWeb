@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const INITIAL_MESSAGE = {
   role: "model",
@@ -153,24 +155,98 @@ export default function GeminiChatbot() {
               return (
                 <div
                   key={`${message.role}-${index}`}
-                  className={`flex ${
-                    isUser ? "justify-end" : "justify-start"
-                  }`}
+                  className={`flex ${isUser ? "justify-end" : "justify-start"
+                    }`}
                 >
                   <div
                     className={`
-                      max-w-[85%] whitespace-pre-wrap rounded-2xl
-                      px-4 py-3 text-sm leading-relaxed
-                      ${
-                        isUser
-                          ? "rounded-br-md bg-[#e0006e] text-white"
-                          : message.isError
+            max-w-[88%] rounded-2xl px-4 py-3
+            text-sm leading-relaxed
+            ${isUser
+                        ? "rounded-br-md bg-[#e0006e] text-white"
+                        : message.isError
                           ? "rounded-bl-md border border-red-200 bg-red-50 text-red-700"
                           : "rounded-bl-md border border-gray-100 bg-white text-gray-700 shadow-sm"
                       }
-                    `}
+          `}
                   >
-                    {message.text}
+                    {isUser ? (
+                      <span className="whitespace-pre-wrap">
+                        {message.text}
+                      </span>
+                    ) : (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({ children }) => (
+                            <p className="mb-2 last:mb-0 leading-relaxed">
+                              {children}
+                            </p>
+                          ),
+
+                          strong: ({ children }) => (
+                            <strong className="font-bold text-gray-900">
+                              {children}
+                            </strong>
+                          ),
+
+                          ul: ({ children }) => (
+                            <ul className="my-2 list-disc space-y-2 pl-5">
+                              {children}
+                            </ul>
+                          ),
+
+                          ol: ({ children }) => (
+                            <ol className="my-2 list-decimal space-y-2 pl-5">
+                              {children}
+                            </ol>
+                          ),
+
+                          li: ({ children }) => (
+                            <li className="pl-1 leading-relaxed">
+                              {children}
+                            </li>
+                          ),
+
+                          h1: ({ children }) => (
+                            <h1 className="mb-2 text-lg font-bold text-gray-900">
+                              {children}
+                            </h1>
+                          ),
+
+                          h2: ({ children }) => (
+                            <h2 className="mb-2 text-base font-bold text-gray-900">
+                              {children}
+                            </h2>
+                          ),
+
+                          h3: ({ children }) => (
+                            <h3 className="mb-2 text-sm font-bold text-gray-900">
+                              {children}
+                            </h3>
+                          ),
+
+                          a: ({ href, children }) => (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-[#e0006e] underline underline-offset-2"
+                            >
+                              {children}
+                            </a>
+                          ),
+
+                          code: ({ children }) => (
+                            <code className="rounded bg-gray-100 px-1 py-0.5 text-xs text-gray-800">
+                              {children}
+                            </code>
+                          ),
+                        }}
+                      >
+                        {message.text}
+                      </ReactMarkdown>
+                    )}
                   </div>
                 </div>
               );
