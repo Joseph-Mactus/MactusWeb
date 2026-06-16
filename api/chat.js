@@ -228,37 +228,35 @@ export default async function handler(req, res) {
       apiKey,
     });
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-
-        tools: [
-          {
-            urlContext: {},
-          },
-        ],
-
-        temperature: 0.1,
-        topP: 0.8,
-        maxOutputTokens: 500,
+   const response = await ai.models.generateContent({
+  model: "gemini-2.5-flash",
+  contents,
+  config: {
+    systemInstruction: SYSTEM_INSTRUCTION,
+    tools: [
+      {
+        urlContext: {},
       },
-    });
+    ],
+    temperature: 0.1,
+    topP: 0.8,
+    maxOutputTokens: 1000,
+  },
+});
 
-    const answer = response.text?.trim();
+    let answer = response.text?.trim();
 
-    if (!answer) {
-      console.error(
-        "Gemini returned an empty answer:",
-        JSON.stringify(response)
-      );
+if (!answer) {
+  return res.status(502).json({
+    success: false,
+    message: "Gemini returned an empty answer.",
+  });
+}
 
-      return res.status(502).json({
-        success: false,
-        message: "Gemini returned an empty answer.",
-      });
-    }
+if (finishReason === "MAX_TOKENS") {
+  answer +=
+    "\n\n_Response shortened because it reached the response limit._";
+}
 
     const retrievedUrls = getRetrievedUrls(response);
 
