@@ -88,7 +88,7 @@ const products = [
     ],
     image: comImg4,
     link: '/products/mem/',
-    note: 'Previously listed as MPATS — now MPATS',
+    
   },
   {
     id: 'ivblt',
