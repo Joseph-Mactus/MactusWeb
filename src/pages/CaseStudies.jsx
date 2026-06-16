@@ -11,7 +11,7 @@ import casImg5 from '../assets/images/Complianceproducts/MEM/mem_2.jpeg';
 const caseStudies = [
   {
     id: 1,
-    tag: "SACS™",
+    tag: "SACS",
     title: "Strengthening GMP Compliance with Automated Access Control System",
     teaser: "Even the most mature pharmaceutical facilities carry hidden compliance risks. Strong SOPs, trained teams, and GMP discipline often still rely on people to enforce access rules. When cleanroom entry depends on manual registers and memory, small gaps quietly build audit pressure. This case study shows how one facility eliminated that risk by making compliance automatic at the door.",
     image: casImg1,
@@ -26,14 +26,14 @@ const caseStudies = [
   },
   {
     id: 3,
-    tag: "ASDS™",
+    tag: "ASDS",
     title: "The Risk of Manual Disinfectant Solution Preparation",
     teaser: "Manual disinfectant preparation depends heavily on operator accuracy. At this facility, manual weighing, calculations, and paper records introduced variability and traceability gaps. Small errors resulted in deviations, rework, and audit observations. This case study shows how automation transformed a high-risk GMP activity into a controlled, compliant process.",
     image: casImg3,
   },
   {
     id: 4,
-    tag: "MEM™",
+    tag: "MEM",
     title: "Automating Environmental Monitoring for Audit-Ready Compliance",
     teaser: "Manual environmental monitoring programs are prone to data integrity risks and delayed responses to excursions. This case study illustrates how transitioning to an automated, real-time MEM system eliminated paperwork, ensured 21 CFR Part 11 compliance, and provided immediate visibility into cleanroom conditions, significantly reducing audit vulnerabilities.",
     image: casImg5,
@@ -47,7 +47,7 @@ const caseStudies = [
   }
 ];
 
-const tags = ["All", "SACS™", "IRS™", "ASDS™", "MEM™", "IVBLT"];
+const tags = ["All", "SACS", "IRS™", "ASDS", "MEM", "IVBLT"];
 
 const CaseStudies = () => {
   const [activeTag, setActiveTag] = useState("All");

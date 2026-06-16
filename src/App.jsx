@@ -18,6 +18,7 @@ import EnvironmentalMonitoringSystem from './pages/SystemIntegration/EMSPage';
 import Testimonial from './pages/TestimonialsPage';
 import ContactUs from './pages/Contactus';
 import ComplianceProductPage from './pages/Complianceproductspage';
+import SystemIntegrationPage from './pages/SystemIntegrationpage';
 import LowVoltageSystems from './pages/SystemIntegration/Lowvoltagesystems';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/testimonial" element={<Testimonial />} />
 
 
+        <Route path="/system-integration" element={<SystemIntegrationPage />} />
         <Route path="/system-integration/building-management-system" element={<BuildingManagementSystem />} />
         <Route path="/system-integration/environmental-monitoring-system" element={<EnvironmentalMonitoringSystem/>} />     
         <Route path="/system-integration/low-voltage-systems" element={<LowVoltageSystems />} />

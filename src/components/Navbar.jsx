@@ -9,11 +9,11 @@ const NAV_ITEMS = [
   {
   title: "COMPLIANCE PRODUCTS",
   subItems: [
-    "SACS™ (Smart Access Control System)",
-    "IRS™ (Intervention Recording System)",
-    "ASDS™ (Automated Solution Dispensing System)",
-    "MEM™ (Environmental Monitoring)",
-    "IVBLT™ (Intravenous Bag Leak Tester)"
+    "SACS (Smart Access Control System)",
+    "IRS(Intervention Recording System)",
+    "ASDS (Automated Solution Dispensing System)",
+    "MEM (Environmental Monitoring)",
+    "IVBLT (Intravenous Bag Leak Tester)"
   ]
 },
   {
@@ -56,11 +56,11 @@ const ICON_MAP = {
 };
 
 const SUB_PATHS = {
-  "SACS™ (Smart Access Control System)": "/products/sacs",
-  "IRS™ (Intervention Recording System)": "/products/irs",
-  "ASDS™ (Automated Solution Dispensing System)": "/products/asds",
-  "MEM™ (Environmental Monitoring)": "/products/mem",
-  "IVBLT™ (Intravenous Bag Leak Tester)": "/products/ivblt",
+  "SACS (Smart Access Control System)": "/products/sacs",
+  "IRS(Intervention Recording System)": "/products/irs",
+  "ASDS (Automated Solution Dispensing System)": "/products/asds",
+  "MEM (Environmental Monitoring)": "/products/mem",
+  "IVBLT (Intravenous Bag Leak Tester)": "/products/ivblt",
 
   "Company Overview": "/company-overview",
   "Leadership": "/leadership",

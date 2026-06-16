@@ -11,7 +11,7 @@ import lowImg7 from '../../assets/images/Lowvoltagesystems/centrol-clock-system-
 import lowImg8 from '../../assets/images/Lowvoltagesystems/gas-detection-created-1-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
 import lowImg9 from '../../assets/images/Lowvoltagesystems/aiease_1748949958369-768x526.jpg';
 
-// ── Shared design tokens (identical to SACS™ page) ────────────────────────────
+// ── Shared design tokens (identical to SACS page) ────────────────────────────
 
 const SectionTitle = ({ children }) => (
   <div className="flex justify-center w-full mb-6 mt-8">

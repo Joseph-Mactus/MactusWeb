@@ -5,30 +5,30 @@ const FOOTER_COLS = [
     title: "COMPLIANCE PRODUCTS",
     links: [
       {
-        name: "SACS™ (Smart Access Control System)",
+        name: "SACS (Smart Access Control System)",
         path: "/products/sacs"
       },
       {
-        name: "IRS™ (Intervention Recording System)",
+        name: "IRS(Intervention Recording System)",
         path: "/products/irs"
       },
       {
-        name: "ASDS™ (Automated Solution Dispensing System)",
+        name: "ASDS (Automated Solution Dispensing System)",
         path: "/products/asds"
       },
       {
-        name: "MEM™ (Environmental Monitoring)",
+        name: "MEM (Environmental Monitoring)",
         path: "/products/mem"
       },
       {
-        name: "IVBLT™ (Intravenous Bag Leak Tester)",
+        name: "IVBLT (Intravenous Bag Leak Tester)",
         path: "/products/ivblt"
       }
     ]
   },
   {
     title: "SYSTEM INTEGRATION",
-    links: [
+    links: [      
       {
         name: "Building Management System",
         path: "/system-integration/building-management-system"

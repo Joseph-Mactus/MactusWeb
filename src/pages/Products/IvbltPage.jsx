@@ -27,7 +27,7 @@ const steps = [
     id: 1,
     title: "LOAD",
     icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>,
-    detail: "IV bag is placed in the IVBLT™ chamber. The system reads the bag size configuration and sets the appropriate test pressure automatically.",
+    detail: "IV bag is placed in the IVBLT chamber. The system reads the bag size configuration and sets the appropriate test pressure automatically.",
   },
   {
     id: 2,
@@ -127,36 +127,36 @@ const outcomes = [
 
 const faqs = [
   {
-    question: "What is an Intravenous Bag Leak Tester (IVBLT™)?",
-    answer: "An IVBLT™ is a precision testing system that applies controlled pressure to intravenous bags to detect sealing defects, pinholes, and port leaks that cannot be identified by manual visual inspection. Every bag is tested individually — pressure is applied, monitored for the test duration, and the result is automatically classified as pass or fail. All test data is electronically recorded per 21 CFR Part 11.",
+    question: "What is an Intravenous Bag Leak Tester (IVBLT)?",
+    answer: "An IVBLT is a precision testing system that applies controlled pressure to intravenous bags to detect sealing defects, pinholes, and port leaks that cannot be identified by manual visual inspection. Every bag is tested individually — pressure is applied, monitored for the test duration, and the result is automatically classified as pass or fail. All test data is electronically recorded per 21 CFR Part 11.",
   },
   {
     question: "Why is pressure-based testing better than manual visual inspection for IV bags?",
     answer: "Manual visual inspection cannot detect pinholes smaller than approximately 0.2mm, and squeeze-testing applies inconsistent force between operators. Pressure-based testing applies a defined, repeatable force to every bag — regardless of operator or shift — and detects pressure drops that indicate leaks far below the threshold of visual detection. The result is objectively classified and electronically recorded, making it regulatory-defensible in a way manual inspection cannot be.",
   },
   {
-    question: "Does IVBLT™ test destructively — do bags need to be discarded after testing?",
-    answer: "No. IVBLT™ operates non-destructively. Bags that pass the pressure test proceed directly to the next step — labelling, secondary packaging, or release — without any modification. Only failed bags are flagged and quarantined. There is no product loss from the testing process itself.",
+    question: "Does IVBLT test destructively — do bags need to be discarded after testing?",
+    answer: "No. IVBLT operates non-destructively. Bags that pass the pressure test proceed directly to the next step — labelling, secondary packaging, or release — without any modification. Only failed bags are flagged and quarantined. There is no product loss from the testing process itself.",
   },
   {
-    question: "Which IV bag sizes does IVBLT™ support?",
-    answer: "Mactus IVBLT™ supports standard LVP and SVP bag sizes — 50 mL, 100 mL, 250 mL, 500 mL, and 1000 mL. The system automatically adjusts test pressure based on bag size configuration. Multi-size facilities can configure all required sizes during installation and switch between them via the HMI without manual pressure adjustment.",
+    question: "Which IV bag sizes does IVBLT support?",
+    answer: "Mactus IVBLT supports standard LVP and SVP bag sizes — 50 mL, 100 mL, 250 mL, 500 mL, and 1000 mL. The system automatically adjusts test pressure based on bag size configuration. Multi-size facilities can configure all required sizes during installation and switch between them via the HMI without manual pressure adjustment.",
   },
   {
-    question: "Is IVBLT™ 21 CFR Part 11 compliant?",
-    answer: "Yes. IVBLT™ records every test event electronically — bag ID, size, pressure profile, test duration, result, operator, and timestamp — in a tamper-proof, 21 CFR Part 11 compliant audit trail. Role-based access controls restrict who can modify test parameters. Electronic signatures are bound to each test event. Full validation documentation (URS, FDS, DQ, IQ, OQ, PQ) is delivered with every installation.",
+    question: "Is IVBLT 21 CFR Part 11 compliant?",
+    answer: "Yes. IVBLT records every test event electronically — bag ID, size, pressure profile, test duration, result, operator, and timestamp — in a tamper-proof, 21 CFR Part 11 compliant audit trail. Role-based access controls restrict who can modify test parameters. Electronic signatures are bound to each test event. Full validation documentation (URS, FDS, DQ, IQ, OQ, PQ) is delivered with every installation.",
   },
   {
-    question: "Can IVBLT™ be integrated with our existing MES or batch record system?",
-    answer: "Yes. IVBLT™ test results can be pushed to MES, EBR, or LIMS via standard interfaces. Batch-level reconciliation data — total bags tested, passed, failed, and quarantined — can be automatically included in the electronic batch record, eliminating manual data entry at batch closure.",
+    question: "Can IVBLT be integrated with our existing MES or batch record system?",
+    answer: "Yes. IVBLT test results can be pushed to MES, EBR, or LIMS via standard interfaces. Batch-level reconciliation data — total bags tested, passed, failed, and quarantined — can be automatically included in the electronic batch record, eliminating manual data entry at batch closure.",
   },
   {
     question: "What is bag status reconciliation and why does it matter?",
-    answer: "Bag status reconciliation is the automatic count of bags tested, passed, failed, and quarantined per batch. In manual systems, reconciliation is done by counting physical bags and cross-referencing paper records — prone to counting errors and a common source of batch closure deviations. IVBLT™ tracks every bag electronically from test entry to result classification, so the reconciliation is complete and accurate the moment the batch finishes testing.",
+    answer: "Bag status reconciliation is the automatic count of bags tested, passed, failed, and quarantined per batch. In manual systems, reconciliation is done by counting physical bags and cross-referencing paper records — prone to counting errors and a common source of batch closure deviations. IVBLT tracks every bag electronically from test entry to result classification, so the reconciliation is complete and accurate the moment the batch finishes testing.",
   },
   {
-    question: "How long does IVBLT™ deployment take?",
-    answer: "Standard IVBLT™ deployment is 6 to 8 weeks end-to-end — including URS finalisation, hardware delivery and installation, HMI configuration, bag size setup, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-line rollouts are scoped separately.",
+    question: "How long does IVBLT deployment take?",
+    answer: "Standard IVBLT deployment is 6 to 8 weeks end-to-end — including URS finalisation, hardware delivery and installation, HMI configuration, bag size setup, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-line rollouts are scoped separately.",
   },
 ];
 
@@ -184,15 +184,15 @@ const IVBLTPage = () => {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mactus.in/" },
       { "@type": "ListItem", "position": 2, "name": "Compliance Products", "item": "https://mactus.in/complians-products/" },
-      { "@type": "ListItem", "position": 3, "name": "IVBLT™", "item": "https://mactus.in/intravenous-bag-leak-tester/" },
+      { "@type": "ListItem", "position": 3, "name": "IVBLT", "item": "https://mactus.in/intravenous-bag-leak-tester/" },
     ],
   };
 
   useEffect(() => {
-    document.title = "Intravenous Bag Leak Tester (IVBLT™) | IV Bag Integrity Testing | Mactus Automation";
+    document.title = "Intravenous Bag Leak Tester (IVBLT) | IV Bag Integrity Testing | Mactus Automation";
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
-    m.setAttribute('content', 'Mactus IVBLT™ detects pinhole leaks in IV bags with high-sensitivity pressure testing — cGMP and GDP compliant, electronic audit trail, automated bag status reconciliation. Built for large volume parenterals manufacturing.');
+    m.setAttribute('content', 'Mactus IVBLT detects pinhole leaks in IV bags with high-sensitivity pressure testing — cGMP and GDP compliant, electronic audit trail, automated bag status reconciliation. Built for large volume parenterals manufacturing.');
   }, []);
 
   return (
@@ -258,7 +258,7 @@ const IVBLTPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-80">
-              Mactus IVBLT™ applies precise, size-adjusted pressure to every IV bag — detecting the smallest sealing defects before they leave your facility. cGMP and GDP compliant, electronically recorded, and built for 100% in-line testing on large volume parenteral lines.
+              Mactus IVBLT applies precise, size-adjusted pressure to every IV bag — detecting the smallest sealing defects before they leave your facility. cGMP and GDP compliant, electronically recorded, and built for 100% in-line testing on large volume parenteral lines.
             </p>
 
             <div className="flex flex-row items-center gap-4 flex-wrap sm:flex-nowrap">
@@ -279,14 +279,14 @@ const IVBLTPage = () => {
       {/* ── SECTION 2 — THE PROBLEM WE SOLVE ────────────────────────────────── */}
       <section className="py-16 px-6 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle s eyebrow="WHY IVBLT™">Manual leak inspection misses what the eye can't see.</SectionTitle>
+          <SectionTitle s eyebrow="WHY IVBLT">Manual leak inspection misses what the eye can't see.</SectionTitle>
 
           <div className="max-w-3xl mx-auto mb-10 space-y-4">
             <p className="text-gray-600 text-lg leading-relaxed font-medium">
               Intravenous bags are sterile, pressurised primary containers. A pinhole — too small to see under normal light, impossible to detect by squeeze-test alone — allows microbial ingress, oxygen ingress, and loss of sterility assurance. In large volume parenteral manufacturing, where hundreds or thousands of bags are produced per shift, manual inspection cannot provide the sensitivity or consistency that patient safety demands.
             </p>
             <p className="font-black text-xl text-[#e0006e]">
-              IVBLT™ replaces the squeeze test with precision pressure measurement — every bag, every time.
+              IVBLT replaces the squeeze test with precision pressure measurement — every bag, every time.
             </p>
           </div>
 
@@ -296,7 +296,7 @@ const IVBLTPage = () => {
                 <tr className="bg-gray-100">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                   <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Manual / Visual Inspection</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">IVBLT™</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">IVBLT</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -319,13 +319,13 @@ const IVBLTPage = () => {
         </div>
       </section>
 
-      {/* ── SECTION 3 — WHAT IVBLT™ IS ────────────────────────────────────────── */}
+      {/* ── SECTION 3 — WHAT IVBLT IS ────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle eyebrow="THE SOLUTION">What IVBLT™ Is</SectionTitle>
+          <SectionTitle eyebrow="THE SOLUTION">What IVBLT Is</SectionTitle>
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium mb-10">
             <p>
-              IVBLT™ is a precision-engineered IV bag integrity testing system that applies constant, controlled pressure — automatically adjusted according to bag size — to detect sealing defects, pinholes, and port leaks that cannot be identified by manual visual inspection. The system operates non-destructively: bags that pass the test proceed directly to labelling and packaging.
+              IVBLT is a precision-engineered IV bag integrity testing system that applies constant, controlled pressure — automatically adjusted according to bag size — to detect sealing defects, pinholes, and port leaks that cannot be identified by manual visual inspection. The system operates non-destructively: bags that pass the test proceed directly to labelling and packaging.
             </p>
             <p>
               Every test is electronically recorded — bag ID, size, pressure applied, test duration, result, and operator. The test record is written to a 21 CFR Part 11 compliant audit trail the moment the test completes. Batch-level bag status reconciliation — tested, passed, failed, and quarantined counts — is available on demand.
@@ -336,16 +336,16 @@ const IVBLTPage = () => {
           <div className="relative bg-gray-900 rounded-2xl p-8 md:p-10 overflow-hidden border border-white/5">
             <div className="absolute top-4 left-6 text-[#e0006e] font-black leading-none select-none" style={{ fontSize: '80px', opacity: 0.12 }}>"</div>
             <p className="text-gray-200 text-lg md:text-xl leading-relaxed font-medium italic relative z-10">
-              "IVBLT™ is the difference between 'we inspected every bag' and 'every bag was pressure-tested to specification — and the system has the record.'"
+              "IVBLT is the difference between 'we inspected every bag' and 'every bag was pressure-tested to specification — and the system has the record.'"
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 4 — HOW IVBLT™ WORKS ─────────────────────────────────────── */}
+      {/* ── SECTION 4 — HOW IVBLT WORKS ─────────────────────────────────────── */}
       <section className="py-16 px-6 bg-white border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="THE WORKFLOW">How IVBLT™ Works</SectionTitle>
+          <SectionTitle eyebrow="THE WORKFLOW">How IVBLT Works</SectionTitle>
           <p className="text-center text-gray-500 font-medium text-lg -mt-6 mb-14">Precision pressure testing — automated, repeatable, recorded.</p>
 
           {/* Stepper */}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ImageCarousel from '../components/ImageCarousel';
 import comImg1 from '../assets/images/Complianceproducts/ChatGPT-Image-Apr-14-2025-04_27_52-PM-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.png';
 import comImg2 from '../assets/images/Complianceproducts/IRS/IRS1.png';
 import comImg3 from '../assets/images/Complianceproducts/ASDS/asds_1.png';
-import comImg4 from '../assets/images/Complianceproducts/MEM/mem_2.jpeg';
+import comImg4 from '../assets/images/Complianceproducts/MEM/mem_3.png';
 import comImg5 from '../assets/images/ivblt_2.png';
 import ZohoFormModal from '../components/ZohoFormModal';
 
@@ -27,10 +28,10 @@ const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
 const products = [
   {
     id: 'sacs',
-    tag: 'SACS™',
+    tag: 'SACS',
     name: 'Smart Access Control System',
     positioning: 'The cleanroom door is where contamination risk and compliance risk both begin.',
-    description: 'Mactus SACS™ is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
+    description: 'Mactus SACS is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
     capabilities: [
       'Biometric authentication — fingerprint and face recognition',
       'SOP-enforced gowning sequence before cleanroom entry',
@@ -45,7 +46,7 @@ const products = [
     id: 'irs',
     tag: 'IRS™',
     name: 'Intervention Recording System',
-    positioning: 'Every aseptic intervention is a contamination risk and a data integrity event. IRS™ captures both.',
+    positioning: 'Every aseptic intervention is a contamination risk and a data integrity event. IRScaptures both.',
     description: 'The Intervention Recording System (IRS™) is a web-based automation solution designed to monitor, control, and record interventions occurring during batch processing in pharmaceutical filling lines. Sensor-measured duration, operator identity, intervention type, and supervisor sign-off — all captured automatically, aligned with EU GMP Annex 1.',
     capabilities: [
       'Sensor-measured intervention duration — no operator self-reporting',
@@ -59,10 +60,10 @@ const products = [
   },
   {
     id: 'asds',
-    tag: 'ASDS™',
+    tag: 'ASDS',
     name: 'Automated Solution Dispensing System',
-    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS™ replaces the graduated cylinder with a recipe.',
-    description: 'The ASDS™ is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a recipe and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — recipe, volume, operator, time — with full 21 CFR Part 11 audit trail.',
+    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS replaces the graduated cylinder with a recipe.',
+    description: 'The ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a recipe and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — recipe, volume, operator, time — with full 21 CFR Part 11 audit trail.',
     capabilities: [
       'Up to 6 configurable recipes — disinfectant, IPA, detergent, sporicide',
       'Volumetric accuracy — recipe-locked, no manual estimation',
@@ -75,10 +76,10 @@ const products = [
   },
   {
     id: 'mem',
-    tag: 'MEM™',
-    name: 'MEM™ — Mactus Environmental Monitoring',
-    positioning: 'One unaccounted-for media plate can delay batch release. MEM™ makes sure that never happens.',
-    description: 'MEM™ digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
+    tag: 'MEM',
+    name: 'MEM — Mactus Environmental Monitoring',
+    positioning: 'One unaccounted-for media plate can delay batch release. MEM makes sure that never happens.',
+    description: 'MEM digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
     capabilities: [
       'QR-code tracking — every plate scanned at every lifecycle stage',
       'Automatic batch reconciliation — all plates accounted for at release',
@@ -87,7 +88,7 @@ const products = [
     ],
     image: comImg4,
     link: '/products/mem/',
-    note: 'Previously listed as MPATS — now MEM™',
+    note: 'Previously listed as MPATS — now MEM',
   },
   {
     id: 'ivblt',
@@ -119,11 +120,11 @@ const standards = [
 ];
 
 const tableRows = [
-  { product: 'SACS™', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
+  { product: 'SACS', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
   { product: 'IRS™', link: '/products/irs', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'ASDS™', link: '/products/asds', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'MEM™', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
-  { product: 'IVBLT™', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'ASDS', link: '/products/asds', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
+  { product: 'MEM', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
+  { product: 'IVBLT', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
 ];
 
 const validationDocs = [
@@ -225,7 +226,7 @@ const ComplianceProductsPage = () => {
     document.title = "Pharma Compliance Products | 21 CFR Part 11 GMP Systems | Mactus Automation";
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
-    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS™, IRS™, ASDS™, MEM™, IVBLT™. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
+    m.setAttribute('content', 'Five purpose-built compliance products for pharmaceutical manufacturing — SACS, IRS™, ASDS, MEM, IVBLT. 21 CFR Part 11 compliant, GAMP 5 validated, audit-ready from day one.');
   }, []);
 
   return (
@@ -289,30 +290,9 @@ const ComplianceProductsPage = () => {
           </div>
 
           {/* Right — floating product count visual */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-sm">
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: 'SACS™', sub: 'Access Control', num: '01' },
-                  { label: 'IRS™', sub: 'Interventions', num: '02' },
-                  { label: 'ASDS™', sub: 'Dispensing', num: '03' },
-                  { label: 'MEM™', sub: 'Env. Monitoring', num: '04' },
-                ].map((item, i) => (
-                  <div key={i} className={`bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#e0006e]/40 hover:bg-white/10 transition-all duration-300 ${i === 0 ? 'mt-6' : ''} ${i === 3 ? '-mt-6' : ''}`}>
-                    <p className="text-[#e0006e] font-black text-[10px] tracking-widest uppercase mb-1">{item.num}</p>
-                    <p className="text-white font-black text-base">{item.label}</p>
-                    <p className="text-gray-500 text-xs font-medium mt-0.5">{item.sub}</p>
-                  </div>
-                ))}
-              </div>
-              {/* Center badge */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-14 h-14 rounded-full bg-[#e0006e] flex items-center justify-center shadow-[0_0_40px_rgba(224,0,110,0.5)] border-4 border-[#1a1a1a]">
-                  <span className="text-white font-black text-sm">+5</span>
-                </div>
-              </div>
+          <div className="relative animate-fade-in-right animate-float">
+              <ImageCarousel images={[comImg3,comImg2,comImg4,comImg5,comImg1]} />
             </div>
-          </div>
         </div>
       </section>
 

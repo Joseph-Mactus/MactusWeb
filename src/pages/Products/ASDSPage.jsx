@@ -52,7 +52,7 @@ const ASDSPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useState(() => {
-    document.title = "Automated Solution Dispensing System (ASDS™) | Mactus";
+    document.title = "Automated Solution Dispensing System (ASDS) | Mactus";
   }, []);
 
   const features = [
@@ -66,7 +66,7 @@ const ASDSPage = () => {
   const steps = [
     { title: "Authenticate", desc: "Operator logs in at the HMI. Electronic signature is bound to the dispense event." },
     { title: "Select", desc: "Operator picks the recipe (e.g., 0.5% sodium hypochlorite) and the required volume." },
-    { title: "Dispense", desc: "ASDS™ calculates the dilution, opens the metered valves, mixes, and dispenses into the operator's labelled container." },
+    { title: "Dispense", desc: "ASDS calculates the dilution, opens the metered valves, mixes, and dispenses into the operator's labelled container." },
     { title: "Record", desc: "Recipe, volume, operator, time, and dispense ID are written to the audit trail and the cleaning log automatically." },
   ];
 
@@ -80,14 +80,14 @@ const ASDSPage = () => {
   ];
 
   const faqs = [
-    { question: "What is an Automated Solution Dispensing System (ASDS™) in pharma?", answer: "An Automated Solution Dispensing System is an automated cleaning-solution preparation unit for pharma and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, IPA, and other cleaning agents with purified water on demand, eliminating manual mixing errors. Each dispense is recorded electronically per 21 CFR Part 11 — recipe, volume, operator, time — for full audit traceability." },
-    { question: "Why automate cleaning solution preparation? Operators have done it manually for decades.", answer: "They have, and that's exactly the audit problem. Manual preparation depends on operator attention and graduated-cylinder accuracy. Dilution strength drifts shift-to-shift, batch consistency is unprovable, reconciliation between prepared and used quantities relies on paper logbooks, and the entire process is a recurring finding in GMP audits. ASDS™ removes the variable: recipe is locked, dilution is metered, every event is signed." },
-    { question: "How many different cleaning solutions can ASDS™ prepare?", answer: "Up to 6 different recipes are configurable per ASDS™ unit. Common configurations include sodium hypochlorite (variable strengths), 70% IPA, peracetic acid, quaternary ammonium disinfectants, detergents, and sporicides. Recipes are configured during install based on your site's cleaning SOPs and locked under change control." },
-    { question: "Is ASDS™ 21 CFR Part 11 compliant?", answer: "Yes. ASDS™ includes role-based user management, electronic signatures bound to each dispense event, time-stamped audit trails, and tamper-proof historical data storage. Validation documentation (URS, FDS, DQ, IQ, OQ, PQ, traceability matrix) is delivered with every installation per GAMP 5." },
-    { question: "Can ASDS™ move between cleanrooms?", answer: "Yes. ASDS™ is built on castors with brakes, designed to be wheeled between cleanrooms and through standard cleanroom doors. The SS fabrication is pharma-grade and tolerates repeated cleaning between rooms. One unit can serve multiple cleanroom suites on a shift rotation." },
-    { question: "Does ASDS™ handle reconciliation of prepared vs. used vs. discarded?", answer: "Yes. Every prepared volume is logged. Operators record use and discard events through the same HMI. The reconciliation report — prepared, used, discarded, balance — is available for any time window and exportable for batch records or QA review." },
-    { question: "What's the typical deployment timeline?", answer: "Standard ASDS™ deployment is 6 to 8 weeks end-to-end — including recipe finalisation, hardware delivery, on-site installation, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-unit rollouts across multiple sites are scoped separately." },
-    { question: "Does ASDS™ require purified water / WFI plumbing?", answer: "ASDS™ connects to your existing purified water supply via a standard sanitary connection. No new plumbing infrastructure is required if you already have a purified water loop accessible at the unit's deployment location. Utility requirements are confirmed during the URS / site-survey phase." }
+    { question: "What is an Automated Solution Dispensing System (ASDS) in pharma?", answer: "An Automated Solution Dispensing System is an automated cleaning-solution preparation unit for pharma and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, IPA, and other cleaning agents with purified water on demand, eliminating manual mixing errors. Each dispense is recorded electronically per 21 CFR Part 11 — recipe, volume, operator, time — for full audit traceability." },
+    { question: "Why automate cleaning solution preparation? Operators have done it manually for decades.", answer: "They have, and that's exactly the audit problem. Manual preparation depends on operator attention and graduated-cylinder accuracy. Dilution strength drifts shift-to-shift, batch consistency is unprovable, reconciliation between prepared and used quantities relies on paper logbooks, and the entire process is a recurring finding in GMP audits. ASDS removes the variable: recipe is locked, dilution is metered, every event is signed." },
+    { question: "How many different cleaning solutions can ASDS prepare?", answer: "Up to 6 different recipes are configurable per ASDS unit. Common configurations include sodium hypochlorite (variable strengths), 70% IPA, peracetic acid, quaternary ammonium disinfectants, detergents, and sporicides. Recipes are configured during install based on your site's cleaning SOPs and locked under change control." },
+    { question: "Is ASDS 21 CFR Part 11 compliant?", answer: "Yes. ASDS includes role-based user management, electronic signatures bound to each dispense event, time-stamped audit trails, and tamper-proof historical data storage. Validation documentation (URS, FDS, DQ, IQ, OQ, PQ, traceability matrix) is delivered with every installation per GAMP 5." },
+    { question: "Can ASDS move between cleanrooms?", answer: "Yes. ASDS is built on castors with brakes, designed to be wheeled between cleanrooms and through standard cleanroom doors. The SS fabrication is pharma-grade and tolerates repeated cleaning between rooms. One unit can serve multiple cleanroom suites on a shift rotation." },
+    { question: "Does ASDS handle reconciliation of prepared vs. used vs. discarded?", answer: "Yes. Every prepared volume is logged. Operators record use and discard events through the same HMI. The reconciliation report — prepared, used, discarded, balance — is available for any time window and exportable for batch records or QA review." },
+    { question: "What's the typical deployment timeline?", answer: "Standard ASDS deployment is 6 to 8 weeks end-to-end — including recipe finalisation, hardware delivery, on-site installation, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-unit rollouts across multiple sites are scoped separately." },
+    { question: "Does ASDS require purified water / WFI plumbing?", answer: "ASDS connects to your existing purified water supply via a standard sanitary connection. No new plumbing infrastructure is required if you already have a purified water loop accessible at the unit's deployment location. Utility requirements are confirmed during the URS / site-survey phase." }
   ];
 
   const faqSchema = {
@@ -144,7 +144,7 @@ const ASDSPage = () => {
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
             <div className="space-y-8 animate-fade-in-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
@@ -166,12 +166,15 @@ const ASDSPage = () => {
                   <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.4s' }}>volume.</span>
                 </span>
                 <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
-                  <span className="animate-reveal-up inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}>Right every single time.</span>
+                  <span className="animate-reveal-up inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}>Right every </span>
+                </span>
+                <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
+                  <span className="animate-reveal-up pr-1 pb-1 inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}> single time.</span>
                 </span>
               </h1>
 
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[550px] font-medium opacity-80">
-                Automated Solution Dispensing System (ASDS™) prepares and dispenses your cleaning solutions — disinfectant, detergent, IPA — to the exact strength, the exact volume, and the exact SOP your cleanroom requires. Mobile, SS-fabricated, 21 CFR Part 11 compliant, and ready to wheel into the next room.
+                Automated Solution Dispensing System (ASDS) prepares and dispenses your cleaning solutions — disinfectant, detergent, IPA — to the exact strength, the exact volume, and the exact SOP your cleanroom requires. Mobile, SS-fabricated, 21 CFR Part 11 compliant, and ready to wheel into the next room.
               </p>
 
               <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -200,7 +203,7 @@ const ASDSPage = () => {
         {/* The Problem Section */}
         <section className="py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
-            <SectionTitle eyebrow="WHY ASDS™">Manual cleaning solution prep is the slow leak in GMP cleaning</SectionTitle>
+            <SectionTitle eyebrow="WHY ASDS">Manual cleaning solution prep is the slow leak in GMP cleaning</SectionTitle>
 
             <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
               <p className="text-gray-500 text-lg leading-relaxed font-medium">
@@ -210,7 +213,7 @@ const ASDSPage = () => {
                 The reality: dilution is approximate, recipes drift between operators, batch-to-batch consistency is impossible to prove, reconciliation between prepared, used, and discarded volumes is a guess, and the cleaning logbook turns into the same audit headache as every other paper record.
               </p>
               <p className="text-2xl font-black text-[#e0006e] tracking-tight mt-8">
-                ASDS™ replaces the graduated cylinder with a recipe.
+                ASDS replaces the graduated cylinder with a recipe.
               </p>
             </div>
 
@@ -220,7 +223,7 @@ const ASDSPage = () => {
                   <tr className="bg-gray-100">
                     <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                     <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Manual Prep</th>
-                    <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">ASDS™</th>
+                    <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">ASDS</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -243,15 +246,15 @@ const ASDSPage = () => {
           </div>
         </section>
 
-        {/* What ASDS™ Is */}
+        {/* What ASDS Is */}
         <section className="py-24 px-6 bg-[#fafafa] border-y border-gray-100">
           <div className="max-w-7xl mx-auto">
-            <SectionTitle>What ASDS™ Is</SectionTitle>
+            <SectionTitle>What ASDS Is</SectionTitle>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  ASDS™ is a mobile, SS-fabricated, automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a recipe (e.g., 0.5% sodium hypochlorite, 70% IPA, 5% detergent), keys in the required volume, and presses dispense. ASDS™ handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
+                  ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a recipe (e.g., 0.5% sodium hypochlorite, 70% IPA, 5% detergent), keys in the required volume, and presses dispense. ASDS handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
                 </p>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Every dispense is recorded electronically — recipe, volume, operator, time, batch. The dispensing log is built as the work is done. Nothing to write up later.
@@ -262,7 +265,7 @@ const ASDSPage = () => {
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#e0006e]/20 rounded-full blur-[3rem] group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 <svg className="w-12 h-12 text-[#e0006e]/30 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1 15V9C1 8.44772 1.44772 8 2 8H5C6.10457 8 7 7.10457 7 6V5C7 3.89543 6.10457 3 5 3H0C-1.10457 3 -2 3.89543 -2 5V15C-2 18.866 1.13401 22 5 22H7V21L7 18C7 16.8954 6.10457 16 5 16H2C1.44772 16 1 15.5523 1 15Z" /></svg>
                 <p className="text-white font-medium text-2xl md:text-3xl leading-snug tracking-tight italic relative z-10">
-                  "ASDS™ is the difference between 'the operator said they mixed 0.5%' and 'the system confirmed it, signed it, and logged it.'"
+                  "ASDS is the difference between 'the operator said they mixed 0.5%' and 'the system confirmed it, signed it, and logged it.'"
                 </p>
               </div>
             </div>
@@ -340,7 +343,7 @@ const ASDSPage = () => {
                     <iframe
                       className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
                       src="https://www.youtube.com/embed/6SZQT3DSDso?rel=0&modestbranding=1&controls=1"
-                      title="ASDS™ System Workflow"
+                      title="ASDS System Workflow"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
@@ -377,8 +380,8 @@ const ASDSPage = () => {
         <section className="py-24 px-6 bg-[#1a1a1a]">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After ASDS™ Goes Live</h2>
-              <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running ASDS™ in production</p>
+              <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After ASDS Goes Live</h2>
+              <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running ASDS in production</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-800">
@@ -435,3 +438,5 @@ const ASDSPage = () => {
 };
 
 export default ASDSPage;
+
+

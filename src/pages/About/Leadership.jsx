@@ -48,7 +48,7 @@ const Leadership = () => {
       name: "Sethurajan S",
       title: "Project Engineering Leader",
       photo: leaImg5,
-      bio: "Mr. Sethurajan S is a seasoned BMS specialist with over 13 years of experience in the design, execution, and documentation of intelligent building solutions. He is proficient across the full project lifecycle, including system integration and commissioning. His expertise extends to EMS and ELV systems such as FAPA, ACS, DIS, CCTV, and networking infrastructure. Currently, he oversees end-to-end project engineering, focusing on the design and execution of compliance-driven systems such as SACS™, IRS™, ASDS™, and MEM™, and leads system integration projects for the pharmaceutical industry. He holds a B.E. in Electronics and Communication Engineering from Anna University, Chennai, and is certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4 Commissioning, and Schneider Electric Building Automation.",
+      bio: "Mr. Sethurajan S is a seasoned BMS specialist with over 13 years of experience in the design, execution, and documentation of intelligent building solutions. He is proficient across the full project lifecycle, including system integration and commissioning. His expertise extends to EMS and ELV systems such as FAPA, ACS, DIS, CCTV, and networking infrastructure. Currently, he oversees end-to-end project engineering, focusing on the design and execution of compliance-driven systems such as SACS, IRS™, ASDS, and MEM, and leads system integration projects for the pharmaceutical industry. He holds a B.E. in Electronics and Communication Engineering from Anna University, Chennai, and is certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4 Commissioning, and Schneider Electric Building Automation.",
       linkedin: "https://www.linkedin.com/in/sethu-rajan-558329b9/"
     },
     {
@@ -62,7 +62,7 @@ const Leadership = () => {
       name: "Manikandan P",
       title: "Customer Support Leader",
       photo: leaImg7,
-      bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS™, IRS™, ASDS™, and MEM™. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
+      bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS, IRS™, ASDS, and MEM. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
       linkedin: "https://www.linkedin.com/in/manikandan-p-81748719a/"
     }
   ];
@@ -101,7 +101,7 @@ const Leadership = () => {
 
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
       <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden min-h-[50vh] flex flex-col items-center justify-center text-center border-b border-white/5">
-        {/* Decorative elements from SACS™/IRS™ */}
+        {/* Decorative elements from SACS/IRS*/}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
