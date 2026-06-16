@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import emsImg1 from '../../assets/images/EMSPage/ems_1.png';
-import emsImg2 from '../../assets/images/EMSPage/iStock-1714501746-1024x683.jpg';
 
 const SectionTitle = ({ children, eyebrow, isDark }) => (
   <div className="flex flex-col items-center w-full mb-12 mt-8">

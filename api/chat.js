@@ -1,4 +1,7 @@
+/* global process */
 import { GoogleGenAI } from "@google/genai";
+import fs from "fs";
+import path from "path";
 
 const PRODUCT_URLS = {
   home: "https://mactus.in/",
@@ -115,6 +118,18 @@ function sanitizeHistory(history) {
         },
       ],
     }));
+}
+
+function getKnowledgeBase() {
+  try {
+    const kbPath = path.join(process.cwd(), 'src', 'assets', 'knowledge', 'mactus-knowledge.md');
+    if (fs.existsSync(kbPath)) {
+      return fs.readFileSync(kbPath, 'utf8');
+    }
+  } catch (error) {
+    console.error("Could not read knowledge base:", error);
+  }
+  return "";
 }
 
 function getRelevantUrls(message) {
@@ -355,6 +370,11 @@ export default async function handler(req, res) {
       },
     ];
 
+    const kbContent = getKnowledgeBase();
+    const fullSystemInstruction = kbContent
+      ? `${SYSTEM_INSTRUCTION}\n\nCOMPANY KNOWLEDGE BASE (Use this as your primary factual source):\n${kbContent}`
+      : SYSTEM_INSTRUCTION;
+
     const ai = new GoogleGenAI({
       apiKey,
     });
@@ -363,7 +383,7 @@ export default async function handler(req, res) {
       model: "gemini-2.5-flash",
       contents,
       config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
+        systemInstruction: fullSystemInstruction,
 
         tools: [
           {

@@ -108,16 +108,7 @@ const products = [
   },
 ];
 
-const standards = [
-  { acronym: '21 CFR Part 11', full: 'US FDA electronic records and signatures' },
-  { acronym: 'EU GMP Annex 1', full: 'Manufacture of sterile medicinal products' },
-  { acronym: 'ALCOA+', full: 'Attributable, Legible, Contemporaneous, Original, Accurate' },
-  { acronym: 'GAMP 5', full: 'Good Automated Manufacturing Practice' },
-  { acronym: 'WHO-GMP', full: 'World Health Organization GMP' },
-  { acronym: 'USFDA', full: 'US Food and Drug Administration' },
-  { acronym: 'MHRA', full: 'Medicines and Healthcare products Regulatory Agency' },
-  { acronym: 'CDSCO', full: 'Central Drugs Standard Control Organisation (India)' },
-];
+
 
 const tableRows = [
   { product: 'SACS', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
@@ -127,16 +118,7 @@ const tableRows = [
   { product: 'IVBLT', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
 ];
 
-const validationDocs = [
-  'User Requirements Specification (URS)',
-  'Functional Design Specification (FDS)',
-  'Design Qualification (DQ)',
-  'Installation Qualification (IQ)',
-  'Operational Qualification (OQ)',
-  'Performance Qualification (PQ)',
-  'Traceability Matrix',
-  'Risk Assessment (GAMP 5 Category 4/5)',
-];
+
 
 // ─── Product Card ─────────────────────────────────────────────────────────────
 

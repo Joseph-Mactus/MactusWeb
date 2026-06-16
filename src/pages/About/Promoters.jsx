@@ -50,13 +50,7 @@ const Promoters = () => {
     }
   ];
 
-  const credentials = [
-    "Ex Honeywell Leadership",
-    "Ex Strides Arcolab",
-    "IIT & NIT Alumni",
-    "USFDA & MHRA Compliance Expertise",
-    "Six Sigma Black Belt"
-  ];
+
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20 overflow-x-hidden">

@@ -22,10 +22,12 @@ import SystemIntegrationPage from './pages/SystemIntegrationpage';
 import LowVoltageSystems from './pages/SystemIntegration/Lowvoltagesystems';
 
 import GeminiChatbot from './components/GeminiChatbot';
+import PageLoader from './components/PageLoader';
 
 function App() {
   return (
     <Router>
+      <PageLoader />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/sacs" element={<SACSPage />} />

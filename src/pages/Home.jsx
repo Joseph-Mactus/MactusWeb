@@ -28,7 +28,7 @@ const useCountUp = (target, duration = 1800, start = false) => {
     if (!start) return;
     let startTime = null;
     const isNumeric = typeof target === 'number';
-    if (!isNumeric) { setCount(target); return; }
+    if (!isNumeric) { setTimeout(() => setCount(target), 0); return; }
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
@@ -207,7 +207,7 @@ const IndiaMap = ({ activePin, setActivePin }) => {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 const HomePage = () => {
-  const [openFaq, setOpenFaq] = useState(0);
+
   const [activePin, setActivePin] = useState(null);
 
   const faqs = [

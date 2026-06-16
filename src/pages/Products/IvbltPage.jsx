@@ -118,12 +118,7 @@ const builtFor = [
   { icon: "🔬", label: "QC / In-Process Testing Labs", subtitle: "Development and validation batches" },
 ];
 
-const outcomes = [
-  { stat: "100%", label: "Bag Coverage", detail: "Every bag pressure-tested — not sampled. No bag leaves untested." },
-  { stat: "↓ Reject Rate", label: "Downstream Rejection", detail: "Defects caught at testing, not at distribution or patient administration." },
-  { stat: "Zero", label: "Manual Count Errors", detail: "Automated reconciliation eliminates batch closure discrepancies." },
-  { stat: "Seconds", label: "Audit Data Retrieval", detail: "Every test result retrievable by bag ID, batch, date, or operator." },
-];
+
 
 const faqs = [
   {
