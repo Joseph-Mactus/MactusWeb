@@ -252,13 +252,13 @@ const TestimonialsPage = () => {
 `}</style>
 
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[70vh] text-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[70vh] text-center border-b border-white/5">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 z-0 opacity-20" style={{
           backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)',
           backgroundSize: '32px 32px'
         }}></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#1a1a1a] z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#25252B] z-0"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto space-y-6 flex flex-col items-center">
 

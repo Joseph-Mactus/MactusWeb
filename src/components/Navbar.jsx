@@ -59,7 +59,7 @@ const SUB_PATHS = {
   "SACS (Smart Access Control System)": "/products/sacs",
   "IRS(Intervention Recording System)": "/products/irs",
   "ASDS (Automated Solution Dispensing System)": "/products/asds",
-  "MPATS (Environmental Monitoring)": "/products/mem",
+  "MPATS (Environmental Monitoring)": "/products/mpats",
   "IVBLT (Intravenous Bag Leak Tester)": "/products/ivblt",
 
   "Company Overview": "/company-overview",

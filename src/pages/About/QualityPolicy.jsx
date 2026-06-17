@@ -82,7 +82,7 @@ const QualityPolicy = () => {
       `}</style>
 
       {/* SECTION 1 — HERO / PAGE TITLE BANNER */}
-      <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden min-h-[60vh] flex flex-col items-center justify-center text-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-24 px-6 overflow-hidden min-h-[60vh] flex flex-col items-center justify-center text-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -159,7 +159,7 @@ const QualityPolicy = () => {
       </section>
 
       {/* SECTION 4 — CLOSING STATEMENT BLOCK */}
-      <section className="py-32 px-6 bg-[#1a1a1a] text-center relative overflow-hidden border-t border-white/5">
+      <section className="py-32 px-6 bg-[#25252B] text-center relative overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(#e0006e_1.5px,transparent_1.5px)] bg-[size:40px_40px] opacity-[0.05]"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto space-y-12">

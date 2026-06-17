@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {FaSyringe,FaDna,FaMicroscope,FaFlask,FaHospital,} from "react-icons/fa";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
@@ -122,13 +123,32 @@ const MEMPage = () => {
   ];
 
   const builtFor = [
-    { label: "Sterile Injectable Manufacturing", subtitle: "Grade A/B/C/D", icon: "💉" },
-    { label: "Biologics, Vaccines & Cell Therapy", subtitle: "Stringent EM requirements", icon: "🧬" },
-    { label: "QC Microbiology Labs", subtitle: "High throughput reading", icon: "🔬" },
-    { label: "Aseptic Process Simulation (APS)", subtitle: "Media Fills", icon: "🧪" },
-    { label: "Compounding Pharmacies", subtitle: "USP <797> / <800>", icon: "🏥" }
-  ];
-
+  {
+    label: "Sterile Injectable Manufacturing",
+    subtitle: "Grade A/B/C/D",
+    icon: <FaSyringe />,
+  },
+  {
+    label: "Biologics, Vaccines & Cell Therapy",
+    subtitle: "Stringent EM requirements",
+    icon: <FaDna />,
+  },
+  {
+    label: "QC Microbiology Labs",
+    subtitle: "High throughput reading",
+    icon: <FaMicroscope />,
+  },
+  {
+    label: "Aseptic Process Simulation (APS)",
+    subtitle: "Media Fills",
+    icon: <FaFlask />,
+  },
+  {
+    label: "Compounding Pharmacies",
+    subtitle: "USP <797> / <800>",
+    icon: <FaHospital />,
+  },
+];
   const outcomes = [
     { stat: "100%", label: "Plate Reconciliation", detail: "Missing-plate investigations eliminated." },
     { stat: "↓ Admin time", label: "Administrative Efficiency", detail: "Significant reduction in QC admin time per batch." },
@@ -186,7 +206,7 @@ const MEMPage = () => {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mactus.in/" },
-      { "@type": "ListItem", "position": 2, "name": "MPATS (Environmental Monitoring)", "item": "https://mactus.in/products/mem" }
+      { "@type": "ListItem", "position": 2, "name": "MPATS (Environmental Monitoring)", "item": "https://mactus.in/products/MPATS" }
     ]
   };
 
@@ -239,14 +259,14 @@ const MEMPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
           <div className="space-y-8 animate-fade-in-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase">
-             MACTUS ENVIRONMENTAL MONITORING
+             Media Plate Tracking and Management System
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -461,7 +481,7 @@ const MEMPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {builtFor.map((item, idx) => (
               <div key={idx} className="bg-gray-50 border border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group flex flex-col gap-4">
-                <div className="w-12 h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl group-hover:border-[#e0006e]/30 transition-colors">
+                <div className="w-12 text-[#e0006e] h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl group-hover:border-[#e0006e]/30 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -475,7 +495,7 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 7 — OUTCOMES */}
-      <section className="py-24 px-6 bg-[#1a1a1a]">
+      <section className="py-24 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After MPATS Goes Live</h2>
@@ -524,7 +544,7 @@ const MEMPage = () => {
 
       {/* SECTION 9 — PRE-FOOTER CTA */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">

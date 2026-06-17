@@ -183,7 +183,7 @@ function getRelevantUrls(message) {
   if (
     includesAny([
       "ems",
-      "mem",
+      "MPATS",
       "environmental monitoring",
       "temperature",
       "humidity",

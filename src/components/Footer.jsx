@@ -18,7 +18,7 @@ const FOOTER_COLS = [
       },
       {
         name: "MPATS (Environmental Monitoring)",
-        path: "/products/mem"
+        path: "/products/MPATS"
       },
       {
         name: "IVBLT (Intravenous Bag Leak Tester)",

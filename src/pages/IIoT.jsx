@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaPills, FaDna, FaUtensils, FaHospital, FaIndustry, FaSnowflake } from "react-icons/fa";
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import iioImg1 from '../assets/images/IIoT/IIOT_Screenshot-2025-07-24-165157-1024x493.png';
@@ -163,39 +165,38 @@ const IIoT = () => {
     }
   ];
 
-  const builtFor = [
-    {
-      label: "Pharmaceutical Manufacturing",
-      subtitle: "single-site and multi-site rollouts",
-      icon: "💊"
-    },
-    {
-      label: "Biologics, Vaccine & Cell Therapy",
-      subtitle: "validated storage and utility monitoring",
-      icon: "🧬"
-    },
-    {
-      label: "Food & Beverage Processing",
-      subtitle: "sanitisation and OEE analytics",
-      icon: "🍽️"
-    },
-    {
-      label: "Hospitals & Healthcare",
-      subtitle: "critical-utility monitoring",
-      icon: "🏥"
-    },
-    {
-      label: "Industrial Manufacturing",
-      subtitle: "regulatory or sustainability reporting requirements",
-      icon: "🏭"
-    },
-    {
-      label: "Cold-Chain Logistics",
-      subtitle: "validated storage at scale",
-      icon: "❄️"
-    }
-  ];
-
+ const builtFor = [
+  {
+    label: "Pharmaceutical Manufacturing",
+    subtitle: "single-site and multi-site rollouts",
+    icon: <FaPills />,
+  },
+  {
+    label: "Biologics, Vaccine & Cell Therapy",
+    subtitle: "validated storage and utility monitoring",
+    icon: <FaDna />,
+  },
+  {
+    label: "Food & Beverage Processing",
+    subtitle: "sanitisation and OEE analytics",
+    icon: <FaUtensils />,
+  },
+  {
+    label: "Hospitals & Healthcare",
+    subtitle: "critical-utility monitoring",
+    icon: <FaHospital />,
+  },
+  {
+    label: "Industrial Manufacturing",
+    subtitle: "regulatory or sustainability reporting requirements",
+    icon: <FaIndustry />,
+  },
+  {
+    label: "Cold-Chain Logistics",
+    subtitle: "validated storage at scale",
+    icon: <FaSnowflake />,
+  },
+];
   const outcomes = [
     { stat: "8–18%", label: "Energy and utility cost reduction in year one (varies by baseline)" },
     { stat: "↓ Downtime", label: "Measurable reduction through condition-based maintenance triggers" },
@@ -308,7 +309,7 @@ const IIoT = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -474,7 +475,7 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 5 — HOW WE DELIVER */}
-      <section className="py-24 px-6 bg-[#1a1a1a] relative border-b border-white/5">
+      <section className="py-24 px-6 bg-[#25252B] relative border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '32px 32px' }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -579,7 +580,7 @@ const IIoT = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {builtFor.map((item, idx) => (
               <div key={idx} className="bg-white border border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:shadow-xl transition-all duration-300 group flex flex-col gap-4">
-                <div className="w-12 h-12 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center text-2xl group-hover:bg-[#e0006e]/10 group-hover:border-[#e0006e]/30 transition-colors">
+                <div className="w-12 text-[#e0006e] h-12 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center text-2xl group-hover:bg-[#e0006e]/10 group-hover:border-[#e0006e]/30 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -593,7 +594,7 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 8 — OUTCOMES / RESULTS */}
-      <section className="py-24 px-6 bg-[#1a1a1a]">
+      <section className="py-24 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After Deployment</h2>
@@ -649,7 +650,7 @@ const IIoT = () => {
 
       {/* SECTION 10 — PRE-FOOTER CTA STRIP & CROSS LINKS */}
       <section className="py-20 px-6 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col items-center text-center gap-8">

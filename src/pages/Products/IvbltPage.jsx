@@ -6,6 +6,8 @@ import ImageCarousel from '../../components/ImageCarousel';
 import ivblt_1 from '../../assets/images/ivblt_1.png';
 import ivblt_2 from '../../assets/images/ivblt_2.png';
 import ivblt_3 from '../../assets/images/ivblt_3.png';
+import {FaSyringe,FaPills,FaDna,FaHospital,FaGlobe,FaMicroscope,} from "react-icons/fa";
+
 // ─── Section Title ────────────────────────────────────────────────────────────
 
 const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
@@ -109,13 +111,38 @@ const features = [
   },
 ];
 
+
 const builtFor = [
-  { icon: "💉", label: "Large Volume Parenterals (LVP)", subtitle: "500 mL, 1000 mL IV bags" },
-  { icon: "💊", label: "Small Volume Parenterals (SVP)", subtitle: "50 mL, 100 mL, 250 mL bags" },
-  { icon: "🧬", label: "Biologics & Biosimilars", subtitle: "IV formulation integrity testing" },
-  { icon: "🏥", label: "Hospital Pharmacy Compounding", subtitle: "USP <797> compliant facilities" },
-  { icon: "🌍", label: "Contract Manufacturing Organisations", subtitle: "Multi-product LVP lines" },
-  { icon: "🔬", label: "QC / In-Process Testing Labs", subtitle: "Development and validation batches" },
+  {
+    icon: <FaSyringe />,
+    label: "Large Volume Parenterals (LVP)",
+    subtitle: "500 mL, 1000 mL IV bags",
+  },
+  {
+    icon: <FaPills />,
+    label: "Small Volume Parenterals (SVP)",
+    subtitle: "50 mL, 100 mL, 250 mL bags",
+  },
+  {
+    icon: <FaDna />,
+    label: "Biologics & Biosimilars",
+    subtitle: "IV formulation integrity testing",
+  },
+  {
+    icon: <FaHospital />,
+    label: "Hospital Pharmacy Compounding",
+    subtitle: "USP <797> compliant facilities",
+  },
+  {
+    icon: <FaGlobe />,
+    label: "Contract Manufacturing Organisations",
+    subtitle: "Multi-product LVP lines",
+  },
+  {
+    icon: <FaMicroscope />,
+    label: "QC / In-Process Testing Labs",
+    subtitle: "Development and validation batches",
+  },
 ];
 
 
@@ -224,7 +251,7 @@ const IVBLTPage = () => {
       `}</style>
 
       {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -422,7 +449,7 @@ const IVBLTPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
             {builtFor.map((item, idx) => (
               <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group flex items-center gap-4">
-                <div className="w-12 h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors">
+                <div className="w-12 text-[#e0006e] h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -460,7 +487,7 @@ const IVBLTPage = () => {
 
       {/* ── SECTION 9 — PRE-FOOTER CTA ───────────────────────────────────────── */}
       <section className="py-10 px-6 bg-white">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">

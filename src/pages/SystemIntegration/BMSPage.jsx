@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaSlidersH, FaChartBar, FaTools, FaChartLine, FaDesktop, FaUsers, FaPills, FaBuilding, FaIndustry, FaHardHat, FaSnowflake, FaLeaf, FaBolt, FaLink, FaShieldAlt } from "react-icons/fa";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import bmsImg1 from '../../assets/images/BMSPage/bms_1.png';
@@ -24,43 +25,67 @@ const BMSPage = () => {
   const features = [
     {
       title: "Centralized Control",
-      icon: "🎛️",
-      desc: "All building systems — HVAC, utilities, fire, access, energy — managed from a single control interface. One screen, complete visibility."
+      icon: <FaSlidersH />,
+      desc: "All building systems — HVAC, utilities, fire, access, energy — managed from a single control interface. One screen, complete visibility.",
     },
     {
       title: "Real-Time Monitoring",
-      icon: "📊",
-      desc: "Live dashboards for equipment status, environmental parameters, energy consumption, and alarms. Instant visibility into what's running, what's tripping, and what's trending."
+      icon: <FaChartBar />,
+      desc: "Live dashboards for equipment status, environmental parameters, energy consumption, and alarms. Instant visibility into what's running, what's tripping, and what's trending.",
     },
     {
       title: "Maintenance Management",
-      icon: "🔧",
-      desc: "Scheduled maintenance alerts, equipment runtime tracking, and fault logging reduce unplanned downtime and keep your plant running within spec."
+      icon: <FaTools />,
+      desc: "Scheduled maintenance alerts, equipment runtime tracking, and fault logging reduce unplanned downtime and keep your plant running within spec.",
     },
     {
       title: "Data Analytics & Reporting",
-      icon: "📈",
-      desc: "Historical trends, energy reports, and performance benchmarks exportable for facilities management, compliance, or sustainability reporting."
+      icon: <FaChartLine />,
+      desc: "Historical trends, energy reports, and performance benchmarks exportable for facilities management, compliance, or sustainability reporting.",
     },
     {
       title: "User-Friendly Interface",
-      icon: "🖥️",
-      desc: "Operator screens designed for facility managers — not engineers. Role-based access so each user sees exactly what they need."
+      icon: <FaDesktop />,
+      desc: "Operator screens designed for facility managers — not engineers. Role-based access so each user sees exactly what they need.",
     },
     {
       title: "Occupancy Monitoring",
-      icon: "👥",
-      desc: "People-count and zone-occupancy data integrated into HVAC and access control for energy-efficient, compliant facility management."
+      icon: <FaUsers />,
+      desc: "People-count and zone-occupancy data integrated into HVAC and access control for energy-efficient, compliant facility management.",
     },
   ];
 
   const builtFor = [
-    { icon: "💊", label: "Pharmaceutical Manufacturing", subtitle: "GMP HVAC and cleanroom utilities control" },
-    { icon: "🏢", label: "Commercial Buildings", subtitle: "Office complexes, hospitals, data centers" },
-    { icon: "🏭", label: "Industrial Plants", subtitle: "Process facilities, compressor farms, utility blocks" },
-    { icon: "🏗️", label: "Large Infrastructure", subtitle: "Campuses, multi-building facilities" },
-    { icon: "❄️", label: "Cold-Chain & Controlled Storage", subtitle: "Temperature-critical environments" },
-    { icon: "🌱", label: "Sustainability-Focused Facilities", subtitle: "Energy metering and ESG reporting" },
+    {
+      icon: <FaPills />,
+      label: "Pharmaceutical Manufacturing",
+      subtitle: "GMP HVAC and cleanroom utilities control",
+    },
+    {
+      icon: <FaBuilding />,
+      label: "Commercial Buildings",
+      subtitle: "Office complexes, hospitals, data centers",
+    },
+    {
+      icon: <FaIndustry />,
+      label: "Industrial Plants",
+      subtitle: "Process facilities, compressor farms, utility blocks",
+    },
+    {
+      icon: <FaHardHat />,
+      label: "Large Infrastructure",
+      subtitle: "Campuses, multi-building facilities",
+    },
+    {
+      icon: <FaSnowflake />,
+      label: "Cold-Chain & Controlled Storage",
+      subtitle: "Temperature-critical environments",
+    },
+    {
+      icon: <FaLeaf />,
+      label: "Sustainability-Focused Facilities",
+      subtitle: "Energy metering and ESG reporting",
+    },
   ];
 
   const faqs = [
@@ -161,7 +186,7 @@ const BMSPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -208,7 +233,7 @@ const BMSPage = () => {
                 alt="Building Management System"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#25252B]/40 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -278,7 +303,7 @@ const BMSPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {features.map((f, i) => (
               <div key={i} className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group flex gap-6 items-start">
-                <div className="w-14 h-14 bg-white rounded-2xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors shadow-sm">
+                <div className="w-14 text-[#e0006e] h-14 bg-white rounded-2xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors shadow-sm">
                   {f.icon}
                 </div>
                 <div>
@@ -332,7 +357,7 @@ const BMSPage = () => {
       </section>
 
       {/* SECTION 6 — ECOSTRUXURE PARTNERSHIP */}
-      <section className="py-16 px-6 bg-[#1a1a1a]">
+      <section className="py-16 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="PLATFORM OF CHOICE" isDark>EcoStruxure™ BMS — Our Platform of Choice</SectionTitle>
 
@@ -344,11 +369,23 @@ const BMSPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
             {[
-              { icon: "⚡", label: "Open, standards-based architecture", sub: "BACnet, Modbus, LON, KNX" },
-              { icon: "🔗", label: "Native integration", sub: "Schneider energy and power management" },
-              { icon: "🛡️", label: "Cybersecurity-aware design", sub: "Role-based access and audit logs" },
+              {
+                icon: <FaBolt />,
+                label: "Open, standards-based architecture",
+                sub: "BACnet, Modbus, LON, KNX",
+              },
+              {
+                icon: <FaLink />,
+                label: "Native integration",
+                sub: "Schneider energy and power management",
+              },
+              {
+                icon: <FaShieldAlt />,
+                label: "Cybersecurity-aware design",
+                sub: "Role-based access and audit logs",
+              },
             ].map((item, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-colors group flex flex-col gap-3">
+              <div key={i} className="bg-white/5 text-[#e0006e] border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-colors group flex flex-col gap-3">
                 <span className="text-3xl">{item.icon}</span>
                 <div>
                   <p className="text-white font-black text-sm mb-1 group-hover:text-[#e0006e] transition-colors">{item.label}</p>
@@ -423,13 +460,13 @@ const BMSPage = () => {
       </section>
 
       {/* SECTION 8 — BUILT FOR */}
-      <section className="py-16 px-6 bg-[#1a1a1a]">
+      <section className="py-16 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="TARGET ENVIRONMENTS" isDark>Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {builtFor.map((item, idx) => (
               <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-all duration-300 group flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-[#e0006e]/10 transition-colors border border-white/10 group-hover:border-[#e0006e]/30">
+                <div className="w-12 text-[#e0006e] h-12 bg-white/5 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-[#e0006e]/10 transition-colors border border-white/10 group-hover:border-[#e0006e]/30">
                   {item.icon}
                 </div>
                 <div>
@@ -471,7 +508,7 @@ const BMSPage = () => {
 
       {/* SECTION 10 — PRE-FOOTER CTA */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">

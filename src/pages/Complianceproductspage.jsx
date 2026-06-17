@@ -75,7 +75,7 @@ const products = [
     note: null,
   },
   {
-    id: 'mem',
+    id: 'MPATS',
     tag: 'MPATS',
     name: 'MPATS — Mactus Environmental Monitoring',
     positioning: 'One unaccounted-for media plate can delay batch release. MPATS makes sure that never happens.',
@@ -87,7 +87,7 @@ const products = [
       'EU GMP Annex 1 and 21 CFR Part 11 aligned',
     ],
     image: comImg4,
-    link: '/products/mem/',
+    link: '/products/MPATS/',
     
   },
   {
@@ -114,7 +114,7 @@ const tableRows = [
   { product: 'SACS', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
   { product: 'IRS™', link: '/products/irs', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
   { product: 'ASDS', link: '/products/asds', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'MPATS', link: '/products/mem/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
+  { product: 'MPATS', link: '/products/MPATS/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
   { product: 'IVBLT', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
 ];
 
@@ -236,7 +236,7 @@ const ComplianceProductsPage = () => {
       `}</style>
 
       {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -344,7 +344,7 @@ const ComplianceProductsPage = () => {
 
       {/* ── SECTION 7 — CTA STRIP ────────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">

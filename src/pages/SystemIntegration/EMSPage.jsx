@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaSyringe, FaPills, FaDna, FaSnowflake, FaMicroscope, FaIndustry, FaBell, FaDesktop, FaSatelliteDish, FaShieldAlt, FaCheckCircle, FaFileAlt, FaBolt, FaDatabase } from "react-icons/fa";
+
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import emsImg1 from '../../assets/images/EMSPage/ems_1.png';
@@ -57,16 +59,81 @@ const EMSPage = () => {
     },
   ];
 
-  const features = [
-    { icon: "🔔", title: "Local Alarming with Room Displays", desc: "On-site visual and audible alarms at room level — operators know immediately when a parameter drifts." },
-    { icon: "🖥️", title: "Centralized Alarm Management", desc: "All alarms consolidated in the central dashboard — nothing slips past the team on shift." },
-    { icon: "📡", title: "Remote Access & Control", desc: "Authorized users can monitor parameters and acknowledge alarms remotely — from the QA office or off-site." },
-    { icon: "🛡️", title: "Compliant Monitoring Software", desc: "21 CFR Part 11 compliant — electronic signatures, role-based access, tamper-evident audit trails." },
-    { icon: "✅", title: "GMP-Approved Devices", desc: "Sensors and transmitters qualified for GMP pharmaceutical environments. Calibration records maintained per installation." },
-    { icon: "📄", title: "Customer-Customized Reporting", desc: "Reports configured to your facility's needs — by room, area, date range, parameter, or batch. Formatted for APR/PQR." },
-    { icon: "⚡", title: "Real-Time Data Collection", desc: "Every parameter sampled continuously. No polling gaps. No manual entries. Live data for every monitored room." },
-    { icon: "🗄️", title: "Data Logging & Immutable Storage", desc: "All readings stored in a tamper-proof, immutable database. Data cannot be altered after capture — ALCOA+ aligned." },
-  ];
+  const builtFor = [
+  {
+    icon: <FaSyringe />,
+    label: "Sterile Injectable Manufacturing",
+    subtitle: "Grade A/B/C/D cleanroom cascades",
+  },
+  {
+    icon: <FaPills />,
+    label: "Oral Solid Dosage",
+    subtitle: "Production and packaging areas",
+  },
+  {
+    icon: <FaDna />,
+    label: "Biologics, Vaccines & Cell Therapy",
+    subtitle: "Controlled environment suites",
+  },
+  {
+    icon: <FaSnowflake />,
+    label: "Cold-Chain & Validated Storage",
+    subtitle: "2–8°C, -20°C, -80°C chambers",
+  },
+  {
+    icon: <FaMicroscope />,
+    label: "QC and Stability Laboratories",
+    subtitle: "Temperature and RH controlled rooms",
+  },
+  {
+    icon: <FaIndustry />,
+    label: "API Manufacturing",
+    subtitle: "Controlled utility and production areas",
+  },
+];
+
+const features = [
+  {
+    icon: <FaBell />,
+    title: "Local Alarming with Room Displays",
+    desc: "On-site visual and audible alarms at room level — operators know immediately when a parameter drifts.",
+  },
+  {
+    icon: <FaDesktop />,
+    title: "Centralized Alarm Management",
+    desc: "All alarms consolidated in the central dashboard — nothing slips past the team on shift.",
+  },
+  {
+    icon: <FaSatelliteDish />,
+    title: "Remote Access & Control",
+    desc: "Authorized users can monitor parameters and acknowledge alarms remotely — from the QA office or off-site.",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Compliant Monitoring Software",
+    desc: "21 CFR Part 11 compliant — electronic signatures, role-based access, tamper-evident audit trails.",
+  },
+  {
+    icon: <FaCheckCircle />,
+    title: "GMP-Approved Devices",
+    desc: "Sensors and transmitters qualified for GMP pharmaceutical environments. Calibration records maintained per installation.",
+  },
+  {
+    icon: <FaFileAlt />,
+    title: "Customer-Customized Reporting",
+    desc: "Reports configured to your facility's needs — by room, area, date range, parameter, or batch. Formatted for APR/PQR.",
+  },
+  {
+    icon: <FaBolt />,
+    title: "Real-Time Data Collection",
+    desc: "Every parameter sampled continuously. No polling gaps. No manual entries. Live data for every monitored room.",
+  },
+  {
+    icon: <FaDatabase />,
+    title: "Data Logging & Immutable Storage",
+    desc: "All readings stored in a tamper-proof, immutable database. Data cannot be altered after capture — ALCOA+ aligned.",
+  },
+];
 
   const steps = [
     {
@@ -111,14 +178,6 @@ const EMSPage = () => {
     },
   ];
 
-  const builtFor = [
-    { icon: "💉", label: "Sterile Injectable Manufacturing", subtitle: "Grade A/B/C/D cleanroom cascades" },
-    { icon: "💊", label: "Oral Solid Dosage", subtitle: "Production and packaging areas" },
-    { icon: "🧬", label: "Biologics, Vaccines & Cell Therapy", subtitle: "Controlled environment suites" },
-    { icon: "❄️", label: "Cold-Chain & Validated Storage", subtitle: "2–8°C, -20°C, -80°C chambers" },
-    { icon: "🔬", label: "QC and Stability Laboratories", subtitle: "Temperature and RH controlled rooms" },
-    { icon: "🏭", label: "API Manufacturing", subtitle: "Controlled utility and production areas" },
-  ];
 
   const faqs = [
     {
@@ -222,7 +281,7 @@ const EMSPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -234,7 +293,7 @@ const EMSPage = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
               </span>
-              SYSTEM INTEGRATION · ENVIRONMENTAL MONITORING
+              SYSTEM INTEGRATION · Media Plate Tracking and Management System
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -289,7 +348,7 @@ const EMSPage = () => {
                 alt="Environmental Monitoring System"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#25252B]/40 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -347,7 +406,7 @@ const EMSPage = () => {
           key={i}
           className="flex items-center gap-4 border-b border-gray-100 pb-4"
         >
-          <span className="text-2xl">
+          <span className="text-2xl text-[#e0006e] ">
             {f.icon}
           </span>
           <h4 className="text-lg font-semibold text-gray-900">
@@ -426,7 +485,7 @@ const EMSPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {builtFor.map((item, idx) => (
               <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group flex items-center gap-4">
-                <div className="w-12 h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors">
+                <div className="w-12 text-[#e0006e] h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -471,7 +530,7 @@ const EMSPage = () => {
 
       {/* SECTION 10 — PRE-FOOTER CTA */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">

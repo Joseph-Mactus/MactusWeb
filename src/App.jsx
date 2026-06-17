@@ -33,7 +33,7 @@ function App() {
         <Route path="/products/sacs" element={<SACSPage />} />
         <Route path="/products/irs" element={<IRSPage />} />
         <Route path="/products/asds" element={<ASDSPage />} />
-        <Route path="/products/mem" element={<MEMPage />} />
+        <Route path="/products/MPATS" element={<MEMPage />} />
         <Route path="/products/ivblt" element={<IVBLTPage />} />
 
         <Route path="/company-overview" element={<CompanyOverview />} />

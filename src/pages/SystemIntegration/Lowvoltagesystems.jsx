@@ -169,7 +169,7 @@ const LowVoltageSystems = () => {
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-16 px-6 ml-[-5px] overflow-hidden min-h-[72vh] flex items-center">
+      <section className="relative bg-[#25252B] py-16 px-6 ml-[-5px] overflow-hidden min-h-[72vh] flex items-center">
         {/* Dot grid background */}
         <div
           className="absolute inset-0 z-0 opacity-20"
@@ -244,14 +244,14 @@ const LowVoltageSystems = () => {
             Eight integrated safety and security disciplines, deployed as a cohesive infrastructure suite for regulated manufacturing and industrial environments.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid px-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7">
             {systems.map((sys, i) => (
               <div
                 key={i}
-                className="bg-white rounded-[2.5rem] border border-gray-100 card-hover group overflow-hidden flex flex-col"
+                className="bg-white rounded-[2rem] border border-gray-100 card-hover group overflow-hidden flex flex-col"
               >
                 {/* System image */}
-                <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <div className="w-50% h-50 overflow-hidden flex-shrink-0">
                   <img
                     src={sys.image}
                     alt={sys.title}

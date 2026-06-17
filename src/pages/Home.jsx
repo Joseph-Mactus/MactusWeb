@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import indiaMap from '@svg-maps/india';
 import homImg1 from '../assets/images/Home/mlogo-1.png';
 import homImg2 from '../assets/images/Home/Home.png';
+import { FaPills, FaHospital, FaUtensils } from "react-icons/fa";
 const india = indiaMap.default || indiaMap;
 
 // ─── Reusable Components ──────────────────────────────────────────────────────
@@ -283,7 +284,7 @@ const HomePage = () => {
       `}</style>
 
       {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-      <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -340,10 +341,10 @@ const HomePage = () => {
                 className="w-full object-cover"
                 style={{ maxHeight: '480px' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/70 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#25252B]/70 to-transparent"></div>
             </div>
             {/* Floating event card */}
-            <div className="absolute bottom-6 left-4 right-4 bg-[#1a1a1a]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl">
+            <div className="absolute bottom-6 left-4 right-4 bg-[#25252B]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-[#e0006e] font-black text-[10px] tracking-[0.2em] uppercase">Live Audit Trail · SACS</span>
                 <span className="flex items-center gap-1.5 text-green-400 text-[10px] font-bold"><span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>RECORDING</span>
@@ -475,18 +476,41 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Engineered for the industries that can't afford to get it wrong.</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { icon: "💊", name: "Pharmaceutical Manufacturing", body: "Sterile injectables, oral solid dosage, biologics, API. From aseptic fill-finish to QC microbiology — we know where regulators look first." },
-              { icon: "🏥", name: "Healthcare & Hospitals", body: "Critical-environment monitoring for ICUs, OTs, blood banks, and pharmacy compounding units. NABH and JCI alignment built in." },
-              { icon: "🍽️", name: "Food Processing", body: "FSSAI, HACCP, and FSMA-aligned monitoring for processing, cold-chain, and packaging — because food-grade is just pharma-grade with different vocabulary." },
-            ].map((ind, i) => (
-              <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 group text-center">
-                <div className="w-16 h-16 rounded-2xl bg-[#e0006e]/10 flex items-center justify-center text-3xl mb-6 mx-auto group-hover:bg-[#e0006e]/20 transition-colors">{ind.icon}</div>
-                <h3 className="font-black text-xl text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors">{ind.name}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed font-medium">{ind.body}</p>
-              </div>
-            ))}
-          </div>
+  {[
+    {
+      icon: <FaPills />,
+      name: "Pharmaceutical Manufacturing",
+      body: "Sterile injectables, oral solid dosage, biologics, API. From aseptic fill-finish to QC microbiology — we know where regulators look first.",
+    },
+    {
+      icon: <FaHospital />,
+      name: "Healthcare & Hospitals",
+      body: "Critical-environment monitoring for ICUs, OTs, blood banks, and pharmacy compounding units. NABH and JCI alignment built in.",
+    },
+    {
+      icon: <FaUtensils />,
+      name: "Food Processing",
+      body: "FSSAI, HACCP, and FSMA-aligned monitoring for processing, cold-chain, and packaging.",
+    },
+  ].map((ind, i) => (
+    <div
+      key={i}
+      className="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 group text-center"
+    >
+      <div className="w-16 h-16 rounded-2xl bg-[#e0006e]/10 flex items-center justify-center text-3xl text-[#e0006e] mb-6 mx-auto group-hover:bg-[#e0006e] group-hover:text-white transition-colors">
+        {ind.icon}
+      </div>
+
+      <h3 className="font-black text-xl text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors">
+        {ind.name}
+      </h3>
+
+      <p className="text-gray-500 text-sm leading-relaxed font-medium">
+        {ind.body}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
       </section>
       {/* Stats Section  */}
@@ -603,7 +627,7 @@ const HomePage = () => {
       {/* ── SECTION 9 — MACTUS VERIFY (commented out until ready to ship) ─────── */}
       {/* TODO: Uncomment when Mactus Verify is ready to ship */}
       {/*
-      <section className="py-20 px-6 bg-[#1a1a1a] border-b border-white/5">
+      <section className="py-20 px-6 bg-[#25252B] border-b border-white/5">
         ...
       </section>
       */}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaPhoneAlt, FaMobileAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, } from "react-icons/fa";
+import { Phone } from 'lucide-react';
 
 // ── Reusable design tokens ────────────────────────────────────────────────────
 const ACCENT = '#e0006e';
@@ -67,7 +69,7 @@ const ContactUs = () => {
       `}</style>
 
             {/* ── SECTION 1 — HERO ─────────────────────────────────────────────────── */}
-            <section className="relative bg-[#1a1a1a] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+            <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
                 {/* Dot grid */}
                 <div className="absolute inset-0 z-0 opacity-20"
                     style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
@@ -104,9 +106,21 @@ const ContactUs = () => {
                     {/* Quick-contact chips */}
                     <div className="flex flex-wrap gap-3">
                         {[
-                            { icon: '📞', label: '+91 80 4890 9888', href: 'tel:+918048909888' },
-                            { icon: '📱', label: '+91 9986781714', href: 'tel:+919986781714' },
-                            { icon: '✉️', label: 'contact@mactus.in', href: 'mailto:contact@mactus.in' },
+                            {
+                                icon: <FaPhoneAlt />,
+                                label: "+91 80 4890 9888",
+                                href: "tel:+918048909888",
+                            },
+                            {
+                                icon: <FaMobileAlt />,
+                                label: "+91 9986781714",
+                                href: "tel:+919986781714",
+                            },
+                            {
+                                icon: <FaEnvelope />,
+                                label: "contact@mactus.in",
+                                href: "mailto:contact@mactus.in",
+                            },
                         ].map((chip) => (
                             <a
                                 key={chip.href}
@@ -267,8 +281,7 @@ const ContactUs = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 items-stretch">
                         {/* Address card */}
-                        <div className="bg-[#1a1a1a] rounded-[2.5rem] p-10 space-y-7 flex flex-col justify-between">
-                            <div className="space-y-6">
+<div className="relative overflow-hidden bg-gradient-to-br from-[#25252B] via-[#3a1830] to-[#6b1245] rounded-[2.5rem] p-10 space-y-7 flex flex-col justify-between">                            <div className="space-y-6">
                                 <div>
                                     <p className="text-[#e0006e] font-black text-xs tracking-[0.3em] uppercase mb-1">Registered Office</p>
                                     <h3 className="text-white font-black text-xl">Mactus Automation Pvt. Ltd.</h3>
@@ -277,39 +290,69 @@ const ContactUs = () => {
                                 <div className="space-y-4">
                                     {/* Address */}
                                     <div className="flex items-start gap-4">
-                                        <span className="text-xl mt-0.5">📍</span>
+                                        <FaMapMarkerAlt className="text-xl mt-0.5 shrink-0 text-gray-300" />
+
                                         <div className="text-gray-300 text-sm leading-relaxed font-medium">
-                                            #75, 1st Main, 2nd Stage,<br />
-                                            Arekere-Mico Layout,<br />
-                                            Bannerghatta Road,<br />
-                                            Bangalore – 560076,<br />
+                                            #75, 1st Main, 2nd Stage,
+                                            <br />
+                                            Arekere-Mico Layout,
+                                            <br />
+                                            Bannerghatta Road,
+                                            <br />
+                                            Bangalore – 560076,
+                                            <br />
                                             Karnataka, India
                                         </div>
                                     </div>
 
                                     {/* Phone */}
-                                    <a href="tel:+918048909888" className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group">
-                                        <span className="text-xl">📞</span>
-                                        <span className="text-sm font-bold group-hover:underline">+91 80 4890 9888</span>
+                                    <a
+                                        href="tel:+918048909888"
+                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
+                                    >
+                                        <FaPhoneAlt className="text-xl shrink-0 " />
+
+                                        <span className="text-sm font-bold group-hover:underline">
+                                            +91 80 4890 9888
+                                        </span>
                                     </a>
 
                                     {/* Mobile */}
-                                    <a href="tel:+919986781714" className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group">
-                                        <span className="text-xl">📱</span>
-                                        <span className="text-sm font-bold group-hover:underline">+91 9986781714</span>
+                                    <a
+                                        href="tel:+919986781714"
+                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
+                                    >
+                                        <FaMobileAlt className="text-xl shrink-0 " />
+
+                                        <span className="text-sm font-bold group-hover:underline">
+                                            +91 9986781714
+                                        </span>
                                     </a>
 
                                     {/* Email */}
-                                    <a href="mailto:contact@mactus.in" className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group">
-                                        <span className="text-xl">✉️</span>
-                                        <span className="text-sm font-bold group-hover:underline">contact@mactus.in</span>
+                                    <a
+                                        href="mailto:contact@mactus.in"
+                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
+                                    >
+                                        <FaEnvelope className="text-xl shrink-0 " />
+
+                                        <span className="text-sm font-bold group-hover:underline">
+                                            contact@mactus.in
+                                        </span>
                                     </a>
 
                                     {/* Website */}
-                                    <a href="https://www.mactus.in" target="_blank" rel="noopener noreferrer"
-                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group">
-                                        <span className="text-xl">🌐</span>
-                                        <span className="text-sm font-bold group-hover:underline">www.mactus.in</span>
+                                    <a
+                                        href="https://www.mactus.in"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
+                                    >
+                                        <FaGlobe className="text-xl shrink-0 " />
+
+                                        <span className="text-sm font-bold group-hover:underline">
+                                            www.mactus.in
+                                        </span>
                                     </a>
                                 </div>
 
@@ -342,7 +385,7 @@ const ContactUs = () => {
                                 href="https://maps.google.com/maps?q=Mactus+Automation+Pvt+Ltd,+75,+I+Main+Rd,+Arekere+MICO+Layout+2nd+stage,+Bengaluru,+Karnataka+560076"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-[#e0006e] text-[#e0006e] font-extrabold text-sm hover:bg-[#e0006e] hover:text-white transition-all duration-300 tracking-wider"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-[#e0006e] text-white font-extrabold text-sm hover:bg-[#e0006e] hover:text-white transition-all duration-300 tracking-wider"
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
@@ -371,7 +414,7 @@ const ContactUs = () => {
             </section>
 
             {/* ── SECTION 4 — QUICK CONTACT STRIP ──────────────────────────────────── */}
-            <section className="bg-[#1a1a1a] py-5 px-6">
+            <section className="bg-[#25252B] py-5 px-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
                         <p className="text-white font-black text-base md:text-lg">
@@ -383,14 +426,22 @@ const ContactUs = () => {
                         </a>
                     </div>
                     <div className="flex flex-col sm:flex-row items-center gap-4">
-                        <a href="tel:+918048909888"
-                            className="flex items-center gap-2 text-[#e0006e] font-black text-xl md:text-2xl hover:opacity-80 transition-opacity tracking-tight">
-                            📞 +91 80 4890 9888
+                        <a
+                            href="tel:+918048909888"
+                            className="flex items-center gap-2 text-white font-black text-xl md:text-2xl hover:text-[#e0006e] transition-colors tracking-tight"
+                        >
+                            <FaPhoneAlt className="text-white text-lg md:text-xl shrink-0" />
+                            +91 80 4890 9888
                         </a>
+
                         <span className="text-gray-600 hidden sm:block">·</span>
-                        <a href="tel:+919986781714"
-                            className="flex items-center gap-2 text-[#e0006e] font-black text-xl md:text-2xl hover:opacity-80 transition-opacity tracking-tight">
-                            📱 +91 9986781714
+
+                        <a
+                            href="tel:+919986781714"
+                            className="flex items-center gap-2 text-white font-black text-xl md:text-2xl hover:text-[#e0006e] transition-colors tracking-tight"
+                        >
+                            <FaMobileAlt className="text-white text-lg md:text-xl shrink-0" />
+                            +91 9986781714
                         </a>
                     </div>
                 </div>

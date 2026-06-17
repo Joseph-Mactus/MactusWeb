@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {FaRocket,FaChartLine,FaHandshake,FaMoneyBillWave,FaEnvelope} from "react-icons/fa";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ZohoFormModal from '../../components/ZohoFormModal';
@@ -164,12 +165,24 @@ const CareersPage = () => {
     return () => controller.abort();
   }, []);
 
-  const benefits = [
-    { label: "Exciting Automation Projects", icon: "🚀" },
-    { label: "Career Growth & Learning Opportunities", icon: "📈" },
-    { label: "Collaborative & Supportive Team", icon: "🤝" },
-    { label: "Competitive Salary & Benefits", icon: "💰" },
-  ];
+ const benefits = [
+  {
+    label: "Exciting Automation Projects",
+    icon: <FaRocket />,
+  },
+  {
+    label: "Career Growth & Learning Opportunities",
+    icon: <FaChartLine />,
+  },
+  {
+    label: "Collaborative & Supportive Team",
+    icon: <FaHandshake />,
+  },
+  {
+    label: "Competitive Salary & Benefits",
+    icon: <FaMoneyBillWave />,
+  },
+];
 
   return (
     <div className="min-h-screen bg-[#fafafa] font-sans text-gray-900 selection:bg-[#e0006e]/20">
@@ -187,9 +200,9 @@ const CareersPage = () => {
       `}</style>
 
       {/* Hero */}
-      <section className="relative bg-[#1a1a1a] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px,transparent 0.5px)', backgroundSize: '32px 32px' }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#1a1a1a] z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#25252B] z-0"></div>
         <div className="relative z-10 max-w-5xl mx-auto space-y-6">
           <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
             <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>Join Us at</span></span>
@@ -208,16 +221,27 @@ const CareersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {benefits.map((b, i) => (
               <div key={i} className="flex flex-col items-center text-center p-8 bg-gray-50 rounded-[2rem] border border-gray-100 hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group">
-                <span className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">{b.icon}</span>
+                <span className="text-5xl text-[#e0006e] mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">{b.icon}</span>
                 <span className="font-bold text-gray-800 text-lg group-hover:text-[#e0006e] transition-colors">{b.label}</span>
               </div>
             ))}
           </div>
           <div className="mt-16 text-center">
-            <p className="text-gray-500 font-medium text-lg">
-              <span className="mr-2">📩</span> Interested? Contact <a href="mailto:careers@mactus.in" className="text-[#e0006e] font-bold hover:underline">careers@mactus.in</a> for current openings.
-            </p>
-          </div>
+  <p className="text-gray-500 font-medium text-lg flex items-center justify-center flex-wrap gap-2">
+    <FaEnvelope className="text-[#e0006e] text-xl" />
+
+    <span>
+      Interested? Contact{" "}
+      <a
+        href="mailto:careers@mactus.in"
+        className="text-[#e0006e] font-bold hover:underline"
+      >
+        careers@mactus.in
+      </a>{" "}
+      for current openings.
+    </span>
+  </p>
+</div>
         </div>
       </section>
 
@@ -248,7 +272,7 @@ const CareersPage = () => {
 
       {/* CTA */}
       <section className="py-20 px-6 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto bg-[#1a1a1a] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
