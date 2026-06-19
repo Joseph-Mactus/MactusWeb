@@ -3,7 +3,7 @@ import { FaPills, FaDna, FaUtensils, FaHospital, FaIndustry, FaSnowflake } from 
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import iioImg1 from '../assets/images/IIoT/IIOT_Screenshot-2025-07-24-165157-1024x493.png';
+import iiotArchitectureImg from '../assets/images/IIoT/IIOT_Architecture.png';
 
 const SectionTitle = ({ children, eyebrow, isDark }) => (
   <div className="flex flex-col items-center w-full mb-12 mt-8">
@@ -64,6 +64,11 @@ const IIoT = () => {
   const components = [
     {
       number: "01",
+      title: "Edge Gateways",
+      desc: "Industrial-grade edge devices that aggregate data at the line or area level, run protocol translation (OPC-UA, Modbus, BACnet, MQTT, REST), buffer through network outages, and apply edge-level alarm and filter logic. Edge gateways isolate the validated OT network from the data analytics layer above — a critical architectural boundary in GxP environments."
+    },
+    {
+      number: "02",
       title: "Sensor Layer",
       desc: "Smart sensors on the equipment, lines, or utilities that aren't yet instrumented — vibration on motors, current on pumps, flow on utilities, temperature on bearings. We use industry-standard hardware and avoid proprietary lock-in. Existing PLC data is read directly, no new sensors required."
     },
@@ -191,11 +196,7 @@ const IIoT = () => {
     subtitle: "regulatory or sustainability reporting requirements",
     icon: <FaIndustry />,
   },
-  {
-    label: "Cold-Chain Logistics",
-    subtitle: "validated storage at scale",
-    icon: <FaSnowflake />,
-  },
+  
 ];
   const outcomes = [
     { stat: "8–18%", label: "Energy and utility cost reduction in year one (varies by baseline)" },
@@ -355,14 +356,14 @@ const IIoT = () => {
 
           {/* Right Column */}
           <div className="relative animate-float lg:justify-self-end w-full flex justify-end z-20 mt-12 lg:mt-0">
-            <div className="relative w-full max-w-2xl mx-auto lg:mx-0 lg:max-w-none lg:w-[125%] bg-white rounded-3xl p-2 shadow-[0_30px_60px_rgba(0,0,0,0.4)] border border-white/10 transition-transform duration-500 hover:scale-[1.02] overflow-hidden group lg:-translate-x-12">
+           
               <div className="absolute inset-0 bg-gradient-to-tr from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               <img 
-                src={iioImg1} 
-                alt="Mactus IIoT Dashboard Screenshot" 
-                className="w-full h-auto rounded-[1.5rem] object-cover relative z-10 shadow-inner"
+                src={iiotArchitectureImg} 
+                alt="Mactus IIoT architecture diagram" 
+                className="w-full min-h-[340px] md:min-h-[430px] lg:min-h-[420px] max-h-[640px] rounded-[1.5rem] object-contain relative z-10 shadow-inner bg-white"
               />
-            </div>
+            
           </div>
         </div>
       </section>

@@ -293,7 +293,7 @@ const features = [
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
               </span>
-              SYSTEM INTEGRATION · Media Plate Tracking and Management System
+              Environmental Monitoring System
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -312,7 +312,7 @@ const features = [
                   className="animate-reveal-up block text-[#e0006e]"
                   style={{ animationDelay: '0.2s' }}
                 >
-                  cleanroom was in spec.
+                  Cleanroom parameters were recorded.Every
                 </span>
               </div>
 
@@ -321,7 +321,7 @@ const features = [
                   className="animate-reveal-up block  font-black"
                   style={{ animationDelay: '0.3s' }}
                 >
-                  Every minute. Every room.
+                   minute. Every room.
                 </span>
               </div>
 

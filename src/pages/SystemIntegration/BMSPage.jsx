@@ -46,12 +46,12 @@ const BMSPage = () => {
     {
       title: "User-Friendly Interface",
       icon: <FaDesktop />,
-      desc: "Operator screens designed for facility managers — not engineers. Role-based access so each user sees exactly what they need.",
+      desc: "Operator screens designed for facility managers — not engineers. Role-based access so each user sees exactly what they need.Support for BACnet, Modbus, and third-party system integration.",
     },
     {
-      title: "Occupancy Monitoring",
+      title: "Remote Accessibility",
       icon: <FaUsers />,
-      desc: "People-count and zone-occupancy data integrated into HVAC and access control for energy-efficient, compliant facility management.",
+      desc: "Secure access for monitoring and control from anywhere.",
     },
   ];
 
@@ -61,21 +61,13 @@ const BMSPage = () => {
       label: "Pharmaceutical Manufacturing",
       subtitle: "GMP HVAC and cleanroom utilities control",
     },
-    {
-      icon: <FaBuilding />,
-      label: "Commercial Buildings",
-      subtitle: "Office complexes, hospitals, data centers",
-    },
+    
     {
       icon: <FaIndustry />,
       label: "Industrial Plants",
       subtitle: "Process facilities, compressor farms, utility blocks",
     },
-    {
-      icon: <FaHardHat />,
-      label: "Large Infrastructure",
-      subtitle: "Campuses, multi-building facilities",
-    },
+    
     {
       icon: <FaSnowflake />,
       label: "Cold-Chain & Controlled Storage",
@@ -198,24 +190,23 @@ const BMSPage = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
               </span>
-              SYSTEM INTEGRATION · BUILDING MANAGEMENT
+              BUILDING MANAGEMENT SYSTEM
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
               <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Every building</span>
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Centralized Monitoring</span>
               </span>
               <span className="animate-reveal-up block text-[#e0006e]" style={{ animationDelay: '0.15s' }}>
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>system. One</span>
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>for Compliance</span>
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up inline-block " style={{ animationDelay: '0.3s' }}>centralized view.</span>
+                <span className="animate-reveal-up inline-block " style={{ animationDelay: '0.3s' }}>and performance</span>
               </span>
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-80">
-              Mactus delivers Building Management Systems that integrate HVAC, utilities, fire, access control, and energy metering into a single, real-time control layer — custom-built for pharmaceutical, industrial, and commercial facilities.
-            </p>
+Mactus Automation delivers intelligent BMS solutions for centralized monitoring and control of HVAC, utilities, energy, and critical infrastructure. Designed for pharmaceutical, healthcare, and food processing facilities, our systems improve efficiency, reliability, and facility visibility.            </p>
 
             <div className="flex flex-row items-center gap-4 pt-2 flex-wrap sm:flex-nowrap">
               <a href="/contact-us/" className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
@@ -247,11 +238,9 @@ const BMSPage = () => {
           </SectionTitle>
           <div className="max-w-4xl mx-auto space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
             <p>
-              In today's world, industrial, commercial, and residential facilities rely on advanced climate and environment control systems for efficiency, comfort, and sustainability. At Mactus Automation, we specialize in delivering comprehensive Building Management Systems that seamlessly integrate and control HVAC systems, exhaust systems, and critical utilities such as hot water systems, chilled water systems, compressors, and UPS.
-            </p>
+Modern facilities require intelligent systems that ensure reliability, energy efficiency, and uninterrupted operation. Mactus provides integrated BMS solutions that unify HVAC systems, utilities, fire alarm systems, energy meters, access control, and security infrastructure into a single platform, enabling real-time monitoring and control.</p>
             <p>
-              Our BMS solutions go beyond HVAC — integrating diesel generators, energy meters, and other essential building operations to provide complete visibility and centralized control. We enable full integration with Fire Alarm Systems, Fire Suppression Systems, Access Control, Video Monitoring, and Public Address Systems, ensuring a holistic approach to building automation. Every BMS solution we deliver is custom-built in collaboration with consultants, owners, and facility teams to meet specific operational requirements.
-            </p>
+Our solutions are engineered to deliver operational excellence, improved energy performance, and long-term scalability while ensuring seamless integration with existing infrastructure.</p>
           </div>
         </div>
       </section>
@@ -266,22 +255,22 @@ const BMSPage = () => {
                 icon: (
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>
                 ),
-                title: "Standards-Based & Scalable",
-                desc: "Open, standards-based communication protocols ensure seamless integration with existing infrastructure and future-ready expandability as your facility grows."
+                title: "Trusted Expertise for Pharmaceutical Excellence",
+                desc: "With deep domain expertise, we ensure the precision, accuracy, and reliability essential to pharmaceutical operations, helping customers maintain compliance and operational excellence."
               },
               {
                 icon: (
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 ),
-                title: "Easy to Deploy & Manage",
-                desc: "Streamlined deployment and intuitive management tools reduce the burden on facility managers and technicians — from installation to daily operations."
+                title: "Precision by Design",
+                desc: "Delivering the accuracy, reliability, and expertise demanded by pharmaceutical operations"
               },
               {
                 icon: (
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 ),
-                title: "User-Friendly Control",
-                desc: "Intuitive interfaces give your team real-time monitoring, alarm management, and decision-making capability without specialist training."
+                title: "Beyond Compliance",
+                desc: "We deliver tailored reporting formats to meet specific customer, regulatory, and operational requirements, transforming data into meaningful insights and enabling informed decision-making."
               }
             ].map((pillar, i) => (
               <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 group text-center">
@@ -320,19 +309,12 @@ const BMSPage = () => {
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="HARDWARE">The BMS Control Panel</SectionTitle>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center max-w-6xl mx-auto">
             {/* Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 group">
-              <img
-                src={bmsImg2}
-                alt="BMS Control Panel"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+            
 
             {/* Text */}
-            <div className="space-y-6">
+            <div className="max-w-4xl mx-auto space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
               <p className="text-gray-600 text-lg leading-relaxed font-medium">
                 A BMS control panel is the centralized hub for monitoring and managing key building systems such as HVAC, lighting, utilities, and safety equipment. It integrates sensors, controllers, and user interfaces to ensure optimal performance and energy efficiency.
               </p>
@@ -344,13 +326,13 @@ const BMSPage = () => {
               </p>
 
               {/* Chips */}
-              <div className="flex flex-wrap gap-2 pt-4">
+              {/* <div className="flex flex-wrap gap-2 pt-4">
                 {["Real-time data visualization", "Alarm & fault response", "Scheduled automation", "Remote access", "Regulatory compliance"].map(chip => (
                   <span key={chip} className="px-4 py-2 rounded-full bg-[#e0006e]/5 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-wide">
                     {chip}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -463,7 +445,7 @@ const BMSPage = () => {
       <section className="py-16 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="TARGET ENVIRONMENTS" isDark>Built For</SectionTitle>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-6xl mx-auto">
             {builtFor.map((item, idx) => (
               <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-all duration-300 group flex items-center gap-4">
                 <div className="w-12 text-[#e0006e] h-12 bg-white/5 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-[#e0006e]/10 transition-colors border border-white/10 group-hover:border-[#e0006e]/30">
