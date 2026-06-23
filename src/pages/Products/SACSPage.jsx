@@ -96,6 +96,22 @@ const SACSPage = () => {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
         }
+        @keyframes line-extend {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        @keyframes text-reveal-right {
+          0% { opacity: 0; transform: translateX(-15px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+          .animate-line-extend {
+          transform-origin: left;
+          animation: line-extend 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-text-reveal-right {
+          opacity: 0;
+          animation: text-reveal-right 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
         .animate-reveal-up {
           animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -109,22 +125,32 @@ const SACSPage = () => {
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s linear infinite;
         }
+        
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-8 animate-fade-in-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase mb-4">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
-              </span>
-              SMART ACCESS CONTROL SYSTEM
+          <div className="space-y-5 animate-fade-in-left">
+            <div className="w-full mb-12 max-w-[760px]">
+              <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
+
+                {/* Left Magenta Line */}
+                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
+
+                {/* Product Name */}
+                <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>mart{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">A</span>ccess{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">C</span>ontrol{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
+                </h2>
+
+              </div>
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -161,7 +187,7 @@ const SACSPage = () => {
             </div>
           </div>
 
-          <div className="relative animate-fade-in-right animate-float">
+          <div className="relative mt-20 animate-fade-in-right animate-float">
             <ImageCarousel images={[sacs_1, sacs_2, sacs_3]} />
           </div>
         </div>
@@ -336,7 +362,7 @@ const SACSPage = () => {
       {/* FAQ Section */}
       <section className="py-24 px-6 bg-white border-t border-gray-50">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle>Common Questions</SectionTitle>
+          <SectionTitle>Frequently Asked Questions</SectionTitle>
           <FAQAccordion items={faqs} />
         </div>
       </section>

@@ -56,18 +56,18 @@ const ASDSPage = () => {
   }, []);
 
   const features = [
-    { title: "Recipe-Driven Preparation", desc: ["Up to 6 custom different disinfectant solutions configurable per unit (Sporicidal, Hand Disinfectant and Detergent).", "Operator selects recipe + volume on the HMI; system handles the dilution math and dispensing", "Recipes are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
+    { title: "Solvents-Driven Preparation", desc: ["Up to 6 custom different disinfectant solutions configurable per unit (Sporicidal, Hand Disinfectant and Detergent).", "Operator selects solvent + volume on the IPC; system handles the dilution math and dispensing", "Solvents are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
     { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery — no \"close enough\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
     { title: "On-Demand, No Waste", desc: ["Solutions prepared only when needed — no shift-start over-preparation", "Reduced waste of expensive concentrates", "Reconciliation is automatic — every dispense logged, every discard captured"], icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
     { title: "Compliance", desc: ["21 CFR Part 11 compliant user management — electronic signatures, role-based access, audit trails", "Automated record keeping — every dispense event time-stamped and signed", "Historical data storage and export for QA review and APR/PQR", "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ"], icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-    { title: "Build & Usability", desc: ["Pharma-grade SS fabrication — designed for repeated cleaning and cleanroom environments", "Mobile design — castors with brakes, wheel between cleanrooms", "Industrial HMI with intuitive recipe-selection workflow", "Compact footprint — fits through standard cleanroom doors"], icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
+    { title: "Build & Usability", desc: ["Pharma-grade SS fabrication — designed for repeated cleaning and cleanroom environments", "Mobile design — castors with brakes, wheel between cleanrooms", "Industrial IPC with intuitive solvent-selection workflow", "Compact footprint — fits through standard cleanroom doors"], icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
   ];
 
   const steps = [
-    { title: "Authenticate", desc: "Operator logs in at the HMI. Electronic signature is bound to the dispense event." },
-    { title: "Select", desc: "Operator picks the recipe (e.g., 0.5% sodium hypochlorite) and the required volume." },
-    { title: "Dispense", desc: "ASDS calculates the dilution, opens the metered valves, mixes, and dispenses into the operator's labelled container." },
-    { title: "Record", desc: "Recipe, volume, operator, time, and dispense ID are written to the audit trail and the cleaning log automatically." },
+    { title: "Authenticate", desc: "Operator logs in at the IPC. Electronic signature is bound to the dispense event." },
+    { title: "Select", desc: "Operator picks the solvent (e.g., 2 % disinfectant) and the required volume." },
+    { title: "Dispense", desc: "ASDS calculates the dilution, opens the valves, mixes, and dispenses into the operator's labelled container." },
+    { title: "Record", desc: "Solvents, volume, operator, time, and dispense ID are written to the audit trail and the cleaning log automatically." },
   ];
 
   const useCases = [
@@ -80,13 +80,13 @@ const ASDSPage = () => {
   ];
 
   const faqs = [
-    { question: "What is an Automated Solution Dispensing System (ASDS) in pharma?", answer: "An Automated Solution Dispensing System is an automated cleaning-solution preparation unit for pharma and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, IPA, and other cleaning agents with purified water on demand, eliminating manual mixing errors. Each dispense is recorded electronically per 21 CFR Part 11 — recipe, volume, operator, time — for full audit traceability." },
-    { question: "Why automate cleaning solution preparation? Operators have done it manually for decades.", answer: "They have, and that's exactly the audit problem. Manual preparation depends on operator attention and graduated-cylinder accuracy. Dilution strength drifts shift-to-shift, batch consistency is unprovable, reconciliation between prepared and used quantities relies on paper logbooks, and the entire process is a recurring finding in GMP audits. ASDS removes the variable: recipe is locked, dilution is metered, every event is signed." },
-    { question: "How many different cleaning solutions can ASDS prepare?", answer: "Up to 6 different recipes are configurable per ASDS unit. Common configurations include sodium hypochlorite (variable strengths), 70% IPA, peracetic acid, quaternary ammonium disinfectants, detergents, and sporicides. Recipes are configured during install based on your site's cleaning SOPs and locked under change control." },
+    { question: "What is an Automated Solution Dispensing System (ASDS) in pharma?", answer: "An Automated Solution Dispensing System is an automated cleaning-solution preparation unit for pharma and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, IPA, and other cleaning agents with purified water on demand, eliminating manual mixing errors. Each dispense is recorded electronically per 21 CFR Part 11 — solvent, volume, operator, time — for full audit traceability." },
+    { question: "Why automate cleaning solution preparation? Operators have done it manually for decades.", answer: "They have, and that's exactly the audit problem. Manual preparation depends on operator attention and graduated-cylinder accuracy. Dilution strength drifts shift-to-shift, batch consistency is unprovable, reconciliation between prepared and used quantities relies on paper logbooks, and the entire process is a recurring finding in GMP audits. ASDS removes the variable: solvent is locked, dilution is metered, every event is signed." },
+    { question: "How many different cleaning solutions can ASDS prepare?", answer: "Up to 6 different solvents are configurable per ASDS unit. Common configurations include disinfectant (variable strengths), 70% IPA, peracetic acid, quaternary ammonium disinfectants, detergents, and sporicides. Solvents are configured during install based on your site's cleaning SOPs and locked under change control." },
     { question: "Is ASDS 21 CFR Part 11 compliant?", answer: "Yes. ASDS includes role-based user management, electronic signatures bound to each dispense event, time-stamped audit trails, and tamper-proof historical data storage. Validation documentation (URS, FDS, DQ, IQ, OQ, PQ, traceability matrix) is delivered with every installation per GAMP 5." },
     { question: "Can ASDS move between cleanrooms?", answer: "Yes. ASDS is built on castors with brakes, designed to be wheeled between cleanrooms and through standard cleanroom doors. The SS fabrication is pharma-grade and tolerates repeated cleaning between rooms. One unit can serve multiple cleanroom suites on a shift rotation." },
-    { question: "Does ASDS handle reconciliation of prepared vs. used vs. discarded?", answer: "Yes. Every prepared volume is logged. Operators record use and discard events through the same HMI. The reconciliation report — prepared, used, discarded, balance — is available for any time window and exportable for batch records or QA review." },
-    { question: "What's the typical deployment timeline?", answer: "Standard ASDS deployment is 6 to 8 weeks end-to-end — including recipe finalisation, hardware delivery, on-site installation, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-unit rollouts across multiple sites are scoped separately." },
+    { question: "Does ASDS handle reconciliation of prepared vs. used vs. discarded?", answer: "Yes. Every prepared volume is logged. Operators record use and discard events through the same IPC. The reconciliation report — prepared, used, discarded, balance — is available for any time window and exportable for batch records or QA review." },
+    { question: "What's the typical deployment timeline?", answer: "Standard ASDS deployment is 6 to 8 weeks end-to-end — including solvent finalisation, hardware delivery, on-site installation, validation testing (IQ, OQ, PQ), operator training, and go-live support. Multi-unit rollouts across multiple sites are scoped separately." },
     { question: "Does ASDS require purified water / WFI plumbing?", answer: "ASDS connects to your existing purified water supply via a standard sanitary connection. No new plumbing infrastructure is required if you already have a purified water loop accessible at the unit's deployment location. Utility requirements are confirmed during the URS / site-survey phase." }
   ];
 
@@ -128,6 +128,23 @@ const ASDSPage = () => {
           .animate-float {
             animation: float 6s ease-in-out infinite;
           }
+
+          @keyframes line-extend {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        @keyframes text-reveal-right {
+          0% { opacity: 0; transform: translateX(-15px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+          .animate-line-extend {
+          transform-origin: left;
+          animation: line-extend 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-text-reveal-right {
+          opacity: 0;
+          animation: text-reveal-right 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
           .shimmer-text {
             background: linear-gradient(90deg, #e0006e 0%, #ff4b9f 50%, #e0006e 100%);
             background-size: 200% auto;
@@ -138,40 +155,63 @@ const ASDSPage = () => {
         `}</style>
 
         {/* Hero Section */}
-        <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
           <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
             <div className="space-y-8 animate-fade-in-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
-                </span>
-                Automated Solution Dispensing System
-              </div>
+              <div className="w-full mb-12 max-w-[760px]">
+              <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
 
-              <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
-                <span className="overflow-hidden inline-block py-1">
-                  <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Right</span>
-                </span>
-                <span className="overflow-hidden inline-block py-1">
-                  <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.2s' }}>strength.</span>
-                </span>
-                <span className="overflow-hidden inline-block py-1">
-                  <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.3s' }}>Right</span>
-                </span>
-                <span className="overflow-hidden inline-block py-1">
-                  <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.4s' }}>volume.</span>
-                </span>
-                <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
-                  <span className="animate-reveal-up inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}>Right every </span>
-                </span>
-                <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
-                  <span className="animate-reveal-up pr-1 pb-1 inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}> single time.</span>
-                </span>
-              </h1>
+                {/* Left Magenta Line */}
+                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
+
+                {/* Product Name */}
+                <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">A</span>utomated{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>olution{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">D</span>ispensing{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
+                </h2>
+              </div>
+            </div>
+
+              <div className="flex items-center gap-0">
+                <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
+
+                  <span className="overflow-hidden inline-block py-1">
+                    <span
+                      className="animate-reveal-up inline-block"
+                      style={{ animationDelay: "0.1s" }}
+                    >
+                      Right
+                    </span>
+                  </span>
+
+                  <span className="overflow-hidden inline-block py-1">
+                    <span
+                      className="animate-reveal-up inline-block"
+                      style={{ animationDelay: "0.2s" }}
+                    >
+                      strength.
+                    </span>
+                  </span>
+
+                  <span className="overflow-hidden inline-block py-1 px-(-10)">
+                    <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.3s' }}>Right</span>
+                  </span>
+                  <span className="overflow-hidden inline-block py-1">
+                    <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.4s' }}>volume.</span>
+                  </span>
+                  <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
+                    <span className="animate-reveal-up inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}>Right every </span>
+                  </span>
+                  <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
+                    <span className="animate-reveal-up pr-1 pb-1 inline-block shimmer-text font-black" style={{ animationDelay: '0.5s' }}> single time.</span>
+                  </span>
+                </h1>
+              </div>
 
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[550px] font-medium opacity-80">
                 Automated Solution Dispensing System (ASDS) prepares and dispenses your cleaning solutions — disinfectant, detergent, IPA — to the exact strength, the exact volume, and the exact SOP your cleanroom requires. Mobile, SS-fabricated, 21 CFR Part 11 compliant, and ready to wheel into the next room.
@@ -210,10 +250,10 @@ const ASDSPage = () => {
                 Cleaning is the first line of defence against contamination. And in most pharma plants, the cleaning solutions themselves are still mixed by hand — an operator with a graduated cylinder, a bottle of stock disinfectant, a jug of purified water, and the patience to get it right in a busy shift.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed font-medium">
-                The reality: dilution is approximate, recipes drift between operators, batch-to-batch consistency is impossible to prove, reconciliation between prepared, used, and discarded volumes is a guess, and the cleaning logbook turns into the same audit headache as every other paper record.
+                The reality: dilution is approximate, solvents drift between operators, batch-to-batch consistency is impossible to prove, reconciliation between prepared, used, and discarded volumes is a guess, and the cleaning logbook turns into the same audit headache as every other paper record.
               </p>
               <p className="text-2xl font-black text-[#e0006e] tracking-tight mt-8">
-                ASDS replaces the graduated cylinder with a recipe.
+                ASDS replaces the graduated cylinder with a solvent.
               </p>
             </div>
 
@@ -228,8 +268,8 @@ const ASDSPage = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    ["Wrong dilution strength", "Common (visual estimation)", "Volumetric, recipe-driven"],
-                    ["Cross-shift inconsistency", "Operator-dependent", "Recipe locked, same every time"],
+                    ["Wrong dilution strength", "Common (visual estimation)", "Volumetric, solvent-driven"],
+                    ["Cross-shift inconsistency", "Operator-dependent", "Solvents locked, same every time"],
                     ["Wastage", "Over-prepared, discarded", "Prepared on-demand"],
                     ["Reconciliation", "Manual logbook math", "Auto-logged: prepared, used, discarded"],
                     ["Audit trail", "Paper logbook", "Electronic, 21 CFR Part 11"]
@@ -254,10 +294,10 @@ const ASDSPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a recipe (e.g., 0.5% sodium hypochlorite, 70% IPA, 5% detergent), keys in the required volume, and presses dispense. ASDS handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
+                  ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a solvent (e.g., 2 % disinfectant, 70% IPA, 5% detergent), keys in the required volume, and presses dispense. ASDS handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
                 </p>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Every dispense is recorded electronically — recipe, volume, operator, time, batch. The dispensing log is built as the work is done. Nothing to write up later.
+                  Every dispense is recorded electronically — solvent, volume, operator, time, batch. The dispensing log is built as the work is done. Nothing to write up later.
                 </p>
               </div>
 
@@ -265,7 +305,7 @@ const ASDSPage = () => {
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#e0006e]/20 rounded-full blur-[3rem] group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 <svg className="w-12 h-12 text-[#e0006e]/30 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1 15V9C1 8.44772 1.44772 8 2 8H5C6.10457 8 7 7.10457 7 6V5C7 3.89543 6.10457 3 5 3H0C-1.10457 3 -2 3.89543 -2 5V15C-2 18.866 1.13401 22 5 22H7V21L7 18C7 16.8954 6.10457 16 5 16H2C1.44772 16 1 15.5523 1 15Z" /></svg>
                 <p className="text-white font-medium text-2xl md:text-3xl leading-snug tracking-tight italic relative z-10">
-                  "ASDS is the difference between 'the operator said they mixed 0.5%' and 'the system confirmed it, signed it, and logged it.'"
+                  "ASDS is the difference between 'the operator said they mixed 2 %' and 'the system confirmed it, signed it, and logged it.'"
                 </p>
               </div>
             </div>
@@ -362,7 +402,7 @@ const ASDSPage = () => {
               {useCases.map((uc, i) => (
                 <div key={i} className="bg-[#fafafa] border text-[#e0006e] border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col gap-4">
                   <div className="w-12 h-12 bg-white rounded-xl  shadow-sm border border-gray-100 flex items-center justify-center text-[#e0006e] group-hover:text-[#e0006e] group-hover:border-[#e0006e]/30 transition-colors">
-                    <svg className="w-6 h-6" fill="none"  stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={uc.icon} />
                     </svg>
                   </div>
@@ -387,7 +427,7 @@ const ASDSPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-800">
               {[
                 { stat: "100%", label: "of prep events logged", desc: "No manual logbooks" },
-                { stat: "0 variation", label: "in dilution strength", desc: "Recipe-locked" },
+                { stat: "0 variation", label: "in dilution strength", desc: "Solvents-locked" },
                 { stat: "Savings", label: "on stock concentrate", desc: "On-demand prep" },
                 { stat: "Less time", label: "per prep cycle", desc: "Operators move faster" },
                 { stat: "Cleaner", label: "GMP audits", desc: "100% traceability" },
@@ -405,12 +445,17 @@ const ASDSPage = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 px-6 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <SectionTitle>Frequently Asked Questions</SectionTitle>
-            <FAQAccordion items={faqs} />
+        <section className="py-24 px-6 bg-white border-t border-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex justify-center w-full mb-6 mt-8">
+            <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+              Frequently Asked Questions
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
+            </h2>
           </div>
-        </section>
+          <FAQAccordion items={faqs} />
+        </div>
+      </section>
 
         {/* Pre-footer CTA */}
         <section className="py-10 px-6 bg-white">

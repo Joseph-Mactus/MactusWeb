@@ -137,7 +137,7 @@ SACS is a paperless entry-exit management solution for cleanrooms and restricted
 - **Audit Readiness:** Instant export of signed audit trails for USFDA, MHRA, EU GMP, WHO-GMP inspections.
 - **Deployment:** Typically 6–8 weeks end-to-end.
 
-### Common Questions
+### Frequently Asked Questions
 **Q: What is SACS?**
 A: SACS replaces manual entry-exit logbooks in cleanrooms with a paperless, 21 CFR Part 11 compliant system that biometrically authenticates personnel, enforces SOPs, and maintains an electronic audit trail.
 
@@ -163,7 +163,7 @@ IRS™ automatically records every aseptic intervention in real-time during phar
 - **21 CFR Part 11 Compliance:** Electronic records and signatures for every intervention event.
 - **Deployment:** Typically 6–8 weeks.
 
-### Common Questions
+### Frequently Asked Questions
 **Q: What is IRS™?**
 A: IRS™ automatically records aseptic interventions in fill-finish lines using door/port sensors. Every intervention is captured without operator self-reporting, attributed to the correct operator, and stored in a 21 CFR Part 11 compliant audit trail.
 
@@ -177,19 +177,19 @@ A: Manual recording relies on operators to self-report their interventions, whic
 ASDS is a mobile, stainless-steel (SS) fabricated automated cleaning solution preparation unit for pharmaceutical and healthcare facilities. It mixes precise dilutions of disinfectants, detergents, and IPA with purified water on demand — eliminating manual mixing errors and providing a complete 21 CFR Part 11 compliant audit trail for every dispense.
 
 ### Confirmed Features
-- **Recipe-Driven Preparation:** Up to 6 configurable recipes (disinfectant, IPA, detergent, sporicide). Recipes are locked under change control.
+- **Solvents-Driven Preparation:** Up to 6 configurable solvents (disinfectant, IPA, detergent, sporicide). Rolvents are locked under change control.
 - **Volumetric Accuracy:** Exact stock and purified water ratios dispensed — no "close enough" tolerance.
 - **On-Demand, No Waste:** Solutions prepared only when needed, eliminating over-preparation and waste of expensive concentrates.
-- **21 CFR Part 11 Compliance:** User management, electronic signatures, automated record-keeping for every dispense (recipe, volume, operator, time).
+- **21 CFR Part 11 Compliance:** User management, electronic signatures, automated record-keeping for every dispense (solvent, volume, operator, time).
 - **Mobile Design:** SS-fabricated with castors — moves between cleanrooms as needed.
 - **Deployment:** Typically 6–8 weeks.
 
-### Common Questions
+### Frequently Asked Questions
 **Q: What is ASDS?**
-A: ASDS is an automated system that prepares cleaning and disinfection solutions to precise recipe-controlled ratios, eliminating manual mixing errors and providing a full electronic record of every dispensed solution.
+A: ASDS is an automated system that prepares cleaning and disinfection solutions to precise solvent-controlled ratios, eliminating manual mixing errors and providing a full electronic record of every dispensed solution.
 
-**Q: How many recipes can ASDS handle?**
-A: Up to 6 different disinfectant/cleaning solution recipes per unit, all locked under change control.
+**Q: How many solvents can ASDS handle?**
+A: Up to 6 different disinfectant/cleaning solution solvents per unit, all locked under change control.
 
 ---
 
@@ -220,7 +220,7 @@ IVBLT applies constant, controlled pressure to IV bags to detect sealing defects
 - **Regulatory Compliance:** cGMP and GDP compliant; audit-ready for USFDA, EU GMP, MHRA, WHO-GMP.
 - **Deployment:** Typically 6–8 weeks.
 
-### Common Questions
+### Frequently Asked Questions
 **Q: Does IVBLT destroy the bags it tests?**
 A: No. IVBLT is non-destructive. Bags that pass the pressure test proceed directly to the next production step.
 
@@ -275,7 +275,7 @@ The relationship between BMS and EMS: **"BMS keeps the environment in control. E
 - **Integration:** Often delivered as an integrated pair with BMS. Also integrates with LIMS, MES, and electronic batch records.
 - **Deployment:** Typically 10–16 weeks for a single facility.
 
-### Common Questions
+### Frequently Asked Questions
 **Q: What parameters does EMS monitor?**
 A: Temperature, relative humidity (RH), and differential pressure as standard. Additional parameters (particle counts, CO2, airflow velocity) can be integrated.
 
@@ -360,7 +360,7 @@ Every IIoT project includes:
 - Industrial Manufacturing
 - Cold-Chain Logistics
 
-## Common Questions
+## Frequently Asked Questions
 **Q: Will IIoT affect our validated systems?**
 A: No. Mactus IIoT is read-only against validated systems by default. Validated systems continue to operate as before.
 
@@ -380,7 +380,7 @@ Mactus has published case studies demonstrating real-world compliance risk resol
 
 2. **IRS™** — "When Manual Intervention Recording Becomes a Compliance Risk" — Digitized a manual intervention recording burden that was creating traceability gaps and audit pressure during sterile manufacturing.
 
-3. **ASDS** — "The Risk of Manual Disinfectant Solution Preparation" — Replaced manual weighing and calculation with recipe-driven automation, eliminating variability and GMP deviations.
+3. **ASDS** — "The Risk of Manual Disinfectant Solution Preparation" — Replaced manual weighing and calculation with solvent-driven automation, eliminating variability and GMP deviations.
 
 4. **MPATS** — "Automating Environmental Monitoring for Audit-Ready Compliance" — Transitioned from paper-based environmental monitoring to automated real-time MPATS, eliminating data integrity risks and audit vulnerabilities.
 

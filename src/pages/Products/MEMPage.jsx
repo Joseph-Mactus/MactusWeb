@@ -25,11 +25,36 @@ const SectionTitle = ({ children, eyebrow, isDark }) => (
   </div>
 );
 
+const FAQAccordion = ({ items }) => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  return (
+    <div className="space-y-4">
+      {items.map((item, idx) => (
+        <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm transition-all hover:shadow-md">
+          <button
+            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+            className="w-full px-8 py-6 text-left flex justify-between items-center gap-4"
+          >
+            <span className="font-bold text-gray-900 text-lg">{item.question}</span>
+            <span className={`w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''} flex-shrink-0`}>
+              <svg className="w-4 h-4 text-[#e0006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </button>
+          <div className={`transition-all duration-300 overflow-hidden ${openIndex === idx ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className="px-8 pb-6 text-gray-500 leading-relaxed">
+              {item.answer}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 const MEMPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [activeStage, setActiveStage] = useState(1);
-  const [openFaq, setOpenFaq] = useState(null);
 
   const lifecycleStages = [
     {
@@ -158,8 +183,8 @@ const MEMPage = () => {
 
   const faqs = [
     {
-      question: "What is MPATS (Mactus Environmental Monitoring)?",
-      answer: "MPATS is a digital system that manages the complete lifecycle of media plates used in pharmaceutical environmental monitoring — from issuance through exposure, incubation, reading, and disposition. Each plate carries a QR code that is scanned at every handover, binding the plate to the operator, location, batch, and incubator. The result is end-to-end traceability, automatic reconciliation, and 21 CFR Part 11 compliant electronic records of every event in the plate's life."
+      question: "What is MPATS (Media Plate Tracking and  Management System)?",
+      answer: "MPATS is a digital system that manages the complete lifecycle of media plates used in pharmaceutical Media Plate Tracking and  Management System — from issuance through exposure, incubation, reading, and disposition. Each plate carries a QR code that is scanned at every handover, binding the plate to the operator, location, batch, and incubator. The result is end-to-end traceability, automatic reconciliation, and 21 CFR Part 11 compliant electronic records of every event in the plate's life."
     },
     {
       question: "What types of environmental monitoring does MPATS support?",
@@ -222,7 +247,7 @@ const MEMPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20 overflow-x-hidden">
+    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
       <Navbar />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -232,6 +257,23 @@ const MEMPage = () => {
         @keyframes reveal-up {
           0% { transform: translateY(100%); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes line-extend {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        @keyframes text-reveal-right {
+          0% { opacity: 0; transform: translateX(-15px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+          .animate-line-extend {
+          transform-origin: left;
+          animation: line-extend 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-text-reveal-right {
+          opacity: 0;
+          animation: text-reveal-right 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
         }
         @keyframes shimmer {
           0% { background-position: -200% center; }
@@ -259,14 +301,28 @@ const MEMPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
           <div className="space-y-8 animate-fade-in-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase">
-             Media Plate Tracking and Management System
+            <div className="w-full mb-12 max-w-[760px]">
+              <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
+
+                {/* Left Magenta Line */}
+                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
+
+                {/* Product Name */}
+                <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">M</span>edia{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">P</span>lates{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">T</span>racking and{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">M</span>anagement{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
+                </h2>
+
+              </div>
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -516,29 +572,15 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 8 — FAQ */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-white border-t border-gray-50">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle eyebrow="COMMON QUESTIONS">Frequently Asked Questions</SectionTitle>
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm transition-all hover:shadow-md">
-                <button
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full px-8 py-6 text-left flex justify-between items-center gap-4 focus:outline-none"
-                >
-                  <span className="font-bold text-gray-900 text-lg">{faq.question}</span>
-                  <span className={`w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center transition-transform duration-300 ${openFaq === idx ? 'rotate-180 bg-[#e0006e] text-white' : 'text-[#e0006e]'} flex-shrink-0`}>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
-                  </span>
-                </button>
-                <div className={`transition-all duration-300 overflow-hidden ${openFaq === idx ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="px-8 pb-6 text-gray-500 leading-relaxed font-medium">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="flex justify-center w-full mb-6 mt-8">
+            <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+              Frequently Asked Questions
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
+            </h2>
           </div>
+          <FAQAccordion items={faqs} />
         </div>
       </section>
 

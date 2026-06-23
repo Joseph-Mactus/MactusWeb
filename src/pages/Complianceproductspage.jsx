@@ -62,11 +62,11 @@ const products = [
     id: 'asds',
     tag: 'ASDS',
     name: 'Automated Solution Dispensing System',
-    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS replaces the graduated cylinder with a recipe.',
-    description: 'The ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a recipe and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — recipe, volume, operator, time — with full 21 CFR Part 11 audit trail.',
+    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS replaces the graduated cylinder with a solvent.',
+    description: 'The ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a solvent and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — solvent, volume, operator, time — with full 21 CFR Part 11 audit trail.',
     capabilities: [
-      'Up to 6 configurable recipes — disinfectant, IPA, detergent, sporicide',
-      'Volumetric accuracy — recipe-locked, no manual estimation',
+      'Up to 6 configurable solvents — disinfectant, IPA, detergent, sporicide',
+      'Volumetric accuracy — solvent-locked, no manual estimation',
       'On-demand preparation — eliminates over-preparation and waste',
       'Mobile, SS-fabricated — wheels between cleanrooms',
     ],
@@ -212,7 +212,7 @@ const ComplianceProductsPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20 overflow-x-hidden">
+    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
       <Navbar />
 
 

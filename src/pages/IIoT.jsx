@@ -274,7 +274,7 @@ const IIoT = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20 overflow-x-hidden">
+    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
       <Navbar />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -624,7 +624,12 @@ const IIoT = () => {
       {/* SECTION 9 — FAQ ACCORDION */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle eyebrow="COMMON QUESTIONS">Frequently Asked Questions</SectionTitle>
+          <div className="flex justify-center w-full mb-6 mt-8">
+            <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+              Frequently Asked Questions
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
+            </h2>
+          </div>
           
           <div className="space-y-4">
             {faqs.map((faq, idx) => (

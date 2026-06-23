@@ -7,15 +7,15 @@ const NAV_ITEMS = [
     subItems: ["Company Overview", "Leadership", "Promoters", "Careers", "Quality Policy"]
   },
   {
-  title: "COMPLIANCE PRODUCTS",
-  subItems: [
-    "SACS (Smart Access Control System)",
-    "IRS(Intervention Recording System)",
-    "ASDS (Automated Solution Dispensing System)",
-    "MPATS (Environmental Monitoring)",
-    "IVBLT (Intravenous Bag Leak Tester)"
-  ]
-},
+    title: "COMPLIANCE PRODUCTS",
+    subItems: [
+      "SACS (Smart Access Control System)",
+      "IRS(Intervention Recording System)",
+      "ASDS (Automated Solution Dispensing System)",
+      "MPATS (Media Plates Tracking and Management System)",
+      "IVBLT (Intravenous Bag Leak Tester)"
+    ]
+  },
   {
     title: "SYSTEM INTEGRATION",
     subItems: ["Building Management System", "Environmental Monitoring System", "Low Voltage Systems"]
@@ -59,7 +59,7 @@ const SUB_PATHS = {
   "SACS (Smart Access Control System)": "/products/sacs",
   "IRS(Intervention Recording System)": "/products/irs",
   "ASDS (Automated Solution Dispensing System)": "/products/asds",
-  "MPATS (Environmental Monitoring)": "/products/mpats",
+  "MPATS (Media Plates Tracking and Management System)": "/products/mpats",
   "IVBLT (Intravenous Bag Leak Tester)": "/products/ivblt",
 
   "Company Overview": "/company-overview",
@@ -90,7 +90,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gray-100 px-6 py-8 flex items-center justify-between sticky top-0 z-50 shadow-md transition-all duration-300">
+    <nav className="bg-gray-100 px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-md transition-all duration-300">
 
       {/* Logo */}
       <div className="flex items-center gap-4">
@@ -172,23 +172,20 @@ export default function Navbar() {
 
       {/* Mobile Bottom Sheet */}
       <div
-        className={`fixed inset-0 z-[65] xl:hidden transition-all duration-300 ${
-          isMenuOpen ? 'visible' : 'invisible pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-[65] xl:hidden transition-all duration-300 ${isMenuOpen ? 'visible' : 'invisible pointer-events-none'
+          }`}
       >
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
           onClick={() => setIsMenuOpen(false)}
         />
 
         {/* Sheet */}
         <div
-          className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-[24px] flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            isMenuOpen ? 'translate-y-0' : 'translate-y-full'
-          }`}
+          className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-[24px] flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMenuOpen ? 'translate-y-0' : 'translate-y-full'
+            }`}
           style={{ maxHeight: '85vh' }}
         >
           {/* Drag Handle */}
@@ -225,14 +222,12 @@ export default function Navbar() {
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-9 h-9 rounded-[10px] flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
-                        isExpanded ? 'bg-[#e0006e]' : 'bg-[#fdf0f6]'
-                      }`}
+                      className={`w-9 h-9 rounded-[10px] flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${isExpanded ? 'bg-[#e0006e]' : 'bg-[#fdf0f6]'
+                        }`}
                     >
                       <svg
-                        className={`w-[18px] h-[18px] transition-colors duration-300 ${
-                          isExpanded ? 'text-white' : 'text-[#e0006e]'
-                        }`}
+                        className={`w-[18px] h-[18px] transition-colors duration-300 ${isExpanded ? 'text-white' : 'text-[#e0006e]'
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -246,9 +241,8 @@ export default function Navbar() {
                   {item.subItems && (
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg
-                        className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
-                          isExpanded ? 'rotate-180' : ''
-                        }`}
+                        className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -270,9 +264,8 @@ export default function Navbar() {
 
                   {item.subItems && (
                     <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isExpanded ? 'max-h-[400px] opacity-100 mb-2' : 'max-h-0 opacity-0'
-                      }`}
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[400px] opacity-100 mb-2' : 'max-h-0 opacity-0'
+                        }`}
                     >
                       <div className="pl-12 flex flex-col">
                         {item.subItems.map((sub, i) => (

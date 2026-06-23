@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import lowImg1 from '../../assets/images/Lowvoltagesystems/iStock-535197853-scaled-ra3ga84zsehh5dxfkr5dg058a1x325tlcqxvml292o.jpg';
@@ -101,13 +101,70 @@ const whyPoints = [
 // ── Page Component ────────────────────────────────────────────────────────────
 
 const LowVoltageSystems = () => {
-  useState(() => {
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const faqs = [
+    {
+      question: "What are Low Voltage Systems (LVS) in industrial facilities?",
+      answer: "Low Voltage Systems (LVS), also known as Extra-Low Voltage (ELV) systems, refer to safety, security, and communication infrastructure operating at lower voltages (typically under 50V AC or 120V DC ripple-free). These include fire alarm systems, public addressing systems, access control, door interlocking, CCTV surveillance, emergency talkback, central clock, and gas detection systems."
+    },
+    {
+      question: "Why is integration between different Low Voltage Systems important?",
+      answer: "Integrating LVS systems eliminates operational silos and enables automated emergency protocols. For example, when a fire alarm is triggered, the integration can automatically activate public announcements, release access-controlled exit doors, display corresponding CCTV camera feeds on security consoles, and adjust HVAC airflow via the BMS to contain smoke."
+    },
+    {
+      question: "Are Mactus Low Voltage Systems compliant with pharmaceutical regulations?",
+      answer: "Yes. For pharmaceutical and biotech environments, compliance is built in. Our access control and door interlocking systems are designed to comply with USFDA 21 CFR Part 11 and EU GMP Annex 11. We maintain detailed audit logs for all security and access events, and provide validation documentation including IQ, OQ, and PQ protocols."
+    },
+    {
+      question: "What standard protocols do you support for system integration?",
+      answer: "We support industry-standard communication protocols like Modbus, BACnet, TCP/IP, and standard dry-contact relays. This allows us to interface LVS components directly with your existing Building Management System (BMS), SCADA, PLCs, or centralized security dashboard."
+    },
+    {
+      question: "Do we need to replace our existing alarm or safety systems to work with Mactus?",
+      answer: "Not necessarily. Mactus specializes in brownfield integration. We can interface your legacy systems (e.g., existing fire alarm panels or CCTV networks) to a modern control layer, adding new components only where required to meet compliance or safety guidelines."
+    },
+    {
+      question: "What support and maintenance options do you offer for LVS?",
+      answer: "Mactus offers comprehensive post-installation support, including customized Annual Maintenance Contracts (AMCs), periodic calibration (especially for gas detection systems), software updates, and preventive maintenance checks to ensure your life-safety and security infrastructure is fully operational 24/7."
+    }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mactus.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Low Voltage Systems", "item": "https://mactus.in/low-voltage-systems/" }
+    ]
+  };
+
+  useEffect(() => {
     document.title = 'Low Voltage Systems (LVS) | Safety & Security Infrastructure | Mactus';
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', 'Mactus Automation designs, integrates, and commissions Low Voltage Systems (LVS) for pharma and industrial facilities — fire alarms, access control, door interlocks, CCTV, and gas detection.');
   }, []);
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
       <Navbar />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <style>{`
         @keyframes reveal-up {
@@ -320,6 +377,34 @@ const LowVoltageSystems = () => {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ SECTION ───────────────────────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <SectionTitle>Frequently Asked Questions</SectionTitle>
+          <div className="space-y-4 mt-8">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm transition-all hover:shadow-md">
+                <button
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full px-8 py-6 text-left flex justify-between items-center gap-4 focus:outline-none"
+                >
+                  <span className="font-bold text-gray-900 text-lg">{faq.question}</span>
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${openFaq === idx ? 'rotate-180 bg-[#e0006e] text-white' : 'bg-gray-50 text-[#e0006e]'}`}>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                  </span>
+                </button>
+                <div className={`transition-all duration-300 overflow-hidden ${openFaq === idx ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="px-8 pb-6 text-gray-500 leading-relaxed font-medium">
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

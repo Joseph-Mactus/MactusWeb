@@ -248,7 +248,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20 overflow-x-hidden">
+    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#e0006e]/20">
       <Navbar />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

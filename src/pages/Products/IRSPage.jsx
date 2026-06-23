@@ -50,7 +50,7 @@ const IRSPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useState(() => {
-    document.title = "Intervention Recording System (IRS™) | Mactus";
+    document.title = "Intervention Recording System (IRS) | Mactus";
   }, []);
 
   const features = [
@@ -71,12 +71,12 @@ const IRSPage = () => {
   ];
 
   const faqs = [
-    { question: "What is IRS™?", answer: "IRS(Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
-    { question: "Is it Annex 1 aligned?", answer: "Yes, IRSis specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
+    { question: "What is IRS?", answer: "IRS(Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
+    { question: "Is it Annex 1 aligned?", answer: "Yes, IRS is specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
     { question: "How does it detect interventions automatically?", answer: "We use a combination of magnetic sensors for doors/ports and IR curtains for glove ports to detect physical entry into the aseptic zone without any manual trigger needed." },
     { question: "Can it enforce a max per batch?", answer: "Yes, you can configure maximum limits for specific types of interventions. The system will alert supervisors if the limit is approached or reached." },
-    { question: "Does it work with existing lines?", answer: "IRSis designed for retrofit. Our non-invasive sensors can be mounted on almost any existing fill-finish line, RABS, or Isolator without compromising cabinet integrity." },
-    { question: "How does it support APR/PQR?", answer: "Instead of manual data collation, IRSprovides 1-click export of trending data, making Annual Product Reviews (APR) and Periodic Quality Reviews (PQR) significantly faster." },
+    { question: "Does it work with existing lines?", answer: "IR is designed for retrofit. Our non-invasive sensors can be mounted on almost any existing fill-finish line, RABS, or Isolator without compromising cabinet integrity." },
+    { question: "How does it support APR/PQR?", answer: "Instead of manual data collation, IR provides 1-click export of trending data, making Annual Product Reviews (APR) and Periodic Quality Reviews (PQR) significantly faster." },
     { question: "Is it suitable for media fills?", answer: "It is ideal for Aseptic Process Simulations (Media Fills). It accurately tracks the duration and sequence of interventions, providing a perfect record for regulatory submission." },
     { question: "How long does deployment take?", answer: "A typical deployment, including sensor mounting and software configuration, takes 4-6 weeks, followed by site validation (IQ/OQ)." },
   ];
@@ -111,21 +111,45 @@ const IRSPage = () => {
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s linear infinite;
         }
+          @keyframes line-extend {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        @keyframes text-reveal-right {
+          0% { opacity: 0; transform: translateX(-15px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+          .animate-line-extend {
+          transform-origin: left;
+          animation: line-extend 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-text-reveal-right {
+          opacity: 0;
+          animation: text-reveal-right 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8 animate-fade-in-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[18px] font-black tracking-[0.2em] uppercase mb-4">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
-              </span>
-              INTERVENTION RECORDING SYSTEM
+            <div className="w-full mb-12 max-w-[760px]">
+              <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
+
+                {/* Left Magenta Line */}
+                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
+
+                {/* Product Name */}
+                <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">I</span>ntervention{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">R</span>ecording{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
+                </h2>
+
+              </div>
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -184,7 +208,7 @@ const IRSPage = () => {
                 EU GMP Annex 1 (2022) made it explicit: every intervention must be justified, documented, time-bound, and trended.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed font-bold text-gray-900">
-Yet on most facilities, recording is still an operator scribbling on a cleanroom paper — sometimes hours after the fact.              </p>
+                Yet on most facilities, recording is still an operator scribbling on a cleanroom paper — sometimes hours after the fact.              </p>
             </div>
           </div>
 
@@ -194,7 +218,7 @@ Yet on most facilities, recording is still an operator scribbling on a cleanroom
                 <tr className="bg-gray-100">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                   <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper / Manual</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With IRS™</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With IRS</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -272,7 +296,7 @@ Yet on most facilities, recording is still an operator scribbling on a cleanroom
                   <iframe
                     className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
                     src="https://www.youtube.com/embed/q_V2sazmumQ?rel=0&modestbranding=1&controls=1"
-                    title="IRSSystem Workflow"
+                    title="IRS System Workflow"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
@@ -290,7 +314,7 @@ Yet on most facilities, recording is still an operator scribbling on a cleanroom
             <div className="space-y-6">
               <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Aseptic Processing</span>
               <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Engineered for critical fill-finish</h2>
-              <p className="text-gray-400 text-lg">Whether on an open RABS or a closed isolator, IRSprovides the transparency your quality team demands.</p>
+              <p className="text-gray-400 text-lg">Whether on an open RABS or a closed isolator, IRS provides the transparency your quality team demands.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
@@ -337,7 +361,7 @@ Yet on most facilities, recording is still an operator scribbling on a cleanroom
       {/* FAQ Section */}
       <section className="py-24 px-6 bg-white border-t border-gray-50">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle>Common Questions</SectionTitle>
+          <SectionTitle>Frequently Asked Questions</SectionTitle>
           <FAQAccordion items={faqs} />
         </div>
       </section>
