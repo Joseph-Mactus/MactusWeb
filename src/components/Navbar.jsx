@@ -105,17 +105,16 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Nav Links */}
-      <div className="hidden xl:flex items-center gap-6">
-        {NAV_ITEMS.map((item) => {
+<div className="hidden min-[1180px]:flex items-center gap-3 xl:gap-5">        {NAV_ITEMS.map((item) => {
           let topPath = null;
           if (item.title === "IIOT IMPLEMENTATION") topPath = "/iiot-implementations";
           if (item.title === "CONTACT US") topPath = "/contact-us/";
 
           const content = (
             <div className="flex items-center gap-1 cursor-pointer group">
-              <span className="text-[#e0006e] text-[15px] font-extrabold whitespace-nowrap group-hover:text-black transition-colors duration-300">
-                {item.title}
-              </span>
+              <span className="text-[#e0006e] text-[13px] xl:text-[14px] font-extrabold whitespace-nowrap group-hover:text-black transition-colors duration-300">
+  {item.title}
+</span>
               {item.subItems && (
                 <svg className="w-3.5 h-3.5 text-[#e0006e] transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
@@ -159,8 +158,7 @@ export default function Navbar() {
       {/* Hamburger Toggle */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="xl:hidden p-2 text-[#e0006e] hover:bg-gray-100 rounded-lg transition-colors z-[70] relative"
-      >
+className="min-[1180px]:hidden p-2 text-[#e0006e] hover:bg-gray-100 rounded-lg transition-colors z-[70] relative"      >
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           {isMenuOpen ? (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
@@ -172,8 +170,7 @@ export default function Navbar() {
 
       {/* Mobile Bottom Sheet */}
       <div
-        className={`fixed inset-0 z-[65] xl:hidden transition-all duration-300 ${isMenuOpen ? 'visible' : 'invisible pointer-events-none'
-          }`}
+        className={`fixed inset-0 z-[65] min-[1180px]:hidden transition-all duration-300 ${isMenuOpen ? 'visible' : 'invisible pointer-events-none'}`}
       >
         {/* Backdrop */}
         <div

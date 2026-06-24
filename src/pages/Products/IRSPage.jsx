@@ -70,6 +70,15 @@ const IRSPage = () => {
     { title: "RECORD", desc: "The data—duration, operator, justification, and timestamp—is committed to the 21 CFR audit trail." },
   ];
 
+  const useCases = [
+    { title: "Sterile Injectable Manufacturing", desc: "RABS and isolator fill-finish lines for vials, PFS, and ampoules", icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" },
+    { title: "Biologics & Vaccine Fill-Finish", desc: "High-value product lines requiring precision intervention tracking", icon: "M13 10V3L4 14h7v8l9-11h-7z" },
+    { title: "Lyophilised Product Lines", desc: "Loading and unloading events with full traceability", icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
+    { title: "Aseptic Process Simulation", desc: "Media fill campaigns with dedicated APS mode for complex sequences", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
+    { title: "Cell & Gene Therapy", desc: "Ultra-critical environments demanding zero-miss intervention records", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+    { title: "Oral Solid Dosage", desc: "Controlled access zones and equipment intervention documentation", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
+  ];
+
   const faqs = [
     { question: "What is IRS?", answer: "IRS(Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
     { question: "Is it Annex 1 aligned?", answer: "Yes, IRS is specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
@@ -308,31 +317,23 @@ const IRSPage = () => {
       </section>
 
       {/* Built For */}
-      <section className="py-16 px-6 bg-[#25252B] text-white">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Aseptic Processing</span>
-              <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Engineered for critical fill-finish</h2>
-              <p className="text-gray-400 text-lg">Whether on an open RABS or a closed isolator, IRS provides the transparency your quality team demands.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                "Sterile injectables (vials/PFS/ampoules)",
-                "Biologics & vaccine fill-finish",
-                "Lyophilised product fill-finish",
-                "RABS and isolator processing",
-                "Aseptic Process Simulation campaigns",
-                "Cell & gene therapy fill-finish"
-              ].map(item => (
-                <div key={item} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-colors group">
-                  <div className="flex items-center gap-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#e0006e] group-hover:scale-150 transition-transform"></div>
-                    <span className="font-bold text-sm tracking-wide text-gray-200">{item}</span>
-                  </div>
+          <SectionTitle>Built For</SectionTitle>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((uc, i) => (
+              <div key={i} className="bg-[#fafafa] border text-[#e0006e] border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col gap-4">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-[#e0006e] group-hover:text-[#e0006e] group-hover:border-[#e0006e]/30 transition-colors">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={uc.icon} />
+                  </svg>
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h4 className="font-black text-gray-900 mb-2 group-hover:text-[#e0006e] transition-colors">{uc.title}</h4>
+                  <p className="text-gray-500 text-sm font-medium">{uc.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

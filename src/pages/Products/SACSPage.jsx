@@ -68,6 +68,15 @@ const SACSPage = () => {
     { title: "RECORD", desc: "The entry event is digitally signed and added to the 21 CFR Part 11 audit trail." },
   ];
 
+  const useCases = [
+    { title: "Sterile Injectables", desc: "Grade A/B cleanroom entry management for vials, PFS, and ampoule lines", icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" },
+    { title: "Biologics & Vaccine Fill-Finish", desc: "Enforced SOP-based access for high-value biologics manufacturing", icon: "M13 10V3L4 14h7v8l9-11h-7z" },
+    { title: "Oral Solid Dosage", desc: "Controlled zone access with training verification for OSD facilities", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
+    { title: "API Manufacturing Grade B/C", desc: "Role-based access enforcement across multi-grade API facilities", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+    { title: "Hospital Pharmacy (USP 797/800)", desc: "Compounding cleanroom access control with complete electronic audit trail", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
+    { title: "Food Processing (FSMA/FSSAI)", desc: "Hygienic zone entry monitoring for food safety compliance", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
+  ];
+
   const faqs = [
     { question: "What is SACS?", answer: "SACS (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual entry and exit logbooks with a digital, 21 CFR Part 11 compliant workflow." },
     { question: "Is it 21 CFR Part 11 compliant?", answer: "Yes, SACS is built from the ground up to meet the requirements of 21 CFR Part 11, including electronic signatures, audit trails, and data integrity controls." },
@@ -309,31 +318,23 @@ const SACSPage = () => {
       </section>
 
       {/* Built For */}
-      <section className="py-16 px-6 bg-[#25252B] text-white">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <span className="text-[#e0006e] font-extrabold text-xs tracking-[0.4em] uppercase block">Industry Targets</span>
-              <h2 className="font-black text-4xl md:text-5xl tracking-tighter">Built for high-stakes manufacturing</h2>
-              <p className="text-gray-400 text-lg">Every facility type has unique compliance challenges. SACS is flexible enough for all of them.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                "Sterile injectables",
-                "Biologics & vaccine fill-finish",
-                "Oral solid dosage",
-                "API manufacturing Grade B/C",
-                "Hospital pharmacy USP 797/800",
-                "Food processing FSMA/FSSAI"
-              ].map(item => (
-                <div key={item} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-[#e0006e]/50 transition-colors group">
-                  <div className="flex items-center gap-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#e0006e] group-hover:scale-150 transition-transform"></div>
-                    <span className="font-bold text-sm tracking-wide text-gray-200">{item}</span>
-                  </div>
+          <SectionTitle>Built For</SectionTitle>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((uc, i) => (
+              <div key={i} className="bg-[#fafafa] border text-[#e0006e] border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col gap-4">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-[#e0006e] group-hover:text-[#e0006e] group-hover:border-[#e0006e]/30 transition-colors">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={uc.icon} />
+                  </svg>
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h4 className="font-black text-gray-900 mb-2 group-hover:text-[#e0006e] transition-colors">{uc.title}</h4>
+                  <p className="text-gray-500 text-sm font-medium">{uc.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

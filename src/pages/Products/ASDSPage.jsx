@@ -155,27 +155,27 @@ const ASDSPage = () => {
         `}</style>
 
         {/* Hero Section */}
-      <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+        <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
           <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
             <div className="space-y-8 animate-fade-in-left">
               <div className="w-full mb-12 max-w-[760px]">
-              <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
+                <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
 
-                {/* Left Magenta Line */}
-                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
+                  {/* Left Magenta Line */}
+                  <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
 
-                {/* Product Name */}
-                <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
-                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">A</span>utomated{" "}
-                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>olution{" "}
-                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">D</span>ispensing{" "}
-                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
-                </h2>
+                  {/* Product Name */}
+                  <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
+                    <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">A</span>utomated{" "}
+                    <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>olution{" "}
+                    <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">D</span>ispensing{" "}
+                    <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
+                  </h2>
+                </div>
               </div>
-            </div>
 
               <div className="flex items-center gap-0">
                 <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -214,9 +214,10 @@ const ASDSPage = () => {
               </div>
 
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[550px] font-medium opacity-80">
-                Automated Solution Dispensing System (ASDS) prepares and dispenses your cleaning solutions — disinfectant, detergent, IPA — to the exact strength, the exact volume, and the exact SOP your cleanroom requires. Mobile, SS-fabricated, 21 CFR Part 11 compliant, and ready to wheel into the next room.
+                Automated Solution Dispensing System (ASDS) is a portable, pharma-grade solution designed to automate the preparation and dispensing of disinfectants, detergents, IPA, and other cleaning agents. With recipe-driven control, electronic audit trails, and 21 CFR Part 11 compliance, ASDS ensures consistent dilution accuracy, operator accountability, and complete traceability across your cleaning operations.
               </p>
-
+              {/* Installed Base Strip */}
+              
               <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
                 <button onClick={() => setIsModalOpen(true)} className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
                   Request a Demo
@@ -236,6 +237,38 @@ const ASDSPage = () => {
 
             <div className="relative animate-fade-in-right animate-float">
               <ImageCarousel images={[irs_1, irs_2, irs_3]} />
+              
+              <div className="w-full max-w-[450px] rounded-2xl  border border-white/10 bg-white/[0.04] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.25)]">
+                <div className="flex items-stretch">
+
+                  {/* Magenta Side Line */}
+                  <div className="w-1.5 bg-[#e0006e]"></div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-5 py-4 w-full">
+
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black mb-1">
+                        Installed Base
+                      </p>
+
+                      <p className="text-gray-300 text-sm md:text-base font-medium">
+                        Trusted solution deployed across regulated pharma facilities
+                      </p>
+                    </div>
+
+                    <div className="flex items-baseline gap-1 flex-shrink-0">
+                      <span className="text-[#e0006e] text-4xl md:text-5xl font-black leading-none drop-shadow-[0_0_18px_rgba(224,0,110,0.45)]">
+                        20
+                      </span>
+                      <span className="text-white text-2xl font-black">+</span>
+                      <span className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">
+                        Units
+                      </span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -243,18 +276,22 @@ const ASDSPage = () => {
         {/* The Problem Section */}
         <section className="py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
-            <SectionTitle eyebrow="WHY ASDS">Manual cleaning solution prep is the slow leak in GMP cleaning</SectionTitle>
+            <SectionTitle eyebrow="WHY ASDS">Manual cleaning solution preparation is a hidden GMP risk</SectionTitle>
 
             <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
               <p className="text-gray-500 text-lg leading-relaxed font-medium">
-                Cleaning is the first line of defence against contamination. And in most pharma plants, the cleaning solutions themselves are still mixed by hand — an operator with a graduated cylinder, a bottle of stock disinfectant, a jug of purified water, and the patience to get it right in a busy shift.
+                Cleaning is the first line of defence against contamination in pharmaceutical manufacturing. Yet in many facilities, cleaning solutions are still prepared manually—using measuring cylinders, stock disinfectants, detergents, IPA, and purified water.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed font-medium">
-                The reality: dilution is approximate, solvents drift between operators, batch-to-batch consistency is impossible to prove, reconciliation between prepared, used, and discarded volumes is a guess, and the cleaning logbook turns into the same audit headache as every other paper record.
+                The result is variability. Dilution strengths can differ between operators, solution concentrations may drift across shifts, and batch-to-batch consistency becomes difficult to verify. Reconciliation of prepared, used, and discarded quantities often depends on manual calculations and paper logbooks, creating compliance challenges during audits.
               </p>
               <p className="text-2xl font-black text-[#e0006e] tracking-tight mt-8">
-                ASDS replaces the graduated cylinder with a solvent.
+                ASDS replaces manual mixing with recipe-driven automation.
               </p>
+              <p>
+                Every solution is prepared according to predefined and validated recipes, ensuring the right concentration, the right volume, and complete traceability every time.
+              </p>
+
             </div>
 
             <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
@@ -268,11 +305,12 @@ const ASDSPage = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    ["Wrong dilution strength", "Common (visual estimation)", "Volumetric, solvent-driven"],
-                    ["Cross-shift inconsistency", "Operator-dependent", "Solvents locked, same every time"],
-                    ["Wastage", "Over-prepared, discarded", "Prepared on-demand"],
-                    ["Reconciliation", "Manual logbook math", "Auto-logged: prepared, used, discarded"],
-                    ["Audit trail", "Paper logbook", "Electronic, 21 CFR Part 11"]
+                    [" Wrong dilution strength", "Prone to operator error and visual estimation", "Accurate, recipe-driven dispensing "],
+                    ["Cross-shift inconsistency", "Operator-dependent", "Locked recipes ensure repeatability"],
+                    ["Chemical wastage ", "Over-preparation and disposal", "On-demand preparation minimizes waste "],
+                    ["Reconciliation", "Manual calculations and paper records", "Automatically logged and traceable"],
+                    ["Audit trail", "Paper-based logbooks", "Electronic records with 21 CFR Part 11 compliance"],
+                    ["Traceability", "Difficult to verify preparation history", "Complete operator, recipe, and dispense traceability"]
                   ].map((row, i) => (
                     <tr key={i} className="group hover:bg-gray-50 transition-colors">
                       <td className="px-8 py-6 font-bold text-gray-900 bg-white">{row[0]}</td>
@@ -294,7 +332,7 @@ const ASDSPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a solvent (e.g., 2 % disinfectant, 70% IPA, 5% detergent), keys in the required volume, and presses dispense. ASDS handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
+                  ASDS is a mobile,automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a solvent (e.g., 2 % disinfectant, 70% IPA, 2% detergent), keys in the required volume, and presses dispense. ASDS handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
                 </p>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Every dispense is recorded electronically — solvent, volume, operator, time, batch. The dispensing log is built as the work is done. Nothing to write up later.
@@ -424,7 +462,7 @@ const ASDSPage = () => {
               <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running ASDS in production</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-800">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 divide-y md:divide-y-0 md:divide-x divide-gray-800">
               {[
                 { stat: "100%", label: "of prep events logged", desc: "No manual logbooks" },
                 { stat: "0 variation", label: "in dilution strength", desc: "Solvents-locked" },
@@ -432,7 +470,7 @@ const ASDSPage = () => {
                 { stat: "Less time", label: "per prep cycle", desc: "Operators move faster" },
                 { stat: "Cleaner", label: "GMP audits", desc: "100% traceability" },
               ].map((outcome, i) => (
-                <div key={i} className="text-center space-y-3 pt-8 md:pt-0 px-4 group">
+                <div key={i} className="text-center space-y-3 pt-8 md:pt-0 px-2 group">
                   <p className="text-[#e0006e] font-black text-4xl lg:text-5xl tracking-tighter transition-transform group-hover:scale-105">{outcome.stat}</p>
                   <div>
                     <p className="text-white font-bold text-sm tracking-wide">{outcome.label}</p>
@@ -446,16 +484,16 @@ const ASDSPage = () => {
 
         {/* FAQ Section */}
         <section className="py-24 px-6 bg-white border-t border-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center w-full mb-6 mt-8">
-            <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
-              Frequently Asked Questions
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
-            </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex justify-center w-full mb-6 mt-8">
+              <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+                Frequently Asked Questions
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
+              </h2>
+            </div>
+            <FAQAccordion items={faqs} />
           </div>
-          <FAQAccordion items={faqs} />
-        </div>
-      </section>
+        </section>
 
         {/* Pre-footer CTA */}
         <section className="py-10 px-6 bg-white">
