@@ -57,7 +57,7 @@ const ASDSPage = () => {
 
   const features = [
     { title: "Solvents-Driven Preparation", desc: ["Up to 6 custom different disinfectant solutions configurable per unit (Sporicidal, Hand Disinfectant and Detergent).", "Operator selects solvent + volume on the IPC; system handles the dilution math and dispensing", "Solvents are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
-    { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery — no \"close enough\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
+    { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery —  \"Accurate\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
     { title: "On-Demand, No Waste", desc: ["Solutions prepared only when needed — no shift-start over-preparation", "Reduced waste of expensive concentrates", "Reconciliation is automatic — every dispense logged, every discard captured"], icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
     { title: "Compliance", desc: ["21 CFR Part 11 compliant user management — electronic signatures, role-based access, audit trails", "Automated record keeping — every dispense event time-stamped and signed", "Historical data storage and export for QA review and APR/PQR", "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ"], icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
     { title: "Build & Usability", desc: ["Pharma-grade SS fabrication — designed for repeated cleaning and cleanroom environments", "Mobile design — castors with brakes, wheel between cleanrooms", "Industrial IPC with intuitive solvent-selection workflow", "Compact footprint — fits through standard cleanroom doors"], icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
@@ -155,7 +155,7 @@ const ASDSPage = () => {
         `}</style>
 
         {/* Hero Section */}
-        <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+        <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
           <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -216,8 +216,7 @@ const ASDSPage = () => {
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[550px] font-medium opacity-80">
                 Automated Solution Dispensing System (ASDS) is a portable, pharma-grade solution designed to automate the preparation and dispensing of disinfectants, detergents, IPA, and other cleaning agents. With recipe-driven control, electronic audit trails, and 21 CFR Part 11 compliance, ASDS ensures consistent dilution accuracy, operator accountability, and complete traceability across your cleaning operations.
               </p>
-              {/* Installed Base Strip */}
-              
+
               <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
                 <button onClick={() => setIsModalOpen(true)} className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
                   Request a Demo
@@ -235,38 +234,79 @@ const ASDSPage = () => {
 
             </div>
 
-            <div className="relative animate-fade-in-right animate-float">
+            <div className="relative mt-16 animate-fade-in-right animate-float">
               <ImageCarousel images={[irs_1, irs_2, irs_3]} />
-              
-              <div className="w-full max-w-[450px] rounded-2xl  border border-white/10 bg-white/[0.04] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.25)]">
-                <div className="flex items-stretch">
 
-                  {/* Magenta Side Line */}
-                  <div className="w-1.5 bg-[#e0006e]"></div>
+              {/* Installed Base — Premium Stats Strip */}
+              <div className="w-full mt-4 relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
 
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-5 py-4 w-full">
+                {/* Soft glow */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute -top-16 -right-16 w-40 h-40 bg-[#e0006e]/20 rounded-full blur-3xl"></div>
+                </div>
 
-                    <div>
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black mb-1">
-                        Installed Base
-                      </p>
-
-                      <p className="text-gray-300 text-sm md:text-base font-medium">
-                        Trusted solution deployed across regulated pharma facilities
-                      </p>
-                    </div>
-
-                    <div className="flex items-baseline gap-1 flex-shrink-0">
-                      <span className="text-[#e0006e] text-4xl md:text-5xl font-black leading-none drop-shadow-[0_0_18px_rgba(224,0,110,0.45)]">
-                        20
-                      </span>
-                      <span className="text-white text-2xl font-black">+</span>
-                      <span className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">
-                        Units
-                      </span>
-                    </div>
-
+                {/* Header bar */}
+                <div className="relative flex items-center justify-between px-5 py-2 border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e] shadow-[0_0_8px_rgba(224,0,110,0.9)]"></span>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">
+                      Installed Base
+                    </p>
                   </div>
+
+                  <span className="hidden sm:inline-flex text-[9px] uppercase tracking-widest text-gray-400 font-bold">
+                    Validated
+                  </span>
+                </div>
+
+                {/* Stats row */}
+                <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
+                  {[
+                    {
+                      value: "20+",
+                      label: "Units Deployed",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      value: "100%",
+                      label: "GMP Compliant",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      value: "21 CFR",
+                      label: "Part 11 Ready",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      ),
+                    },
+                  ].map(({ value, label, icon }, i) => (
+                    <div
+                      key={i}
+                      className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200"
+                    >
+                      <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">
+                        {icon}
+                      </span>
+
+                      <span className="text-white text-xl font-black leading-none drop-shadow-[0_0_12px_rgba(224,0,110,0.35)]">
+                        {value}
+                      </span>
+
+                      <span className="text-gray-500 text-[9px] uppercase tracking-widest font-bold text-center leading-tight group-hover:text-gray-400 transition-colors duration-200">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

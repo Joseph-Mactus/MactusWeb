@@ -55,7 +55,7 @@ function App() {
         <Route path="/compliance-products" element={<ComplianceProductPage />} />       
         <Route path="/iiot-implementations" element={<IIoT />} />
       </Routes>
-      <GeminiChatbot />
+      {/* <GeminiChatbot /> */}
     </Router>
     
   );

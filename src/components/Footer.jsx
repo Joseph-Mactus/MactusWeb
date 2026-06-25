@@ -96,10 +96,8 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#262626] border-t border-white/5">
   <div className="bg-[#262626] pt-6 pb-6 px-8">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-[0fr_1.45fr_1.1fr_0.85fr_0.75fr_1fr_1.45fr] gap-5">
-      {FOOTER_COLS.map((col, idx) => (
-        <div key={idx} className={idx === 0 ? "lg:col-span-2" : "lg:col-span-1"}>
-          <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-8 uppercase opacity-80">{col.title}</h4>
+<div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-[1.6fr_1.2fr_0.9fr_0.8fr_0.9fr_1.5fr] gap-8">      {FOOTER_COLS.map((col, idx) => (
+<div key={idx} className="min-w-0">          <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-8 uppercase opacity-80">{col.title}</h4>
           <ul className="space-y-4">
             {col.links.map((link, i) => (
               <li key={i}>
@@ -110,7 +108,7 @@ export default function Footer() {
         </div>
       ))}
 
-      <div className="lg:col-span-1 space-y-10">
+      <div className="min-w-0 space-y-10">
         <div>
           <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-6 uppercase opacity-80">OUR CONTACT</h4>
           <div className="text-gray-400 text-sm space-y-4 leading-relaxed">

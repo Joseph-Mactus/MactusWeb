@@ -7,6 +7,9 @@ const PRODUCT_URLS = {
   home: "https://mactus.in/",
   sacs: "https://mactus.in/sacs-2/",
   irs: "https://mactus.in/irs/",
+  mpats: "https://mactus.in/mpats/",
+  ivblt: "https://mactus.in/ivblt/",
+  IIoT: "https://mactus.in/iiot/",
   asds: "https://mactus.in/asds/",
   ems: "https://mactus.in/environmental-monitoring-system/",
   bms: "https://mactus.in/building-management-system/",
@@ -53,7 +56,7 @@ SOURCE RULES
    - SACS: Smart Access Control System
    - IRS: Intervention Recording System
    - ASDS: Automated Solution Dispensing System
-   - MEM: Environmental Monitoring
+   - MPATS: Media Plates Tracking and Management System
    - IVBLT: Intravenous Bag Leak Tester
    - BMS: Building Management System
    - EMS: Environmental Monitoring System

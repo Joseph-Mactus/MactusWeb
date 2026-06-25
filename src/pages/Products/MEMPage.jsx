@@ -301,7 +301,7 @@ const MEMPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#25252B] pt-10 pb-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] pt-10 pb-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -355,8 +355,44 @@ const MEMPage = () => {
             </div>
           </div>
 
-          <div className="relative animate-fade-in-right animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
+          <div className="relative animate-fade-in-right mt-16  animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
             <ImageCarousel images={[img_3, img_1, img_2]} />
+
+            {/* Installed Base — Premium Stats Strip */}
+            <div className="w-full mt-4 relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+              {/* Soft glow */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-16 -right-16 w-40 h-40 bg-[#e0006e]/20 rounded-full blur-3xl"></div>
+              </div>
+              {/* Header bar */}
+              <div className="relative flex items-center justify-between px-5 py-2 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e] shadow-[0_0_8px_rgba(224,0,110,0.9)]"></span>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Installed Base</p>
+                </div>
+                <span className="hidden sm:inline-flex text-[9px] uppercase tracking-widest text-gray-400 font-bold">Validated</span>
+              </div>
+              {/* Stats row */}
+              <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
+                {[
+                  { value: "25+", label: "Units Deployed", icon: (
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                  )},
+                  { value: "100%", label: "GMP Compliant", icon: (
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                  )},
+                  { value: "Annex 1", label: "EU GMP Aligned", icon: (
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                  )},
+                ].map(({ value, label, icon }, i) => (
+                  <div key={i} className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200">
+                    <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">{icon}</span>
+                    <span className="text-white text-xl font-black leading-none drop-shadow-[0_0_12px_rgba(224,0,110,0.35)]">{value}</span>
+                    <span className="text-gray-500 text-[9px] uppercase tracking-widest font-bold text-center leading-tight group-hover:text-gray-400 transition-colors duration-200">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -384,7 +420,7 @@ const MEMPage = () => {
               <tbody className="divide-y divide-gray-100">
                 {[
                   ["Missing plate at reconciliation", "Found days later (or not)", "QR-scan visibility, every step"],
-                  ["Incubation parameters", "Recorded manually, often after", "Auto-logged from EMS / incubator"],
+                  ["Tracking parameters", "Recorded manually, often after", "Auto-logged from EMS / incubator"],
                   ["CFU count attribution", "Logbook entry, anonymous", "E-signed by reading microbiologist"],
                   ["Trend analysis for APR/PQR", "Spreadsheet rebuild every cycle", "Live dashboards, one-click export"],
                   ["Audit pull", "Half a day of paperwork", "30 seconds, filtered any way you need"]
