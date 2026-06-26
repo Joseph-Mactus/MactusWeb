@@ -66,10 +66,10 @@ function parseCSVLine(line) {
 }
 
 const SectionTitle = ({ children }) => (
-  <div className="flex flex-col items-center w-full mb-12 mt-8">
-    <h2 className="text-center text-[#e0006e] font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block uppercase">
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );

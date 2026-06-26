@@ -10,14 +10,11 @@ import {FaSyringe,FaPills,FaDna,FaHospital,FaGlobe,FaMicroscope,} from "react-ic
 
 // ─── Section Title ────────────────────────────────────────────────────────────
 
-const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
-  <div className={`flex flex-col ${center ? 'items-center' : 'items-start'} w-full mb-12 mt-8`}>
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">{eyebrow}</span>
-    )}
-    <h2 className={`${center ? 'text-center' : ''} font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -81,59 +78,32 @@ const features = [
   {
     icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>,
     title: "High-Sensitivity Leak Detection",
-    items: [
-      "Detects pinholes and sealing defects invisible to visual inspection",
-      "Pressure-based detection — not dependent on operator squeeze force",
-      "Sensitivity configurable to your product specification",
-      "Non-destructive testing — passing bags proceed directly to next step",
-    ],
+    desc: "Detects pinholes and sealing defects invisible to visual inspection with pressure-based detection configurable to your product specification for non-destructive testing.",
   },
   {
     icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
     title: "Smart Control & Audit Trail",
-    items: [
-      "21 CFR Part 11 compliant electronic records for every test event",
-      "Test result — bag ID, pressure, result, operator — logged automatically",
-      "Role-based access control and electronic signatures",
-      "Tamper-proof audit trail exportable for batch records and QA review",
-    ],
+    desc: "21 CFR Part 11 compliant electronic records for every test event with automatic logging of bag ID, pressure, result, and operator for tamper-proof audit trail exportable for batch records.",
   },
   {
     icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
     title: "Size-Adjusted Pressure Testing",
-    items: [
-      "Pressure automatically adjusted per bag size (50 mL, 100 mL, 250 mL, 500 mL, 1000 mL)",
-      "Eliminates manual pressure setting errors between bag sizes",
-      "Consistent test conditions across every shift and every operator",
-    ],
+    desc: "Pressure automatically adjusted per bag size to eliminate manual pressure setting errors and ensure consistent test conditions across every shift and operator.",
   },
   {
     icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
     title: "Bag Status Reconciliation",
-    items: [
-      "Real-time reconciliation: tested, passed, failed, quarantined counts per batch",
-      "Eliminates manual count discrepancies at batch closure",
-      "Reconciliation report available for QA review and batch record inclusion",
-    ],
+    desc: "Real-time reconciliation of tested, passed, failed, and quarantined counts per batch eliminates manual count discrepancies with reconciliation reports available for QA review.",
   },
   {
     icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
     title: "Minimal Manpower Requirement",
-    items: [
-      "Automated load, test, and classify cycle reduces operator intervention",
-      "One operator can manage multiple units simultaneously",
-      "Reduces shift labour cost on high-volume LVP lines",
-    ],
+    desc: "Automated load, test, and classify cycle reduces operator intervention allowing one operator to manage multiple units simultaneously and reduce shift labour costs on high-volume LVP lines.",
   },
   {
     icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
     title: "Regulatory Compliance",
-    items: [
-      "cGMP and GDP guideline compliant",
-      "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ",
-      "Supports 100% testing requirement for sterile LVP products",
-      "Audit-ready records for USFDA, EU GMP, MHRA, WHO-GMP inspections",
-    ],
+    desc: "cGMP and GDP guideline compliant with validation pack delivered for every install, supporting 100% testing requirement for sterile LVP products with audit-ready records for regulatory inspections.",
   },
 ];
 
@@ -296,7 +266,7 @@ const IVBLTPage = () => {
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
 
           {/* Left */}
           <div className="space-y-8 animate-fade-in-left">
@@ -363,15 +333,27 @@ const IVBLTPage = () => {
               {/* Stats row */}
               <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
                 {[
-                  { value: "10+", label: "Units Deployed", icon: (
+                  { value: "5+", label: "Units Deployed", icon: (
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                   )},
-                  { value: "USP <1>", label: "Compliant", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                  )},
-                  { value: "21 CFR", label: "Part 11 Ready", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                  )},
+                  {
+                      value: "EU GMP Annex1 ",
+                      label: "Aligned",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      value: "21 CFR Part 11",
+                      label: "Compliance",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      ),
+                    },
                 ].map(({ value, label, icon }, i) => (
                   <div key={i} className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200">
                     <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">{icon}</span>
@@ -386,16 +368,16 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 2 — THE PROBLEM WE SOLVE ────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
+        <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why IVBLT</p>
         <div className="max-w-6xl mx-auto">
           <SectionTitle s eyebrow="WHY IVBLT">Manual leak inspection misses what the eye can't see.</SectionTitle>
 
-          <div className="max-w-3xl mx-auto mb-10 space-y-4">
-            <p className="text-gray-600 text-lg leading-relaxed font-medium">
-              Intravenous bags are sterile, pressurised primary containers. A pinhole — too small to see under normal light, impossible to detect by squeeze-test alone — allows microbial ingress, oxygen ingress, and loss of sterility assurance. In large volume parenteral manufacturing, where hundreds or thousands of bags are produced per shift, manual inspection cannot provide the sensitivity or consistency that patient safety demands.
-            </p>
-            <p className="font-black text-xl text-[#e0006e]">
-              IVBLT replaces the squeeze test with precision pressure measurement — every bag, every time.
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
+              Intravenous bags must remain sterile and leak-free. Even a tiny pinhole can cause microbial ingress, oxygen ingress, and loss of sterility assurance.
+
+ <span className="text-[#e0006e]">VBLT replaces manual squeeze testing with precision pressure-based leak detection — every bag, every time.</span>
             </p>
           </div>
 
@@ -429,30 +411,33 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 3 — WHAT IVBLT IS ────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <SectionTitle eyebrow="THE SOLUTION">What IVBLT Is</SectionTitle>
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium mb-10">
-            <p>
-              IVBLT is a precision-engineered IV bag integrity testing system that applies constant, controlled pressure — automatically adjusted according to bag size — to detect sealing defects, pinholes, and port leaks that cannot be identified by manual visual inspection. The system operates non-destructively: bags that pass the test proceed directly to labelling and packaging.
-            </p>
-            <p>
-              Every test is electronically recorded — bag ID, size, pressure applied, test duration, result, and operator. The test record is written to a 21 CFR Part 11 compliant audit trail the moment the test completes. Batch-level bag status reconciliation — tested, passed, failed, and quarantined counts — is available on demand.
-            </p>
-          </div>
+      <section className="py-14 md:py-16 px-6 bg-[#fafafa] border-y border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle>What IVBLT is</SectionTitle>
 
-          {/* Callout block */}
-          <div className="relative bg-gray-900 rounded-2xl p-8 md:p-10 overflow-hidden border border-white/5">
-            <div className="absolute top-4 left-6 text-[#e0006e] font-black leading-none select-none" style={{ fontSize: '80px', opacity: 0.12 }}>"</div>
-            <p className="text-gray-200 text-lg md:text-xl leading-relaxed font-medium italic relative z-10">
-              "IVBLT is the difference between 'we inspected every bag' and 'every bag was pressure-tested to specification — and the system has the record.'"
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-gray-600 text-lg leading-relaxed">
+                IVBLT is a precision-engineered IV bag integrity testing system that applies constant, controlled pressure — automatically adjusted according to bag size — to detect sealing defects, pinholes, and port leaks that cannot be identified by manual visual inspection. The system operates non-destructively: bags that pass the test proceed directly to labelling and packaging.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Every test is electronically recorded — bag ID, size, pressure applied, test duration, result, and operator. The test record is written to a 21 CFR Part 11 compliant audit trail the moment the test completes. Batch-level bag status reconciliation — tested, passed, failed, and quarantined counts — is available on demand.
+              </p>
+            </div>
+
+            <div className="bg-[#0a0a1a] rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#e0006e]/20 rounded-full blur-[3rem] group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <svg className="w-12 h-12 text-[#e0006e]/30 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1 15V9C1 8.44772 1.44772 8 2 8H5C6.10457 8 7 7.10457 7 6V5C7 3.89543 6.10457 3 5 3H0C-1.10457 3 -2 3.89543 -2 5V15C-2 18.866 1.13401 22 5 22H7V21L7 18C7 16.8954 6.10457 16 5 16H2C1.44772 16 1 15.5523 1 15Z" /></svg>
+              <p className="text-white font-medium text-2xl md:text-3xl leading-snug tracking-tight italic relative z-10">
+                "IVBLT is the difference between 'we inspected every bag' and 'every bag was pressure-tested to specification — and the system has the record.'"
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── SECTION 4 — HOW IVBLT WORKS ─────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white border-b border-gray-100 overflow-hidden">
+      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="THE WORKFLOW">How IVBLT Works</SectionTitle>
           <p className="text-center text-gray-500 font-medium text-lg -mt-6 mb-14">Precision pressure testing — automated, repeatable, recorded.</p>
@@ -503,26 +488,22 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 5 — KEY FEATURES ─────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="CAPABILITIES">Key Features</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <SectionTitle>Key Features</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {features.map((f, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group">
-                <div className="w-14 h-14 bg-[#e0006e]/10 text-[#e0006e] rounded-2xl flex items-center justify-center mb-5 group-hover:bg-[#e0006e] group-hover:text-white transition-all duration-500">
-                  {f.icon}
+              <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute left-0 top-0 w-1.5 h-full bg-[#e0006e] scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500 ease-out"></div>
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex-shrink-0 flex items-center justify-center group-hover:bg-[#e0006e] transition-colors duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e] text-[#e0006e] group-hover:text-white">
+                    {f.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-black text-2xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors">{f.title}</h3>
+                    <p className="text-gray-600 leading-relaxed font-medium text-sm md:text-base">{f.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-black text-xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors">{f.title}</h3>
-                <ul className="space-y-2.5">
-                  {f.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-3 text-gray-600 font-medium text-sm">
-                      <div className="mt-1 text-[#e0006e] flex-shrink-0">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                      </div>
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
@@ -530,18 +511,40 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 6 — BUILT FOR ────────────────────────────────────────────── */}
-      <section className="py-0 px-6 bg-white border-b border-gray-100">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="TARGET ENVIRONMENTS">Built For</SectionTitle>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+          <SectionTitle>Built For</SectionTitle>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {builtFor.map((item, idx) => (
-              <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group flex items-center gap-4">
-                <div className="w-12 text-[#e0006e] h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-[#e0006e]/30 transition-colors">
+              <div key={idx} className="bg-[#fafafa] border text-[#e0006e] border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col gap-4">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-[#e0006e] group-hover:text-[#e0006e] group-hover:border-[#e0006e]/30 transition-colors">
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="font-black text-gray-900 text-sm mb-1 group-hover:text-[#e0006e] transition-colors">{item.label}</h4>
-                  <p className="text-gray-500 text-xs font-medium">{item.subtitle}</p>
+                  <h4 className="font-black text-gray-900 mb-2 group-hover:text-[#e0006e] transition-colors">{item.label}</h4>
+                  <p className="text-gray-500 text-sm font-medium">{item.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 7 — OUTCOMES ─────────────────────────────────────────────── */}
+      <section className="py-12 md:py-14 px-6 bg-white">
+        <SectionTitle>Outcomes</SectionTitle>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { label: "pinhole detection", value: "100%", sub: "High-Sensitivity Testing" },
+              { label: "manual squeeze tests", value: "0", sub: "Pressure-Based Verification" },
+              { label: "reconciliation errors", value: "Eliminated", sub: "Automated Bag Status Tracking" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center space-y-4 p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-500">
+                <p className="text-[#e0006e] font-black text-6xl tracking-tighter">{stat.value}</p>
+                <div className="space-y-1">
+                  <p className="text-gray-900 font-black text-xs tracking-widest uppercase">{stat.label}</p>
+                  <p className="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase">{stat.sub}</p>
                 </div>
               </div>
             ))}
@@ -550,9 +553,9 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 8 — FAQ ──────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-white border-t border-gray-50">
+      <section className="py-14 md:py-16 px-6 bg-white border-t border-gray-50">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center w-full mb-6 mt-8">
+          <div className="flex justify-center w-full mb-5 mt-2">
             <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
               Frequently Asked Questions
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
@@ -565,7 +568,7 @@ const IVBLTPage = () => {
       <section className="py-10 px-6 bg-white">
         <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
                 Cleaning is your first line of defence. <span className="text-[#e0006e]">Make sure every drop is the right one.</span>

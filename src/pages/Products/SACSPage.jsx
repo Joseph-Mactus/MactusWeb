@@ -10,8 +10,8 @@ import sacs_3 from '../../assets/images/Complianceproducts/SACS/sacs_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_SmartAccessControlSystemBrochureV1.pdf';
 const SectionTitle = ({ children }) => (
-  <div className="flex justify-center w-full mb-6 mt-8">
-    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
       <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
@@ -55,17 +55,17 @@ const SACSPage = () => {
   const features = [
     { title: "21 CFR Compliance", desc: "Full adherence to Part 11 electronic records and signatures requirements.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
     { title: "Access Enforcement", desc: "Hard interlocking that prevents door opening unless all SOP conditions are met.", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" },
-    { title: "Training Verification", desc: "Syncs with HRMS to ensure only currently certified staff can enter specific areas.", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
-    { title: "Tailgate Detection", desc: "Advanced AI sensors detect and alert if multiple people enter on a single badge-in.", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
-    { title: "Real-time Monitoring", desc: "Live dashboard showing every entry, exit, and violation across the facility.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
-    { title: "Audit Readiness", desc: "Instant export of signed, tamper-proof audit trails for USFDA/MHRA inspections.", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+    { title: "Training Verification", desc: "Syncs with Master data to ensure only currently certified staff can enter specific areas.", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
+    { title: "Tailgate Detection", desc: "Advanced AI sensors detect and alert if any tailgate happens.", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
+    { title: "Real-time Monitoring", desc: "Live dashboard showing every entry and exit across the facility.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
+    { title: "Audit Readiness", desc: "Instant export of signed, tamper-proof audit trails for Regulatory/Customer inspections.", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
   ];
 
   const steps = [
     { title: "IDENTIFY", desc: "Operator uses biometric authentication at the cleanroom entrance." },
     { title: "VALIDATE", desc: "SACS™ verifies identity, training status, and gowning qualification status in real-time." },
-    { title: "PERMIT / BLOCK", desc: "Door lock releases only if all criteria are met; otherwise, entry is denied and logged." },
-    { title: "RECORD", desc: "The entry event is digitally signed and added to the 21 CFR Part 11 audit trail." },
+    { title: "PERMIT / BLOCK", desc: "Door lock releases only if all criteria are met; otherwise, entry is denied." },
+    { title: "RECORD", desc: "The entry event is digitally record and added to the 21 CFR Part 11 audit trail." },
   ];
 
   const useCases = [
@@ -81,9 +81,9 @@ const SACSPage = () => {
     { question: "What is SACS?", answer: "SACS (Smart Access Control System) is a specialized electronic entry-exit management system designed for pharmaceutical cleanrooms and regulated environments. It replaces manual entry and exit logbooks with a digital, 21 CFR Part 11 compliant workflow." },
     { question: "Is it 21 CFR Part 11 compliant?", answer: "Yes, SACS is built from the ground up to meet the requirements of 21 CFR Part 11, including electronic signatures, audit trails, and data integrity controls." },
     { question: "Does it replace door interlocking?", answer: "SACS enhances existing interlocking systems. It can interface with your current door controllers to provide an additional layer of compliance-based logic before a door is permitted to unlock." },
-    { question: "How does it prevent tailgating?", answer: "We use high-precision overhead IR or AI-based vision sensors to count the number of individuals passing through a door. If the count exceeds the number of authorized badge-ins, an alarm is triggered." },
-    { question: "Can it enforce gowning sequence?", answer: "Absolutely. SACS  can be configured to connect to your gowning qualification master list, and only qualified operators will be permitted to enter the aseptic area." },
-    { question: "Does it verify training?", answer: "Yes, SACS integrates with your Learning Management System (LMS) or HRMS to ensure that an operator's certifications for that specific area are current before allowing entry." },
+    { question: "How does it prevent tailgating?", answer: "We use high-precision overhead IR to count the number of individuals passing through a door. If the count exceeds the number of authorized badge-ins, an alarm is triggered." },
+    { question: "Can it enforce gowning qualification?", answer: "Absolutely. SACS  can be configured to connect to your gowning qualification master list, and only qualified operators will be permitted to enter the aseptic area." },
+    { question: "Does it verify training?", answer: "Yes, SACS integrates with your training master list to ensure that an operator's certifications for that specific area are current before allowing entry." },
     { question: "What does deployment look like?", answer: "Deployment is a turnkey process including hardware installation, software configuration, and full IQ/OQ/PQ validation to ensure compliance with your site requirements." },
     { question: "Which customers use SACS?", answer: "SACS is trusted by leading sterile injectable plants, vaccine manufacturers, and API facilities across India and globally to maintain audit readiness." },
   ];
@@ -143,7 +143,7 @@ const SACSPage = () => {
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
           <div className="space-y-14 animate-fade-in-left">
             <div className="w-full mb-12 max-w-[760px]">
               <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
@@ -163,7 +163,7 @@ const SACSPage = () => {
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
-              {["The", "cleanroom", "door", "that"].map((word, i) => (
+              {["The", "cleanroom", "Entry", "that"].map((word, i) => (
                 <span key={i} className="overflow-hidden pr-2 inline-block py-1">
                   <span className="animate-reveal-up inline-block" style={{ animationDelay: `${i * 0.1}s` }}>{word}</span>
                 </span>
@@ -216,15 +216,27 @@ const SACSPage = () => {
               {/* Stats row */}
               <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
                 {[
-                  { value: "20+", label: "Units Deployed", icon: (
+                  { value: "45+", label: "Units Deployed", icon: (
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                   )},
-                  { value: "Annex 1", label: "EU GMP Aligned", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                  )},
-                  { value: "21 CFR", label: "Part 11 Ready", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                  )},
+                  {
+                      value: "EU GMP Annex1 ",
+                      label: "Aligned",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      value: "21 CFR Part 11",
+                      label: "Compliance",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      ),
+                    },
                 ].map(({ value, label, icon }, i) => (
                   <div key={i} className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200">
                     <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">{icon}</span>
@@ -238,46 +250,43 @@ const SACSPage = () => {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-16 px-6 bg-white">
+      {/* The Problem Section */}
+      <section className="py-14 md:py-16 px-6 bg-white">
+        <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why SACS</p>
         <div className="max-w-7xl mx-auto">
-          <SectionTitle>The Audit Challenge</SectionTitle>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
-            <div className="space-y-6">
-              <h2 className="font-black text-4xl md:text-5xl text-gray-900 leading-tight tracking-tighter">
-                Why a paper gowning logbook is your <span className="text-[#e0006e]">weakest</span> link
-              </h2>
-            </div>
-            <div className="space-y-6">
-              <p className="text-gray-500 text-lg leading-relaxed">
-                In an aseptic area, every entry is a regulated event. Most pharma plants still capture all of this on a logbook taped to the door.
-              </p>
-              <p className="text-gray-500 text-lg leading-relaxed font-bold text-gray-900">
-                Form 483 observations on access control are among the most common USFDA findings in sterile facilities.
-              </p>
-            </div>
+          <SectionTitle eyebrow="WHY SACS">Manual entry-exit logbooks are a compliance risk</SectionTitle>
+
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
+              In aseptic areas, every entry must be controlled and recorded.
+
+ <span className="text-[#e0006e]">SACS replaces paper logbooks with SOP-based digital access control.</span>
+ 
+Each entry is verified, time-stamped, and audit-ready.
+            </p>
           </div>
 
-          <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm">
+          <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-gray-200">
+                <tr className="bg-gray-100">
                   <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
                   <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper Logbook</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With SACS</th>
+                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">SACS</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                  ["Untrained operator enters", "Manual check by security", "System-level training lock"],
-                  ["Gowning qualification skipped", "Relies on honesty", "Digital verification required"],
-                  ["Tailgate entry", "Impossible to track", "Sensor-based AI detection"],
-                  ["Audit trail", "Illegible, paper-based", "Instant 21 CFR PDF export"],
-                  ["Capacity exceeded", "Hard to monitor", "Real-time headcount lock"],
+                  ["Unqualified operator enters controlled area", "Manual verification is difficult and often missed", "Role-based qualified access lock"],
+                  ["Gowning / training not verified", "Depends on operator declaration or supervisor check", "Digital qualification verification before entry"],
+                  ["Tailgate entry into cleanroom", "Cannot be captured in paper records", "Sensor-based tailgate detection and alert"],
+                  ["Audit trail not compliant", "Paper records may be incomplete, illegible, or delayed", "Time-stamped 21 CFR Part 11-ready audit report"],
+                  ["Area occupancy limit exceeded", "Real-time headcount is hard to monitor", "Live occupancy monitoring with access restriction"],
+                  ["Operator stays beyond allowed duration", "Entry and exit duration is manually calculated", "Zone-wise duration tracking with alerts"],
                 ].map((row, i) => (
                   <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="px-8 py-6 font-bold text-gray-900">{row[0]}</td>
-                    <td className="px-8 py-6 text-gray-500">{row[1]}</td>
+                    <td className="px-8 py-6 font-bold text-gray-900 bg-white">{row[0]}</td>
+                    <td className="px-8 py-6 text-gray-500 bg-white">{row[1]}</td>
                     <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
                   </tr>
                 ))}
@@ -287,20 +296,51 @@ const SACSPage = () => {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-16 px-6 bg-gray-50">
+      {/* What SACS Is */}
+      <section className="py-14 md:py-16 px-6 bg-[#fafafa] border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle>Compliance Features</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <SectionTitle>What SACS is</SectionTitle>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-gray-600 text-lg leading-relaxed">
+                SACS is a smart access control system that replaces paper entry-exit logbooks with automated, 21 CFR Part 11 compliant digital access management. The system verifies operator identity, training status, and gowning qualification before granting cleanroom entry.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Every entry event is electronically recorded with biometric authentication, time-stamps, and electronic signatures. The audit trail is built in real-time, eliminating paper-based compliance risks and providing instant export for regulatory inspections.
+              </p>
+            </div>
+
+            <div className="bg-[#0a0a1a] rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#e0006e]/20 rounded-full blur-[3rem] group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <svg className="w-12 h-12 text-[#e0006e]/30 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1 15V9C1 8.44772 1.44772 8 2 8H5C6.10457 8 7 7.10457 7 6V5C7 3.89543 6.10457 3 5 3H0C-1.10457 3 -2 3.89543 -2 5V15C-2 18.866 1.13401 22 5 22H7V21L7 18C7 16.8954 6.10457 16 5 16H2C1.44772 16 1 15.5523 1 15Z" /></svg>
+              <p className="text-white font-medium text-2xl md:text-3xl leading-snug tracking-tight italic relative z-10">
+                "SACS is the difference between 'the operator signed the logbook' and 'the system verified the operator, enforced the SOP, and logged the entry.'"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="py-14 md:py-16 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle>Key Features</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {features.map((f, i) => (
-              <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/10 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 group">
-                <div className="w-14 h-14 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#e0006e] transition-all duration-500">
-                  <svg className="w-7 h-7 text-[#e0006e] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={f.icon} />
-                  </svg>
+              <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute left-0 top-0 w-1.5 h-full bg-[#e0006e] scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500 ease-out"></div>
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex-shrink-0 flex items-center justify-center group-hover:bg-[#e0006e] transition-colors duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e]">
+                    <svg className="w-8 h-8 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={f.icon} />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-black text-2xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors">{f.title}</h3>
+                    <p className="text-gray-600 leading-relaxed font-medium text-sm md:text-base">{f.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-black text-xl text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors">{f.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-sm font-medium">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -308,11 +348,11 @@ const SACSPage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-6 bg-white overflow-hidden">
+      <section className="py-12 md:py-14 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>System Workflow</SectionTitle>
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 space-y-12">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+            <div className="lg:w-1/2 space-y-8">
               {steps.map((step, i) => (
                 <div key={i} className="flex gap-6 relative group">
                   {i !== steps.length - 1 && (
@@ -354,7 +394,7 @@ const SACSPage = () => {
       </section>
 
       {/* Built For */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -376,8 +416,10 @@ const SACSPage = () => {
       </section>
 
       {/* Outcomes */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-12 md:py-14 px-6 bg-white">
+         <SectionTitle>Outcomes</SectionTitle>
         <div className="max-w-7xl mx-auto">
+          <h1></h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { label: "entries captured", value: "100%", sub: "Total Traceability" },
@@ -397,7 +439,7 @@ const SACSPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6 bg-white border-t border-gray-50">
+      <section className="py-14 md:py-16 px-6 bg-white border-t border-gray-50">
         <div className="max-w-4xl mx-auto">
           <SectionTitle>Frequently Asked Questions</SectionTitle>
           <FAQAccordion items={faqs} />
@@ -405,10 +447,10 @@ const SACSPage = () => {
       </section>
 
       {/* Pre-footer CTA */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
                 Your auditor will read every entry. <span className="text-[#e0006e]">Make sure they are all there.</span>

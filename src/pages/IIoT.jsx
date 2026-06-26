@@ -5,16 +5,11 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import iiotArchitectureImg from '../assets/images/IIoT/IIOT_Architecture.png';
 
-const SectionTitle = ({ children, eyebrow, isDark }) => (
-  <div className="flex flex-col items-center w-full mb-12 mt-8">
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
-        {eyebrow}
-      </span>
-    )}
-    <h2 className={`text-center font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-4xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -61,38 +56,35 @@ const IIoT = () => {
     }
   ];
 
-  const components = [
-    {
-      number: "01",
-      title: "Edge Gateways",
-      desc: "Industrial-grade edge devices that aggregate data at the line or area level, run protocol translation (OPC-UA, Modbus, BACnet, MQTT, REST), buffer through network outages, and apply edge-level alarm and filter logic. Edge gateways isolate the validated OT network from the data analytics layer above — a critical architectural boundary in GxP environments."
-    },
-    {
-      number: "02",
-      title: "Sensor Layer",
-      desc: "Smart sensors on the equipment, lines, or utilities that aren't yet instrumented — vibration on motors, current on pumps, flow on utilities, temperature on bearings. We use industry-standard hardware and avoid proprietary lock-in. Existing PLC data is read directly, no new sensors required."
-    },
-    {
-      number: "02",
-      title: "Edge Gateways",
-      desc: "Industrial-grade edge devices that aggregate data at the line or area level, run protocol translation (OPC-UA, Modbus, BACnet, MQTT, REST), buffer through network outages, and apply edge-level alarm and filter logic. Edge gateways isolate the validated OT network from the data analytics layer above — a critical architectural boundary in GxP environments."
-    },
-    {
-      number: "03",
-      title: "Secure Data Pipeline",
-      desc: "Encrypted, authenticated transport from edge to platform. TLS in flight, segmented network architecture, certificate-based device identity, and role-based access for users. Designed to satisfy IEC 62443 expectations for OT cybersecurity and your QMS expectations for data integrity."
-    },
-    {
-      number: "04",
-      title: "Analytics & Visualisation Platform",
-      desc: "Real-time dashboards for engineering, maintenance, OpEx, and leadership — configured to the questions each function actually asks. Historical trending. Threshold and anomaly alerting. Equipment-level and area-level views. Export to PDF, Excel, BI tools."
-    },
-    {
-      number: "05",
-      title: "Integration with Systems Above",
-      desc: "IIoT data pushed to existing MES, EBR, LIMS, ERP, and CMMS where it adds value. Operational events surfaced into the same analytics platforms your business already uses — not yet another login for your team."
-    }
-  ];
+  const components =
+[
+  {
+    number: "01",
+    title: "Edge Gateways",
+    desc: "Industrial edge gateways collect line and area data, translate protocols like OPC-UA, Modbus, BACnet, MQTT, and REST, and buffer data during network outages while maintaining OT and analytics layer separation for GxP environments."
+  },
+  {
+    number: "02",
+    title: "Sensor Layer",
+    desc: "Smart sensors capture equipment and utility data such as vibration, current, flow, and temperature, while existing PLC data can be read directly without adding unnecessary hardware."
+  },
+  {
+    number: "03",
+    title: "Secure Data Pipeline",
+    desc: "Encrypted and authenticated data transfer with TLS, network segmentation, device identity, and role-based access supports OT cybersecurity and pharma data integrity expectations."
+  },
+  {
+    number: "04",
+    title: "Analytics & Visualisation Platform",
+    desc: "Real-time dashboards, historical trends, alarms, and equipment-level insights help engineering, maintenance, and operations teams make faster, data-backed decisions."
+  },
+  {
+    number: "05",
+    title: "System Integration",
+    desc: "IIoT data connects with MES, EBR, LIMS, ERP, CMMS, and BI platforms, bringing operational visibility into existing validated business systems."
+  }
+];
+
 
   const useCases = [
     {
@@ -310,11 +302,11 @@ const IIoT = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-12 md:py-14 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
           {/* Left Column */}
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
@@ -372,7 +364,7 @@ const IIoT = () => {
      
 
       {/* SECTION 2 — THE PROBLEM WE SOLVE */}
-      <section className="py-24 px-6 bg-white relative">
+      <section className="py-14 md:py-16 px-6 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="WHY MACTUS IIOT">Your plant already generates the data. Most of it goes nowhere.</SectionTitle>
           
@@ -387,72 +379,61 @@ const IIoT = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — WHAT AN IIOT IMPLEMENTATION LOOKS LIKE */}
-      <section className="py-24 px-6 bg-[#fafafa] border-y border-gray-100">
+      {/* SECTION 3 — SYSTEM WORKFLOW */}
+      <section className="py-12 md:py-14 px-6 bg-[#fafafa] border-y border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="THE ARCHITECTURE">What an IIoT Implementation Looks Like</SectionTitle>
+          <SectionTitle>System Workflow</SectionTitle>
           
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-gray-500 text-lg leading-relaxed font-medium">
-              A Mactus IIoT implementation has five components. We deliver them as one project, or in phases — depending on what you have today and what you need first.
-            </p>
-          </div>
+         
 
-          <div className="max-w-4xl mx-auto space-y-12 relative">
-            {components.map((comp, idx) => (
-              <div key={idx} className="flex gap-6 relative group">
-                {idx !== components.length - 1 && (
-                  <div className="absolute left-6 top-14 bottom-0 w-0.5 bg-gray-100 group-hover:bg-[#e0006e]/20 transition-colors"></div>
-                )}
-                <div className="w-12 h-12 rounded-full bg-gray-900 text-white flex-shrink-0 flex items-center justify-center font-black text-sm z-10 group-hover:bg-[#e0006e] transition-colors duration-300">
-                  {comp.number}
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+            <div className="lg:w-1/2 space-y-8">
+              {components.map((comp, idx) => (
+                <div key={idx} className="flex gap-6 relative group">
+                  {idx !== components.length - 1 && (
+                    <div className="absolute left-6 top-14 bottom-0 w-0.5 bg-gray-100 group-hover:bg-[#e0006e]/20 transition-colors"></div>
+                  )}
+                  <div className="w-12 h-12 rounded-full bg-gray-900 text-white flex-shrink-0 flex items-center justify-center font-black text-sm z-10 group-hover:bg-[#e0006e] transition-colors duration-300">
+                    {comp.number}
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-xs tracking-widest text-[#e0006e] uppercase">{comp.title}</h4>
+                    <p className="text-gray-500 leading-relaxed font-medium">{comp.desc}</p>
+                  </div>
                 </div>
-                <div className="space-y-2 pb-6 pl-2 border-b border-gray-100 w-full group-hover:border-[#e0006e]/20 transition-colors">
-                  <h4 className="font-black text-xl text-gray-900 group-hover:text-[#e0006e] transition-colors duration-300">{comp.title}</h4>
-                  <p className="text-gray-500 leading-relaxed font-medium">{comp.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-       <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-[#e0006e] font-black text-sm tracking-[0.2em] uppercase mb-3">Live Telemetry</h2>
-            <h3 className="text-gray-900 font-black text-3xl md:text-4xl tracking-tight">See the IIoT Platform in Action</h3>
-          </div>
-          <div className="relative w-full rounded-3xl p-2 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100 transition-transform duration-500 hover:scale-[1.01]">
-            <div className="flex items-center justify-between px-5 py-3 bg-gray-50 rounded-t-2xl border-b border-gray-100">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span className="text-[9px] font-black tracking-[0.25em] text-gray-500 uppercase">System Active</span>
-              </div>
+              ))}
             </div>
-            <div className="relative aspect-video w-full rounded-b-2xl overflow-hidden bg-black">
-              <iframe 
-                className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-2xl scale-[1.01]"
-                src="https://www.youtube.com/embed/0kozktJpyII?rel=0&modestbranding=1&controls=1&start=7" 
-                title="IIoT Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
+
+            <div className="lg:w-1/2 relative group flex justify-center">
+              <div className="relative w-full max-w-xl bg-white rounded-2xl p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-700 hover:scale-[1.02]">
+                <div className="flex items-center justify-end px-4 py-2 bg-gray-50/50 rounded-t-xl border-b border-gray-100/50">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                    <span className="text-[8px] font-black tracking-[0.2em] text-gray-400 uppercase">System Active</span>
+                  </div>
+                </div>
+
+                <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-black">
+                  <iframe 
+                    className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
+                    src="https://www.youtube.com/embed/0kozktJpyII?rel=0&modestbranding=1&controls=1&start=7" 
+                    title="IIoT System Workflow"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 4 — USE CASES */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="APPLICATIONS">What Customers Actually Use It For</SectionTitle>
           
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-10">
             <p className="text-gray-500 text-lg leading-relaxed font-medium">
               IIoT is a category. These are the specific applications we deliver — drawn from work with pharma and industrial customers.
             </p>
@@ -476,13 +457,13 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 5 — HOW WE DELIVER */}
-      <section className="py-24 px-6 bg-[#25252B] relative border-b border-white/5">
+      <section className="py-14 md:py-16 px-6 bg-[#25252B] relative border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '32px 32px' }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <SectionTitle eyebrow="THE MACTUS DIFFERENCE" isDark={true}>IIoT in a Pharma Plant Is Not IIoT in a Steel Mill.</SectionTitle>
           
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-10">
             <p className="text-gray-400 text-lg leading-relaxed font-medium">
               Generic IIoT vendors approach pharma the same way they approach any factory — bolt on sensors, push everything to the cloud, run analytics. In a regulated environment this approach creates more problems than it solves: validated systems are disturbed, OT cybersecurity boundaries are crossed, GxP data leaks into non-compliant infrastructure. Mactus delivers IIoT with the regulatory and operational reality of pharma in view from the start.
             </p>
@@ -508,11 +489,11 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 6 — OT CYBERSECURITY */}
-      <section className="py-24 px-6 bg-white relative">
+      <section className="py-14 md:py-16 px-6 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="COMPLIANCE & SECURITY">OT Cybersecurity Is Part of the Design, Not a Bolt-On at the End.</SectionTitle>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
             {/* Left Content */}
             <div className="space-y-6">
               <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">
@@ -568,11 +549,11 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 7 — BUILT FOR */}
-      <section className="py-24 px-6 bg-[#fafafa] border-y border-gray-100">
+      <section className="py-14 md:py-16 px-6 bg-[#fafafa] border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="TARGET FACILITIES">Built For</SectionTitle>
           
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-10">
             <p className="text-gray-500 text-lg leading-relaxed font-medium">
               Mactus IIoT implementations are designed for facilities where data has to earn its place — and where validated systems can't be disturbed.
             </p>
@@ -595,9 +576,9 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 8 — OUTCOMES / RESULTS */}
-      <section className="py-24 px-6 bg-[#25252B]">
+      <section className="py-14 md:py-16 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
+          <div className="text-center mb-10 space-y-4">
             <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After Deployment</h2>
             <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running IIoT in production</p>
           </div>
@@ -622,9 +603,9 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 9 — FAQ ACCORDION */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center w-full mb-6 mt-8">
+          <div className="flex justify-center w-full mb-5 mt-2">
             <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
               Frequently Asked Questions
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
@@ -655,11 +636,11 @@ const IIoT = () => {
       </section>
 
       {/* SECTION 10 — PRE-FOOTER CTA STRIP & CROSS LINKS */}
-      <section className="py-20 px-6 bg-white border-t border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col items-center text-center gap-8">
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col items-center text-center gap-8">
             <h2 className="text-white font-black text-3xl md:text-5xl leading-tight tracking-tighter max-w-4xl">
               Talk to the engineers who'll architect the IIoT layer over your existing plant, <span className="text-[#e0006e]">not propose a rip-and-replace.</span>
             </h2>

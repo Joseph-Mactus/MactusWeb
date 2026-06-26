@@ -5,16 +5,11 @@ import Footer from '../../components/Footer';
 import bmsImg1 from '../../assets/images/BMSPage/bms_1.png';
 import bmsImg2 from '../../assets/images/BMSPage/WhatsApp-Image-2025-04-08-at-6.03.36-PM-1-scaled-ra3ga84nbbvx5idk6b75jufccm9muxvwaj49306ccg.jpeg';
 
-const SectionTitle = ({ children, eyebrow, isDark }) => (
-  <div className="flex flex-col items-center w-full mb-12 mt-8">
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
-        {eyebrow}
-      </span>
-    )}
-    <h2 className={`text-center font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -178,11 +173,11 @@ const BMSPage = () => {
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-12 md:py-14 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
           {/* Left */}
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
@@ -231,7 +226,7 @@ Mactus Automation delivers intelligent BMS solutions for centralized monitoring 
       </section>
 
       {/* SECTION 2 — INTRO */}
-      <section className="py-16 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto">
           <SectionTitle eyebrow="WHAT WE DELIVER">
             Comprehensive Building Automation for Facilities That Can't Afford Downtime
@@ -246,7 +241,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 3 — WHY CHOOSE MACTUS BMS */}
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="OUR ADVANTAGE">Why Choose Mactus BMS?</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -286,7 +281,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 4 — KEY FEATURES */}
-      <section className="py-16 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="CAPABILITIES">Key Features of BMS</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -306,10 +301,10 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 5 — BMS CONTROL PANEL */}
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="HARDWARE">The BMS Control Panel</SectionTitle>
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
             {/* Image */}
             
 
@@ -339,7 +334,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 6 — ECOSTRUXURE PARTNERSHIP */}
-      <section className="py-16 px-6 bg-[#25252B]">
+      <section className="py-12 md:py-14 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="PLATFORM OF CHOICE" isDark>EcoStruxure™ BMS — Our Platform of Choice</SectionTitle>
 
@@ -349,7 +344,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
             {[
               {
                 icon: <FaBolt />,
@@ -398,7 +393,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 7 — VIDEO */}
-      <section id="bms-graphic" className="py-16 px-6 bg-white border-b border-gray-100">
+      <section id="bms-graphic" className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="LIVE DEMONSTRATION">BMS in Action</SectionTitle>
 
@@ -442,7 +437,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 8 — BUILT FOR */}
-      <section className="py-16 px-6 bg-[#25252B]">
+      <section className="py-12 md:py-14 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="TARGET ENVIRONMENTS" isDark>Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-6xl mx-auto">
@@ -462,9 +457,9 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 9 — FAQ */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center w-full mb-6 mt-8">
+          <div className="flex justify-center w-full mb-5 mt-2">
             <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
               Frequently Asked Questions
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
@@ -494,11 +489,11 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       </section>
 
       {/* SECTION 10 — PRE-FOOTER CTA */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
                 Your building systems shouldn't require a specialist to understand.{' '}

@@ -195,10 +195,10 @@ A: Up to 6 different disinfectant/cleaning solution solvents per unit, all locke
 
 ## MPATS — Mactus Environmental Monitoring (Media Plate Tracking System)
 ### Purpose
-MPATS digitises the complete lifecycle of environmental monitoring media plates used in pharmaceutical cleanrooms. Each plate receives a QR code at issuance and is scanned at every stage (exposure, incubation, reading, disposition), ensuring full traceability, automated reconciliation, and 21 CFR Part 11 compliance. Prevents unaccounted plates at batch closure.
+MPATS digitises the complete lifecycle of environmental monitoring media plates used in pharmaceutical cleanrooms. Each plate receives a QR code at inventory and is scanned at every stage (exposure, incubation, reading, destruction), ensuring full traceability, automated reconciliation, and 21 CFR Part 11 compliance. Prevents unaccounted plates at batch closure.
 
 ### Confirmed Features
-- **QR-Code Lifecycle Tracking:** Tracks settle plates, active air, surface, and personnel monitoring plates from issuance to disposal.
+- **QR-Code Lifecycle Tracking:** Tracks settle plates, active air, surface, and personnel monitoring plates from inventory to destruction.
 - **Automatic Reconciliation:** Real-time count of plates issued, used, and discarded. Missing-plate alerts at every stage transition.
 - **Electronic CFU Readings:** CFU counts entered via guided HMI, electronically signed, and auto-compared against alert/action limits.
 - **Compliance:** EU GMP Annex 1 and 21 CFR Part 11 aligned electronic records.

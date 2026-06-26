@@ -4,23 +4,19 @@ import Footer from '../components/Footer';
 import indiaMap from '@svg-maps/india';
 import homImg1 from '../assets/images/Home/mlogo-1.png';
 import homImg2 from '../assets/images/Home/Home.png';
-import { FaPills, FaHospital, FaUtensils } from "react-icons/fa";
+import { FaPills, FaHospital, FaUtensils,FaVideo, FaFileAlt, FaBookOpen,FaArrowRight  } from "react-icons/fa";
 const india = indiaMap.default || indiaMap;
 
 // ─── Reusable Components ──────────────────────────────────────────────────────
 
-const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
-  <div className={`flex flex-col ${center ? 'items-center' : 'items-start'} w-full mb-12 mt-8`}>
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">{eyebrow}</span>
-    )}
-    <h2 className={`${center ? 'text-center' : ''} font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
-
 // ─── Count-up Hook ────────────────────────────────────────────────────────────
 
 const useCountUp = (target, duration = 1800, start = false) => {
@@ -344,7 +340,7 @@ const HomePage = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#25252B]/70 to-transparent"></div>
             </div>
             {/* Floating event card */}
-            <div className="absolute bottom-6 left-4 right-4 bg-[#25252B]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl">
+            {/* <div className="absolute bottom-6 left-4 right-4 bg-[#25252B]/90 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-[#e0006e] font-black text-[10px] tracking-[0.2em] uppercase">Live Audit Trail · SACS</span>
                 <span className="flex items-center gap-1.5 text-green-400 text-[10px] font-bold"><span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>RECORDING</span>
@@ -361,7 +357,7 @@ const HomePage = () => {
                   <span className="text-green-400 text-[10px] flex-shrink-0">{e.status}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -633,32 +629,75 @@ const HomePage = () => {
       */}
 
       {/* ── SECTION 10 — RESOURCES ───────────────────────────────────────────── */}
-      <section className="py-10 px-6 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="KNOWLEDGE HUB">What we're reading, writing, and recording.</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-1 max-w-6xl mx-auto">
-            {[
-              { type: "WEBINAR", title: "Digitising Line Cleaning in Pharma Manufacturing" },
-              { type: "CASE STUDY", title: "How a Top-5 Indian Pharma Reduced Cleanroom Deviations by 78%" },
-              { type: "WHITEPAPER", title: "ALCOA+ for Aseptic Operations: A Practical Playbook" },
-            ].map((r, i) => (
-              <div key={i} className="group bg-gray-50 rounded-[2rem] p-8 border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
-                <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase mb-4 self-start
-                  ${r.type === 'WEBINAR' ? 'bg-purple-100 text-purple-700 border border-purple-200'
-                    : r.type === 'CASE STUDY' ? 'bg-[#e0006e]/10 text-[#e0006e] border border-[#e0006e]/20'
-                      : 'bg-blue-50 text-blue-600 border border-blue-200'}`}>
-                  {r.type}
-                </span>
-                <h3 className="font-black text-xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors leading-snug flex-1">{r.title}</h3>
-                <a href={r.href} className="flex items-center gap-2 text-[#e0006e] font-black text-xs tracking-widest uppercase group-hover:gap-3 transition-all duration-300 mt-2">
-                  {r.cta}
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} /></svg>
-                </a>
-              </div>
-            ))}
+      <section className="py-16 px-6 bg-[#fafafa] border-b border-gray-100">
+  <div className="max-w-7xl mx-auto">
+    <SectionTitle eyebrow="KNOWLEDGE HUB">
+      What we're reading, writing, and recording.
+    </SectionTitle>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-10">
+  {[
+    {
+      type: "WEBINAR",
+      title: "Digitising Line Cleaning in Pharma Manufacturing",
+      icon: FaVideo,
+      // cta: "Watch Webinar",
+      // href: "#",
+    },
+    {
+      type: "CASE STUDY",
+      title: "How a Top-5 Indian Pharma Reduced Cleanroom Deviations by 78%",
+      icon: FaFileAlt,
+      // cta: "Read Case Study",
+      // href: "#",
+    },
+    {
+      type: "WHITEPAPER",
+      title: "ALCOA+ for Aseptic Operations: A Practical Playbook",
+      icon: FaBookOpen,
+      // cta: "Download Whitepaper",
+      // href: "#",
+    },
+  ].map((r, i) => {
+    const Icon = r.icon;
+
+    return (
+      <a
+        key={i}
+        href={r.href}
+        className="group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+      >
+        <div className="absolute top-0 left-0 w-full h-1 bg-[#e0006e] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+
+        <div className="flex items-center justify-between mb-8">
+          <div className="w-10 h-10 rounded-2xl bg-[#e0006e]/10 text-[#e0006e] flex items-center justify-center group-hover:bg-[#e0006e] group-hover:text-white transition-all duration-300">
+            <Icon className="w-6 h-6" />
           </div>
+
+          <span className="text-[10px] font-black tracking-[0.22em] uppercase text-gray-400 group-hover:text-[#e0006e] transition-colors">
+            {r.type}
+          </span>
         </div>
-      </section>
+
+        <h3 className="text-xl font-black text-gray-900 leading-snug mb-8 group-hover:text-[#e0006e] transition-colors">
+          {r.title}
+        </h3>
+
+        {/* <div className="flex items-center justify-between pt-5 border-t border-gray-100">
+          <span className="text-xs font-black tracking-widest uppercase text-[#e0006e]">
+            {r.cta}
+          </span>
+
+          <span className="w-9 h-9 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-[#e0006e] group-hover:bg-[#e0006e] group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+            <FaArrowRight className="w-3.5 h-3.5" />
+          </span>
+        </div> */}
+      </a>
+    );
+  })}
+</div>
+  </div>
+</section>
+
 
       {/* ── SECTION 11 — FAQ ─────────────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">

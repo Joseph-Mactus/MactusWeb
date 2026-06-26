@@ -14,10 +14,10 @@ import lowImg9 from '../../assets/images/Lowvoltagesystems/img_1.png';
 // ── Shared design tokens (identical to SACS page) ────────────────────────────
 
 const SectionTitle = ({ children }) => (
-  <div className="flex justify-center w-full mb-6 mt-8">
-    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full" />
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -226,7 +226,7 @@ const LowVoltageSystems = () => {
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#25252B] py-16 px-6 ml-[-5px] overflow-hidden min-h-[72vh] flex items-center">
+      <section className="relative bg-[#25252B] py-12 md:py-14 px-6 ml-[-5px] overflow-hidden min-h-[72vh] flex items-center">
         {/* Dot grid background */}
         <div
           className="absolute inset-0 z-0 opacity-20"
@@ -238,7 +238,7 @@ const LowVoltageSystems = () => {
         <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-[#e0006e]/40 to-transparent z-10" />
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
 
             {/* Left: text */}
             <div className="space-y-8">
@@ -294,7 +294,7 @@ const LowVoltageSystems = () => {
       </section>
 
       {/* ── SYSTEMS GRID ─────────────────────────────────────────────────────── */}
-      <section id="systems" className="py-20 px-6 bg-gray-50">
+      <section id="systems" className="py-12 md:py-14 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Our Low Voltage Systems</SectionTitle>
           <p className="text-center text-gray-500 text-base max-w-2xl mx-auto mb-14 leading-relaxed font-medium">
@@ -348,7 +348,7 @@ const LowVoltageSystems = () => {
       </section>
 
       {/* ── WHY MACTUS ───────────────────────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Why Choose Mactus for Low Voltage Systems</SectionTitle>
           <p className="text-center text-gray-500 text-base max-w-xl mx-auto mb-14 leading-relaxed font-medium">
@@ -379,10 +379,10 @@ const LowVoltageSystems = () => {
       </section>
 
       {/* ── FAQ SECTION ───────────────────────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-12 md:py-14 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <SectionTitle>Frequently Asked Questions</SectionTitle>
-          <div className="space-y-4 mt-8">
+          <div className="space-y-4 mt-4">
             {faqs.map((faq, idx) => (
               <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm transition-all hover:shadow-md">
                 <button

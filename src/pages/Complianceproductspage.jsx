@@ -11,14 +11,11 @@ import ZohoFormModal from '../components/ZohoFormModal';
 
 // ─── Section Title ────────────────────────────────────────────────────────────
 
-const SectionTitle = ({ children, eyebrow, isDark, center = true }) => (
-  <div className={`flex flex-col ${center ? 'items-center' : 'items-start'} w-full mb-12 mt-8`}>
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">{eyebrow}</span>
-    )}
-    <h2 className={`${center ? 'text-center' : ''} font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -79,7 +76,7 @@ const products = [
     tag: 'MPATS',
     name: 'MPATS — Mactus Environmental Monitoring',
     positioning: 'One unaccounted-for media plate can delay batch release. MPATS makes sure that never happens.',
-    description: 'MPATS digitises the complete lifecycle of every environmental monitoring media plate — issuance, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
+    description: 'MPATS digitises the complete lifecycle of every environmental monitoring media plate — inventory, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
     capabilities: [
       'QR-code tracking — every plate scanned at every lifecycle stage',
       'Automatic batch reconciliation — all plates accounted for at release',
@@ -88,7 +85,7 @@ const products = [
     ],
     image: comImg4,
     link: '/products/MPATS/',
-    
+
   },
   {
     id: 'ivblt',
@@ -273,8 +270,8 @@ const ComplianceProductsPage = () => {
 
           {/* Right — floating product count visual */}
           <div className="relative animate-fade-in-right animate-float">
-              <ImageCarousel images={[comImg3,comImg2,comImg4,comImg5,comImg1]} />
-            </div>
+            <ImageCarousel images={[comImg3, comImg2, comImg4, comImg5, comImg1]} />
+          </div>
         </div>
       </section>
 

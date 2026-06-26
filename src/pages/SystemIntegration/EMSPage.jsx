@@ -5,16 +5,11 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import emsImg1 from '../../assets/images/EMSPage/ems_1.png';
 
-const SectionTitle = ({ children, eyebrow, isDark }) => (
-  <div className="flex flex-col items-center w-full mb-12 mt-8">
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
-        {eyebrow}
-      </span>
-    )}
-    <h2 className={`text-center font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -281,11 +276,11 @@ const features = [
       `}</style>
 
       {/* SECTION 1 — HERO */}
-      <section className="relative bg-[#25252B] py-20 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-12 md:py-14 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
           {/* Left */}
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.2em] uppercase">
@@ -357,10 +352,10 @@ const features = [
 
 
       {/* SECTION 3 — WHAT EMS MONITORS */}
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="MONITORED PARAMETERS">What EMS Monitors</SectionTitle>
-          <p className="text-center text-gray-500 font-bold tracking-widest uppercase text-xs mb-12 -mt-6">
+          <p className="text-center text-gray-500 font-bold tracking-widest uppercase text-xs mb-12 -mt-3">
             Three parameters. Continuous. Every room.
           </p>
 
@@ -393,7 +388,7 @@ const features = [
       </section>
 
       {/* SECTION 4 — KEY FEATURES */}
-      <section className="py-20 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
   <div className="max-w-7xl mx-auto">
 
     <SectionTitle eyebrow="CAPABILITIES">
@@ -419,7 +414,7 @@ const features = [
   </div>
 </section>
       {/* SECTION 5 — HOW EMS WORKS */}
-      <section className="py-16 px-6 bg-gray-50 border-b border-gray-100 overflow-hidden">
+      <section className="py-12 md:py-14 px-6 bg-gray-50 border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="THE WORKFLOW">How EMS Works</SectionTitle>
           <p className="text-center text-gray-500 font-medium text-lg -mt-6 mb-14">From sensor to audit-ready record — automatically.</p>
@@ -479,7 +474,7 @@ const features = [
       </section>
 
       {/* SECTION 6 — BUILT FOR */}
-      <section className="py-16 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="TARGET ENVIRONMENTS">Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -502,9 +497,9 @@ const features = [
 
 
       {/* SECTION 9 — FAQ */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center w-full mb-6 mt-8">
+          <div className="flex justify-center w-full mb-5 mt-2">
             <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
               Frequently Asked Questions
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
@@ -534,11 +529,11 @@ const features = [
       </section>
 
       {/* SECTION 10 — PRE-FOOTER CTA */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
                 Every batch needs a cleanroom that was in spec.{' '}

@@ -7,16 +7,11 @@ import irs_1 from '../../assets/images/Complianceproducts/ASDS/asds_1.png';
 import irs_2 from '../../assets/images/Complianceproducts/ASDS/asds_2.png';
 import irs_3 from '../../assets/images/Complianceproducts/ASDS/asds_3.png';
 import Brochure from '../../assets/Brochurs/MAPL_ASDS_BrochureV1-compressed.pdf';
-const SectionTitle = ({ children, eyebrow }) => (
-  <div className="flex flex-col items-center w-full mb-12 mt-8">
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
-        {eyebrow}
-      </span>
-    )}
-    <h2 className="text-center text-[#e0006e] font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block">
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -56,11 +51,11 @@ const ASDSPage = () => {
   }, []);
 
   const features = [
-    { title: "Solvents-Driven Preparation", desc: ["Up to 6 custom different disinfectant solutions configurable per unit (Sporicidal, Hand Disinfectant and Detergent).", "Operator selects solvent + volume on the IPC; system handles the dilution math and dispensing", "Solvents are locked under change control — no manual override without authorised credentials"], icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
-    { title: "Accuracy", desc: ["Volumetric accuracy of stock + WFI / purified water ratios", "Verified delivery —  \"Accurate\" tolerance", "Calibration record maintained per unit, exportable for audit"], icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
-    { title: "On-Demand, No Waste", desc: ["Solutions prepared only when needed — no shift-start over-preparation", "Reduced waste of expensive concentrates", "Reconciliation is automatic — every dispense logged, every discard captured"], icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
-    { title: "Compliance", desc: ["21 CFR Part 11 compliant user management — electronic signatures, role-based access, audit trails", "Automated record keeping — every dispense event time-stamped and signed", "Historical data storage and export for QA review and APR/PQR", "Validation pack delivered with every install: URS, FDS, DQ, IQ, OQ, PQ"], icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-    { title: "Build & Usability", desc: ["Pharma-grade SS fabrication — designed for repeated cleaning and cleanroom environments", "Mobile design — castors with brakes, wheel between cleanrooms", "Industrial IPC with intuitive solvent-selection workflow", "Compact footprint — fits through standard cleanroom doors"], icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
+    { title: "Solvents-Driven Preparation", desc: "Up to 6 custom different disinfectant solutions configurable per unit with operator-selectable solvent and volume on the IPC, with locked solvents under change control.", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
+    { title: "Accuracy", desc: "Volumetric accuracy of stock and WFI ratios with verified delivery tolerance and calibration records maintained per unit for audit export.", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
+    { title: "On-Demand, No Waste", desc: "Solutions prepared only when needed to reduce waste of expensive concentrates with automatic reconciliation logging every dispense and discard.", icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
+    { title: "Compliance", desc: "21 CFR Part 11 compliant user management with electronic signatures, automated record keeping, historical data storage, and validation pack delivered with every install.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+    { title: "Build & Usability", desc: "Pharma-grade SS fabrication with mobile design on castors, industrial IPC with intuitive workflow, and compact footprint fitting through standard cleanroom doors.", icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" },
   ];
 
   const steps = [
@@ -159,7 +154,7 @@ const ASDSPage = () => {
           <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
             <div className="space-y-8 animate-fade-in-left">
               <div className="w-full mb-12 max-w-[760px]">
                 <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
@@ -272,8 +267,8 @@ const ASDSPage = () => {
                       ),
                     },
                     {
-                      value: "100%",
-                      label: "GMP Compliant",
+                      value: "EU GMP Annex1 ",
+                      label: "Aligned",
                       icon: (
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -281,8 +276,8 @@ const ASDSPage = () => {
                       ),
                     },
                     {
-                      value: "21 CFR",
-                      label: "Part 11 Ready",
+                      value: "21 CFR Part 11",
+                      label: "Compliance",
                       icon: (
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -314,25 +309,18 @@ const ASDSPage = () => {
         </section>
 
         {/* The Problem Section */}
-        <section className="py-24 px-6 bg-white">
+        <section className="py-14 md:py-16 px-6 bg-white">
+          <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why ASDS</p>
+
           <div className="max-w-7xl mx-auto">
             <SectionTitle eyebrow="WHY ASDS">Manual cleaning solution preparation is a hidden GMP risk</SectionTitle>
 
-            <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
-              <p className="text-gray-500 text-lg leading-relaxed font-medium">
-                Cleaning is the first line of defence against contamination in pharmaceutical manufacturing. Yet in many facilities, cleaning solutions are still prepared manually—using measuring cylinders, stock disinfectants, detergents, IPA, and purified water.
-              </p>
-              <p className="text-gray-500 text-lg leading-relaxed font-medium">
-                The result is variability. Dilution strengths can differ between operators, solution concentrations may drift across shifts, and batch-to-batch consistency becomes difficult to verify. Reconciliation of prepared, used, and discarded quantities often depends on manual calculations and paper logbooks, creating compliance challenges during audits.
-              </p>
-              <p className="text-2xl font-black text-[#e0006e] tracking-tight mt-8">
-                ASDS replaces manual mixing with recipe-driven automation.
-              </p>
-              <p>
-                Every solution is prepared according to predefined and validated recipes, ensuring the right concentration, the right volume, and complete traceability every time.
-              </p>
-
-            </div>
+            <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
+             In pharma manufacturing, cleaning solution preparation must be accurate, consistent, and traceable. <span className="text-[#e0006e]">ASDS replaces manual dilution and paper-based reconciliation with recipe-driven automated dispensing.</span>
+            Each solution is prepared with the right concentration, right volume, and complete audit-ready traceability.
+            </p>
+          </div>
 
             <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
               <table className="w-full text-left border-collapse">
@@ -365,11 +353,11 @@ const ASDSPage = () => {
         </section>
 
         {/* What ASDS Is */}
-        <section className="py-24 px-6 bg-[#fafafa] border-y border-gray-100">
+        <section className="py-14 md:py-16 px-6 bg-[#fafafa] border-y border-gray-100">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>What ASDS is</SectionTitle>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-gray-600 text-lg leading-relaxed">
                   ASDS is a mobile,automated solution preparation unit for pharma and healthcare cleaning operations. The operator selects a solvent (e.g., 2 % disinfectant, 70% IPA, 2% detergent), keys in the required volume, and presses dispense. ASDS handles the rest — drawing the right ratio of stock concentrate and purified water, mixing to homogeneity, and dispensing into the operator's container.
@@ -391,7 +379,7 @@ const ASDSPage = () => {
         </section>
 
         {/* Key Features */}
-        <section className="py-24 px-6 bg-white">
+        <section className="py-14 md:py-16 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>Key Features</SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
@@ -406,14 +394,7 @@ const ASDSPage = () => {
                     </div>
                     <div>
                       <h3 className="font-black text-2xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors">{f.title}</h3>
-                      <ul className="space-y-3">
-                        {f.desc.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e]/60 mt-2 flex-shrink-0"></span>
-                            <span className="text-gray-600 leading-relaxed font-medium text-sm md:text-base">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="text-gray-600 leading-relaxed font-medium text-sm md:text-base">{f.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -423,15 +404,13 @@ const ASDSPage = () => {
         </section>
 
         {/* How It Works */}
-        <section className="py-24 px-6 bg-white overflow-hidden relative">
+        <section className="py-14 md:py-16 px-6 bg-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[radial-gradient(#e0006e_1px,transparent_1px)] bg-[size:30px_30px] opacity-[0.02]"></div>
 
           <div className="max-w-7xl mx-auto relative z-10">
             <SectionTitle>System Workflow</SectionTitle>
-            <p className="text-center text-gray-500 font-bold tracking-widest uppercase mb-16 -mt-8">A 4-step flow on every dispense</p>
-
-            <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2 space-y-12">
+            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+              <div className="lg:w-1/2 space-y-8">
                 {steps.map((step, i) => (
                   <div key={i} className="flex gap-6 relative group">
                     {i !== steps.length - 1 && (
@@ -473,7 +452,7 @@ const ASDSPage = () => {
         </section>
 
         {/* Built For */}
-        <section className="py-24 px-6 bg-white">
+        <section className="py-14 md:py-16 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>Built For</SectionTitle>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -495,26 +474,20 @@ const ASDSPage = () => {
         </section>
 
         {/* Outcomes Strip */}
-        <section className="py-24 px-6 bg-[#25252B]">
+        <section className="py-12 md:py-14 px-6 bg-white">
+          <SectionTitle>Outcomes</SectionTitle>
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16 space-y-4">
-              <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After ASDS Goes Live</h2>
-              <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running ASDS in production</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 divide-y md:divide-y-0 md:divide-x divide-gray-800">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { stat: "100%", label: "of prep events logged", desc: "No manual logbooks" },
-                { stat: "0 variation", label: "in dilution strength", desc: "Solvents-locked" },
-                { stat: "Savings", label: "on stock concentrate", desc: "On-demand prep" },
-                { stat: "Less time", label: "per prep cycle", desc: "Operators move faster" },
-                { stat: "Cleaner", label: "GMP audits", desc: "100% traceability" },
-              ].map((outcome, i) => (
-                <div key={i} className="text-center space-y-3 pt-8 md:pt-0 px-2 group">
-                  <p className="text-[#e0006e] font-black text-4xl lg:text-5xl tracking-tighter transition-transform group-hover:scale-105">{outcome.stat}</p>
-                  <div>
-                    <p className="text-white font-bold text-sm tracking-wide">{outcome.label}</p>
-                    <p className="text-gray-500 text-xs font-medium mt-1">{outcome.desc}</p>
+                { label: "of prep events logged", value: "100%", sub: "No manual logbooks" },
+                { label: "in dilution strength", value: "0 variation", sub: "Solvents-locked" },
+                { label: "on stock concentrate", value: "Savings", sub: "On-demand prep" },
+              ].map((stat, i) => (
+                <div key={i} className="text-center space-y-4 p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-500">
+                  <p className="text-[#e0006e] font-black text-6xl tracking-tighter">{stat.value}</p>
+                  <div className="space-y-1">
+                    <p className="text-gray-900 font-black text-xs tracking-widest uppercase">{stat.label}</p>
+                    <p className="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase">{stat.sub}</p>
                   </div>
                 </div>
               ))}
@@ -523,9 +496,9 @@ const ASDSPage = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 px-6 bg-white border-t border-gray-50">
+        <section className="py-14 md:py-16 px-6 bg-white border-t border-gray-50">
           <div className="max-w-4xl mx-auto">
-            <div className="flex justify-center w-full mb-6 mt-8">
+            <div className="flex justify-center w-full mb-5 mt-2">
               <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
                 Frequently Asked Questions
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
@@ -539,7 +512,7 @@ const ASDSPage = () => {
         <section className="py-10 px-6 bg-white">
           <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+            <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
               <div className="max-w-xl space-y-4">
                 <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
                   Cleaning is your first line of defence. <span className="text-[#e0006e]">Make sure every drop is the right one.</span>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {FaSyringe,FaDna,FaMicroscope,FaFlask,FaHospital,} from "react-icons/fa";
+import { FaSyringe, FaDna, FaMicroscope, FaFlask, FaHospital, } from "react-icons/fa";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
@@ -11,16 +11,11 @@ import img_3 from '../../assets/images/Complianceproducts/MPATS/mem_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_MEM_BrochureV11.pdf';
 
-const SectionTitle = ({ children, eyebrow, isDark }) => (
-  <div className="flex flex-col items-center w-full mb-12 mt-8">
-    {eyebrow && (
-      <span className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-4">
-        {eyebrow}
-      </span>
-    )}
-    <h2 className={`text-center font-black text-3xl md:text-5xl tracking-tighter relative pb-4 inline-block ${isDark ? 'text-white' : 'text-gray-900'}`}>
+const SectionTitle = ({ children }) => (
+  <div className="flex justify-center w-full mb-5 mt-2">
+    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#e0006e] rounded-full"></span>
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
     </h2>
   </div>
 );
@@ -62,8 +57,8 @@ const MEMPage = () => {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg>
       ),
-      name: "Issuance",
-      detail: "Each plate receives a unique QR code label. Plate ID, media type, batch, and expiry are recorded. Operator identity captured at issuance."
+      name: "inventory",
+      detail: "Each plate receives a unique QR code label. Plate ID, media type, batch, and expiry are recorded. Operator identity captured at inventory."
     },
     {
       id: 2,
@@ -87,93 +82,77 @@ const MEMPage = () => {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
       ),
       name: "Reading",
-      detail: "CFU count entered through guided HMI, e-signed by the reading microbiologist. Automatic comparison against alert and action limits for that location and grade."
+      detail: "CFU count entered through software, e-signed by the reading microbiologist. Automatic comparison against alert and action limits for that location and grade."
     },
     {
       id: 5,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
       ),
-      name: "Disposition",
+      name: "destruction",
       detail: "Plate disposed or archived. Final status locked. Batch-level reconciliation report auto-generated — all plates accounted for."
     }
   ];
-
-  const features = [
-    {
-      title: "Lifecycle Automation",
-      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
-      items: [
-        "Full plate lifecycle — issuance, usage, incubation, reading, disposition, reconciliation",
-        "QR code on every plate, scanned at every handover point",
-        "Supports air sampling (active and passive/settle), surface swabs, contact plates, personnel monitoring"
-      ]
-    },
-    {
-      title: "Compliance",
-      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
-      items: [
-        "21 CFR Part 11 compliant — electronic signatures, audit trails, role-based access",
-        "Aligned with USFDA, MHRA, EU GMP Annex 1, and WHO-GMP EM expectations",
-        "Fully customisable workflow to enforce site-specific EM SOPs"
-      ]
-    },
-    {
-      title: "Reconciliation",
-      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
-      items: [
-        "Real-time reconciliation between plates issued, used, and discarded — no spreadsheet rebuilds",
-        "Missing-plate alerts at every stage transition",
-        "Batch-level reconciliation reports ready at batch release, not weeks later"
-      ]
-    },
-    {
-      title: "Reading & Trending",
-      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>,
-      items: [
-        "CFU counts entered through guided HMI, e-signed by reading microbiologist",
-        "Automatic comparison against alert and action limits, by location and grade",
-        "Built-in dashboards for trending by room, grade, date, operator — ready for APR/PQR"
-      ]
-    },
-    {
-      title: "Integration",
-      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>,
-      items: [
-        "Connects to incubator monitoring / EMS for auto-logged incubation parameters",
-        "Pushes events to LIMS, MES, and BMS via standard interfaces",
-        "Bi-directional integration with batch records — EM data flows into the BMR"
-      ]
-    }
-  ];
+const features = [
+  {
+    title: "QR Plate Identity",
+    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>,
+    desc: "Every media plate is assigned a unique QR identity for complete tracking from inventory to final disposition."
+  },
+  {
+    title: "Lifecycle Traceability",
+    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
+    desc: "Track each plate across inventory, exposure, incubation, reading, reconciliation, and disposal."
+  },
+  {
+    title: "Smart Reconciliation",
+    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
+    desc: "Automatically reconcile issued, exposed, incubated, read, and discarded plates with missing-plate alerts."
+  },
+  {
+    title: "Guided CFU Reading",
+    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>,
+    desc: "Capture CFU results through guided entry with microbiologist-linked review and electronic signature."
+  },
+  {
+    title: "EM Trend Intelligence",
+    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3v18m4-14v14m4-10v10M7 13v8M3 17v4" /></svg>,
+    desc: "View location-wise, batch-wise, and grade-wise EM trends for faster investigation, APR, and PQR review."
+  },
+  {
+    title: "Audit-Ready Compliance",
+    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+    desc: "Generate filtered audit reports with plate history, timestamps, user actions, e-signatures, and traceability."
+  }
+];
 
   const builtFor = [
-  {
-    label: "Sterile Injectable Manufacturing",
-    subtitle: "Grade A/B/C/D",
-    icon: <FaSyringe />,
-  },
-  {
-    label: "Biologics, Vaccines & Cell Therapy",
-    subtitle: "Stringent EM requirements",
-    icon: <FaDna />,
-  },
-  {
-    label: "QC Microbiology Labs",
-    subtitle: "High throughput reading",
-    icon: <FaMicroscope />,
-  },
-  {
-    label: "Aseptic Process Simulation (APS)",
-    subtitle: "Media Fills",
-    icon: <FaFlask />,
-  },
-  {
-    label: "Compounding Pharmacies",
-    subtitle: "USP <797> / <800>",
-    icon: <FaHospital />,
-  },
-];
+    {
+      label: "Sterile Injectable Manufacturing",
+      subtitle: "Grade A/B/C/D",
+      icon: <FaSyringe />,
+    },
+    {
+      label: "Biologics, Vaccines & Cell Therapy",
+      subtitle: "Stringent EM requirements",
+      icon: <FaDna />,
+    },
+    {
+      label: "QC Microbiology Labs",
+      subtitle: "High throughput reading",
+      icon: <FaMicroscope />,
+    },
+    {
+      label: "Aseptic Process Simulation (APS)",
+      subtitle: "Media Fills",
+      icon: <FaFlask />,
+    },
+    {
+      label: "Compounding Pharmacies",
+      subtitle: "USP <797> / <800>",
+      icon: <FaHospital />,
+    },
+  ];
   const outcomes = [
     { stat: "100%", label: "Plate Reconciliation", detail: "Missing-plate investigations eliminated." },
     { stat: "↓ Admin time", label: "Administrative Efficiency", detail: "Significant reduction in QC admin time per batch." },
@@ -184,7 +163,7 @@ const MEMPage = () => {
   const faqs = [
     {
       question: "What is MPATS (Media Plate Tracking and  Management System)?",
-      answer: "MPATS is a digital system that manages the complete lifecycle of media plates used in pharmaceutical Media Plate Tracking and  Management System — from issuance through exposure, incubation, reading, and disposition. Each plate carries a QR code that is scanned at every handover, binding the plate to the operator, location, batch, and incubator. The result is end-to-end traceability, automatic reconciliation, and 21 CFR Part 11 compliant electronic records of every event in the plate's life."
+      answer: "MPATS is a digital system that manages the complete lifecycle of media plates used in pharmaceutical Media Plate Tracking and  Management System — from inventory through exposure, incubation, reading, and destruction. Each plate carries a QR code that is scanned at every handover, binding the plate to the operator, location, batch, and incubator. The result is end-to-end traceability, automatic reconciliation, and 21 CFR Part 11 compliant electronic records of every event in the plate's life."
     },
     {
       question: "What types of environmental monitoring does MPATS support?",
@@ -192,7 +171,7 @@ const MEMPage = () => {
     },
     {
       question: "How does QR-code tracking actually work on a media plate?",
-      answer: "Each plate is labelled with a unique QR code at the issuance step in MPATS. From that moment on, every interaction with the plate — moving to the cleanroom for exposure, returning to the lab, placing in an incubator, reading the result, disposing — is captured by scanning the QR code at the relevant station. The scan binds the event to the operator who scanned it, the time, and the location. The plate's full history is reconstructable from its QR code alone."
+      answer: "Each plate is labelled with a unique QR code at the inventory step in MPATS. From that moment on, every interaction with the plate — moving to the cleanroom for exposure, returning to the lab, placing in an incubator, reading the result, disposing — is captured by scanning the QR code at the relevant station. The scan binds the event to the operator who scanned it, the time, and the location. The plate's full history is reconstructable from its QR code alone."
     },
     {
       question: "Does MPATS replace our existing QC microbiology LIMS?",
@@ -202,7 +181,7 @@ const MEMPage = () => {
       question: "How does MPATS align with EU GMP Annex 1 expectations for environmental monitoring?",
       answer: "EU GMP Annex 1 (2022 revision) increased expectations for environmental monitoring rigour — particularly around continuous monitoring, contamination control strategy, and data integrity. MPATS supports these expectations directly: every sample is tied to a specific location and grade, every result is e-signed and trended, alert/action limit breaches trigger documented review workflows, and the full audit trail is ALCOA+ aligned."
     },
-    
+
     {
       question: "Does MPATS integrate with our incubators and EMS?",
       answer: "Yes. MPATS integrates with environmental monitoring systems (EMS) and incubator monitoring to automatically log incubation parameters — temperature, duration, incubator ID — without manual operator entry. This eliminates a common source of data integrity findings and ensures incubation parameters are tamper-proof."
@@ -305,7 +284,7 @@ const MEMPage = () => {
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
         <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
           <div className="space-y-8 animate-fade-in-left">
             <div className="w-full mb-12 max-w-[760px]">
               <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
@@ -331,7 +310,7 @@ const MEMPage = () => {
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>monitoring sample fully traceable from</span>
-                <span className="animate-reveal-up pr-1 shimmer-text text-[#e0006e]" style={{ animationDelay: '0.3s' }}>issuance to disposal.</span>
+                <span className="animate-reveal-up pr-1 shimmer-text text-[#e0006e]" style={{ animationDelay: '0.3s' }}>inventory to destruction.</span>
 
               </span>
               <span className="overflow-hidden inline-block py-1 w-full">
@@ -339,7 +318,7 @@ const MEMPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[550px] font-medium opacity-80">
-              MPATS digitizes the complete lifecycle of environmental monitoring media plates — issuance, exposure, incubation, reading, reconciliation, and disposal — with QR-code traceability, electronic signatures, and audit-ready records.
+              MPATS digitizes the complete lifecycle of environmental monitoring media plates — inventory, exposure, incubation, reading, reconciliation, and destruction — with QR-code traceability, electronic signatures, and audit-ready records.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap sm:flex-nowrap">
@@ -375,15 +354,29 @@ const MEMPage = () => {
               {/* Stats row */}
               <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
                 {[
-                  { value: "25+", label: "Units Deployed", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                  )},
-                  { value: "100%", label: "GMP Compliant", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                  )},
-                  { value: "Annex 1", label: "EU GMP Aligned", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                  )},
+                  {
+                    value: "10+", label: "Units Deployed", icon: (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    )
+                  },
+                 {
+                      value: "EU GMP Annex1 ",
+                      label: "Aligned",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      value: "21 CFR Part 11",
+                      label: "Compliance",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      ),
+                    },
                 ].map(({ value, label, icon }, i) => (
                   <div key={i} className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200">
                     <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">{icon}</span>
@@ -398,7 +391,9 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 2 — THE PROBLEM WE SOLVE */}
-      <section className="py-14 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 px-6 bg-white border-b border-gray-100">
+                <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why MPATS</p>
+
         <div className="max-w-6xl mx-auto">
           <SectionTitle eyebrow="WHY MPATS">Lose one plate, lose the audit.</SectionTitle>
 
@@ -418,19 +413,22 @@ const MEMPage = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {[
-                  ["Missing plate at reconciliation", "Found days later (or not)", "QR-scan visibility, every step"],
-                  ["Tracking parameters", "Recorded manually, often after", "Auto-logged from EMS / incubator"],
-                  ["CFU count attribution", "Logbook entry, anonymous", "E-signed by reading microbiologist"],
-                  ["Trend analysis for APR/PQR", "Spreadsheet rebuild every cycle", "Live dashboards, one-click export"],
-                  ["Audit pull", "Half a day of paperwork", "30 seconds, filtered any way you need"]
-                ].map((row, i) => (
-                  <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="px-8 py-6 font-bold text-gray-900">{row[0]}</td>
-                    <td className="px-8 py-6 text-gray-500">{row[1]}</td>
-                    <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
-                  </tr>
-                ))}
+                {
+                  [
+                    ["Sampling point mismatch", "Manual location entry", "QR-linked sampling location"],
+                    ["Plate exposure timing gap", "Manual time recording", "Auto time-stamped exposure"],
+                    ["Sampling schedule miss", "Checklist dependency", "Digital sampling workflow"],
+                    ["Location traceability gap", "Manual area selection", "Area-wise QR traceability"],
+                    ["Excursion investigation delay", "Paper-based review", "Instant deviation evidence"],
+                    ["Sample reconciliation gap", "Manual plate count check", "Digital reconciliation control"]
+                  ]
+                    .map((row, i) => (
+                      <tr key={i} className="group hover:bg-gray-50 transition-colors">
+                        <td className="px-8 py-6 font-bold text-gray-900">{row[0]}</td>
+                        <td className="px-8 py-6 text-gray-500">{row[1]}</td>
+                        <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
+                      </tr>
+                    ))}
               </tbody>
             </table>
           </div>
@@ -438,16 +436,27 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 3 — WHAT MPATS IS */}
-      <section className="py-10 px-6 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <SectionTitle eyebrow="THE SOLUTION">What MPATS Is</SectionTitle>
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
-            <p>
-              MPATS is a digital solution that manages the complete lifecycle of every media plate used in environmental monitoring. Each plate is assigned a QR code at issuance and scanned at every stage — exposure, incubation, reading, and disposition.
-            </p>
-            <p>
-              Every scan is linked to the operator, location, batch, incubator, and microbiologist. By batch release, reconciliation is already complete. MPATS transforms environmental monitoring from manual tracking to provable compliance.
-            </p>
+      <section className="py-14 md:py-16 px-6 bg-[#fafafa] border-y border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle>What MPATS is</SectionTitle>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-gray-600 text-lg leading-relaxed">
+                From plate inventory to final destruction, MPATS gives every media plate a complete digital identity by assigning a unique QR code and capturing each critical movement across the environmental monitoring process.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Every exposure, incubation, reading, and reconciliation step is digitally linked to the operator, sampling location, batch, and microbiology review, helping pharma teams maintain reliable EM traceability and audit-ready compliance.
+              </p>
+            </div>
+
+            <div className="bg-[#0a0a1a] rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#e0006e]/20 rounded-full blur-[3rem] group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <svg className="w-12 h-12 text-[#e0006e]/30 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.866 19.883 22 16.017 22H14.017V21ZM1 15V9C1 8.44772 1.44772 8 2 8H5C6.10457 8 7 7.10457 7 6V5C7 3.89543 6.10457 3 5 3H0C-1.10457 3 -2 3.89543 -2 5V15C-2 18.866 1.13401 22 5 22H7V21L7 18C7 16.8954 6.10457 16 5 16H2C1.44772 16 1 15.5523 1 15Z" /></svg>
+              <p className="text-white font-medium text-2xl md:text-3xl leading-snug tracking-tight italic relative z-10">
+                "MPATS is the difference between 'the plate was recorded somewhere' and 'the system traced every plate, every handover, and every result.'"
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -456,7 +465,7 @@ const MEMPage = () => {
       <section className="py-12 px-6 bg-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="THE WORKFLOW">The Media Plate Lifecycle, End to End</SectionTitle>
-          <p className="text-center italic text-gray-500 mb-16 text-xl -mt-6">"Five stages. One QR code. Zero unaccounted-for plates."</p>
+          <p className="text-center italic text-gray-500 mb-10 text-xl -mt-6">"Five stages. One QR code. Zero unaccounted-for plates."</p>
 
           {/* Stepper Container */}
           <div className="relative mb-12">
@@ -540,26 +549,22 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 5 — KEY FEATURES */}
-      <section className="py-10 px-6 bg-gray-50 border-y border-gray-100">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="CAPABILITIES">Key Features</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <SectionTitle>Key Features</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {features.map((feature, idx) => (
-              <div key={idx} className={`bg-white p-8 rounded-3xl border border-gray-100 hover:border-[#e0006e]/30 transition-colors shadow-sm ${idx === features.length - 1 ? 'md:col-span-2 md:max-w-2xl md:mx-auto w-full' : ''}`}>
-                <div className="w-14 h-14 bg-[#e0006e]/10 text-[#e0006e] rounded-2xl flex items-center justify-center mb-6">
-                  {feature.icon}
+              <div key={idx} className={`bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:border-[#e0006e]/20 hover:shadow-[0_30px_60px_rgba(0,0,0,0.06)] transition-all duration-500 group relative overflow-hidden ${idx === features.length - 1 && features.length % 2 !== 0 ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''}`}>
+                <div className="absolute left-0 top-0 w-1.5 h-full bg-[#e0006e] scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500 ease-out"></div>
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex-shrink-0 flex items-center justify-center group-hover:bg-[#e0006e] transition-colors duration-500 shadow-sm border border-gray-100 group-hover:border-[#e0006e] text-[#e0006e] group-hover:text-white">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-black text-2xl text-gray-900 mb-4 group-hover:text-[#e0006e] transition-colors">{feature.title}</h3>
+                    <p className="text-gray-600 leading-relaxed font-medium text-sm md:text-base">{feature.desc}</p>
+                  </div>
                 </div>
-                <h3 className="font-black text-2xl text-gray-900 mb-6">{feature.title}</h3>
-                <ul className="space-y-4">
-                  {feature.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-600 font-medium">
-                      <div className="mt-1 text-[#e0006e] flex-shrink-0">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                      </div>
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
@@ -567,13 +572,13 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 6 — BUILT FOR */}
-      <section className="py-4 px-0 bg-white">
+      <section className="py-14 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="TARGET ENVIRONMENTS">Built For</SectionTitle>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <SectionTitle>Built For</SectionTitle>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {builtFor.map((item, idx) => (
-              <div key={idx} className="bg-gray-50 border border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:shadow-lg transition-all duration-300 group flex flex-col gap-4">
-                <div className="w-12 text-[#e0006e] h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-2xl group-hover:border-[#e0006e]/30 transition-colors">
+              <div key={idx} className="bg-[#fafafa] border text-[#e0006e] border-gray-100 p-8 rounded-3xl hover:border-[#e0006e]/30 hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col gap-4">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-[#e0006e] group-hover:text-[#e0006e] group-hover:border-[#e0006e]/30 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -587,19 +592,20 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 7 — OUTCOMES */}
-      <section className="py-24 px-6 bg-[#25252B]">
+      <section className="py-12 md:py-14 px-6 bg-white">
+        <SectionTitle>Outcomes</SectionTitle>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-white font-black text-3xl md:text-4xl tracking-tighter uppercase">What Customers See After MPATS Goes Live</h2>
-            <p className="text-gray-400 font-bold tracking-widest uppercase text-xs">Reported outcomes from Mactus customers running MPATS in production EM programmes</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-800">
-            {outcomes.map((outcome, idx) => (
-              <div key={idx} className="text-center space-y-4 pt-8 md:pt-0 px-6 group flex flex-col justify-center">
-                <p className="text-[#e0006e] font-black text-5xl tracking-tighter transition-transform duration-300 group-hover:scale-105">{outcome.stat}</p>
-                <div>
-                  <h4 className="text-white font-black text-lg mb-2 uppercase tracking-wide">{outcome.label}</h4>
-                  <p className="text-gray-400 font-medium text-sm leading-relaxed max-w-[200px] mx-auto">{outcome.detail}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { label: "media plate tracking", value: "100%", sub: "Complete Traceability" },
+              { label: "manual log entries", value: "Zero", sub: "Automated System" },
+              { label: "audit preparation", value: "Instant", sub: "One-Click Export" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center space-y-4 p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-500">
+                <p className="text-[#e0006e] font-black text-6xl tracking-tighter">{stat.value}</p>
+                <div className="space-y-1">
+                  <p className="text-gray-900 font-black text-xs tracking-widest uppercase">{stat.label}</p>
+                  <p className="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase">{stat.sub}</p>
                 </div>
               </div>
             ))}
@@ -608,9 +614,9 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 8 — FAQ */}
-      <section className="py-24 px-6 bg-white border-t border-gray-50">
+      <section className="py-14 md:py-16 px-6 bg-white border-t border-gray-50">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center w-full mb-6 mt-8">
+          <div className="flex justify-center w-full mb-5 mt-2">
             <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl tracking-tight relative pb-3 inline-block">
               Frequently Asked Questions
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
@@ -621,10 +627,10 @@ const MEMPage = () => {
       </section>
 
       {/* SECTION 9 — PRE-FOOTER CTA */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
                 If one plate is missing, the audit isn't ready. <span className="text-[#e0006e]">MPATS makes sure that doesn't happen.</span>
