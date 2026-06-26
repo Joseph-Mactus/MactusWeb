@@ -13,7 +13,6 @@ app.all('/api/chat', (req, res) => {
 
 const PORT = 3001;
 app.listen(PORT, () => {
-  console.log(`Local API server running on http://localhost:${PORT}`);
 });
 
 // Keep process alive just in case
