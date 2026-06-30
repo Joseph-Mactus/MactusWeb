@@ -213,8 +213,8 @@ const HomePage = () => {
     { q: "Is Mactus 21 CFR Part 11 compliant?", a: "Yes. Every Mactus product is built around 21 CFR Part 11 requirements from the architecture up — electronic signatures, role-based access, tamper-proof audit trails, and time-stamped event capture. Full GAMP 5 validation documentation is delivered with every install." },
     { q: "Does Mactus integrate with our existing systems?", a: "Yes. SACS integrates with existing door interlocking. EMS integrates with most BMS platforms — Honeywell, Siemens, Schneider, Johnson Controls. Our IIoT layer is protocol-agnostic — Modbus, OPC-UA, BACnet, MQTT. We connect to your environment; we don't ask you to replace it." },
     { q: "What validation support do you provide?", a: "Full V-model documentation: URS, FDS, DQ, IQ, OQ, PQ, traceability matrix, and risk assessment per GAMP 5 Category 4/5. We've supported customers through USFDA, EU GMP, MHRA, WHO-GMP, and CDSCO inspections." },
-    { q: "How quickly can a Mactus system be deployed?", a: "Standard compliance products (SACS, IRS™, IVBLT) deploy in 6 to 10 weeks including validation. Custom integrations (BMS, EMS, LVS) range from 12 to 24 weeks depending on facility scope." },
-    { q: "Are your products suitable for sterile injectable manufacturing?", a: "Yes. Our compliance product line was designed primarily for aseptic and sterile environments. Installed bases at sterile injectable, vaccine, and biologics facilities across India." },
+    { q: "How quickly can a Mactus system be deployed?", a: "Standard compliance products (SACS, IRS, IVBLT) deploy in 6 to 10 weeks including validation. Custom integrations (BMS, EMS, LVS) range from 12 to 24 weeks depending on facility scope." },
+    { q: "Are your products suitable for sterile injectable manufacturing?", a: "Yes. Our compliance product line was designed primarily for aseptic and sterile environments. Install Bases at sterile injectable, vaccine, and biologics facilities across India." },
   ];
 
   const faqSchema = {
@@ -287,12 +287,12 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
           {/* Left */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.15em] uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[13px] font-black tracking-[0.15em] uppercase">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
               </span>
-              TRUSTED BY INDIA'S LEADING PHARMA SINCE 2012
+              TRUSTED BY NATION’S TOP 100 PHARMA COMPANIES SINCE 2012
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
@@ -448,7 +448,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
-              { eyebrow: "REGULATORY PRECISION", title: "Digital Compliance Solutions", body: "Five purpose-built systems — SACS, IRS™, ASDS, MPATS, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
+              { eyebrow: "REGULATORY PRECISION", title: "Digital Compliance Solutions", body: "Five purpose-built systems — SACS, IRS, ASDS, MPATS, IVBLT — each one engineered around the SOPs your auditors actually read. 21 CFR Part 11 compliant from the architecture up, not retrofitted with an overlay.", href: "/compliance-products/", cta: "View compliance products" },
               { eyebrow: "FACILITY AUTOMATION", title: "System Integration", body: "End-to-end BMS, EMS, and LVS integration for life-science facilities. We deliver URS through PQ, with the validation pack QA expects. Your facility goes from commissioned to qualified without a gap.", href: "/system-integration/", cta: "Explore system integration" },
               { eyebrow: "SMART MANUFACTURING", title: "Industrial IoT (IIoT)", body: "Sensors, controllers, and analytics layered onto existing infrastructure. Real-time visibility into HVAC, utilities, and equipment health — so engineering fixes problems before quality finds them.", href: "/iiot-implementations/", cta: "See IIoT implementations" },
             ].map((card, i) => (

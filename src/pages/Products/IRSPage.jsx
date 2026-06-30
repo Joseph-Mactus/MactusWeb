@@ -120,7 +120,7 @@ const IRSPage = () => {
 ;
 
   const faqs = [
-    { question: "What is IRS?", answer: "IRS(Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
+    { question: "What is IRS?", answer: "IRS (Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
     { question: "Is it Annex 1 aligned?", answer: "Yes, IRS is specifically designed to meet the EU GMP Annex 1 (2022) requirements for documenting, justifying, and trending every intervention in aseptic processing." },
     { question: "How does it detect interventions automatically?", answer: "We use a combination of magnetic sensors for doors/ports and IR curtains for glove ports to detect physical entry into the aseptic zone without any manual trigger needed." },
     { question: "Can it enforce a max per batch?", answer: "Yes, you can configure maximum limits for specific types of interventions. The system will alert supervisors if the limit is approached or reached." },
@@ -239,7 +239,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
           <div className="relative mt-16 animate-fade-in-right animate-float">
             <ImageCarousel images={[irs_1, irs_2, irs_3]} />
 
-            {/* Installed Base — Premium Stats Strip */}
+            {/* Install Base — Premium Stats Strip */}
             <div className="w-full mt-4 relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
               {/* Soft glow */}
               <div className="absolute inset-0 pointer-events-none">
@@ -249,7 +249,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
               <div className="relative flex items-center justify-between px-5 py-2 border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e] shadow-[0_0_8px_rgba(224,0,110,0.9)]"></span>
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Installed Base</p>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Install Base</p>
                 </div>
                 <span className="hidden sm:inline-flex text-[9px] uppercase tracking-widest text-gray-400 font-bold">Validated</span>
               </div>
@@ -385,7 +385,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
       </section>
 
       {/* How It Works */}
-      <section className="py-12 md:py-14 px-6 bg-white overflow-hidden">
+      <section className="py-6 md:py-7 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>System Workflow</SectionTitle>
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
@@ -431,7 +431,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
       </section>
 
       {/* Built For */}
-      <section className="py-14 md:py-16 px-6 bg-white">
+      <section className="py-7 md:py-8 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -453,7 +453,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
       </section>
 
       {/* Outcomes */}
-      <section className="py-12 md:py-14 px-6 bg-white">
+      <section className="py-6 md:py-2 px-6 bg-white">
          <SectionTitle>Outcomes</SectionTitle>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

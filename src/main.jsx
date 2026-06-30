@@ -8,11 +8,12 @@ if (!link) {
   link.rel = "icon";
   document.head.appendChild(link);
 }
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 link.type = "image/png";
 link.href = favicon;
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
   </StrictMode>,
+  <SpeedInsights />
 )

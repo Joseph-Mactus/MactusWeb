@@ -18,7 +18,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    tag: "IRS™",
+    tag: "IRS",
     title: "When Manual Intervention Recording Becomes a Compliance Risk",
     teaser: "Manual intervention recording burdened operators during sterile manufacturing. Handwritten logs and delayed entries created gaps in traceability and audit readiness. Small oversights led to deviations and extended QA review cycles. This case study shows how digitization transformed a manual risk into a real-time, audit-ready GMP control system.",
     image: casImg2,
@@ -47,7 +47,7 @@ const caseStudies = [
   }
 ];
 
-const tags = ["All", "SACS", "IRS™", "ASDS", "MPATS", "IVBLT"];
+const tags = ["All", "SACS", "IRS", "ASDS", "MPATS", "IVBLT"];
 
 const CaseStudies = () => {
   const [activeTag, setActiveTag] = useState("All");

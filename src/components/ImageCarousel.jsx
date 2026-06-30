@@ -12,7 +12,7 @@ const ImageCarousel = ({ images }) => {
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-full min-h-[400px] rounded-[2rem] overflow-hidden group shadow-2xl border border-white/10">
+    <div className="relative w-full h-full min-h-[350px] rounded-[2rem] overflow-hidden group shadow-2xl border border-white/10">
       {/* Images */}
       {images.map((image, index) => (
         <div

@@ -94,7 +94,7 @@ const BMSPage = () => {
     },
     {
       question: "What platform does Mactus use for BMS?",
-      answer: "Mactus specializes in EcoStruxure™ BMS — Schneider Electric's open, IoT-enabled building management platform — as well as other leading platforms including Honeywell, Tridium Niagara, and American Auto-Matrix, depending on facility requirements. Platform selection is based on your existing infrastructure, integration requirements, and long-term support strategy."
+      answer: "Mactus specializes in EcoStruxure BMS — Schneider Electric's open, IoT-enabled building management platform — as well as other leading platforms including Honeywell, Tridium Niagara, and American Auto-Matrix, depending on facility requirements. Platform selection is based on your existing infrastructure, integration requirements, and long-term support strategy."
     },
     {
       question: "Does a new BMS require replacing existing equipment?",
@@ -133,7 +133,7 @@ const BMSPage = () => {
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', 'Mactus delivers EcoStruxure™ BMS solutions for pharma, commercial, and industrial facilities — HVAC, utilities, fire, access, and energy in one centralized control layer.');
+    metaDesc.setAttribute('content', 'Mactus delivers EcoStruxure BMS solutions for pharma, commercial, and industrial facilities — HVAC, utilities, fire, access, and energy in one centralized control layer.');
   }, []);
 
   return (
@@ -336,11 +336,11 @@ Our solutions are engineered to deliver operational excellence, improved energy 
       {/* SECTION 6 — ECOSTRUXURE PARTNERSHIP */}
       <section className="py-12 md:py-14 px-6 bg-[#25252B]">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="PLATFORM OF CHOICE" isDark>EcoStruxure™ BMS — Our Platform of Choice</SectionTitle>
+          <SectionTitle eyebrow="PLATFORM OF CHOICE" isDark>EcoStruxure BMS — Our Platform of Choice</SectionTitle>
 
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-gray-400 text-lg leading-relaxed font-medium">
-              Mactus Automation specializes in implementing EcoStruxure™ BMS solutions — Schneider Electric's open, IoT-enabled building management platform — ensuring seamless integration, configuration, and ongoing support for pharmaceutical facilities, commercial buildings, and industrial plants.
+              Mactus Automation specializes in implementing EcoStruxure BMS solutions — Schneider Electric's open, IoT-enabled building management platform — ensuring seamless integration, configuration, and ongoing support for pharmaceutical facilities, commercial buildings, and industrial plants.
             </p>
           </div>
 

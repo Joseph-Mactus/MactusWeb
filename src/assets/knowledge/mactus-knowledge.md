@@ -51,7 +51,7 @@ Nearly three decades of expertise in finance, accounts, administration, and team
 14+ years of experience in programming, project management, product development, and sales. Expert in 21 CFR Part 11 compliance requirements for the pharmaceutical sector. B.E. in Electrical and Electronics from VTU, Belgaum.
 
 ## Sethurajan S — Project Engineering Leader
-13+ years as a BMS specialist with expertise in SACS, IRS™, ASDS, and MPATS system design and execution. Certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4, and Schneider Electric Building Automation. B.E. in Electronics and Communication from Anna University.
+13+ years as a BMS specialist with expertise in SACS, IRS, ASDS, and MPATS system design and execution. Certified in Fire Alarm System Design (Bosch), Honeywell WEBs-4, and Schneider Electric Building Automation. B.E. in Electronics and Communication from Anna University.
 
 ## Athul Mohan — Head of Marketing
 12+ years in SaaS sales, demand generation, and account management, with deep pharma and life sciences industry experience. Leading Mactus's brand transformation, website relaunch, SEO, and LinkedIn strategy.
@@ -116,7 +116,7 @@ Mactus compliance products address documentation gaps in pharmaceutical manufact
 
 **The five compliance products are:**
 1. SACS — Smart Access Control System
-2. IRS™ — Intervention Recording System
+2. IRS — Intervention Recording System
 3. ASDS — Automated Solution Dispensing System
 4. MPATS — Mactus Environmental Monitoring (Media Plate Tracking)
 5. IVBLT — Intravenous Bag Leak Tester
@@ -149,9 +149,9 @@ A: 21 CFR Part 11 and EU GMP Annex 1.
 
 ---
 
-## IRS™ (Intervention Recording System)
+## IRS (Intervention Recording System)
 ### Purpose
-IRS™ automatically records every aseptic intervention in real-time during pharmaceutical fill-finish operations. It digitizes open door and glove-port interventions captured by sensors — without requiring operator input — and associates each intervention to the correct operator via access control integration. Aligned with EU GMP Annex 1 (2022).
+IRS automatically records every aseptic intervention in real-time during pharmaceutical fill-finish operations. It digitizes open door and glove-port interventions captured by sensors — without requiring operator input — and associates each intervention to the correct operator via access control integration. Aligned with EU GMP Annex 1 (2022).
 
 ### Confirmed Features
 - **Auto Sensor Capture:** Non-contact magnetic sensors and IR curtains detect port opening and hand entry automatically.
@@ -164,11 +164,11 @@ IRS™ automatically records every aseptic intervention in real-time during phar
 - **Deployment:** Typically 6–8 weeks.
 
 ### Frequently Asked Questions
-**Q: What is IRS™?**
-A: IRS™ automatically records aseptic interventions in fill-finish lines using door/port sensors. Every intervention is captured without operator self-reporting, attributed to the correct operator, and stored in a 21 CFR Part 11 compliant audit trail.
+**Q: What is IRS?**
+A: IRS automatically records aseptic interventions in fill-finish lines using door/port sensors. Every intervention is captured without operator self-reporting, attributed to the correct operator, and stored in a 21 CFR Part 11 compliant audit trail.
 
 **Q: How is it different from manual recording?**
-A: Manual recording relies on operators to self-report their interventions, which creates data integrity gaps. IRS™ uses sensors to auto-detect and record every intervention the moment it happens.
+A: Manual recording relies on operators to self-report their interventions, which creates data integrity gaps. IRS uses sensors to auto-detect and record every intervention the moment it happens.
 
 ---
 
@@ -243,7 +243,7 @@ These are often delivered together as one accountable integration partner. The t
 
 ## BMS (Building Management System)
 ### Purpose
-Mactus delivers BMS that integrates HVAC, utilities, fire, access control, and energy metering into a single real-time control layer. Designed for pharmaceutical, industrial, and commercial facilities. Mactus specializes in EcoStruxure™ BMS solutions (Schneider Electric's IoT platform).
+Mactus delivers BMS that integrates HVAC, utilities, fire, access control, and energy metering into a single real-time control layer. Designed for pharmaceutical, industrial, and commercial facilities. Mactus specializes in EcoStruxure BMS solutions (Schneider Electric's IoT platform).
 
 ### Confirmed Features
 - **Centralized Control:** Manages all building systems from a single interface.
@@ -378,7 +378,7 @@ Mactus has published case studies demonstrating real-world compliance risk resol
 
 1. **SACS** — "Strengthening GMP Compliance with Automated Access Control System" — Eliminated compliance risk from manual cleanroom entry registers by making compliance automatic at the door.
 
-2. **IRS™** — "When Manual Intervention Recording Becomes a Compliance Risk" — Digitized a manual intervention recording burden that was creating traceability gaps and audit pressure during sterile manufacturing.
+2. **IRS** — "When Manual Intervention Recording Becomes a Compliance Risk" — Digitized a manual intervention recording burden that was creating traceability gaps and audit pressure during sterile manufacturing.
 
 3. **ASDS** — "The Risk of Manual Disinfectant Solution Preparation" — Replaced manual weighing and calculation with solvent-driven automation, eliminating variability and GMP deviations.
 
@@ -396,7 +396,7 @@ Mactus publishes formal documented customer validation letters — confirming de
 - **SACS Customer Validation** — Formal confirmation of cleanroom access control and compliance support using SACS at a pharma manufacturing facility.
 - **ASDS Customer Validation** — Confirmation of successful design, installation, qualification, and operational performance of ASDS at a pharma manufacturing facility.
 
-More validation letters for IRS™, MPATS, and IVBLT are expected to be added as they are prepared.
+More validation letters for IRS, MPATS, and IVBLT are expected to be added as they are prepared.
 
 ---
 
@@ -426,7 +426,7 @@ Contact for product enquiries, demo requests, or to discuss compliance or system
 | Requirement | Recommended Product |
 |---|---|
 | Cleanroom personnel access and interlocking | SACS |
-| Recording aseptic operator interventions | IRS™ |
+| Recording aseptic operator interventions | IRS |
 | Automated cleaning solution preparation | ASDS |
 | Tracking environmental monitoring media plates | MPATS |
 | Detecting pinholes and leaks in IV bags | IVBLT |

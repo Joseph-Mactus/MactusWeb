@@ -97,8 +97,7 @@ const QualityPolicy = () => {
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto font-medium opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
-            At Mactus Automation Pvt. Ltd., we are committed to delivering high-quality automation solutions that enhance efficiency, compliance, and reliability. Our approach integrates best practices in product design and project execution, ensuring excellence from requirement analysis to commissioning.
-          </p>
+At Mactus Automation Pvt. Ltd., we are committed to delivering high-quality Digital compliance managemnt products and solutions that enhance compliance, efficiency, and reliability. Our approach integrates best practices in product design and project execution, ensuring excellence from requirement analysis  to commissioning to successful operation and maintenance.          </p>
         </div>
       </section>
 

@@ -63,7 +63,7 @@ const SACSPage = () => {
 
   const steps = [
     { title: "IDENTIFY", desc: "Operator uses biometric authentication at the cleanroom entrance." },
-    { title: "VALIDATE", desc: "SACS™ verifies identity, training status, and gowning qualification status in real-time." },
+    { title: "VALIDATE", desc: "SACS verifies identity, training status, and gowning qualification status in real-time." },
     { title: "PERMIT / BLOCK", desc: "Door lock releases only if all criteria are met; otherwise, entry is denied." },
     { title: "RECORD", desc: "The entry event is digitally record and added to the 21 CFR Part 11 audit trail." },
   ];
@@ -199,7 +199,7 @@ const SACSPage = () => {
           <div className="relative mt-16 animate-fade-in-right animate-float">
             <ImageCarousel images={[sacs_1, sacs_2, sacs_3]} />
 
-            {/* Installed Base — Premium Stats Strip */}
+            {/* Install Base — Premium Stats Strip */}
             <div className="w-full mt-4 relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
               {/* Soft glow */}
               <div className="absolute inset-0 pointer-events-none">
@@ -209,7 +209,7 @@ const SACSPage = () => {
               <div className="relative flex items-center justify-between px-5 py-2 border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e] shadow-[0_0_8px_rgba(224,0,110,0.9)]"></span>
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Installed Base</p>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Install Base</p>
                 </div>
                 <span className="hidden sm:inline-flex text-[9px] uppercase tracking-widest text-gray-400 font-bold">Validated</span>
               </div>
@@ -304,7 +304,7 @@ Each entry is verified, time-stamped, and audit-ready.
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 text-lg leading-relaxed">
-SACS stands for Smart Access Control System. It replaces paper-based entry and exit logbooks with an automated, 21 CFR Part 11-compliant digital access management solution. The system verifies an operator's identity, training status, and gowning qualification before granting access to the cleanroom.
+                SACS is a smart access control system that replaces paper entry-exit logbooks with automated, 21 CFR Part 11 compliant digital access management. The system verifies operator identity, training status, and gowning qualification before granting cleanroom entry.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Every entry event is electronically recorded with biometric authentication, time-stamps, and electronic signatures. The audit trail is built in real-time, eliminating paper-based compliance risks and providing instant export for regulatory inspections.
@@ -348,7 +348,7 @@ SACS stands for Smart Access Control System. It replaces paper-based entry and e
       </section>
 
       {/* How It Works */}
-      <section className="py-12 md:py-14 px-6 bg-white overflow-hidden">
+      <section className="py-12 md:py-7 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>System Workflow</SectionTitle>
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
@@ -394,7 +394,7 @@ SACS stands for Smart Access Control System. It replaces paper-based entry and e
       </section>
 
       {/* Built For */}
-      <section className="py-14 md:py-16 px-6 bg-white">
+      <section className="py-7 md:py-8 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -416,7 +416,7 @@ SACS stands for Smart Access Control System. It replaces paper-based entry and e
       </section>
 
       {/* Outcomes */}
-      <section className="py-12 md:py-14 px-6 bg-white">
+      <section className="py-6 md:py-2 px-6 bg-white">
          <SectionTitle>Outcomes</SectionTitle>
         <div className="max-w-7xl mx-auto">
           <h1></h1>

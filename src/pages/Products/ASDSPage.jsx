@@ -232,7 +232,7 @@ const ASDSPage = () => {
             <div className="relative mt-16 animate-fade-in-right animate-float">
               <ImageCarousel images={[irs_1, irs_2, irs_3]} />
 
-              {/* Installed Base — Premium Stats Strip */}
+              {/* Install Base — Premium Stats Strip */}
               <div className="w-full mt-4 relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
 
                 {/* Soft glow */}
@@ -245,7 +245,7 @@ const ASDSPage = () => {
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e] shadow-[0_0_8px_rgba(224,0,110,0.9)]"></span>
                     <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">
-                      Installed Base
+                      Install Base
                     </p>
                   </div>
 
@@ -404,7 +404,7 @@ const ASDSPage = () => {
         </section>
 
         {/* How It Works */}
-        <section className="py-14 md:py-16 px-6 bg-white overflow-hidden relative">
+        <section className="py-7 md:py-8 px-6 bg-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[radial-gradient(#e0006e_1px,transparent_1px)] bg-[size:30px_30px] opacity-[0.02]"></div>
 
           <div className="max-w-7xl mx-auto relative z-10">
@@ -452,7 +452,7 @@ const ASDSPage = () => {
         </section>
 
         {/* Built For */}
-        <section className="py-14 md:py-16 px-6 bg-white">
+        <section className="py-7 md:py-8 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <SectionTitle>Built For</SectionTitle>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -474,13 +474,13 @@ const ASDSPage = () => {
         </section>
 
         {/* Outcomes Strip */}
-        <section className="py-12 md:py-14 px-6 bg-white">
+        <section className="py-4 md:py-2 px-6 bg-white">
           <SectionTitle>Outcomes</SectionTitle>
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { label: "of prep events logged", value: "100%", sub: "No manual logbooks" },
-                { label: "in dilution strength", value: "0 variation", sub: "Solvents-locked" },
+                { label: "in dilution strength", value: "0 Variation", sub: "Solvents-locked" },
                 { label: "on stock concentrate", value: "Savings", sub: "On-demand prep" },
               ].map((stat, i) => (
                 <div key={i} className="text-center space-y-4 p-12 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-500">

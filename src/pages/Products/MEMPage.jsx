@@ -337,7 +337,7 @@ const features = [
           <div className="relative animate-fade-in-right mt-16  animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
             <ImageCarousel images={[img_3, img_1, img_2]} />
 
-            {/* Installed Base — Premium Stats Strip */}
+            {/* Install Base — Premium Stats Strip */}
             <div className="w-full mt-4 relative rounded-2xl overflow-hidden border border-white/10 bg-[#161622]/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
               {/* Soft glow */}
               <div className="absolute inset-0 pointer-events-none">
@@ -347,7 +347,7 @@ const features = [
               <div className="relative flex items-center justify-between px-5 py-2 border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#e0006e] shadow-[0_0_8px_rgba(224,0,110,0.9)]"></span>
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Installed Base</p>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[#e0006e] font-black">Install Base</p>
                 </div>
                 <span className="hidden sm:inline-flex text-[9px] uppercase tracking-widest text-gray-400 font-bold">Validated</span>
               </div>
@@ -355,7 +355,7 @@ const features = [
               <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
                 {[
                   {
-                    value: "10+", label: "Units Deployed", icon: (
+                    value: "Pilot",label: "Trials in Progress", icon: (
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                     )
                   },
@@ -549,7 +549,7 @@ const features = [
       </section>
 
       {/* SECTION 5 — KEY FEATURES */}
-      <section className="py-14 md:py-16 px-6 bg-white">
+      <section className="py-7 md:py-8 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Key Features</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
@@ -572,7 +572,7 @@ const features = [
       </section>
 
       {/* SECTION 6 — BUILT FOR */}
-      <section className="py-14 md:py-16 px-6 bg-white">
+      <section className="py-7 md:py-8 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle>Built For</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -592,7 +592,7 @@ const features = [
       </section>
 
       {/* SECTION 7 — OUTCOMES */}
-      <section className="py-12 md:py-14 px-6 bg-white">
+      <section className="py-6 md:py-7 px-6 bg-white">
         <SectionTitle>Outcomes</SectionTitle>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
