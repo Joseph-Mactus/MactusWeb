@@ -85,7 +85,7 @@ const SACSPage = () => {
     { question: "Can it enforce gowning qualification?", answer: "Absolutely. SACS  can be configured to connect to your gowning qualification master list, and only qualified operators will be permitted to enter the aseptic area." },
     { question: "Does it verify training?", answer: "Yes, SACS integrates with your training master list to ensure that an operator's certifications for that specific area are current before allowing entry." },
     { question: "What does deployment look like?", answer: "Deployment is a turnkey process including hardware installation, software configuration, and full IQ/OQ/PQ validation to ensure compliance with your site requirements." },
-    { question: "Which customers use SACS?", answer: "SACS is trusted by leading sterile injectable plants, vaccine manufacturers, and API facilities across India and globally to maintain audit readiness." },
+    { question: "Which customers use SACS?", answer: "SACS is trusted by leading sterile injectable plants, vaccine manufacturers." },
   ];
 
   return (
@@ -304,7 +304,7 @@ Each entry is verified, time-stamped, and audit-ready.
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 text-lg leading-relaxed">
-                SACS is a smart access control system that replaces paper entry-exit logbooks with automated, 21 CFR Part 11 compliant digital access management. The system verifies operator identity, training status, and gowning qualification before granting cleanroom entry.
+SACS stands for Smart Access Control System. It replaces paper-based entry and exit logbooks with an automated, 21 CFR Part 11-compliant digital access management solution. The system verifies an operator's identity, training status, and gowning qualification before granting access to the cleanroom.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Every entry event is electronically recorded with biometric authentication, time-stamps, and electronic signatures. The audit trail is built in real-time, eliminating paper-based compliance risks and providing instant export for regulatory inspections.

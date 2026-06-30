@@ -21,7 +21,7 @@ const ZohoFormModal = ({
 
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-          <h3 className="text-xl font-black text-gray-900">{title}</h3>
+          <h1 className="text-xl font-bold text-[#e0006e]">{title}</h1>
           <button
             onClick={(e) => { e.stopPropagation(); onClose(); }}
             className="p-2 text-gray-400 hover:text-[#e0006e] hover:bg-[#e0006e]/10 rounded-full transition-colors"
