@@ -645,7 +645,7 @@ const IIoT = () => {
               Talk to the engineers who'll architect the IIoT layer over your existing plant, <span className="text-[#e0006e]">not propose a rip-and-replace.</span>
             </h2>
             
-            <a href="/contact-us/" className="mt-4 bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
+            <a href="/contact-us/" className="mt-4 bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-5 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl flex items-center gap-3 whitespace-nowrap">
               Request an IIoT Assessment &rarr;
             </a>
           </div>

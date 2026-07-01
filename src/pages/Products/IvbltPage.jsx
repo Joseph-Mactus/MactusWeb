@@ -275,7 +275,6 @@ const IVBLTPage = () => {
               <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
 
                 {/* Left Magenta Line */}
-                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
 
                 {/* Product Name */}
                 <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">

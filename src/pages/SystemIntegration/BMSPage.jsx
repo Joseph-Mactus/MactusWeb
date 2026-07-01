@@ -56,13 +56,13 @@ const BMSPage = () => {
       label: "Pharmaceutical Manufacturing",
       subtitle: "GMP HVAC and cleanroom utilities control",
     },
-    
+
     {
       icon: <FaIndustry />,
       label: "Industrial Plants",
       subtitle: "Process facilities, compressor farms, utility blocks",
     },
-    
+
     {
       icon: <FaSnowflake />,
       label: "Cold-Chain & Controlled Storage",
@@ -201,7 +201,7 @@ const BMSPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-80">
-Mactus Automation delivers intelligent BMS solutions for centralized monitoring and control of HVAC, utilities, energy, and critical infrastructure. Designed for pharmaceutical, healthcare, and food processing facilities, our systems improve efficiency, reliability, and facility visibility.            </p>
+              Mactus Automation delivers intelligent BMS solutions for centralized monitoring and control of HVAC, utilities, energy, and critical infrastructure. Designed for pharmaceutical, healthcare, and food processing facilities, our systems improve efficiency, reliability, and facility visibility.            </p>
 
             <div className="flex flex-row items-center gap-4 pt-2 flex-wrap sm:flex-nowrap">
               <a href="/contact-us/" className="px-7 py-4 bg-[#e0006e] text-white font-extrabold rounded-xl shadow-[0_10px_25px_rgba(224,0,110,0.2)] hover:shadow-[0_15px_35px_rgba(224,0,110,0.3)] hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-2 whitespace-nowrap">
@@ -233,9 +233,9 @@ Mactus Automation delivers intelligent BMS solutions for centralized monitoring 
           </SectionTitle>
           <div className="max-w-4xl mx-auto space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
             <p>
-Modern facilities require intelligent systems that ensure reliability, energy efficiency, and uninterrupted operation. Mactus provides integrated BMS solutions that unify HVAC systems, utilities, fire alarm systems, energy meters, access control, and security infrastructure into a single platform, enabling real-time monitoring and control.</p>
+              Modern facilities require intelligent systems that ensure reliability, energy efficiency, and uninterrupted operation. Mactus provides integrated BMS solutions that unify HVAC systems, utilities, fire alarm systems, energy meters, access control, and security infrastructure into a single platform, enabling real-time monitoring and control.</p>
             <p>
-Our solutions are engineered to deliver operational excellence, improved energy performance, and long-term scalability while ensuring seamless integration with existing infrastructure.</p>
+              Our solutions are engineered to deliver operational excellence, improved energy performance, and long-term scalability while ensuring seamless integration with existing infrastructure.</p>
           </div>
         </div>
       </section>
@@ -306,7 +306,7 @@ Our solutions are engineered to deliver operational excellence, improved energy 
           <SectionTitle eyebrow="HARDWARE">The BMS Control Panel</SectionTitle>
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
             {/* Image */}
-            
+
 
             {/* Text */}
             <div className="max-w-4xl mx-auto space-y-6 text-gray-600 text-lg leading-relaxed font-medium">

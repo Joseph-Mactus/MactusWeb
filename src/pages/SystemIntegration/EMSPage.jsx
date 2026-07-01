@@ -292,37 +292,25 @@ const features = [
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
-
-              <div className="overflow-hidden">
-                <span
-                  className="animate-reveal-up block"
-                  style={{ animationDelay: '0.1s' }}
-                >
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>
                   Proof that your
                 </span>
-              </div>
-
-              <div className="overflow-hidden -mt-2">
-                <span
-                  className="animate-reveal-up block text-[#e0006e]"
-                  style={{ animationDelay: '0.2s' }}
-                >
-                  Cleanroom parameters were recorded.Every
+              </span>
+              <span className="animate-reveal-up block text-[#e0006e]" style={{ animationDelay: '0.15s' }}>
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>
+                  Cleanroom parameters
                 </span>
-              </div>
-
-              <div className="overflow-hidden -mt-2">
-                <span
-                  className="animate-reveal-up block  font-black"
-                  style={{ animationDelay: '0.3s' }}
-                >
-                   minute. Every room.
+              </span>
+              <span className="overflow-hidden inline-block py-1 w-full">
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.3s' }}>
+                  were recorded.
                 </span>
-              </div>
-
+              </span>
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[540px] font-medium opacity-80">
+              <strong className="text-white block mb-2 font-extrabold tracking-wide uppercase text-sm">Every minute. Every room.</strong>
               Mactus EMS continuously monitors temperature, relative humidity, and differential pressure across your pharmaceutical facility — with GMP-approved sensors, immutable data logging, local and centralized alarms, and audit-ready reports that stand up to USFDA and MHRA inspection.
             </p>
 

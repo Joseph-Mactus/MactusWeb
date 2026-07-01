@@ -139,18 +139,17 @@ const SACSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] pb-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start relative z-10 w-full">
           <div className="space-y-6 animate-fade-in-left">
             <div className="w-full max-w-[760px]">
               <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
 
                 {/* Left Magenta Line */}
-                <span className="block w-6 md:w-13 h-[2px] bg-[#e0006e] flex-shrink-0 animate-line-extend"></span>
 
                 {/* Product Name */}
                 <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
@@ -197,7 +196,7 @@ const SACSPage = () => {
             </div>
           </div>
 
-          <div className="relative mt-16 animate-fade-in-right animate-float">
+          <div className="relative animate-fade-in-right animate-float">
             <ImageCarousel images={[sacs_1, sacs_2, sacs_3]} />
 
             {/* Install Base — Premium Stats Strip */}
@@ -387,15 +386,45 @@ Each entry is verified, time-stamped, and audit-ready.
                   </div>
                 </div>
 
-                <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-white">
-                  <iframe
-                    className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
-                    src="https://www.youtube.com/embed/3Xj6dzZFoqQ?rel=0&modestbranding=1&controls=1"
-                    title="SACS System Workflow"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+                <div className="w-full max-w-4xl mx-auto px-4">
+  {/* Desktop iframe */}
+  <div className="hidden sm:block relative w-full aspect-video bg-black rounded-2xl overflow-hidden">
+    <iframe
+      className="absolute inset-0 w-full h-full"
+      src="https://www.youtube-nocookie.com/embed/3Xj6dzZFoqQ?rel=0&playsinline=1"
+      title="SACS System Workflow"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+      allowFullScreen
+      referrerPolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+
+  {/* Mobile fallback */}
+  <a
+    href="https://www.youtube.com/watch?v=3Xj6dzZFoqQ"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="sm:hidden relative block w-full h-[260px] bg-black rounded-2xl overflow-hidden"
+  >
+    <img
+      src="https://img.youtube.com/vi/3Xj6dzZFoqQ/hqdefault.jpg"
+      alt="SACS System Workflow"
+      className="w-full h-full object-cover opacity-80"
+    />
+
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-full bg-[#e0006e] flex items-center justify-center shadow-[0_0_30px_rgba(224,0,110,0.6)]">
+        <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    </div>
+
+    <p className="absolute bottom-4 left-4 right-4 text-white text-sm font-bold">
+      Tap to watch video
+    </p>
+  </a>
+</div>
               </div>
             </div>
           </div>

@@ -253,22 +253,16 @@ const LowVoltageSystems = () => {
 
               {/* Heading */}
               <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
-                <div className="overflow-hidden">
-                  <span
-                    className="animate-reveal-up block"
-                    style={{ animationDelay: '0.1s' }}
-                  >
-                    Safety Security
+                <span className="overflow-hidden inline-block py-1 w-full">
+                  <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>
+                    Safety, Security &
                   </span>
-                </div>
-                <div className="overflow-hidden -mt-2">
-                  <span
-                    className="animate-reveal-up block text-[#e0006e]"
-                    style={{ animationDelay: '0.2s' }}
-                  >
-                    Smart Infrastructure.
+                </span>
+                <span className="animate-reveal-up block text-[#e0006e]" style={{ animationDelay: '0.15s' }}>
+                  <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>
+                    Smart Infrastructure
                   </span>
-                </div>
+                </span>
               </h1>
 
               {/* Intro */}
@@ -301,48 +295,61 @@ const LowVoltageSystems = () => {
             Eight integrated safety and security disciplines, deployed as a cohesive infrastructure suite for regulated manufacturing and industrial environments.
           </p>
 
-          <div className="grid px-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7">
-            {systems.map((sys, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-[2rem] border border-gray-100 card-hover group overflow-hidden flex flex-col"
-              >
-                {/* System image */}
-                <div className="w-50% h-50 overflow-hidden flex-shrink-0">
-                  <img
-                    src={sys.image}
-                    alt={sys.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
+              {systems.map((sys, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-[1.5rem] sm:rounded-[2rem] border border-gray-100 card-hover group overflow-hidden flex flex-col"
+                >
+                  {/* System image */}
+                  <div className="w-full h-48 sm:h-56 md:h-60 overflow-hidden flex-shrink-0">
+                    <img
+                      src={sys.image}
+                      alt={sys.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
 
-                {/* Card body */}
-                <div className="flex gap-6 p-8 flex-1">
-                  {/* Icon block */}
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#e0006e] transition-all duration-500">
-                      <svg className="w-7 h-7 text-[#e0006e] group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={sys.icon} />
-                      </svg>
+                  {/* Card body */}
+                  <div className="flex gap-4 sm:gap-6 p-5 sm:p-8 flex-1">
+                    {/* Icon block */}
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#e0006e]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#e0006e] transition-all duration-500">
+                        <svg
+                          className="w-6 h-6 sm:w-7 sm:h-7 text-[#e0006e] group-hover:text-white transition-colors duration-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.8}
+                            d={sys.icon}
+                          />
+                        </svg>
+                      </div>
+
+                      <p className="text-center text-[10px] font-black text-gray-300 tracking-widest mt-2">
+                        {String(i + 1).padStart(2, "0")}
+                      </p>
                     </div>
-                    {/* System number */}
-                    <p className="text-center text-[10px] font-black text-gray-300 tracking-widest mt-2">
-                      {String(i + 1).padStart(2, '0')}
-                    </p>
-                  </div>
 
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-black text-lg text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors duration-300 leading-tight">
-                      {sys.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">
-                      {sys.desc}
-                    </p>
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-black text-lg sm:text-xl text-gray-900 mb-3 group-hover:text-[#e0006e] transition-colors duration-300 leading-tight">
+                        {sys.title}
+                      </h3>
+
+                      <p className="text-gray-500 text-sm sm:text-[15px] leading-relaxed font-medium">
+                        {sys.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -404,7 +411,25 @@ const LowVoltageSystems = () => {
           </div>
         </div>
       </section>
-
+{/* SECTION 10 — PRE-FOOTER CTA */}
+      <section className="py-12 md:py-14 px-6 bg-white">
+        <div className="max-w-7xl mx-auto bg-[#25252B] rounded-[3rem] overflow-hidden relative group shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e0006e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+          <div className="relative z-10 py-12 px-6 md:px-14 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div className="max-w-xl space-y-4">
+              <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
+                Your safety and security systems shouldn't operate in silos.{' '}
+                <span className="text-[#e0006e]">Let's integrate them.</span>
+              </h2>
+            </div>
+            <a href="/contact-us/" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-5 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap">
+              Request a Consultation
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );
