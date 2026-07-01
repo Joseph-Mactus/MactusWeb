@@ -540,7 +540,7 @@ const features = [
                 <span className="text-[#e0006e]">EMS makes sure you can prove it.</span>
               </h2>
             </div>
-            <a href="/contact-us/" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap">
+            <a href="/contact-us/" className="bg-[#e0006e] hover:bg-[#ff1a8c] text-white px-5 py-5 rounded-2xl font-black tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap">
               Request a Consultation
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>

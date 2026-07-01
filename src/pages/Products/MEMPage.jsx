@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
+import ComparisonTable from '../../components/ComparisonTable';
 
 import img_1 from '../../assets/images/Complianceproducts/MPATS/mem_1.jpeg';
 import img_2 from '../../assets/images/Complianceproducts/MPATS/mem_2.jpeg';
@@ -403,35 +404,17 @@ const features = [
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
-                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Spreadsheet / Paper</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">MPATS</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {
-                  [
-                    ["Sampling point mismatch", "Manual location entry", "QR-linked sampling location"],
-                    ["Plate exposure timing gap", "Manual time recording", "Auto time-stamped exposure"],
-                    ["Sampling schedule miss", "Checklist dependency", "Digital sampling workflow"],
-                    ["Location traceability gap", "Manual area selection", "Area-wise QR traceability"],
-                    ["Excursion investigation delay", "Paper-based review", "Instant deviation evidence"],
-                    ["Sample reconciliation gap", "Manual plate count check", "Digital reconciliation control"]
-                  ]
-                    .map((row, i) => (
-                      <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                        <td className="px-8 py-6 font-bold text-gray-900">{row[0]}</td>
-                        <td className="px-8 py-6 text-gray-500">{row[1]}</td>
-                        <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
-                      </tr>
-                    ))}
-              </tbody>
-            </table>
-          </div>
+          <ComparisonTable
+            headers={["The Risk", "Spreadsheet / Paper", "MPATS"]}
+            rows={[
+              ["Sampling point mismatch", "Manual location entry", "QR-linked sampling location"],
+              ["Plate exposure timing gap", "Manual time recording", "Auto time-stamped exposure"],
+              ["Sampling schedule miss", "Checklist dependency", "Digital sampling workflow"],
+              ["Location traceability gap", "Manual area selection", "Area-wise QR traceability"],
+              ["Excursion investigation delay", "Paper-based review", "Instant deviation evidence"],
+              ["Sample reconciliation gap", "Manual plate count check", "Digital reconciliation control"]
+            ]}
+          />
         </div>
       </section>
 
@@ -501,6 +484,9 @@ const features = [
                     <h3 className={`mt-6 font-black text-lg transition-colors duration-300 ${isActive ? 'text-[#e0006e]' : 'text-gray-900'}`}>
                       {stage.name}
                     </h3>
+                    <div className={`lg:hidden mt-4 text-sm text-center px-4 transition-all duration-300 ${isActive ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+                      <p className="text-gray-600 font-medium">{stage.detail}</p>
+                    </div>
                   </div>
                 );
               })}
@@ -511,7 +497,7 @@ const features = [
           <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
             {/* Active Detail Panel */}
-            <div className="lg:w-1/2 bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-100 shadow-inner relative overflow-hidden min-h-[300px] flex items-center justify-center text-center">
+            <div className="hidden lg:flex lg:w-1/2 bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-100 shadow-inner relative overflow-hidden min-h-[300px] items-center justify-center text-center">
               {lifecycleStages.map((stage) => (
                 <div
                   key={stage.id}

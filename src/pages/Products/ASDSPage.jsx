@@ -7,6 +7,7 @@ import irs_1 from '../../assets/images/Complianceproducts/ASDS/asds_1.png';
 import irs_2 from '../../assets/images/Complianceproducts/ASDS/asds_2.png';
 import irs_3 from '../../assets/images/Complianceproducts/ASDS/asds_3.png';
 import Brochure from '../../assets/Brochurs/MAPL_ASDS_BrochureV1-compressed.pdf';
+import ComparisonTable from '../../components/ComparisonTable';
 const SectionTitle = ({ children }) => (
   <div className="flex justify-center w-full mb-5 mt-2">
     <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
@@ -322,33 +323,41 @@ const ASDSPage = () => {
             </p>
           </div>
 
-            <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
-                    <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Manual Prep</th>
-                    <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">ASDS</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    [" Wrong dilution strength", "Prone to operator error and visual estimation", "Accurate, recipe-driven dispensing "],
-                    ["Cross-shift inconsistency", "Operator-dependent", "Locked recipes ensure repeatability"],
-                    ["Chemical wastage ", "Over-preparation and disposal", "On-demand preparation minimizes waste "],
-                    ["Reconciliation", "Manual calculations and paper records", "Automatically logged and traceable"],
-                    ["Audit trail", "Paper-based logbooks", "Electronic records with 21 CFR Part 11 compliance"],
-                    ["Traceability", "Difficult to verify preparation history", "Complete operator, recipe, and dispense traceability"]
-                  ].map((row, i) => (
-                    <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                      <td className="px-8 py-6 font-bold text-gray-900 bg-white">{row[0]}</td>
-                      <td className="px-8 py-6 text-gray-500 bg-white">{row[1]}</td>
-                      <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+           <ComparisonTable
+  headers={["The Risk", "Manual Prep", "ASDS"]}
+  rows={[
+    [
+      "Wrong dilution strength",
+      "Prone to operator error and visual estimation",
+      "Accurate, recipe-driven dispensing",
+    ],
+    [
+      "Cross-shift inconsistency",
+      "Operator-dependent",
+      "Locked recipes ensure repeatability",
+    ],
+    [
+      "Chemical wastage",
+      "Over-preparation and disposal",
+      "On-demand preparation minimizes waste",
+    ],
+    [
+      "Reconciliation",
+      "Manual calculations and paper records",
+      "Automatically logged and traceable",
+    ],
+    [
+      "Audit trail",
+      "Paper-based logbooks",
+      "Electronic records with 21 CFR Part 11 compliance",
+    ],
+    [
+      "Traceability",
+      "Difficult to verify preparation history",
+      "Complete operator, recipe, and dispense traceability",
+    ],
+  ]}
+/>
           </div>
         </section>
 

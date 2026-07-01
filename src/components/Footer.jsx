@@ -98,7 +98,7 @@ export default function Footer() {
       <div className="bg-[#262626] pt-8 pb-6 px-6 sm:px-8">
 
         {/* Footer Top */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-[1150px]:grid-cols-[1.6fr_1.2fr_0.9fr_0.8fr_0.9fr_1.5fr] gap-x-10 gap-y-12 items-start">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 min-[1150px]:grid-cols-[1.6fr_1.2fr_0.9fr_0.8fr_0.9fr_1.5fr] gap-x-10 gap-y-12 items-start">
 
           {FOOTER_COLS.map((col, idx) => (
             <div key={idx} className="min-w-0">

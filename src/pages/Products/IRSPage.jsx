@@ -9,6 +9,7 @@ import irs_2 from '../../assets/images/Complianceproducts/IRS/IRS2.png';
 import irs_3 from '../../assets/images/Complianceproducts/IRS/IRS3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_InterverntionRecordingSystemBrochureV1.pdf';
+import ComparisonTable from '../../components/ComparisonTable';
 
 const SectionTitle = ({ children }) => (
   <div className="flex justify-center w-full mb-5 mt-2">
@@ -71,7 +72,7 @@ const IRSPage = () => {
     desc: "IRS links the intervention to the operator, active batch, area, and process stage."
   },
   {
-    title: "JUSTIFY",
+    title: "DOCUMENT",
     desc: "Operator selects the intervention reason from a pre-approved list, such as stopper jam or vial adjustment."
   },
   {
@@ -179,7 +180,7 @@ const IRSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] py-0  pb-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
@@ -299,37 +300,46 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
 
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-             In sterile areas, every intervention must be justified, documented, and traceable. <span className="text-[#e0006e]">IRS replaces manual cleanroom logs with automated sensor-based recording.</span>
-             Each intervention is detected, time-stamped, operator-linked, and audit-ready.
+             In sterile manufacturing, every intervention must be justified, documented, and fully traceable. <span className="text-[#e0006e]">IRS replaces manual batch recording with automated, sensor-driven intervention tracking.</span>
+             Every intervention is automatically detected, time-stamped, linked to the operator, and recorded in an audit-ready format—improving compliance, data integrity, and operational efficiency.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
-                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper / Manual</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">IRS</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {[
-                  ["Missed intervention", "Manual log dependency", "Automatic event capture"],
-                  ["Duration mismatch", "Manual time entry", "Time-stamped duration record"],
-                  ["Frequent interventions", "Hard to monitor live", "Batch-wise limit alerts"],
-                  ["Operator traceability gap", "Manual signature only", "User-linked e-sign record"],
-                  ["Batch review delay", "Spreadsheet-based analysis", "Instant PQR/APR insights"],
-                ].map((row, i) => (
-                  <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="px-8 py-6 font-bold text-gray-900 bg-white">{row[0]}</td>
-                    <td className="px-8 py-6 text-gray-500 bg-white">{row[1]}</td>
-                    <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ComparisonTable
+  headers={["The Risk", "Paper / Manual", "IRS"]}
+  rows={[
+    [
+      "Data Entry Errors",
+      "Prone to manual errors.",
+      "Automated recording ensures accuracy.",
+    ],
+    [
+      "Compliance Risk",
+      "Incomplete or missing records.",
+      "Automatic, real-time recording.",
+    ],
+    [
+      "Uncontrolled Interventions",
+      "Difficult to detect deviations.",
+      "Detects and records every intervention.",
+    ],
+    [
+      "Real-Time Visibility",
+      "No live monitoring.",
+      "Live monitoring with real-time visibility.",
+    ],
+    [
+      "Batch Review & Traceability",
+      "Slow review with limited traceability.",
+      "Faster review with complete traceability.",
+    ],
+    [
+      "Analytics & Trends",
+      "No automated analytics or trend tracking.",
+      "Built-in dashboards with intervention analytics and trend reports.",
+    ],
+  ]}
+/>
         </div>
       </section>
 
@@ -341,7 +351,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 text-lg leading-relaxed">
-                IRS is an automated intervention recording system that uses non-contact sensors to detect glove port access and door open/close events in aseptic manufacturing areas. The system automatically links each intervention to the operator, active batch, and process stage.
+                IRS is an automated intervention recording system that uses non-contact sensors to detect glove port access and door open/close events in Aseptic filling machine . The system automatically links each intervention to the operator, active batch, and process stage.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Every intervention is electronically recorded with time-stamps, electronic signatures,. The audit trail is built in real-time, eliminating paper-based compliance risks and providing instant PQR/APR insights.

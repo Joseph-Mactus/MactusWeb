@@ -9,6 +9,7 @@ import sacs_2 from '../../assets/images/Complianceproducts/SACS/sacs_1.png';
 import sacs_3 from '../../assets/images/Complianceproducts/SACS/sacs_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_SmartAccessControlSystemBrochureV1.pdf';
+import ComparisonTable from '../../components/ComparisonTable';
 const SectionTitle = ({ children }) => (
   <div className="flex justify-center w-full mb-5 mt-2">
     <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
@@ -138,7 +139,7 @@ const SACSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] py-5 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
@@ -266,33 +267,41 @@ Each entry is verified, time-stamped, and audit-ready.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
-                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Paper Logbook</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">SACS</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {[
-                  ["Unqualified operator enters controlled area", "Manual verification is difficult and often missed", "Role-based qualified access lock"],
-                  ["Gowning / training not verified", "Depends on operator declaration or supervisor check", "Digital qualification verification before entry"],
-                  ["Tailgate entry into cleanroom", "Cannot be captured in paper records", "Sensor-based tailgate detection and alert"],
-                  ["Audit trail not compliant", "Paper records may be incomplete, illegible, or delayed", "Time-stamped 21 CFR Part 11-ready audit report"],
-                  ["Area occupancy limit exceeded", "Real-time headcount is hard to monitor", "Live occupancy monitoring with access restriction"],
-                  ["Operator stays beyond allowed duration", "Entry and exit duration is manually calculated", "Zone-wise duration tracking with alerts"],
-                ].map((row, i) => (
-                  <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="px-8 py-6 font-bold text-gray-900 bg-white">{row[0]}</td>
-                    <td className="px-8 py-6 text-gray-500 bg-white">{row[1]}</td>
-                    <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ComparisonTable
+  headers={["The Risk", "Paper Logbook", "SACS"]}
+  rows={[
+    [
+      "Unqualified operator enters controlled area",
+      "Manual verification is difficult and often missed",
+      "Role-based qualified access lock",
+    ],
+    [
+      "Gowning / training not verified",
+      "Depends on operator declaration or supervisor check",
+      "Digital qualification verification before entry",
+    ],
+    [
+      "Tailgate entry into cleanroom",
+      "Cannot be captured in paper records",
+      "Sensor-based tailgate detection and alert",
+    ],
+    [
+      "Audit trail not compliant",
+      "Paper records may be incomplete, illegible, or delayed",
+      "Time-stamped 21 CFR Part 11-ready audit report",
+    ],
+    [
+      "Area occupancy limit exceeded",
+      "Real-time headcount is hard to monitor",
+      "Live occupancy monitoring with access restriction",
+    ],
+    [
+      "Operator stays beyond allowed duration",
+      "Entry and exit duration is manually calculated",
+      "Zone-wise duration tracking with alerts",
+    ],
+  ]}
+/>
         </div>
       </section>
 

@@ -7,6 +7,7 @@ import ivblt_1 from '../../assets/images/ivblt_1.png';
 import ivblt_2 from '../../assets/images/ivblt_2.png';
 import ivblt_3 from '../../assets/images/ivblt_3.png';
 import {FaSyringe,FaPills,FaDna,FaHospital,FaGlobe,FaMicroscope,} from "react-icons/fa";
+import ComparisonTable from '../../components/ComparisonTable';
 
 // ─── Section Title ────────────────────────────────────────────────────────────
 
@@ -368,47 +369,58 @@ const IVBLTPage = () => {
       </section>
 
       {/* ── SECTION 2 — THE PROBLEM WE SOLVE ────────────────────────────────── */}
-      <section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
-        <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why IVBLT</p>
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle s eyebrow="WHY IVBLT">Manual leak inspection misses what the eye can't see.</SectionTitle>
+     {/* ── SECTION 2 — THE PROBLEM WE SOLVE ────────────────────────────────── */}
+<section className="py-12 md:py-14 px-6 bg-white border-b border-gray-100">
+  <div className="max-w-6xl mx-auto">
+    <SectionTitle eyebrow="WHY IVBLT">
+      Manual leak inspection misses what the eye can't see.
+    </SectionTitle>
 
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-              Intravenous bags must remain sterile and leak-free. Even a tiny pinhole can cause microbial ingress, oxygen ingress, and loss of sterility assurance.
+    <div className="max-w-3xl mx-auto text-center mb-12">
+      <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
+        Intravenous bags must remain sterile and leak-free. Even a tiny pinhole
+        can cause microbial ingress, oxygen ingress, and loss of sterility
+        assurance.
+      </p>
 
- <span className="text-[#e0006e]">VBLT replaces manual squeeze testing with precision pressure-based leak detection — every bag, every time.</span>
-            </p>
-          </div>
+      <p className="text-[#e0006e] text-xl font-bold leading-relaxed">
+        IVBLT replaces manual squeeze testing with precision pressure-based leak
+        detection — every bag, every time.
+      </p>
+    </div>
 
-          <div className="overflow-x-auto rounded-[2.5rem] border border-gray-100 shadow-sm mx-auto max-w-5xl">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">The Risk</th>
-                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">Manual / Visual Inspection</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">IVBLT</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {[
-                  ["Pinhole detection", "Misses defects < 0.2mm", "High-sensitivity pressure detection"],
-                  ["Consistency between operators", "Operator-dependent squeeze force", "Constant, size-adjusted pressure — every bag"],
-                  ["Batch reconciliation", "Manual count, prone to error", "Automated bag status reconciliation"],
-                  ["Test records", "Paper logbook", "Electronic, 21 CFR Part 11 audit trail"],
-                  ["Regulatory defensibility", '"We visually inspected each bag"', '"Every bag pressure-tested — result on record"'],
-                ].map((row, i) => (
-                  <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="px-8 py-6 font-bold text-gray-900 bg-white">{row[0]}</td>
-                    <td className="px-8 py-6 text-gray-500 bg-white">{row[1]}</td>
-                    <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors">{row[2]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+    <ComparisonTable
+      headers={["The Risk", "Manual / Visual Inspection", "IVBLT"]}
+      rows={[
+        [
+          "Pinhole detection",
+          "Misses defects < 0.2mm",
+          "High-sensitivity pressure detection",
+        ],
+        [
+          "Consistency between operators",
+          "Operator-dependent squeeze force",
+          "Constant, size-adjusted pressure — every bag",
+        ],
+        [
+          "Batch reconciliation",
+          "Manual count, prone to error",
+          "Automated bag status reconciliation",
+        ],
+        [
+          "Test records",
+          "Paper logbook",
+          "Electronic, 21 CFR Part 11 audit trail",
+        ],
+        [
+          "Regulatory defensibility",
+          '"We visually inspected each bag"',
+          '"Every bag pressure-tested — result on record"',
+        ],
+      ]}
+    />
+  </div>
+</section>
 
       {/* ── SECTION 3 — WHAT IVBLT IS ────────────────────────────────────────── */}
       <section className="py-14 md:py-16 px-6 bg-[#fafafa] border-y border-gray-100">
