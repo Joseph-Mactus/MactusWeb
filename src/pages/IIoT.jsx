@@ -413,15 +413,49 @@ const IIoT = () => {
                   </div>
                 </div>
 
-                <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-black">
-                  <iframe 
-                    className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
-                    src="https://www.youtube.com/embed/0kozktJpyII?rel=0&modestbranding=1&controls=1&start=7" 
-                    title="IIoT System Workflow"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
-                </div>
+                <div className="w-full max-w-4xl mx-auto px-4">
+  {/* Desktop / Tablet iframe */}
+  <div className="hidden sm:block relative w-full aspect-video bg-black rounded-b-xl overflow-hidden">
+    <iframe
+      className="absolute inset-0 w-full h-full rounded-b-xl"
+      src="https://www.youtube-nocookie.com/embed/0kozktJpyII?rel=0&modestbranding=1&controls=1&start=7&playsinline=1"
+      title="IIoT System Workflow"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+      allowFullScreen
+      referrerPolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+
+  {/* Mobile fallback */}
+  <a
+    href="https://www.youtube.com/watch?v=0kozktJpyII&t=7s"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="sm:hidden relative block w-full h-[260px] bg-black rounded-b-xl overflow-hidden"
+  >
+    <img
+      src="https://img.youtube.com/vi/0kozktJpyII/hqdefault.jpg"
+      alt="IIoT System Workflow"
+      className="w-full h-full object-cover opacity-80"
+    />
+
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-full bg-[#e0006e] flex items-center justify-center shadow-[0_0_30px_rgba(224,0,110,0.6)]">
+        <svg
+          className="w-8 h-8 text-white ml-1"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    </div>
+
+    <p className="absolute bottom-4 left-4 right-4 text-white text-sm font-bold">
+      Tap to watch video
+    </p>
+  </a>
+</div>
               </div>
             </div>
           </div>
