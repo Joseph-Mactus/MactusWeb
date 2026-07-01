@@ -139,14 +139,14 @@ const SACSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] pb-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         {/* Decorative Grid Background (from Home.jsx) */}
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
-          <div className="space-y-14 animate-fade-in-left">
-            <div className="w-full mb-12 max-w-[760px]">
+          <div className="space-y-6 animate-fade-in-left">
+            <div className="w-full max-w-[760px]">
               <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
 
                 {/* Left Magenta Line */}

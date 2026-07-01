@@ -104,7 +104,7 @@ const ContactUs = () => {
                     </p>
 
                     {/* Quick-contact chips */}
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2">
                         {[
                             {
                                 icon: <FaPhoneAlt />,

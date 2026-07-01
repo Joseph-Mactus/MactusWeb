@@ -94,38 +94,38 @@ const MEMPage = () => {
       detail: "Plate disposed or archived. Final status locked. Batch-level reconciliation report auto-generated — all plates accounted for."
     }
   ];
-const features = [
-  {
-    title: "QR Plate Identity",
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>,
-    desc: "Every media plate is assigned a unique QR identity for complete tracking from inventory to final disposition."
-  },
-  {
-    title: "Lifecycle Traceability",
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
-    desc: "Track each plate across inventory, exposure, incubation, reading, reconciliation, and disposal."
-  },
-  {
-    title: "Smart Reconciliation",
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
-    desc: "Automatically reconcile issued, exposed, incubated, read, and discarded plates with missing-plate alerts."
-  },
-  {
-    title: "Guided CFU Reading",
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>,
-    desc: "Capture CFU results through guided entry with microbiologist-linked review and electronic signature."
-  },
-  {
-    title: "EM Trend Intelligence",
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3v18m4-14v14m4-10v10M7 13v8M3 17v4" /></svg>,
-    desc: "View location-wise, batch-wise, and grade-wise EM trends for faster investigation, APR, and PQR review."
-  },
-  {
-    title: "Audit-Ready Compliance",
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
-    desc: "Generate filtered audit reports with plate history, timestamps, user actions, e-signatures, and traceability."
-  }
-];
+  const features = [
+    {
+      title: "QR Plate Identity",
+      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>,
+      desc: "Every media plate is assigned a unique QR identity for complete tracking from inventory to final disposition."
+    },
+    {
+      title: "Lifecycle Traceability",
+      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
+      desc: "Track each plate across inventory, exposure, incubation, reading, reconciliation, and disposal."
+    },
+    {
+      title: "Smart Reconciliation",
+      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
+      desc: "Automatically reconcile issued, exposed, incubated, read, and discarded plates with missing-plate alerts."
+    },
+    {
+      title: "Guided CFU Reading",
+      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>,
+      desc: "Capture CFU results through guided entry with microbiologist-linked review and electronic signature."
+    },
+    {
+      title: "EM Trend Intelligence",
+      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3v18m4-14v14m4-10v10M7 13v8M3 17v4" /></svg>,
+      desc: "View location-wise, batch-wise, and grade-wise EM trends for faster investigation, APR, and PQR review."
+    },
+    {
+      title: "Audit-Ready Compliance",
+      icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+      desc: "Generate filtered audit reports with plate history, timestamps, user actions, e-signatures, and traceability."
+    }
+  ];
 
   const builtFor = [
     {
@@ -356,28 +356,28 @@ const features = [
               <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
                 {[
                   {
-                    value: "Pilot",label: "Trials in Progress", icon: (
+                    value: "Pilot", label: "Trials in Progress", icon: (
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                     )
                   },
-                 {
-                      value: "EU GMP Annex1 ",
-                      label: "Aligned",
-                      icon: (
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      value: "21 CFR Part 11",
-                      label: "Compliance",
-                      icon: (
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg>
-                      ),
-                    },
+                  {
+                    value: "EU GMP Annex1 ",
+                    label: "Aligned",
+                    icon: (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    value: "21 CFR Part 11",
+                    label: "Compliance",
+                    icon: (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                    ),
+                  },
                 ].map(({ value, label, icon }, i) => (
                   <div key={i} className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200">
                     <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">{icon}</span>
@@ -393,7 +393,7 @@ const features = [
 
       {/* SECTION 2 — THE PROBLEM WE SOLVE */}
       <section className="py-12 px-6 bg-white border-b border-gray-100">
-                <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why MPATS</p>
+        <p className="text-center text-[#e0006e] font-bold tracking-widest uppercase  ">Why MPATS</p>
 
         <div className="max-w-6xl mx-auto">
           <SectionTitle eyebrow="WHY MPATS">Lose one plate, lose the audit.</SectionTitle>

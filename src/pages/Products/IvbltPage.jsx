@@ -291,10 +291,10 @@ const IVBLTPage = () => {
 
             <h1 className="text-white font-black leading-[1.05] tracking-tighter flex flex-wrap gap-x-[0.3em]" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>A pinhole you can't see is a patient</span>
+                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>A pinhole you can't see is </span>
               </span>
               <span className="overflow-hidden inline-block py-1">
-                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.2s' }}> safety failure</span>
+                <span className="animate-reveal-up inline-block pr-2" style={{ animationDelay: '0.2s' }}>a patient safety failure</span>
               </span>
               <span className="overflow-hidden inline-block py-1 w-full lg:w-auto">
                 <span className="animate-reveal-up inline-block pb-1 shimmer-text font-black" style={{ animationDelay: '0.5s' }}>waiting to happen.</span>

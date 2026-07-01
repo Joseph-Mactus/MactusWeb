@@ -122,7 +122,7 @@ const CaseStudies = () => {
       </section>
 
       {/* SECTION 3 — FILTER BAR */}
-      <section className="py-8 bg-white border-b border-gray-100 sticky top-[72px] z-20 shadow-sm">
+      <section className="py-8 bg-white border-b border-gray-100  top-[72px] z-20 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-3">
             {tags.map(tag => (

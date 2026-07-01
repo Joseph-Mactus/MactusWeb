@@ -63,62 +63,62 @@ const IRSPage = () => {
   ];
 
   const steps = [
-  {
-    title: "DETECT",
-    desc: "Non-contact sensors detect glove port access and door open/close events without operator input."
-  },
-  {
-    title: "IDENTIFY",
-    desc: "IRS links the intervention to the operator, active batch, area, and process stage."
-  },
-  {
-    title: "DOCUMENT",
-    desc: "Operator selects the intervention reason from a pre-approved list, such as stopper jam or vial adjustment."
-  },
-  {
-    title: "APPROVE",
-    desc: "Critical interventions are routed to the supervisor for real-time electronic review and approval."
-  },
-  {
-    title: "RECORD",
-    desc: "Operator, reason, duration, timestamp, and approval status are stored in a 21 CFR Part 11-ready audit trail."
-  },
-];
+    {
+      title: "DETECT",
+      desc: "Non-contact sensors detect glove port access and door open/close events without operator input."
+    },
+    {
+      title: "IDENTIFY",
+      desc: "IRS links the intervention to the operator, active batch, area, and process stage."
+    },
+    {
+      title: "DOCUMENT",
+      desc: "Operator selects the intervention reason from a pre-approved list, such as stopper jam or vial adjustment."
+    },
+    {
+      title: "APPROVE",
+      desc: "Critical interventions are routed to the supervisor for real-time electronic review and approval."
+    },
+    {
+      title: "RECORD",
+      desc: "Operator, reason, duration, timestamp, and approval status are stored in a 21 CFR Part 11-ready audit trail."
+    },
+  ];
 
-  const useCases = 
-[
-  {
-    title: "Sterile Injectable Manufacturing",
-    desc: "RABS and isolator lines where every door and glove-port intervention must be recorded.",
-    icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-  },
-  {
-    title: "Aseptic Fill-Finish Lines",
-    desc: "Vial, PFS, ampoule, and cartridge lines requiring complete intervention traceability.",
-    icon: "M13 10V3L4 14h7v8l9-11h-7z"
-  },
-  {
-    title: "Biologics & Vaccine Manufacturing",
-    desc: "Critical product lines where intervention control and audit-ready records are essential.",
-    icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-  },
-  {
-    title: "Lyophilized Product Lines",
-    desc: "Loading, unloading, and process interventions captured with batch-wise traceability.",
-    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-  },
-  {
-    title: "Aseptic Process Simulation",
-    desc: "Media fill campaigns requiring accurate recording of every simulated intervention.",
-    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-  },
-  {
-    title: "Cell & Gene Therapy",
-    desc: "High-value sterile processes where zero-miss intervention documentation is critical.",
-    icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-  }
-]
-;
+  const useCases =
+    [
+      {
+        title: "Sterile Injectable Manufacturing",
+        desc: "RABS and isolator lines where every door and glove-port intervention must be recorded.",
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        title: "Aseptic Fill-Finish Lines",
+        desc: "Vial, PFS, ampoule, and cartridge lines requiring complete intervention traceability.",
+        icon: "M13 10V3L4 14h7v8l9-11h-7z"
+      },
+      {
+        title: "Biologics & Vaccine Manufacturing",
+        desc: "Critical product lines where intervention control and audit-ready records are essential.",
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
+        title: "Lyophilized Product Lines",
+        desc: "Loading, unloading, and process interventions captured with batch-wise traceability.",
+        icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+      },
+      {
+        title: "Aseptic Process Simulation",
+        desc: "Media fill campaigns requiring accurate recording of every simulated intervention.",
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      },
+      {
+        title: "Cell & Gene Therapy",
+        desc: "High-value sterile processes where zero-miss intervention documentation is critical.",
+        icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+      }
+    ]
+    ;
 
   const faqs = [
     { question: "What is IRS?", answer: "IRS (Intervention Recording System) is an automated digital solution for documenting aseptic interventions in real-time, replacing manual logbooks with a 21 CFR Part 11 compliant workflow." },
@@ -180,13 +180,13 @@ const IRSPage = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative bg-[#25252B] py-10 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
+      <section className="relative bg-[#25252B] py-0 px-6 overflow-hidden min-h-[70vh] flex items-center border-b border-white/5">
         <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#e0006e]/10 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10 w-full">
-          <div className="space-y-16 animate-fade-in-left">
-            <div className="w-full mb-12   max-w-[760px]">
+          <div className="space-y-8 animate-fade-in-left">
+            <div className="w-full max-w-[760px]">
               <div className="flex items-center gap-6 md:gap-8 lg:gap-6">
 
                 {/* Left Magenta Line */}
@@ -195,7 +195,7 @@ const IRSPage = () => {
                 {/* Product Name */}
                 <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
                   <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">I</span>ntervention{" "}
-                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">R</span>ecording{" "}
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">R</span>ecording{" "} 
                   <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
                 </h2>
 
@@ -218,7 +218,7 @@ const IRSPage = () => {
             </h1>
 
             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-IRS ensures that no critical intervention goes unnoticed. From open door events to glove-port activities, every action is captured automatically, signed electronically, and converted into a compliant digital record ready for audit review.
+              IRS ensures that no critical intervention goes unnoticed. From open door events to glove-port activities, every action is captured automatically, signed electronically, and converted into a compliant digital record ready for audit review.
             </p>
 
             <div className="flex flex-row items-center gap-4 pt-4 flex-wrap md:flex-nowrap">
@@ -237,7 +237,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
             </div>
           </div>
 
-          <div className="relative mt-16 animate-fade-in-right animate-float">
+          <div className="relative mt-0 mb-16 animate-fade-in-right animate-float">
             <ImageCarousel images={[irs_1, irs_2, irs_3]} />
 
             {/* Install Base — Premium Stats Strip */}
@@ -257,27 +257,29 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
               {/* Stats row */}
               <div className="relative grid grid-cols-3 gap-2 px-2 py-2">
                 {[
-                  { value: "30+", label: "Units Deployed", icon: (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                  )},
                   {
-                      value: "EU GMP Annex1 ",
-                      label: "Aligned",
-                      icon: (
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      value: "21 CFR Part 11",
-                      label: "Compliance",
-                      icon: (
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg>
-                      ),
-                    },
+                    value: "30+", label: "Units Deployed", icon: (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    )
+                  },
+                  {
+                    value: "EU GMP Annex1 ",
+                    label: "Aligned",
+                    icon: (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    value: "21 CFR Part 11",
+                    label: "Compliance",
+                    icon: (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                    ),
+                  },
                 ].map(({ value, label, icon }, i) => (
                   <div key={i} className="group relative flex flex-col items-center justify-center gap-1 px-2 py-2 rounded-xl border border-white/[0.07] bg-white/[0.035] hover:bg-white/[0.06] hover:border-[#e0006e]/30 transition-all duration-200">
                     <span className="text-[#e0006e]/70 group-hover:text-[#e0006e] transition-colors duration-200">{icon}</span>
@@ -300,46 +302,46 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
 
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-             In sterile manufacturing, every intervention must be justified, documented, and fully traceable. <span className="text-[#e0006e]">IRS replaces manual batch recording with automated, sensor-driven intervention tracking.</span>
-             Every intervention is automatically detected, time-stamped, linked to the operator, and recorded in an audit-ready format—improving compliance, data integrity, and operational efficiency.
+              In sterile manufacturing, every intervention must be justified, documented, and fully traceable. <span className="text-[#e0006e]">IRS replaces manual batch recording with automated, sensor-driven intervention tracking.</span>
+              Every intervention is automatically detected, time-stamped, linked to the operator, and recorded in an audit-ready format—improving compliance, data integrity, and operational efficiency.
             </p>
           </div>
 
           <ComparisonTable
-  headers={["The Risk", "Paper / Manual", "IRS"]}
-  rows={[
-    [
-      "Data Entry Errors",
-      "Prone to manual errors.",
-      "Automated recording ensures accuracy.",
-    ],
-    [
-      "Compliance Risk",
-      "Incomplete or missing records.",
-      "Automatic, real-time recording.",
-    ],
-    [
-      "Uncontrolled Interventions",
-      "Difficult to detect deviations.",
-      "Detects and records every intervention.",
-    ],
-    [
-      "Real-Time Visibility",
-      "No live monitoring.",
-      "Live monitoring with real-time visibility.",
-    ],
-    [
-      "Batch Review & Traceability",
-      "Slow review with limited traceability.",
-      "Faster review with complete traceability.",
-    ],
-    [
-      "Analytics & Trends",
-      "No automated analytics or trend tracking.",
-      "Built-in dashboards with intervention analytics and trend reports.",
-    ],
-  ]}
-/>
+            headers={["The Risk", "Paper / Manual", "IRS"]}
+            rows={[
+              [
+                "Data Entry Errors",
+                "Prone to manual errors.",
+                "Automated recording ensures accuracy.",
+              ],
+              [
+                "Compliance Risk",
+                "Incomplete or missing records.",
+                "Automatic, real-time recording.",
+              ],
+              [
+                "Uncontrolled Interventions",
+                "Difficult to detect deviations.",
+                "Detects and records every intervention.",
+              ],
+              [
+                "Real-Time Visibility",
+                "No live monitoring.",
+                "Live monitoring with real-time visibility.",
+              ],
+              [
+                "Batch Review & Traceability",
+                "Slow review with limited traceability.",
+                "Faster review with complete traceability.",
+              ],
+              [
+                "Analytics & Trends",
+                "No automated analytics or trend tracking.",
+                "Built-in dashboards with intervention analytics and trend reports.",
+              ],
+            ]}
+          />
         </div>
       </section>
 
@@ -464,7 +466,7 @@ IRS ensures that no critical intervention goes unnoticed. From open door events 
 
       {/* Outcomes */}
       <section className="py-6 md:py-2 px-6 bg-white">
-         <SectionTitle>Outcomes</SectionTitle>
+        <SectionTitle>Outcomes</SectionTitle>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
