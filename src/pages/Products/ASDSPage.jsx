@@ -166,7 +166,7 @@ const ASDSPage = () => {
                   <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
                     <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">A</span>utomated{" "}
                     <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>olution{" "}
-                    <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">D</span>ispensing{" "}<br/>
+                    <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">D</span>ispensing{" "}<br />
                     <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
                   </h2>
                 </div>
@@ -229,7 +229,7 @@ const ASDSPage = () => {
 
             </div>
 
-            <div className="relative mt-16 animate-fade-in-right animate-float">
+            <div className="relative  animate-fade-in-right animate-float">
               <ImageCarousel images={[irs_1, irs_2, irs_3]} />
 
               {/* Install Base — Premium Stats Strip */}
@@ -316,47 +316,47 @@ const ASDSPage = () => {
             <SectionTitle eyebrow="WHY ASDS">Manual cleaning solution preparation is a hidden GMP risk</SectionTitle>
 
             <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-             In pharma manufacturing, cleaning solution preparation must be accurate, consistent, and traceable. <span className="text-[#e0006e]">ASDS replaces manual dilution and paper-based reconciliation with recipe-driven automated dispensing.</span>
-            Each solution is prepared with the right concentration, right volume, and complete audit-ready traceability.
-            </p>
-          </div>
+              <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
+                In pharma manufacturing, cleaning solution preparation must be accurate, consistent, and traceable. <span className="text-[#e0006e]">ASDS replaces manual dilution and paper-based reconciliation with recipe-driven automated dispensing.</span>
+                Each solution is prepared with the right concentration, right volume, and complete audit-ready traceability.
+              </p>
+            </div>
 
-           <ComparisonTable
-  headers={["The Risk", "Manual Prep", "ASDS"]}
-  rows={[
-    [
-      "Wrong dilution strength",
-      "Prone to operator error and visual estimation",
-      "Accurate, recipe-driven dispensing",
-    ],
-    [
-      "Cross-shift inconsistency",
-      "Operator-dependent",
-      "Locked recipes ensure repeatability",
-    ],
-    [
-      "Chemical wastage",
-      "Over-preparation and disposal",
-      "On-demand preparation minimizes waste",
-    ],
-    [
-      "Reconciliation",
-      "Manual calculations and paper records",
-      "Automatically logged and traceable",
-    ],
-    [
-      "Audit trail",
-      "Paper-based logbooks",
-      "Electronic records with 21 CFR Part 11 compliance",
-    ],
-    [
-      "Traceability",
-      "Difficult to verify preparation history",
-      "Complete operator, recipe, and dispense traceability",
-    ],
-  ]}
-/>
+            <ComparisonTable
+              headers={["The Risk", "Manual Prep", "ASDS"]}
+              rows={[
+                [
+                  "Wrong dilution strength",
+                  "Prone to operator error and visual estimation",
+                  "Accurate, recipe-driven dispensing",
+                ],
+                [
+                  "Cross-shift inconsistency",
+                  "Operator-dependent",
+                  "Locked recipes ensure repeatability",
+                ],
+                [
+                  "Chemical wastage",
+                  "Over-preparation and disposal",
+                  "On-demand preparation minimizes waste",
+                ],
+                [
+                  "Reconciliation",
+                  "Manual calculations and paper records",
+                  "Automatically logged and traceable",
+                ],
+                [
+                  "Audit trail",
+                  "Paper-based logbooks",
+                  "Electronic records with 21 CFR Part 11 compliance",
+                ],
+                [
+                  "Traceability",
+                  "Difficult to verify preparation history",
+                  "Complete operator, recipe, and dispense traceability",
+                ],
+              ]}
+            />
           </div>
         </section>
 
@@ -444,14 +444,48 @@ const ASDSPage = () => {
                     </div>
                   </div>
 
-                  <div className="relative aspect-video w-full rounded-b-xl overflow-hidden bg-white">
-                    <iframe
-                      className="w-[101%] h-[101%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-b-xl scale-[1.02]"
-                      src="https://www.youtube.com/embed/6SZQT3DSDso?rel=0&modestbranding=1&controls=1"
-                      title="ASDS System Workflow"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                  <div className="w-full max-w-4xl mx-auto px-4">
+                    {/* Desktop / Tablet iframe */}
+                    <div className="hidden sm:block relative w-full aspect-video bg-black rounded-b-xl overflow-hidden">
+                      <iframe
+                        className="absolute inset-0 w-full h-full rounded-b-xl"
+                        src="https://www.youtube-nocookie.com/embed/6SZQT3DSDso?rel=0&modestbranding=1&controls=1&playsinline=1"
+                        title="ASDS System Workflow"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                        allowFullScreen
+                        referrerPolicy="strict-origin-when-cross-origin"
+                      ></iframe>
+                    </div>
+
+                    {/* Mobile fallback */}
+                    <a
+                      href="https://www.youtube.com/watch?v=6SZQT3DSDso"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="sm:hidden relative block w-full h-[260px] bg-black rounded-b-xl overflow-hidden"
+                    >
+                      <img
+                        src="https://img.youtube.com/vi/6SZQT3DSDso/maxresdefault.jpg"
+                        alt="ASDS System Workflow"
+                        className="w-full h-full object-cover opacity-80"
+                      />
+
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-[#e0006e] flex items-center justify-center shadow-[0_0_30px_rgba(224,0,110,0.6)]">
+                          <svg
+                            className="w-8 h-8 text-white ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <p className="absolute bottom-4 left-4 right-4 text-white text-sm font-bold">
+                        Tap to watch video
+                      </p>
+                    </a>
                   </div>
                 </div>
               </div>

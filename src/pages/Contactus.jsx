@@ -8,12 +8,12 @@ import { Phone } from 'lucide-react';
 const ACCENT = '#e0006e';
 
 const SectionTitle = ({ children }) => (
-  <div className="flex justify-center w-full mb-5 mt-2">
-    <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
-      {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
-    </h2>
-  </div>
+    <div className="flex justify-center w-full mb-5 mt-2">
+        <h2 className="text-center text-[#e0006e] font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight relative pb-3 inline-block">
+            {children}
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e0006e] rounded-full"></span>
+        </h2>
+    </div>
 );
 
 // ── MAIN PAGE ─────────────────────────────────────────────────────────────────
@@ -279,137 +279,169 @@ const ContactUs = () => {
                 <div className="max-w-7xl mx-auto">
                     <SectionTitle>Find Our Office</SectionTitle>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 items-stretch">
-                        {/* Address card */}
-<div className="relative overflow-hidden bg-gradient-to-br from-[#25252B] via-[#3a1830] to-[#6b1245] rounded-[2.5rem] p-10 space-y-7 flex flex-col justify-between">                            <div className="space-y-6">
-                                <div>
-                                    <p className="text-[#e0006e] font-black text-xs tracking-[0.3em] uppercase mb-1">Registered Office</p>
-                                    <h3 className="text-white font-black text-xl">Mactus Automation Pvt. Ltd.</h3>
-                                </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 items-stretch max-w-5xl max-h-3xl mx-auto">
+  {/* Address card */}
+  <div className="relative overflow-hidden bg-gradient-to-br from-[#25252B] via-[#3a1830] to-[#6b1245] rounded-[2rem] p-7 space-y-5 flex flex-col justify-between">
+    <div className="space-y-5">
+      <div>
+        <p className="text-[#e0006e] font-black text-xs tracking-[0.3em] uppercase mb-1">
+          Registered Office
+        </p>
+        <h3 className="text-white font-black text-lg">
+          Mactus Automation Pvt. Ltd.
+        </h3>
+      </div>
 
-                                <div className="space-y-4">
-                                    {/* Address */}
-                                    <div className="flex items-start gap-4">
-                                        <FaMapMarkerAlt className="text-xl mt-0.5 shrink-0 text-gray-300" />
+      <div className="space-y-3.5">
+        {/* Address */}
+        <div className="flex items-start gap-3">
+          <FaMapMarkerAlt className="text-lg mt-0.5 shrink-0 text-gray-300" />
 
-                                        <div className="text-gray-300 text-sm leading-relaxed font-medium">
-                                            #75, 1st Main, 2nd Stage,
-                                            <br />
-                                            Arekere-Mico Layout,
-                                            <br />
-                                            Bannerghatta Road,
-                                            <br />
-                                            Bangalore – 560076,
-                                            <br />
-                                            Karnataka, India
-                                        </div>
-                                    </div>
+          <div className="text-gray-300 text-sm leading-relaxed font-medium">
+            #75, 1st Main, 2nd Stage,
+            <br />
+            Arekere-Mico Layout,
+            <br />
+            Bannerghatta Road,
+            <br />
+            Bangalore – 560076,
+            <br />
+            Karnataka, India
+          </div>
+        </div>
 
-                                    {/* Phone */}
-                                    <a
-                                        href="tel:+918048909888"
-                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
-                                    >
-                                        <FaPhoneAlt className="text-xl shrink-0 " />
+        {/* Phone */}
+        <a
+          href="tel:+918048909888"
+          className="flex items-center gap-3 text-gray-300 hover:text-[#e0006e] transition-colors group"
+        >
+          <FaPhoneAlt className="text-lg shrink-0" />
 
-                                        <span className="text-sm font-bold group-hover:underline">
-                                            +91 80 4890 9888
-                                        </span>
-                                    </a>
+          <span className="text-sm font-bold group-hover:underline">
+            +91 80 4890 9888
+          </span>
+        </a>
 
-                                    {/* Mobile */}
-                                    <a
-                                        href="tel:+919986781714"
-                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
-                                    >
-                                        <FaMobileAlt className="text-xl shrink-0 " />
+        {/* Mobile */}
+        <a
+          href="tel:+919986781714"
+          className="flex items-center gap-3 text-gray-300 hover:text-[#e0006e] transition-colors group"
+        >
+          <FaMobileAlt className="text-lg shrink-0" />
 
-                                        <span className="text-sm font-bold group-hover:underline">
-                                            +91 9986781714
-                                        </span>
-                                    </a>
+          <span className="text-sm font-bold group-hover:underline">
+            +91 9986781714
+          </span>
+        </a>
 
-                                    {/* Email */}
-                                    <a
-                                        href="mailto:contact@mactus.in"
-                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
-                                    >
-                                        <FaEnvelope className="text-xl shrink-0 " />
+        {/* Email */}
+        <a
+          href="mailto:contact@mactus.in"
+          className="flex items-center gap-3 text-gray-300 hover:text-[#e0006e] transition-colors group"
+        >
+          <FaEnvelope className="text-lg shrink-0" />
 
-                                        <span className="text-sm font-bold group-hover:underline">
-                                            contact@mactus.in
-                                        </span>
-                                    </a>
+          <span className="text-sm font-bold group-hover:underline">
+            contact@mactus.in
+          </span>
+        </a>
 
-                                    {/* Website */}
-                                    <a
-                                        href="https://www.mactus.in"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-4 text-gray-300 hover:text-[#e0006e] transition-colors group"
-                                    >
-                                        <FaGlobe className="text-xl shrink-0 " />
+        {/* Website */}
+        <a
+          href="https://www.mactus.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 text-gray-300 hover:text-[#e0006e] transition-colors group"
+        >
+          <FaGlobe className="text-lg shrink-0" />
 
-                                        <span className="text-sm font-bold group-hover:underline">
-                                            www.mactus.in
-                                        </span>
-                                    </a>
-                                </div>
+          <span className="text-sm font-bold group-hover:underline">
+            www.mactus.in
+          </span>
+        </a>
+      </div>
 
-                                {/* Social icons */}
-                                <div className="flex items-center gap-3 pt-2">
-                                    {/* LinkedIn */}
-                                    <a href="https://www.linkedin.com/company/33209730" target="_blank" rel="noopener noreferrer"
-                                        className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#e0006e]/20 hover:border-[#e0006e]/40 transition-all">
-                                        <svg className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                                            <circle cx="4" cy="4" r="2" />
-                                        </svg>
-                                    </a>
-                                    {/* YouTube */}
-                                    <a
-                                        href="https://www.youtube.com/@mactusautomation2548" target="_blank" rel="noopener noreferrer"
-                                        className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#e0006e]/20 hover:border-[#e0006e]/40 transition-all"
-                                    >
-                                        <svg
-                                            className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24"
-                                        >
-                                            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.5 15.5v-7l6 3.5-6 3.5Z" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
+      {/* Social icons */}
+      <div className="flex items-center gap-3 pt-1">
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/company/33209730"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#e0006e]/20 hover:border-[#e0006e]/40 transition-all"
+        >
+          <svg
+            className="w-4.5 h-4.5 text-gray-300"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
 
-                            {/* Directions button */}
-                            <a
-                                href="https://maps.google.com/maps?q=Mactus+Automation+Pvt+Ltd,+75,+I+Main+Rd,+Arekere+MICO+Layout+2nd+stage,+Bengaluru,+Karnataka+560076"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-[#e0006e] text-white font-extrabold text-sm hover:bg-[#e0006e] hover:text-white transition-all duration-300 tracking-wider"
-                            >
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                Get Directions
-                            </a>
-                        </div>
+        {/* YouTube */}
+        <a
+          href="https://www.youtube.com/@mactusautomation2548"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#e0006e]/20 hover:border-[#e0006e]/40 transition-all"
+        >
+          <svg
+            className="w-4.5 h-4.5 text-gray-300"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.5 15.5v-7l6 3.5-6 3.5Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
 
-                        {/* Map */}
-                        <div className="rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-sm min-h-[420px]">
-                            <iframe
-                                title="Mactus Automation Office Location"
-                                src="https://maps.google.com/maps?q=Mactus%20Automation%20Pvt%20Ltd%2C%2075%2C%20I%20Main%20Rd%2C%20Arekere%20MICO%20Layout%202nd%20stage%2C%202nd%20Stage%2C%20Arekere%2C%20Bengaluru%2C%20Karnataka%20560076&t=m&z=19&output=embed&iwloc=near"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0, minHeight: '420px', display: 'block' }}
-                                allowFullScreen
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                            />
-                        </div>
-                    </div>
+    {/* Directions button */}
+    <a
+      href="https://maps.google.com/maps?q=Mactus+Automation+Pvt+Ltd,+75,+I+Main+Rd,+Arekere+MICO+Layout+2nd+stage,+Bengaluru,+Karnataka+560076"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-[#e0006e] text-white font-extrabold text-xs hover:bg-[#e0006e] hover:text-white transition-all duration-300 tracking-wider"
+    >
+      <svg
+        className="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2.5}
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2.5}
+          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+      </svg>
+      Get Directions
+    </a>
+  </div>
+
+  {/* Map */}
+  <div className="rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm min-h-[340px]">
+    <iframe
+      title="Mactus Automation Office Location"
+      src="https://maps.google.com/maps?q=Mactus%20Automation%20Pvt%20Ltd%2C%2075%2C%20I%20Main%20Rd%2C%20Arekere%20MICO%20Layout%202nd%20stage%2C%202nd%20Stage%2C%20Arekere%2C%20Bengaluru%2C%20Karnataka%20560076&t=m&z=19&output=embed&iwloc=near"
+      width="100%"
+      height="100%"
+      style={{ border: 0, minHeight: "340px", display: "block" }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+</div>
                 </div>
             </section>
 

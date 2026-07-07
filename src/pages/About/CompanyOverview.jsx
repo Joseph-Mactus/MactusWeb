@@ -144,7 +144,7 @@ const CompanyOverview = () => {
       </section>
 
       {/* SECTION 3 — WHAT WE OFFER (Product/Service Highlight) */}
-      <section className="py-24 px-6 bg-white border-t border-gray-100">
+      {/* <section className="py-24 px-6 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20 space-y-4">
             <h2 className="text-gray-900 font-black text-4xl md:text-5xl uppercase tracking-tighter italic">What We Offer</h2>
@@ -152,7 +152,7 @@ const CompanyOverview = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 lg:gap-32 justify-items-center text-center">
-            {/* Column 1 — Compliance Products */}
+           
             <div className="space-y-10 w-full max-w-sm">
               <div className="text-center group">
                 <h3 className="text-gray-900 font-black text-2xl mb-3 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors">Compliance Products</h3>
@@ -173,7 +173,7 @@ const CompanyOverview = () => {
               </ul>
             </div>
 
-            {/* Column 2 — System Integration */}
+            
             <div className="space-y-10 w-full max-w-sm">
               <div className="text-center group">
                 <h3 className="text-gray-900 font-black text-2xl mb-3 uppercase tracking-tight group-hover:text-[#e0006e] transition-colors">System Integration</h3>
@@ -209,7 +209,7 @@ const CompanyOverview = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

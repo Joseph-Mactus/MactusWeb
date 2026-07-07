@@ -9,6 +9,7 @@ import leaImg4 from '../../assets/images/Leadership/WhatsApp-Image-2025-08-07-at
 import leaImg5 from '../../assets/images/Leadership/sethu-sir-photo-2-902x1024.jpg';
 import leaImg6 from '../../assets/images/Leadership/athul-image-682x1024.png';
 import leaImg7 from '../../assets/images/Leadership/manikandan-image.png';
+import leaImg8 from '../../assets/images/Leadership/Harshitha.jpeg';
 
 const Leadership = () => {
   useState(() => {
@@ -64,6 +65,13 @@ const Leadership = () => {
       photo: leaImg7,
       bio: "Manikandan P is a seasoned Building Automation Engineer with over 12 years of hands-on experience in BMS, HVAC, and ELV systems across commercial and industrial environments. He has extensive expertise in system commissioning, integration, and troubleshooting, working with leading platforms including Honeywell Trend, Schneider EBO, KMC, and Sauter. He plays a pivotal role in supporting clients throughout the entire project lifecycle, specializing in the design and implementation of compliance-driven systems such as SACS, IRS, ASDS, and MPATS. He holds a B.E. in Electrical and Electronics Engineering from Anna University, Chennai.",
       linkedin: "https://www.linkedin.com/in/manikandan-p-81748719a/"
+    },
+    {
+      name: "Harshitha K",
+      title: "Lead - Software Engineer",
+      photo: leaImg8,
+      bio: "Harshitha K is a Lead Software Engineer at Mactus Automation Pvt. Ltd. with over 5 years of experience in designing and developing scalable client applications. She has expertise in full-stack software development, SQL, TypeScript, software architecture, and modern development frameworks. Passionate about writing clean, maintainable code, she focuses on delivering innovative automation solutions while continuously learning and adopting new technologies.",
+      linkedin: "https://www.linkedin.com/in/harshitha-kodanda?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     }
   ];
 

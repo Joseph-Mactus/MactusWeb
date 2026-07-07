@@ -187,17 +187,44 @@ const CareersPage = () => {
 
       {/* Hero */}
       <section className="relative bg-[#25252B] py-24 px-6 overflow-hidden flex flex-col items-center justify-center min-h-[50vh] text-center border-b border-white/5">
-        <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#e0006e 0.5px,transparent 0.5px)', backgroundSize: '32px 32px' }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#25252B] z-0"></div>
-        <div className="relative z-10 max-w-5xl mx-auto space-y-6">
-          <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
-            <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>Join Us at</span></span>
-            <span className="block overflow-visible px-4"><span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.4s' }}>Mactus!</span></span>
-          </h1>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
-            At Mactus, we are on a mission to redefine pharmaceutical compliance through digital innovation. We design cutting-edge software and automation solutions that simplify complex manufacturing processes, strengthen regulatory compliance, and improve operational excellence for pharmaceutical companies worldwide. With a growing portfolio of industry-leading products and an ambitious global vision, Mactus offers talented professionals the opportunity to work on meaningful technology, solve challenging problems, and build products that positively impact millions of lives.          </p>
-        </div>
-      </section>
+  <div
+    className="absolute inset-0 z-0 opacity-20"
+    style={{
+      backgroundImage: "radial-gradient(#e0006e 0.5px,transparent 0.5px)",
+      backgroundSize: "32px 32px",
+    }}
+  ></div>
+
+  <div className="absolute inset-0 bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#25252B] z-0"></div>
+
+  <div className="relative z-10 w-full max-w-7xl mx-auto space-y-6">
+    <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
+      <span className="block overflow-visible px-4">
+        <span className="animate-reveal-up inline-block" style={{ animationDelay: "0.2s" }}>
+          Join Us at
+        </span>
+      </span>
+
+      <span className="block overflow-visible px-4">
+        <span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: "0.4s" }}>
+          Mactus!
+        </span>
+      </span>
+    </h1>
+
+    <p
+      className="text-gray-400 text-base md:text-lg leading-relaxed max-w-4xl mx-auto font-medium opacity-80 animate-reveal-up"
+      style={{ animationDelay: "0.6s" }}
+    >
+      At Mactus, we are on a mission to redefine pharmaceutical compliance through digital innovation.
+      We design cutting-edge software and automation solutions that simplify complex manufacturing
+      processes, strengthen regulatory compliance, and improve operational excellence for pharmaceutical
+      companies worldwide. With a growing portfolio of industry-leading products and an ambitious global
+      vision, Mactus offers talented professionals the opportunity to work on meaningful technology, solve
+      challenging problems, and build products that positively impact millions of lives.
+    </p>
+  </div>
+</section>
 
       {/* Why Work With Us */}
       <section className="py-20 px-6 bg-white border-b border-gray-100">

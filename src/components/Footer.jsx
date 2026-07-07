@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const FOOTER_COLS = [
   {
@@ -93,20 +93,51 @@ const FOOTER_COLS = [
 ];
 
 export default function Footer() {
+  const [openCol, setOpenCol] = useState(null);
+  const [contactOpen, setContactOpen] = useState(false);
+
+  const toggleColumn = (idx) => {
+    setOpenCol(openCol === idx ? null : idx);
+  };
+
   return (
     <footer className="w-full bg-[#262626] border-t border-white/5">
       <div className="bg-[#262626] pt-8 pb-6 px-6 sm:px-8">
-
         {/* Footer Top */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 min-[1150px]:grid-cols-[1.6fr_1.2fr_0.9fr_0.8fr_0.9fr_1.5fr] gap-x-10 gap-y-12 items-start">
-
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 min-[1150px]:grid-cols-[1.6fr_1.2fr_0.9fr_0.8fr_0.9fr_1.5fr] gap-x-10 gap-y-0 lg:gap-y-12 items-start">
           {FOOTER_COLS.map((col, idx) => (
-            <div key={idx} className="min-w-0">
-              <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-7 uppercase opacity-80">
+            <div
+              key={idx}
+              className="min-w-0 border-b border-white/10 lg:border-b-0 py-4 lg:py-0"
+            >
+              {/* Mobile Heading with Plus Icon */}
+              <button
+                type="button"
+                onClick={() => toggleColumn(idx)}
+                className="w-full flex lg:hidden items-center justify-between text-left"
+              >
+                <h4 className="text-white font-bold text-xs tracking-[0.2em] uppercase opacity-80">
+                  {col.title}
+                </h4>
+
+                <span className="text-[#e0006e] text-2xl font-light leading-none">
+                  {openCol === idx ? "−" : "+"}
+                </span>
+              </button>
+
+              {/* Desktop Heading */}
+              <h4 className="hidden lg:block text-white font-bold text-xs tracking-[0.2em] mb-7 uppercase opacity-80">
                 {col.title}
               </h4>
 
-              <ul className="space-y-4">
+              {/* Links */}
+              <ul
+                className={`space-y-4 overflow-hidden transition-all duration-300 lg:block lg:max-h-none lg:opacity-100 lg:mt-0 ${
+                  openCol === idx
+                    ? "max-h-96 opacity-100 mt-5"
+                    : "max-h-0 opacity-0 lg:opacity-100"
+                }`}
+              >
                 {col.links.map((link, i) => (
                   <li key={i}>
                     <a
@@ -122,12 +153,34 @@ export default function Footer() {
           ))}
 
           {/* Contact Column */}
-          <div className="min-w-0">
-            <h4 className="text-white font-bold text-xs tracking-[0.2em] mb-7 uppercase opacity-80">
+          <div className="min-w-0 border-b border-white/10 lg:border-b-0 py-4 lg:py-0">
+            {/* Mobile Contact Heading */}
+            <button
+              type="button"
+              onClick={() => setContactOpen(!contactOpen)}
+              className="w-full flex lg:hidden items-center justify-between text-left"
+            >
+              <h4 className="text-white font-bold text-xs tracking-[0.2em] uppercase opacity-80">
+                OUR CONTACT
+              </h4>
+
+              <span className="text-[#e0006e] text-2xl font-light leading-none">
+                {contactOpen ? "−" : "+"}
+              </span>
+            </button>
+
+            {/* Desktop Contact Heading */}
+            <h4 className="hidden lg:block text-white font-bold text-xs tracking-[0.2em] mb-7 uppercase opacity-80">
               OUR CONTACT
             </h4>
 
-            <div className="text-gray-400 text-sm space-y-4 leading-relaxed">
+            <div
+              className={`text-gray-400 text-sm space-y-4 leading-relaxed overflow-hidden transition-all duration-300 lg:block lg:max-h-none lg:opacity-100 lg:mt-0 ${
+                contactOpen
+                  ? "max-h-[500px] opacity-100 mt-5"
+                  : "max-h-0 opacity-0 lg:opacity-100"
+              }`}
+            >
               <a
                 href="/contact-us"
                 className="text-gray-400 text-sm hover:text-[#e0006e] transition-colors duration-200 block"

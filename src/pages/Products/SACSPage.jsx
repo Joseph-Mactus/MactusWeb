@@ -407,7 +407,7 @@ Each entry is verified, time-stamped, and audit-ready.
     className="sm:hidden relative block w-full h-[260px] bg-black rounded-2xl overflow-hidden"
   >
     <img
-      src="https://img.youtube.com/vi/3Xj6dzZFoqQ/hqdefault.jpg"
+      src="https://img.youtube.com/vi/3Xj6dzZFoqQ/maxresdefault.jpg"
       alt="SACS System Workflow"
       className="w-full h-full object-cover opacity-80"
     />

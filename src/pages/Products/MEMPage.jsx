@@ -296,7 +296,7 @@ const MEMPage = () => {
                 <h2 className="text-white font-extrabold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[13px] sm:text-[14px] md:text-[16px] lg:text-[22px] leading-relaxed whitespace-nowrap animate-text-reveal-right">
                   <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">M</span>edia{" "}
                   <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">P</span>lates{" "}
-                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">T</span>racking and{" "} <br/>
+                  <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">T</span>racking and{" "} <br />
                   <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">M</span>anagement{" "}
                   <span className="text-[#e0006e] font-black drop-shadow-[0_0_12px_rgba(224,0,110,0.8)] animate-pulse">S</span>ystem
                 </h2>
@@ -334,7 +334,7 @@ const MEMPage = () => {
             </div>
           </div>
 
-          <div className="relative animate-fade-in-right mt-16  animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
+          <div className="relative animate-fade-in-right  animate-float lg:justify-self-end w-full lg:w-[110%] max-w-xl mx-auto lg:mx-0">
             <ImageCarousel images={[img_3, img_1, img_2]} />
 
             {/* Install Base — Premium Stats Strip */}

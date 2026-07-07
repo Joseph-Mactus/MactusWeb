@@ -23,97 +23,145 @@ const SectionTitle = ({ children }) => (
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const products = [
+ {
+  id: 'sacs',
+  tag: 'SACS',
+  name: 'Smart Access Control System',
+  positioning: 'Where cleanroom entry becomes controlled compliance.',
+  description:
+    'SACS replaces manual cleanroom entry-exit logbooks with SOP-enforced digital access control for sterile and restricted pharma areas. The system verifies operator identity, training status, gowning qualification, and access permissions before allowing entry. Every entry and exit is time-stamped, electronically recorded, and audit-ready with complete traceability.',
+  capabilities: [
+    'Biometric authentication using fingerprint and face recognition',
+    'Training and qualification verification before access',
+    'Role-based access control for controlled pharma areas',
+    'Real-time occupancy and entry-exit monitoring',
+    'Time-stamped 21 CFR Part 11-ready audit trail',
+  ],
+  image: comImg1,
+  link: '/products/sacs',
+  note: null,
+},
+{
+  id: 'irs',
+  tag: 'IRS',
+  name: 'Intervention Recording System',
+  positioning: 'Every intervention. Every second. Digitally captured and audit-ready.',
+  description:
+    'IRS replaces manual intervention logbooks with automated, sensor-driven recording for sterile manufacturing and aseptic filling lines. It detects glove port access and door open/close events without operator input, links each intervention to the operator, active batch, area, and process stage, and records it with time stamps, electronic review, and complete audit traceability.',
+  capabilities: [
+    'Non-contact sensor detection for glove port access and door open/close events',
+    'Operator, batch, area, and process-stage linkage for every intervention',
+    'Pre-approved intervention reason selection with supervisor e-sign approval',
+    'Real-time intervention count, duration tracking, and batch-level visibility',
+    'PQR/APR-ready reports with complete audit trail and trend insights',
+  ],
+  image: comImg2,
+  link: '/products/irs/',
+  note: null,
+},
+{
+  id: 'asds',
+  tag: 'ASDS',
+  name: 'Automated Solution Dispensing System',
+  positioning: 'Right strength. Right volume. Right every single time.',
+  description:
+    'ASDS replaces manual cleaning solution preparation with solution-driven automated dispensing for pharma cleaning operations. The operator selects the required solution and volume, while the system controls dilution, mixing, and dispensing with accurate concentration, operator accountability, and complete electronic traceability.',
+  capabilities: [
+    'Solution-driven preparation for disinfectants, detergents, IPA, sporicides, and cleaning agents',
+    'Accurate dilution and volume control with locked, validated solution',
+    'On-demand preparation to reduce over-preparation, chemical waste, and manual errors',
+    'Electronic dispense records with operator, solution, volume, time, and audit trail',
+    '21 CFR Part 11-ready compliance with e-signatures and traceable records',
+    'Mobile pharma-grade SS unit designed for cleanroom cleaning workflows',
+  ],
+  image: comImg3,
+  link: '/products/asds/',
+  note: null,
+},
   {
-    id: 'sacs',
-    tag: 'SACS',
-    name: 'Smart Access Control System',
-    positioning: 'The cleanroom door is where contamination risk and compliance risk both begin.',
-    description: 'Mactus SACS is an advanced, paperless entry-exit management solution designed to ensure secure, compliant, and efficient access control in sterile and restricted environments. Every entry is biometrically authenticated, SOP-sequenced, and electronically recorded — no paper entry logs, no manual reconciliation.',
-    capabilities: [
-      'Biometric authentication — fingerprint and face recognition',
-      'SOP-enforced gowning sequence before cleanroom entry',
-      '21 CFR Part 11 compliant audit trail — every entry timestamped and signed',
-      'Real-time occupancy and access reports for QA review',
-    ],
-    image: comImg1,
-    link: '/products/sacs',
-    note: null,
-  },
-  {
-    id: 'irs',
-    tag: 'IRS',
-    name: 'Intervention Recording System',
-    positioning: 'Every aseptic intervention is a contamination risk and a data integrity event. IRScaptures both.',
-    description: 'The Intervention Recording System (IRS) is a web-based automation solution designed to monitor, control, and record interventions occurring during batch processing in pharmaceutical filling lines. Sensor-measured duration, operator identity, intervention type, and supervisor sign-off — all captured automatically, aligned with EU GMP Annex 1.',
-    capabilities: [
-      'Sensor-measured intervention duration — no operator self-reporting',
-      'EU GMP Annex 1 aligned intervention classification',
-      'Electronic supervisor sign-off bound to each event',
-      'Real-time intervention count and duration trending per batch',
-    ],
-    image: comImg2,
-    link: '/products/irs/',
-    note: null,
-  },
-  {
-    id: 'asds',
-    tag: 'ASDS',
-    name: 'Automated Solution Dispensing System',
-    positioning: 'Manual cleaning solution prep is the slow leak in GMP cleaning. ASDS replaces the graduated cylinder with a solvent.',
-    description: 'The ASDS is a mobile, SS-fabricated, automated solution preparation unit for pharma cleaning operations. The operator selects a solvent and required volume — the system handles the dilution, mixing, and dispensing. Every dispense is electronically recorded — solvent, volume, operator, time — with full 21 CFR Part 11 audit trail.',
-    capabilities: [
-      'Up to 6 configurable solvents — disinfectant, IPA, detergent, sporicide',
-      'Volumetric accuracy — solvent-locked, no manual estimation',
-      'On-demand preparation — eliminates over-preparation and waste',
-      'Mobile, SS-fabricated — wheels between cleanrooms',
-    ],
-    image: comImg3,
-    link: '/products/asds/',
-    note: null,
-  },
-  {
-    id: 'MPATS',
-    tag: 'MPATS',
-    name: 'MPATS — Mactus Environmental Monitoring',
-    positioning: 'One unaccounted-for media plate can delay batch release. MPATS makes sure that never happens.',
-    description: 'MPATS digitises the complete lifecycle of every environmental monitoring media plate — inventory, exposure, incubation, reading, reconciliation, and disposal. QR-code traceability at every handover. Automatic reconciliation. Electronic signatures on every CFU count. Audit-ready records for every batch, every room, every grade.',
-    capabilities: [
-      'QR-code tracking — every plate scanned at every lifecycle stage',
-      'Automatic batch reconciliation — all plates accounted for at release',
-      'E-signed CFU readings — bound to the reading microbiologist',
-      'EU GMP Annex 1 and 21 CFR Part 11 aligned',
-    ],
-    image: comImg4,
-    link: '/products/MPATS/',
-
-  },
-  {
-    id: 'ivblt',
-    tag: 'IVBLT',
-    name: 'Intravenous Bag Leak Tester',
-    positioning: 'A pinhole in an IV bag is invisible to the eye and critical to the patient. IVBLT finds it before it ships.',
-    description: 'The IV Bag Leak Detector (IVBLT) is a precision-engineered system designed to detect even the smallest pinhole leaks in intravenous bags. It ensures product integrity, enhances patient safety, and supports compliance with stringent pharmaceutical quality standards. Every test result is electronically recorded with batch, operator, and timestamp.',
-    capabilities: [
-      'Detects pinhole leaks invisible to manual inspection',
-      '100% in-line or at-line testing — not sampling-based',
-      'Electronic test records — batch, operator, result, timestamp',
-      'Reduces patient safety risk and batch rejection at distribution',
-    ],
-    image: comImg5,
-    link: '/products/ivblt',
-    note: null,
-  },
+  id: 'MPATS',
+  tag: 'MPATS',
+  name: 'Media Plate Tracking and Management System',
+  positioning: 'Every environmental monitoring sample fully traceable from inventory to destruction.',
+  description:
+    'MPATS digitizes the complete lifecycle of environmental monitoring media plates, from inventory, exposure, incubation, and reading to reconciliation and final destruction. Each plate is assigned a unique QR identity and every movement is digitally linked to the operator, sampling location, batch, incubator, microbiology review, and audit record.',
+  capabilities: [
+    'QR-based media plate identity from inventory to final destruction',
+    'Lifecycle tracking across exposure, incubation, reading, reconciliation, and disposal',
+    'Automatic plate reconciliation with missing-plate visibility',
+    'Microbiologist-linked CFU reading with electronic signature',
+    'Location-wise, batch-wise, and grade-wise EM trend intelligence',
+    'Audit-ready reports with timestamps, user actions, and complete traceability',
+  ],
+  image: comImg4,
+  link: '/products/MPATS/',
+},
+{
+  id: 'ivblt',
+  tag: 'IVBLT',
+  name: 'Intravenous Bag Leak Tester',
+  positioning: "A pinhole you can't see is a patient safety failure waiting to happen.",
+  description:
+    'IVBLT replaces manual squeeze testing with precision pressure-based leak detection for IV bags. The system applies controlled, size-adjusted pressure to detect pinholes, sealing defects, and port leaks that are not visible during manual inspection. Every test is electronically recorded with bag ID, size, pressure profile, result, operator, and timestamp for audit-ready traceability.',
+  capabilities: [
+    'High-sensitivity pressure-based detection for pinholes and sealing defects',
+    'Size-adjusted pressure testing for consistent results across bag formats',
+    'Automatic pass/fail classification without operator judgement',
+    'Electronic test records with bag ID, result, operator, and timestamp',
+    'Batch-level reconciliation for tested, passed, failed, and quarantined bags',
+    '21 CFR Part 11-ready audit trail for regulatory and QA review',
+  ],
+  image: comImg5,
+  link: '/products/ivblt',
+  note: null,
+}
+,
 ];
 
 
 
 const tableRows = [
-  { product: 'SACS', link: '/products/sacs', gap: 'Cleanroom entry & gowning records', users: 'Operators, QA, Security', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '6–8 weeks' },
-  { product: 'IRS', link: '/products/irs', gap: 'Aseptic intervention recording', users: 'Operators, Production, QA', standard: 'EU GMP Annex 1, 21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'ASDS', link: '/products/asds', gap: 'Cleaning solution preparation records', users: 'Operators, QA', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-  { product: 'MPATS', link: '/products/MPATS/', gap: 'Media plate lifecycle & reconciliation', users: 'QC Microbiology, QA', standard: '21 CFR Part 11, EU GMP Annex 1', deploy: '10–14 weeks' },
-  { product: 'IVBLT', link: '/products/ivblt', gap: 'IV bag integrity testing records', users: 'QC, Production', standard: '21 CFR Part 11', deploy: '6–8 weeks' },
-];
+  {
+    product: 'SACS',
+    link: '/products/sacs',
+    gap: 'Cleanroom access, gowning qualification & occupancy records',
+    users: 'Operators, QA, Production',
+    // standard: '21 CFR Part 11, EU GMP Annex 1',
+    deploy: '6–8 weeks'
+  },
+  {
+    product: 'IRS',
+    link: '/products/irs/',
+    gap: 'Door and glove-port intervention records',
+    users: 'Operators, Production, QA, Supervisors',
+    // standard: 'EU GMP Annex 1, 21 CFR Part 11',
+    deploy: '4–6 weeks'
+  },
+  {
+    product: 'ASDS',
+    link: '/products/asds/',
+    gap: 'Cleaning solution dilution, dispense & reconciliation records',
+    users: 'Operators, QA, Production',
+    // standard: '21 CFR Part 11, GAMP 5',
+    deploy: '6–8 weeks'
+  },
+  {
+    product: 'MPATS',
+    link: '/products/MPATS/',
+    gap: 'EM media plate lifecycle, CFU reading & reconciliation',
+    users: 'QC Microbiology, QA, Production',
+    // standard: '21 CFR Part 11, EU GMP Annex 1, ALCOA+',
+    deploy: '10–14 weeks'
+  },
+  {
+    product: 'IVBLT',
+    link: '/products/ivblt',
+    gap: 'IV bag leak testing, pass/fail records & batch reconciliation',
+    users: 'QC, Production, QA',
+    // standard: '21 CFR Part 11, cGMP, GDP',
+    deploy: '6–8 weeks'
+  },
+]
 
 
 
@@ -240,33 +288,44 @@ const ComplianceProductsPage = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
 
           {/* Left */}
-          <div className="space-y-8">
+         <div className="space-y-8">
+  <h1
+    className="text-white font-black leading-[1.05] tracking-tighter"
+    style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}
+  >
+    <span className="overflow-hidden inline-block py-1 w-full">
+      <span
+        className="animate-reveal-up inline-block"
+        style={{ animationDelay: '0.1s' }}
+      >
+        Secure, Digital, and
+      </span>
+    </span>
 
+    <span className="overflow-hidden inline-block py-1 w-full">
+      <span
+        className="animate-reveal-up text-[#e0006e] inline-block"
+        style={{ animationDelay: '0.2s' }}
+      >
+        Audit-Ready Solutions
+      </span>
+    </span>
 
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e0006e]/10 border border-[#e0006e]/20 text-[#e0006e] text-[11px] font-black tracking-[0.15em] uppercase">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e0006e] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e0006e]"></span>
-              </span>
-              21 CFR PART 11 · GAMP 5 VALIDATED · AUDIT-READY
-            </div>
+    <span className="overflow-hidden inline-block py-1 w-full">
+      <span
+        className="animate-reveal-up inline-block"
+        style={{ animationDelay: '0.3s' }}
+      >
+        for Regulatory Excellence
+      </span>
+    </span>
+  </h1>
 
-            <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
-              <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Secure, Digital, and</span>
-              </span>
-              <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up text-[#e0006e] inline-block" style={{ animationDelay: '0.2s' }}>Audit-Ready Solutions</span>
-              </span>
-              <span className="overflow-hidden inline-block py-1 w-full">
-                <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.3s' }}>for Regulatory Excellence</span>
-              </span>
-            </h1>
-
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
-              Five purpose-built systems — each engineered around the GMP workflows your auditors look at first. Not generic platforms retrofitted for pharma. Built for pharma from the architecture up.
-            </p>
-          </div>
+  <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-[520px] font-medium opacity-80">
+    Purpose-built pharma systems designed around GMP workflows, data integrity,
+    and audit readiness — built for regulated environments from the ground up.
+  </p>
+</div>
 
           {/* Right — floating product count visual */}
           <div className="relative animate-fade-in-right animate-float">
@@ -280,7 +339,7 @@ const ComplianceProductsPage = () => {
       <section className="py-16 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="THE FULL RANGE">Our Compliance Product Range</SectionTitle>
-          <p className="text-center text-gray-500 font-medium text-base -mt-6 mb-12">Five systems. Each one closes a specific GMP paper gap.</p>
+          <p className="text-center text-gray-500 font-medium text-base  mb-12">Five systems. Each one closes a specific GMP paper gap.</p>
 
           <div className="space-y-10">
             {products.map((product, index) => (
@@ -313,7 +372,7 @@ const ComplianceProductsPage = () => {
                   <th className="px-6 py-5 text-white font-black text-xs tracking-widest uppercase">Product</th>
                   <th className="px-6 py-5 text-white font-black text-xs tracking-widest uppercase">GMP Gap Closed</th>
                   <th className="px-6 py-5 text-white font-black text-xs tracking-widest uppercase">Primary Users</th>
-                  <th className="px-6 py-5 text-white font-black text-xs tracking-widest uppercase">Key Standard</th>
+                  {/* <th className="px-6 py-5 text-white font-black text-xs tracking-widest uppercase">Key Standard</th> */}
                   <th className="px-6 py-5 text-white font-black text-xs tracking-widest uppercase">Deployment</th>
                 </tr>
               </thead>
@@ -325,7 +384,7 @@ const ComplianceProductsPage = () => {
                     </td>
                     <td className="px-6 py-5 text-gray-700 font-medium text-sm">{row.gap}</td>
                     <td className="px-6 py-5 text-gray-500 font-medium text-sm">{row.users}</td>
-                    <td className="px-6 py-5 text-gray-500 font-medium text-xs leading-relaxed">{row.standard}</td>
+                    {/* <td className="px-6 py-5 text-gray-500 font-medium text-xs leading-relaxed">{row.standard}</td> */}
                     <td className="px-6 py-5">
                       <span className="inline-flex px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 font-black text-[10px] tracking-widest uppercase whitespace-nowrap">
                         {row.deploy}

@@ -95,105 +95,98 @@ const IntegrationCard = ({ integration, index }) => {
 
   return (
     <div
-  className={`flex flex-col ${
-    isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'
-  } items-stretch bg-white rounded-[2.5rem] overflow-hidden
+      className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'
+        } items-stretch bg-white rounded-[2.5rem] overflow-hidden
   border border-gray-100
   shadow-[0_8px_40px_rgba(0,0,0,0.06)]
   hover:shadow-[0_20px_60px_rgba(0,0,0,0.10)]
   transition-all duration-500 group`}
->
-  {/* Image section */}
-  <div className="w-full lg:w-7/12 relative overflow-hidden bg-gray-50 min-h-[320px] lg:min-h-[500px]">
-    <img
-      src={integration.image}
-      alt={integration.name}
-      className="
+    >
+      {/* Image section */}
+      <div className="w-full lg:w-6/12 relative overflow-hidden bg-gray-50 min-h-[320px] lg:min-h-[500px]">
+        <img
+          src={integration.image}
+          alt={integration.name}
+          className="
         absolute inset-0
         w-full h-full
         object-fill
         transition-transform duration-700
         group-hover:scale-[1.02]
       "
-    />
+        />
 
-    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
 
-    <div className="absolute top-5 left-5">
-      <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-[#e0006e] text-white text-[11px] font-black tracking-[0.15em] uppercase shadow-lg">
-        {integration.tag}
-      </span>
-    </div>
-  </div>
+        <div className="absolute top-5 left-5">
 
-  {/* Content section */}
-  <div className="w-full lg:w-5/12 p-8 md:p-10 flex flex-col justify-center gap-5">
-    <div>
-      <p className="text-[#e0006e] font-black text-xs tracking-[0.2em] uppercase mb-2">
-        {integration.tag}
-      </p>
+        </div>
+      </div>
 
-      <h3 className="font-black text-2xl md:text-3xl text-gray-900 tracking-tight leading-snug mb-3 group-hover:text-[#e0006e] transition-colors duration-300">
-        {integration.name}
-      </h3>
+      {/* Content section */}
+      <div className="w-full lg:w-6/12 p-8 md:p-10 flex flex-col justify-center gap-5">
+        <div>
+          <h3 className="font-black text-2xl md:text-3xl text-gray-900 tracking-tight leading-snug mb-3 group-hover:text-[#e0006e] transition-colors duration-300">
+            {integration.name}
+          </h3>
 
-      <p className="text-[#e0006e] font-medium text-sm italic leading-relaxed mb-4">
-        "{integration.positioning}"
-      </p>
+          <p className="text-[#e0006e] font-medium text-sm italic leading-relaxed mb-4">
+            "{integration.positioning}"
+          </p>
 
-      <p className="text-gray-500 leading-relaxed font-medium text-sm">
-        {integration.description}
-      </p>
-    </div>
+          <p className="text-gray-500 leading-relaxed font-medium text-sm">
+            {integration.description}
+          </p>
+        </div>
 
-    <ul className="space-y-2.5">
-      {integration.capabilities.map((capability, i) => (
-        <li key={i} className="flex items-start gap-3">
-          <div className="w-5 h-5 rounded-full bg-[#e0006e]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <ul className="space-y-2.5">
+          {integration.capabilities.map((capability, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <div className="w-5 h-5 rounded-full bg-[#e0006e]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg
+                  className="w-3 h-3 text-[#e0006e]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+
+              <span className="text-gray-600 text-sm font-medium leading-relaxed">
+                {capability}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="pt-2">
+          <a
+            href={integration.link}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#e0006e] text-[#e0006e] font-black text-xs tracking-widest uppercase hover:bg-[#e0006e] hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(224,0,110,0.25)]"
+          >
+            Learn More
+
             <svg
-              className="w-3 h-3 text-[#e0006e]"
-              fill="currentColor"
-              viewBox="0 0 20 20"
+              className="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </div>
-
-          <span className="text-gray-600 text-sm font-medium leading-relaxed">
-            {capability}
-          </span>
-        </li>
-      ))}
-    </ul>
-
-    <div className="pt-2">
-      <a
-        href={integration.link}
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#e0006e] text-[#e0006e] font-black text-xs tracking-widest uppercase hover:bg-[#e0006e] hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(224,0,110,0.25)]"
-      >
-        Learn More
-
-        <svg
-          className="w-3.5 h-3.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={3}
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          />
-        </svg>
-      </a>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   );
 };
 
@@ -246,7 +239,7 @@ const SystemIntegrationPage = () => {
               BMS + EMS + LVS INTEGRATION
             </div>
 
-            <h1 className="text-white font-black leading-[1.05] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
+            <h1 className="text-white font-black leading-[.9] tracking-tighter" style={{ fontSize: 'clamp(28px, 4.5vw, 60px)' }}>
               <span className="overflow-hidden inline-block py-1 w-full">
                 <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.1s' }}>Integrated facility</span>
               </span>
@@ -269,14 +262,20 @@ const SystemIntegrationPage = () => {
         </div>
       </section>
 
-      <section className="py-16 px-6  border-b border-gray-100">
+      <section className="py-16 px-6 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle eyebrow="THE FULL RANGE">Our System Integration Range</SectionTitle>
-          <p className="text-center text-gray-500 font-medium text-base -mt-6 mb-12">
-            Three connected system layers. One accountable integration partner.
-          </p>
+          <div className="text-center mb-12">
+            <SectionTitle eyebrow="THE FULL RANGE">
+              Our System Integration Range
+            </SectionTitle>
 
-          <div className="space-y-10">
+
+            <p className="text-gray-500 font-medium text-base md:text-lg">
+              Three connected system layers. One accountable integration partner.
+            </p>
+
+          </div>
+          <div className="space-y-8">
             {integrations.map((integration, index) => (
               <IntegrationCard key={integration.id} integration={integration} index={index} />
             ))}
@@ -336,7 +335,7 @@ const SystemIntegrationPage = () => {
           <div className="relative z-10 py-20 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <div className="max-w-xl space-y-4">
               <h2 className="text-white font-black text-3xl md:text-4xl leading-tight tracking-tighter">
-                Planning a facility integration project across BMS, EMS, or Low Voltage Systems?
+                Planning a facility integration project across BMS, EMS and Low Voltage Systems?
               </h2>
               <p className="text-gray-400 font-medium leading-relaxed">
                 Our team can map your facility scope, integration points, documentation needs, and commissioning path.
