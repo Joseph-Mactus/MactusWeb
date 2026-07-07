@@ -524,10 +524,13 @@ const HomePage = () => {
               MACTUS BY THE NUMBERS
             </span>
 
-            <h2 className="font-black text-4xl md:text-6xl tracking-tighter text-gray-900 leading-tight mb-6">
-              Thirteen years of
-              <span className="text-[#e0006e]"> validated execution.</span>
-            </h2>
+         <h2 className="font-black text-4xl md:text-6xl tracking-tighter text-gray-900 leading-tight mb-6">
+  <span className="relative inline-block text-[#e0006e]">
+    <span className="relative z-10 px-2">Fourteen years</span>
+    <span className="absolute inset-0 -skew-x-6 rounded-xl bg-[#e0006e]/10 shadow-[0_10px_30px_rgba(224,0,110,0.18)]"></span>
+  </span>{" "}
+  of validated execution.
+</h2>
           </div>
 
           {/* Stats Grid */}

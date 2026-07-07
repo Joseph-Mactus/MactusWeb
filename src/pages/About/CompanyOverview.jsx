@@ -12,7 +12,7 @@ const SectionTitle = ({ children, light = false }) => (
 
 const CompanyOverview = () => {
   React.useState(() => {
-    document.title = "Company Overview | Mactus";
+    document.title = "Mactus Overview | Mactus";
   }, []);
 
   return (
@@ -49,10 +49,10 @@ const CompanyOverview = () => {
         }}></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e0006e]/10 via-transparent to-[#25252B] z-0"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto space-y-6">
+        <div className="relative z-10 max-w-4xl mx-auto space-y-6">
           <h1 className="text-white font-black text-3xl md:text-5xl lg:text-7xl leading-tight tracking-tighter uppercase italic">
             <span className="block overflow-visible px-4">
-              <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>Company</span>
+              <span className="animate-reveal-up inline-block" style={{ animationDelay: '0.2s' }}>Mactus</span>
             </span>
             <span className="block overflow-visible px-4">
               <span className="animate-reveal-up inline-block shimmer-text pr-10" style={{ animationDelay: '0.4s' }}>Overview</span>
@@ -60,7 +60,7 @@ const CompanyOverview = () => {
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl font-bold tracking-wide  opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
-            Intelligent Automation for a Compliant World
+            Digital ComplianceManagement productsand solutions forPharma, Healthcare& Food Processing
           </p>
         </div>
       </section>

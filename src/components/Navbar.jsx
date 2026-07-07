@@ -14,24 +14,12 @@ const NAV_ITEMS = [
   },
   {
     title: "COMPLIANCE PRODUCTS",
-    productCategories: [
-      {
-        title: "Injectables",
-        products: [
-          "SACS (Smart Access Control System)",
-          "IRS(Intervention Recording System)",
-          "IVBLT (Intravenous Bag Leak Tester)",
-        ],
-      },
-      {
-        title: "OSD",
-        products: ["ASDS (Automated Solution Dispensing System)"],
-      },
-      {
-        title: "EM",
-        products: ["MPATS (Media Plates Tracking and Management System)"],
-      },
-
+    subItems: [
+      "SACS (Smart Access Control System)",
+      "IRS(Intervention Recording System)",
+      "IVBLT (Intravenous Bag Leak Tester)",
+      "ASDS (Automated Solution Dispensing System)",
+      "MPATS (Media Plates Tracking and Management System)",
     ],
   },
   {
@@ -111,7 +99,7 @@ const SUB_PATHS = {
   "SACS (Smart Access Control System)": "/products/sacs",
   "IRS(Intervention Recording System)": "/products/irs",
   "ASDS (Automated Solution Dispensing System)": "/products/asds",
-  "MPATS (Media Plates Tracking and Management System)": "/products/mpats",
+  "MPATS (Media Plates Tracking and Management System)": "/products/MPATS",
   "IVBLT (Intravenous Bag Leak Tester)": "/products/ivblt",
     
 
@@ -136,18 +124,9 @@ const SUB_PATHS = {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMobileSub, setActiveMobileSub] = useState(null);
-  const [activeMobileCategory, setActiveMobileCategory] = useState(null);
-  const [activeDesktopCategory, setActiveDesktopCategory] = useState(null);
 
   const toggleMobileSub = (title) => {
     setActiveMobileSub(activeMobileSub === title ? null : title);
-    setActiveMobileCategory(null);
-  };
-
-  const toggleMobileCategory = (categoryTitle) => {
-    setActiveMobileCategory(
-      activeMobileCategory === categoryTitle ? null : categoryTitle
-    );
   };
 
   return (
@@ -187,7 +166,7 @@ export default function Navbar() {
             topPath = "/contact-us/";
           }
 
-          const hasDropdown = item.subItems || item.productCategories;
+          const hasDropdown = item.subItems;
 
           const content = (
             <div className="flex items-center gap-1 cursor-pointer group">
@@ -217,91 +196,16 @@ export default function Navbar() {
             <div
               key={item.title}
               className="relative group/nav py-2"
-              onMouseLeave={() => {
-                if (item.productCategories) {
-                  setActiveDesktopCategory(null);
-                }
-              }}
             >
               {topPath ? <a href={topPath}>{content}</a> : content}
 
-              {/* Compliance Products Nested Dropdown */}
-              {item.productCategories && (
-                <div className="absolute top-full left-0 mt-2 w-60 bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl overflow-visible opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0 translate-y-4 transition-all duration-500 ease-out z-[60] border border-white/40">
-                  <div className="h-1 w-full bg-gradient-to-r from-[#e0006e] via-[#ff4d9e] to-[#e0006e] rounded-t-xl" />
-
-                  <div className="py-3 px-2">
-                    {item.productCategories.map((category, idx) => (
-                      <div
-                        key={category.title}
-                        onMouseEnter={() => setActiveDesktopCategory(category)}
-                        style={{ transitionDelay: `${idx * 50}ms` }}
-                        className="flex items-center justify-between px-4 py-3 text-gray-700 text-[13.5px] font-bold rounded-lg hover:bg-[#e0006e]/5 hover:text-[#e0006e] transition-all duration-300 cursor-pointer relative group/item opacity-0 translate-x-2 group-hover/nav:opacity-100 group-hover/nav:translate-x-0"
-                      >
-                        <span>{category.title}</span>
-
-                        <svg
-                          className="w-4 h-4 transition-transform duration-300 group-hover/item:translate-x-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2.5}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-
-                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#e0006e] transition-all duration-300 group-hover/item:h-2/3 rounded-r-full" />
-                      </div>
-                    ))}
-                  </div>
-
-                  {activeDesktopCategory && (
-                    <div className="absolute top-0 left-full ml-2 w-72 bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl border border-white/40 z-[70] overflow-hidden">
-                      <div className="h-1 w-full bg-gradient-to-r from-[#e0006e] via-[#ff4d9e] to-[#e0006e]" />
-
-                      <div className="px-4 pt-3 pb-1 text-[11px] font-black uppercase tracking-[0.18em] text-[#e0006e]">
-                        {activeDesktopCategory.title}
-                      </div>
-
-                      <div className="py-2 px-2">
-                        {activeDesktopCategory.products.map((product) => (
-                          <a
-                            key={product}
-                            href={SUB_PATHS[product] || "#"}
-                            className="block px-4 py-3 text-gray-700 text-[13px] font-bold rounded-lg hover:bg-[#e0006e]/5 hover:text-[#e0006e] transition-all duration-300 relative group/product"
-                          >
-                            <div className="flex items-center justify-between">
-                              <span>{product}</span>
-
-                              <svg
-                                className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover/product:opacity-100 group-hover/product:translate-x-0"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2.5}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </div>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-
               {/* Normal Dropdowns */}
               {item.subItems && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl overflow-hidden opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0 translate-y-4 transition-all duration-500 ease-out z-[60] border border-white/40">
+                <div
+                  className={`absolute top-full left-0 mt-2 ${
+                    item.title === "COMPLIANCE PRODUCTS" ? "w-80" : "w-56"
+                  } bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl overflow-hidden opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0 translate-y-4 transition-all duration-500 ease-out z-[60] border border-white/40`}
+                >
                   <div className="h-1 w-full bg-gradient-to-r from-[#e0006e] via-[#ff4d9e] to-[#e0006e]" />
 
                   <div className="py-3 px-2">
@@ -435,7 +339,7 @@ export default function Navbar() {
                 topPath = "/contact-us/";
               }
 
-              const hasDropdown = item.subItems || item.productCategories;
+              const hasDropdown = item.subItems;
               const isExpanded = activeMobileSub === item.title;
 
               const rowContent = (
@@ -503,82 +407,6 @@ export default function Navbar() {
                     </a>
                   ) : (
                     rowContent
-                  )}
-
-                  {/* Mobile Compliance Products Categories */}
-                  {item.productCategories && (
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isExpanded
-                          ? "max-h-[600px] opacity-100 mb-2"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="pl-12 flex flex-col">
-                        {item.productCategories.map((category) => {
-                          const isCategoryExpanded =
-                            activeMobileCategory === category.title;
-
-                          return (
-                            <div
-                              key={category.title}
-                              className="border-b border-gray-50 last:border-0"
-                            >
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  toggleMobileCategory(category.title)
-                                }
-                                className="w-full flex items-center justify-between py-[11px] px-2 text-[13px] font-bold text-gray-600 hover:text-[#e0006e] hover:bg-[#fdf0f6] rounded-xl transition-all duration-200"
-                              >
-                                <div className="flex items-center gap-2">
-                                  <span className="w-[5px] h-[5px] rounded-full bg-[#e0006e] opacity-50 flex-shrink-0" />
-                                  {category.title}
-                                </div>
-
-                                <svg
-                                  className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
-                                    isCategoryExpanded ? "rotate-180" : ""
-                                  }`}
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2.5}
-                                    d="M19 9l-7 7-7-7"
-                                  />
-                                </svg>
-                              </button>
-
-                              <div
-                                className={`overflow-hidden transition-all duration-300 ${
-                                  isCategoryExpanded
-                                    ? "max-h-[250px] opacity-100"
-                                    : "max-h-0 opacity-0"
-                                }`}
-                              >
-                                <div className="ml-4 mb-2 flex flex-col border-l border-[#e0006e]/20">
-                                  {category.products.map((product) => (
-                                    <a
-                                      key={product}
-                                      href={SUB_PATHS[product] || "#"}
-                                      onClick={() => setIsMenuOpen(false)}
-                                      className="flex items-center gap-2 py-[10px] px-4 text-[12.5px] font-semibold text-gray-500 hover:text-[#e0006e] hover:bg-[#fdf0f6] rounded-r-xl transition-all duration-200"
-                                    >
-                                      <span className="w-[4px] h-[4px] rounded-full bg-[#e0006e] opacity-50 flex-shrink-0" />
-                                      {product}
-                                    </a>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
                   )}
 
                   {/* Mobile Normal SubItems */}
