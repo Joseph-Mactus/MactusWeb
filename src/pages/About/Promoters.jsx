@@ -120,8 +120,7 @@ const Promoters = () => {
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto font-medium opacity-80 animate-reveal-up" style={{ animationDelay: '0.4s' }}>
-            Mactus board of directors (Ex Strides and Ex Honeywell) bring decades of extensive experience in pharmaceutical engineering, quality/compliance management, automation & control. Their collective expertise drives Mactus towards continuous product innovation, project delivery excellence thus helping pharmaceutical companies to be on top of compliance.
-          </p>
+Mactus's promoters bring decades of complementary experience Pharmaceutical engineering (Ex Strides), industrial automation and product leadership (Ex Honeywell), quality and regulatory affairs (Ex Mylan), and software and technology investing (Streamline Healthcare). Their collective expertise drives Mactus towards continuous product innovation, project delivery excellence, and helping pharmaceutical companies stay on top of compliance.          </p>
         </div>
       </section>
 

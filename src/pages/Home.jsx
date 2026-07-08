@@ -440,9 +440,9 @@ const HomePage = () => {
       <section className="py-20 px-6 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-6">
-            <h2 className="font-black text-4xl md:text-5xl tracking-tighter text-gray-900 mb-4">Five products. One purpose.</h2>
+            <h2 className="font-black text-4xl md:text-5xl tracking-tighter text-gray-900 mb-4">From clean-room compliance to facility-wide intelligence</h2>
             <p className="text-gray-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-              Turn the cleanroom's most paper-heavy workflows — entry, intervention, dispensing, media plates, IV bag leak testing — into a signed, time-stamped, audit-ready electronic trail.
+Compliance products that run inside the clean-room. System integration that runs the facility around it. IoT that turns the data both generate into engineering signal. Three portfolios, designed to work together.
             </p>
           </div>
 
