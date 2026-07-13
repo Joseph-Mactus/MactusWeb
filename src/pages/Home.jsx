@@ -413,9 +413,9 @@ const HomePage = () => {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-gray-200">
-                  <th className="px-8 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">Scenario</th>
-                  <th className="px-8 py-6 text-gray-400 font-black text-lg tracking-widest uppercase">On Paper</th>
-                  <th className="px-8 py-6 text-[#e0006e] font-black text-lg tracking-widest uppercase bg-[#e0006e]/5">With Mactus</th>
+                  <th className="px-3 py-6 text-gray-900 font-black text-lg tracking-widest uppercase">Scenario</th>
+                  <th className="px-3 py-6 text-gray-400 font-black text-base tracking-widest uppercase">On{" " }Paper</th>
+                  <th className="px-3 py-6 text-[#e0006e] font-black text-base tracking-widest uppercase bg-[#e0006e]/5">With Mactus</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -425,9 +425,9 @@ const HomePage = () => {
                   ["Reconciliation", "Out of 48 media plates, we can find 46.", "All 48. With QR scans for each."],
                 ].map((row, i) => (
                   <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="px-8 py-6 font-bold text-gray-500">{row[0]}</td>
-                    <td className="px-8 py-6 text-gray-500 font-medium text-sm italic">{row[1]}</td>
-                    <td className="px-8 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors text-sm">{row[2]}</td>
+                    <td className="px-3 py-6 font-bold text-gray-500">{row[0]}</td>
+                    <td className="px-3 py-6 text-gray-500 font-medium text-sm italic">{row[1]}</td>
+                    <td className="px-3 py-6 font-bold text-[#e0006e] bg-[#e0006e]/5 group-hover:bg-[#e0006e]/10 transition-colors text-sm">{row[2]}</td>
                   </tr>
                 ))}
               </tbody>

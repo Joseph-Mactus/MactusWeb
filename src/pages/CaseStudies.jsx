@@ -5,7 +5,7 @@ import casImg1 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-03_30
 import casImg2 from '../assets/images/Complianceproducts/IRS/IRS1.png';
 import casImg3 from '../assets/images/CaseStudies/ChatGPT-Image-Feb-9-2026-04_29_05-PM.png';
 import casImg4 from '../assets/images/ivblt_2.png';
-import casImg5 from '../assets/images/Complianceproducts/MPATS/mem_2.jpeg';
+import casImg5 from '../assets/images/Complianceproducts/MPATS/mem_2.png';
 
 
 const caseStudies = [

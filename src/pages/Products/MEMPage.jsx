@@ -6,8 +6,8 @@ import ImageCarousel from '../../components/ImageCarousel';
 import ZohoFormModal from '../../components/ZohoFormModal';
 import ComparisonTable from '../../components/ComparisonTable';
 
-import img_1 from '../../assets/images/Complianceproducts/MPATS/mem_1.jpeg';
-import img_2 from '../../assets/images/Complianceproducts/MPATS/mem_2.jpeg';
+import img_1 from '../../assets/images/Complianceproducts/MPATS/mem_1.png';
+import img_2 from '../../assets/images/Complianceproducts/MPATS/mem_2.png';
 import img_3 from '../../assets/images/Complianceproducts/MPATS/mem_3.png';
 
 import Brochure from '../../assets/Brochurs/MAPL_MEM_BrochureV11.pdf';
