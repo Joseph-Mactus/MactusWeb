@@ -606,7 +606,7 @@ Compliance products that run inside the clean-room. System integration that runs
       {/* ── SECTION 8 — WHY MACTUS ───────────────────────────────────────────── */}
       <section className="py-20 px-6 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle>Why India's most-inspected pharma plants run on Mactus.</SectionTitle>
+          <SectionTitle>Why India's most-inspected pharma plants run on Mactus Solutions.</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {[
               { title: "Domain-built, not configured-into", body: "We didn't pivot into pharma. We started here. Every product is shaped by SOPs we've read, deviations we've investigated, and inspectors we've watched at work. When we say a system is inspector-ready, we mean we've sat across the table from one." },

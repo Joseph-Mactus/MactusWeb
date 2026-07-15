@@ -60,7 +60,7 @@ const CompanyOverview = () => {
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl font-bold tracking-wide  opacity-80 animate-reveal-up" style={{ animationDelay: '0.6s' }}>
-            Digital ComplianceManagement productsand solutions forPharma, Healthcare& Food Processing
+            Digital Compliance Management products and solutions for Pharma, Healthcare & Food Processing Industries
           </p>
         </div>
       </section>
