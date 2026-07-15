@@ -17,9 +17,9 @@ const NAV_ITEMS = [
     subItems: [
       "SACS (Smart Access Control System)",
       "IRS(Intervention Recording System)",
-      "IVBLT (Intravenous Bag Leak Tester)",
       "ASDS (Automated Solution Dispensing System)",
       "MPATS (Media Plates Tracking and Management System)",
+      "IVBLT (Intravenous Bag Leak Tester)",
     ],
   },
   {
