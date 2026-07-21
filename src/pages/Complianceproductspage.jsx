@@ -31,13 +31,14 @@ const products = [
   description:
     'SACS replaces manual cleanroom entry-exit logbooks with SOP-enforced digital access control for sterile and restricted pharma areas. The system verifies operator identity, training status, gowning qualification, and access permissions before allowing entry. Every entry and exit is time-stamped, electronically recorded, and audit-ready with complete traceability.',
   capabilities: [
-    'Biometric authentication using fingerprint and face recognition',
+    'Biometric authentication using fingerprint, card and face recognition',
     'Training and qualification verification before access',
-    'Role-based access control for controlled pharma areas',
     'Restrict the maximum qualified user count in area',
     'Track duration and provide voice alerts',
-    'Restricts the maximum number of qualified users permitted inside a controlled area',
-    'Time-stamped 21 CFR Part 11-ready audit trail',
+    'Health checklist self-declaration/verification before entry',
+    'Real-time occupancy and entry-exit monitoring',
+    'Entry monitoring through tailgating sensor to prevent multiple users entry with a single authorized access'
+
   ],
   image: comImg1,
   link: '/products/sacs',
