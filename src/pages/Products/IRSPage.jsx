@@ -301,8 +301,7 @@ const IRSPage = () => {
 
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-              In sterile manufacturing, every intervention must be justified, documented, and fully traceable. <span className="text-[#e0006e]">IRS replaces manual batch recording with automated, sensor-driven intervention tracking.</span>
-              Every intervention is automatically detected, time-stamped, linked to the operator, and recorded in an audit-ready format—improving compliance, data integrity, and operational efficiency.
+              In sterile manufacturing, every intervention must be justified, documented, and fully traceable. <span className="text-[#e0006e]">IRS replaces manual batch recording with automated, sensor-driven intervention tracking.</span> Every intervention is automatically detected, time-stamped, linked to the operator, and recorded in an audit-ready format—improving compliance, data integrity, and operational efficiency.
             </p>
           </div>
 

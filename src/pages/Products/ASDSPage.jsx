@@ -317,8 +317,7 @@ const ASDSPage = () => {
 
             <div className="max-w-3xl mx-auto text-center mb-12">
               <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
-                In pharma manufacturing, cleaning solution preparation must be accurate, consistent, and traceable. <span className="text-[#e0006e]">ASDS replaces manual dilution and paper-based reconciliation with recipe-driven automated dispensing.</span>
-                Each solution is prepared with the right concentration, right volume, and complete audit-ready traceability.
+                In pharma manufacturing, cleaning solution preparation must be accurate, consistent, and traceable. <span className="text-[#e0006e]">ASDS replaces manual dilution and paper-based reconciliation with recipe-driven automated dispensing.</span> Each solution is prepared with the right concentration, right volume, and complete audit-ready traceability.
               </p>
             </div>
 

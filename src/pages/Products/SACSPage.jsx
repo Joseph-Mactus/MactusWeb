@@ -260,9 +260,7 @@ const SACSPage = () => {
             <p className="text-gray-900 text-xl font-bold leading-relaxed mb-6">
               In aseptic areas, every entry must be controlled and recorded.
 
- <span className="text-[#e0006e]">SACS replaces paper logbooks with SOP-based digital access control.</span>
- 
-Each entry is verified, time-stamped, and audit-ready.
+ <span className="text-[#e0006e]"> SACS replaces paper logbooks with SOP-based digital access control.</span> Each entry is verified, time-stamped, and audit-ready.
             </p>
           </div>
 

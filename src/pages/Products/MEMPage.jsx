@@ -447,7 +447,7 @@ const MEMPage = () => {
       <section className="py-12 px-6 bg-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto">
           <SectionTitle eyebrow="THE WORKFLOW">The Media Plate Lifecycle, End to End</SectionTitle>
-          <p className="text-center italic text-gray-500 mb-10 text-xl -mt-6">"Five stages. One QR code. Zero unaccounted-for plates."</p>
+          <p className="text-center italic text-gray-500 mb-10 text-xl -mt-2">"Five stages. One QR code. Zero unaccounted-for plates."</p>
 
           {/* Stepper Container */}
           <div className="relative mb-12">
